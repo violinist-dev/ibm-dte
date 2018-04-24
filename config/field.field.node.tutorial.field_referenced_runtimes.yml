@@ -1,0 +1,29 @@
+uuid: b273ec48-7df4-403e-bcee-a65c14baba1a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_referenced_runtimes
+    - node.type.tutorial
+    - taxonomy.vocabulary.programming_runtimes
+id: node.tutorial.field_referenced_runtimes
+field_name: field_referenced_runtimes
+entity_type: node
+bundle: tutorial
+label: 'Referenced Runtimes'
+description: '<p>Programming runtimes and languages used in this tutorial</p>'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      programming_runtimes: programming_runtimes
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

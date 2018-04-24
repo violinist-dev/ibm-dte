@@ -7,6 +7,7 @@ dependencies:
     - field.field.node.tutorial.field_duration
     - field.field.node.tutorial.field_introduction
     - field.field.node.tutorial.field_referenced_products
+    - field.field.node.tutorial.field_referenced_runtimes
     - field.field.node.tutorial.field_short_description
     - field.field.node.tutorial.field_takeaways
     - node.type.tutorial
@@ -74,6 +75,7 @@ third_party_settings:
     group_related_items:
       children:
         - field_referenced_products
+        - field_referenced_runtimes
       parent_name: group_content_groupings
       weight: 22
       format_type: tab
@@ -115,6 +117,15 @@ content:
     region: content
   field_referenced_products:
     weight: 9
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+    region: content
+  field_referenced_runtimes:
+    weight: 10
     settings:
       match_operator: CONTAINS
       size: 60

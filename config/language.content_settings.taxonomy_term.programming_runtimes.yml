@@ -1,0 +1,11 @@
+uuid: 9559b17b-fc21-4dae-ae70-55c9ef0e0988
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.programming_runtimes
+id: taxonomy_term.programming_runtimes
+target_entity_type_id: taxonomy_term
+target_bundle: programming_runtimes
+default_langcode: zxx
+language_alterable: false
