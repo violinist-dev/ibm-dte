@@ -1,0 +1,11 @@
+uuid: 24d99d48-0264-40c6-a394-7c0e9e98b016
+langcode: en
+status: true
+dependencies:
+  module:
+    - language
+id: language_content_settings--language_content_settings
+disabled: true
+path: language_content_settings/language_content_settings
+resourceType: language_content_settings--language_content_settings
+resourceFields: ''

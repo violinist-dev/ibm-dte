@@ -1,0 +1,9 @@
+uuid: 64d16980-267e-4514-bb29-92973e717a3b
+langcode: en
+status: true
+dependencies: {  }
+id: jsonapi_resource_config--jsonapi_resource_config
+disabled: true
+path: jsonapi_resource_config/jsonapi_resource_config
+resourceType: jsonapi_resource_config--jsonapi_resource_config
+resourceFields: ''

@@ -1,0 +1,99 @@
+uuid: e6cea495-fdca-42a6-bd79-f68a66d5c6bd
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.programming_runtimes
+id: taxonomy_term--programming_runtimes
+disabled: false
+path: taxonomy/programming-runtimes
+resourceType: taxonomy--programming-runtimes
+resourceFields:
+  tid:
+    fieldName: tid
+    publicName: tid
+    enhancer:
+      id: ''
+    disabled: false
+    advancedOptionsIcon: ''
+    enhancer_label: ''
+  uuid:
+    fieldName: uuid
+    publicName: uuid
+    enhancer:
+      id: ''
+    disabled: false
+    advancedOptionsIcon: ''
+    enhancer_label: ''
+  langcode:
+    disabled: true
+    fieldName: langcode
+    publicName: langcode
+    enhancer:
+      id: ''
+    advancedOptionsIcon: ''
+    enhancer_label: ''
+  vid:
+    disabled: true
+    fieldName: vid
+    publicName: vid
+    enhancer:
+      id: ''
+    advancedOptionsIcon: ''
+    enhancer_label: ''
+  name:
+    fieldName: name
+    publicName: name
+    enhancer:
+      id: ''
+    disabled: false
+    advancedOptionsIcon: ''
+    enhancer_label: ''
+  description:
+    fieldName: description
+    publicName: description
+    enhancer:
+      id: ''
+    disabled: false
+    advancedOptionsIcon: ''
+    enhancer_label: ''
+  weight:
+    fieldName: weight
+    publicName: weight
+    enhancer:
+      id: ''
+    disabled: false
+    advancedOptionsIcon: ''
+    enhancer_label: ''
+  parent:
+    fieldName: parent
+    publicName: parent
+    enhancer:
+      id: ''
+    disabled: false
+    advancedOptionsIcon: ''
+    enhancer_label: ''
+  changed:
+    disabled: true
+    fieldName: changed
+    publicName: changed
+    enhancer:
+      id: ''
+    advancedOptionsIcon: ''
+    enhancer_label: ''
+  default_langcode:
+    disabled: true
+    fieldName: default_langcode
+    publicName: default_langcode
+    enhancer:
+      id: ''
+    advancedOptionsIcon: ''
+    enhancer_label: ''
+  path:
+    disabled: true
+    fieldName: path
+    publicName: path
+    enhancer:
+      id: ''
+    advancedOptionsIcon: ''
+    enhancer_label: ''

@@ -1,0 +1,11 @@
+uuid: 25ea40c5-22e9-4542-86ca-bac305653104
+langcode: en
+status: true
+dependencies:
+  module:
+    - language
+id: configurable_language--configurable_language
+disabled: true
+path: configurable_language/configurable_language
+resourceType: configurable_language--configurable_language
+resourceFields: ''

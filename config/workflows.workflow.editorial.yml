@@ -2,6 +2,8 @@ uuid: 52935d72-5876-43c3-8206-08ba74a9fb5e
 langcode: en
 status: true
 dependencies:
+  config:
+    - node.type.product
   module:
     - content_moderation
 _core:
@@ -59,4 +61,6 @@ type_settings:
       from:
         - draft
         - published
-  entity_types: {  }
+  entity_types:
+    node:
+      - product
