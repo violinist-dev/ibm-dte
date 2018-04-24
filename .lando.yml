@@ -1,0 +1,6 @@
+name: gm-decoupled
+recipe: pantheon
+config:
+  framework: drupal8
+  site: gm-decoupled
+  id: 467fa8fb-2c08-4cc5-b31d-9c0c245f7350
