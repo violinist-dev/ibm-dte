@@ -38,6 +38,7 @@
         "drupal/jsonapi": "^1.15",
         "drupal/jsonapi_extras": "^2.0@RC",
         "drupal/markdown": "^1.2",
+        "drupal/material_admin": "^1.0@alpha",
         "drupal/maxlength": "^1.0@beta",
         "drupal/media_upload": "^1.7",
         "drupal/node_title_validation": "^1.1",
