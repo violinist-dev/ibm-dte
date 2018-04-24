@@ -1,0 +1,19 @@
+uuid: 6918f49d-0dc2-4a89-a818-52918a612bfc
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_takeaways
+    - node.type.tutorial
+id: node.tutorial.field_takeaways
+field_name: field_takeaways
+entity_type: node
+bundle: tutorial
+label: Takeaways
+description: '<p>High-level items a user will learn or accomplish by completing this tutorial</p>'
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

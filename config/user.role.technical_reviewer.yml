@@ -1,0 +1,11 @@
+uuid: 8bdc81f1-b4f4-4434-9d0f-8aa33c5e8c87
+langcode: en
+status: true
+dependencies: {  }
+id: technical_reviewer
+label: 'Technical Reviewer'
+weight: -8
+is_admin: null
+permissions:
+  - 'use tech_lead_editor transition send_to_content_lead'
+  - 'use tech_lead_editor transition send_to_technical_review'

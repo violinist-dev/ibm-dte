@@ -1,0 +1,23 @@
+uuid: 0987ba96-40af-41f2-9c46-3855789781b9
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_cloud_url
+    - node.type.product
+  module:
+    - link
+id: node.product.field_cloud_url
+field_name: field_cloud_url
+entity_type: node
+bundle: product
+label: 'Cloud URL'
+description: 'If the product is a Cloud-enabled product, include the URL for its registration form. For instance <pre>https://console.bluemix.net/registration/?target=/catalog/services/api-connect/</pre>'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  link_type: 16
+  title: 0
+field_type: link

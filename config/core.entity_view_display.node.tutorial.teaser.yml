@@ -1,0 +1,29 @@
+uuid: 71d6d703-d189-4527-a05c-22dbcad1c243
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.tutorial.body
+    - node.type.tutorial
+  module:
+    - text
+    - user
+id: node.tutorial.teaser
+targetEntityType: node
+bundle: tutorial
+mode: teaser
+content:
+  body:
+    label: hidden
+    type: text_summary_or_trimmed
+    weight: 101
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+    region: content
+  links:
+    weight: 100
+    region: content
+hidden:
+  langcode: true

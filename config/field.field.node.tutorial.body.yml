@@ -1,0 +1,22 @@
+uuid: 04926b78-cde3-4ceb-bcfb-0a10ff5e5d99
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.body
+    - node.type.tutorial
+  module:
+    - text
+id: node.tutorial.body
+field_name: body
+entity_type: node
+bundle: tutorial
+label: Body
+description: "<p>The main body of the tutorial, written in <a href=\"https://guides.github.com/features/mastering-markdown/\" target=\"_blank\">Markdown</a>.</p>\r\n\r\n<p>Tutorials for should be directed at a public audience and should avoid internal terminology and phrases like <em>proof of technology</em>. Tutorials, tasks, and steps should not include <em>tutorial</em>, <em>task</em>, or <em>step</em> in their titles.</p>\r\n\r\n<p>Each “task” in a tutorial should be a high-level concept that a user will learn, with each “step” being a high-level action a user preforms to complete the task (not low-level like “click the button marked X”). Each task should, where it make sense, include some introduction material to explain its purpose. Steps can have multiple actions a user should take, but each should not be marked up as an ordered list. In Markdown, tasks should be a <code>h2</code> tag (<code>## Task</code>) and steps should be a <code>h3</code> tag (<code>### Step</code>)</p>\r\n\r\n<p>For all content in a tutorial, use an active voice instead of a passive voice. If you have a user do the same or similar actions, explain step-by-step the first time you ask a user to do it, but you can refer to previous knowledge <em>from the current tutorial</em> to shorten subsequent actions. Before using an acronym for the first time, define the acronym, and if there is domain-specific terminology that is used and it is not obvious from the context of the tutorial, link to an appropriate introduction of the material the first time it is brought up.</p>\r\n\r\n<p>Please do not include takeaways, an outline, an introduction paragraph, or a summary; there are separate fields that control those items</p>"
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: false
+field_type: text_with_summary

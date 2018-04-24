@@ -1,0 +1,19 @@
+uuid: af715794-e1b6-43a6-913b-ef0f5fbaea1e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_short_description
+    - node.type.tutorial
+id: node.tutorial.field_short_description
+field_name: field_short_description
+entity_type: node
+bundle: tutorial
+label: 'Short Description'
+description: '<p>A short description or short summary of the purpose of the tutorial. The maximum length is 180 characters</p>'
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

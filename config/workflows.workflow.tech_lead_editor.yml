@@ -1,0 +1,78 @@
+uuid: 6475f65c-3e71-4e59-a580-8a67669f72db
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.tutorial
+  module:
+    - content_moderation
+id: tech_lead_editor
+label: Tech/Lead/Editor
+type: content_moderation
+type_settings:
+  states:
+    content_lead_review:
+      published: false
+      default_revision: false
+      label: 'Content Lead Review'
+      weight: -8
+    draft:
+      label: Draft
+      published: false
+      default_revision: false
+      weight: -10
+    editorial_review:
+      published: false
+      default_revision: false
+      label: 'Editorial Review'
+      weight: -7
+    published:
+      label: Published
+      published: true
+      default_revision: true
+      weight: -6
+    technical_review:
+      published: false
+      default_revision: false
+      label: 'Technical Review'
+      weight: -9
+  transitions:
+    create_new_draft:
+      label: 'Send To Draft'
+      to: draft
+      weight: -10
+      from:
+        - content_lead_review
+        - draft
+        - editorial_review
+        - published
+        - technical_review
+    publish:
+      label: Publish
+      to: published
+      weight: -6
+      from:
+        - editorial_review
+    send_to_content_lead:
+      label: 'Send to Content Lead'
+      from:
+        - editorial_review
+        - technical_review
+      to: content_lead_review
+      weight: -8
+    send_to_editor:
+      label: 'Send to Editor'
+      from:
+        - content_lead_review
+      to: editorial_review
+      weight: -7
+    send_to_technical_review:
+      label: 'Send to Technical Review'
+      from:
+        - content_lead_review
+        - draft
+      to: technical_review
+      weight: -9
+  entity_types:
+    node:
+      - tutorial

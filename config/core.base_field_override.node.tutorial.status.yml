@@ -1,0 +1,22 @@
+uuid: aa47180d-d057-4180-be1e-10f7ab9097e7
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.tutorial
+id: node.tutorial.status
+field_name: status
+entity_type: node
+bundle: tutorial
+label: Published
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

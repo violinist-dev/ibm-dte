@@ -1,0 +1,176 @@
+uuid: c7b57092-1fd3-4955-8900-789769641f58
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.tutorial.body
+    - field.field.node.tutorial.field_duration
+    - field.field.node.tutorial.field_introduction
+    - field.field.node.tutorial.field_referenced_products
+    - field.field.node.tutorial.field_short_description
+    - field.field.node.tutorial.field_takeaways
+    - node.type.tutorial
+  module:
+    - content_moderation
+    - field_group
+    - text
+third_party_settings:
+  field_group:
+    group_title_and_language:
+      children:
+        - title
+        - langcode
+        - translation
+      parent_name: ''
+      weight: 0
+      format_type: tabs
+      format_settings:
+        id: ''
+        classes: ''
+        direction: horizontal
+      label: 'Title and Language'
+    group_content_groupings:
+      children:
+        - group_overview
+        - group_main_content
+        - group_related_items
+      parent_name: ''
+      weight: 1
+      format_type: tabs
+      format_settings:
+        id: ''
+        classes: ''
+        direction: vertical
+      label: 'Content Groupings'
+    group_overview:
+      children:
+        - field_duration
+        - field_short_description
+        - field_takeaways
+      parent_name: group_content_groupings
+      weight: 20
+      format_type: tab
+      format_settings:
+        id: ''
+        classes: ''
+        formatter: open
+        description: ''
+        required_fields: true
+      label: Overview
+    group_main_content:
+      children:
+        - field_introduction
+        - body
+      parent_name: group_content_groupings
+      weight: 21
+      format_type: tab
+      format_settings:
+        id: ''
+        classes: ''
+        formatter: closed
+        description: ''
+        required_fields: true
+      label: 'Main Content'
+    group_related_items:
+      children:
+        - field_referenced_products
+      parent_name: group_content_groupings
+      weight: 22
+      format_type: tab
+      format_settings:
+        id: ''
+        classes: ''
+        formatter: closed
+        description: ''
+        required_fields: true
+      label: 'Related Items'
+id: node.tutorial.default
+targetEntityType: node
+bundle: tutorial
+mode: default
+content:
+  body:
+    type: text_textarea_with_summary
+    weight: 7
+    settings:
+      rows: 9
+      summary_rows: 3
+      placeholder: ''
+    third_party_settings: {  }
+    region: content
+  field_duration:
+    weight: 4
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+    region: content
+  field_introduction:
+    weight: 6
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textarea
+    region: content
+  field_referenced_products:
+    weight: 9
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+    region: content
+  field_short_description:
+    weight: 5
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings:
+      maxlength:
+        maxlength_js: 180
+        maxlength_js_label: 'Content limited to @limit characters, remaining: <strong>@remaining</strong>'
+    type: string_textfield
+    region: content
+  field_takeaways:
+    weight: 7
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  langcode:
+    type: language_select
+    weight: 2
+    region: content
+    settings:
+      include_locked: true
+    third_party_settings: {  }
+  moderation_state:
+    type: moderation_state_default
+    weight: 2
+    settings: {  }
+    region: content
+    third_party_settings: {  }
+  title:
+    type: string_textfield
+    weight: 1
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  translation:
+    weight: 3
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  created: true
+  path: true
+  promote: true
+  status: true
+  sticky: true
+  uid: true

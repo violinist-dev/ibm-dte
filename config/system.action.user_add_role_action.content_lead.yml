@@ -1,0 +1,14 @@
+uuid: a4f53f67-4f13-4b64-ab8e-e98af6ce8643
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.content_lead
+  module:
+    - user
+id: user_add_role_action.content_lead
+label: 'Add the Content Lead role to the selected user(s)'
+type: user
+plugin: user_add_role_action
+configuration:
+  rid: content_lead

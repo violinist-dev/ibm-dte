@@ -1,0 +1,14 @@
+uuid: 48bff398-a4e6-4754-a096-c78d0df6c7dd
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.technical_reviewer
+  module:
+    - user
+id: user_add_role_action.technical_reviewer
+label: 'Add the Technical Reviewer role to the selected user(s)'
+type: user
+plugin: user_add_role_action
+configuration:
+  rid: technical_reviewer

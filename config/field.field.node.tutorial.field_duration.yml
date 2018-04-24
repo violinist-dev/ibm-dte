@@ -1,0 +1,23 @@
+uuid: 8e84439d-03ee-43c2-8ea3-8d0a5500c7cc
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_duration
+    - node.type.tutorial
+id: node.tutorial.field_duration
+field_name: field_duration
+entity_type: node
+bundle: tutorial
+label: Duration
+description: '<p>Duration of tutorial, in minutes</p>'
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: 10
+  max: null
+  prefix: ''
+  suffix: ' minute|minutes'
+field_type: integer
