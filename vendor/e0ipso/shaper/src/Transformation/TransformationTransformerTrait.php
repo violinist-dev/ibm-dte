@@ -14,11 +14,25 @@ trait TransformationTransformerTrait {
       $context = new Context();
     }
     if (!$this->conformsToExpectedInputShape($data, $context)) {
-      throw new \TypeError(sprintf('Transformation %s received invalid input data.', __CLASS__));
+      /** @var \Shaper\Validator\ValidateableInterface $validator */
+      $validator = $this->getInputValidator();
+      $message = sprintf(
+        'Adaptor %s received invalid input data: %s',
+        __CLASS__,
+        json_encode($validator->getErrors(), JSON_HEX_TAG | JSON_HEX_APOS | JSON_HEX_AMP | JSON_HEX_QUOT)
+      );
+      throw new \TypeError($message);
     }
     $output = $this->doTransform($data, $context);
     if (!$this->conformsToOutputShape($output, $context)) {
-      throw new \TypeError(sprintf('Transformation %s returned invalid output data.', __CLASS__));
+      /** @var \Shaper\Validator\ValidateableInterface $validator */
+      $validator = $this->getOutputValidator();
+      $message = sprintf(
+        'Adaptor %s returned invalid output data: %s',
+        __CLASS__,
+        json_encode($validator->getErrors(), JSON_HEX_TAG | JSON_HEX_APOS | JSON_HEX_AMP | JSON_HEX_QUOT)
+      );
+      throw new \TypeError($message);
     }
     return $output;
   }

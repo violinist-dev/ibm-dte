@@ -72,7 +72,7 @@ class SyncConfigureForm extends FormBase {
 
     $file_upload = $this->getRequest()->files->get('files', NULL, TRUE);
     $has_upload = FALSE;
-    if ($file_upload && $file_upload['import_tarball']->isValid()) {
+    if (!empty($file_upload['import_tarball']) && $file_upload['import_tarball']->isValid()) {
       // The sync directory must be empty if we are doing an upload.
       $form_state->setValue('import_tarball', $file_upload['import_tarball']->getRealPath());
       $has_upload = TRUE;
