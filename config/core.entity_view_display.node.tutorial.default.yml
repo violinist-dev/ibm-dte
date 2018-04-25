@@ -6,12 +6,14 @@ dependencies:
     - field.field.node.tutorial.body
     - field.field.node.tutorial.field_duration
     - field.field.node.tutorial.field_introduction
+    - field.field.node.tutorial.field_path
     - field.field.node.tutorial.field_referenced_products
     - field.field.node.tutorial.field_referenced_runtimes
     - field.field.node.tutorial.field_short_description
     - field.field.node.tutorial.field_takeaways
     - node.type.tutorial
   module:
+    - fieldable_path
     - text
     - user
 id: node.tutorial.default
@@ -44,6 +46,13 @@ content:
     settings: {  }
     third_party_settings: {  }
     type: basic_string
+    region: content
+  field_path:
+    weight: 108
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: fieldable_path_formatter
     region: content
   field_referenced_products:
     weight: 106

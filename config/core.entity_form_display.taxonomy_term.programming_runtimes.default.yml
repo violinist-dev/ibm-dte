@@ -1,0 +1,40 @@
+uuid: 9172be6e-9028-42f3-88dc-eaf04b41e819
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.taxonomy_term.programming_runtimes.field_path
+    - taxonomy.vocabulary.programming_runtimes
+  module:
+    - text
+id: taxonomy_term.programming_runtimes.default
+targetEntityType: taxonomy_term
+bundle: programming_runtimes
+mode: default
+content:
+  description:
+    type: text_textarea
+    weight: 1
+    region: content
+    settings:
+      placeholder: ''
+      rows: 5
+    third_party_settings: {  }
+  langcode:
+    type: language_select
+    weight: 2
+    region: content
+    settings:
+      include_locked: true
+    third_party_settings: {  }
+  name:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  field_path: true
+  path: true

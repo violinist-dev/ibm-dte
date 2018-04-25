@@ -203,3 +203,11 @@ resourceFields:
     disabled: false
     advancedOptionsIcon: ''
     enhancer_label: ''
+  field_path:
+    fieldName: field_path
+    publicName: search_path
+    enhancer:
+      id: ''
+    disabled: false
+    advancedOptionsIcon: ''
+    enhancer_label: ''

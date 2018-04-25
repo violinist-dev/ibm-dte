@@ -5,5 +5,5 @@ dependencies: {  }
 name: 'Programming Runtimes'
 vid: programming_runtimes
 description: 'Programming runtimes and languages'
-hierarchy: 0
+hierarchy: 1
 weight: 0
