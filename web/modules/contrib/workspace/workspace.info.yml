@@ -1,0 +1,14 @@
+name: Workspace
+type: module
+description: Provides the ability to have multiple workspaces on a single site to facilitate things like full-site preview and content staging.
+# core: 8.x
+dependencies:
+  - options
+  - datetime
+  - replication
+
+# Information added by Drupal.org packaging script on 2018-02-07
+version: '8.x-1.0-beta9'
+core: '8.x'
+project: 'workspace'
+datestamp: 1517993891
