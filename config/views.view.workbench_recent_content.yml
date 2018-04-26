@@ -710,7 +710,7 @@ display:
           tokenize: false
           content:
             value: 'There is no content available for you to edit.'
-            format: basic_html
+            format: html
           plugin_id: text
       relationships:
         uid:
@@ -1157,8 +1157,8 @@ display:
           empty: false
           tokenize: false
           content:
-            value: '<h3>Recent content</h3>'
-            format: basic_html
+            value: '<h3>All recent content</h3>'
+            format: html
           plugin_id: text
       use_ajax: true
     cache_metadata:

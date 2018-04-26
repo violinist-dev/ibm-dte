@@ -1,3 +1,33 @@
-definitions: {  }
+definitions:
+  workbench__content:
+    weight: -50
+    menu_name: workbench
+    parent: ''
+    enabled: true
+    expanded: false
+  workbench__create_content:
+    weight: -49
+    menu_name: workbench
+    parent: ''
+    expanded: false
+    enabled: true
+  workbench__my_edited:
+    weight: -48
+    menu_name: workbench
+    parent: ''
+    expanded: false
+    enabled: true
+  workbench__all_content:
+    weight: -47
+    menu_name: workbench
+    parent: ''
+    enabled: true
+    expanded: false
+  workbench__configure:
+    weight: -45
+    menu_name: workbench
+    parent: ''
+    expanded: false
+    enabled: true
 _core:
   default_config_hash: jdY7AU0tU-QsjmiOw3W8vwpYMb-By--_MSFgbqKUTYM

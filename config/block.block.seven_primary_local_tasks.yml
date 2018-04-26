@@ -1,0 +1,22 @@
+uuid: f1caa2cb-6fd9-49af-8ae5-ce9d9ebd1e00
+langcode: en
+status: true
+dependencies:
+  theme:
+    - seven
+_core:
+  default_config_hash: g1ozs3KrSC2ka2J_LBJlvs9xuZHJXrGWQg7f4lWJFx8
+id: seven_primary_local_tasks
+theme: seven
+region: header
+weight: 0
+provider: null
+plugin: local_tasks_block
+settings:
+  id: local_tasks_block
+  label: 'Primary tabs (Material Admin)'
+  provider: core
+  label_display: '0'
+  primary: true
+  secondary: false
+visibility: {  }

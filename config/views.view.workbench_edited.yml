@@ -701,7 +701,7 @@ display:
           tokenize: false
           content:
             value: 'You haven''t created or edited any content.'
-            format: basic_html
+            format: plain_text
           plugin_id: text
       relationships:
         uid:
@@ -798,7 +798,7 @@ display:
           tokenize: false
           content:
             value: '<h3>Your most recent edits</h3>'
-            format: basic_html
+            format: html
           plugin_id: text
       filters:
         uid_current:
@@ -888,6 +888,7 @@ display:
       link_display: /admin/workbench/content/edited
       display_description: 'The five most recent edits by this user'
       use_ajax: true
+      block_description: 'My Edits'
     cache_metadata:
       max-age: -1
       contexts:

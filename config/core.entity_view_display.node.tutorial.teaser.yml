@@ -26,4 +26,11 @@ content:
     weight: 100
     region: content
 hidden:
+  field_duration: true
+  field_introduction: true
+  field_path: true
+  field_referenced_products: true
+  field_referenced_runtimes: true
+  field_short_description: true
+  field_takeaways: true
   langcode: true
