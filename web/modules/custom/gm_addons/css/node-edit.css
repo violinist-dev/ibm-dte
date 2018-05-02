@@ -1,0 +1,47 @@
+/* Editorial Layout */
+
+.node-form .menu-link-form {
+  display: none;
+}
+
+.node-form .layout-node-form {
+  display: grid;
+  grid-template-columns: 240px 1fr;
+  grid-gap: 1em;
+  grid-column-gap: calc(15px + 1.5em);
+}
+
+.node-form .layout-region {
+  width: auto;
+  padding: 0;
+}
+
+.node-form .layout-region-node-main {
+  grid-column: 1 / span 2;
+  grid-row: 1 / span 1;
+}
+
+.node-form .layout-region-node-secondary {
+  grid-column: 1 / span 1;
+  grid-row: 2 / span 1;
+}
+
+.node-form .layout-region-node-footer {
+  grid-column: 2 / span 1;
+  grid-row: 2 / span 1;
+}
+
+/* Paragraph Enhancements */
+
+.node-form .paragraph-type-label,
+.node-form .paragraph-type-title {
+  display: none !important;
+}
+
+.node-form .paragraphs-subform .paragraph-type-top {
+  flex-direction: row-reverse !important;
+}
+
+.node-form .paragraphs-subform {
+  margin-top: -2em !important;
+}

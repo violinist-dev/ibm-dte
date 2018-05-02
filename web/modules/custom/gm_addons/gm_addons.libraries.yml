@@ -1,0 +1,7 @@
+gm-addons:
+  version: 1.x
+  css:
+    theme:
+      css/node-preview.css: {}
+      css/node-edit.css: {}
+      css/drupal-chrome.css: {}

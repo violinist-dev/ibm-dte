@@ -1,0 +1,4 @@
+/* Moderation Status menu item */
+#toolbar-link-view-moderated_content-page_1:before {
+  background-image: url('../images/moderation.svg');
+}

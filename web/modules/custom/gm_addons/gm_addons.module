@@ -1,0 +1,5 @@
+<?php
+
+function gm_addons_page_attachments(array &$page) {
+  $page['#attached']['library'][] = 'gm_addons/gm-addons';
+}

@@ -24,6 +24,7 @@ module:
   fieldable_path: 0
   file: 0
   filter: 0
+  gm_addons: 0
   image: 0
   inline_form_errors: 0
   jsonapi: 0
