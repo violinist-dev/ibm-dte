@@ -1,7 +1,9 @@
 uuid: c3b02ff8-75b7-4faa-8e3e-8430a7afd19f
 langcode: en
 status: true
-dependencies: {  }
+dependencies:
+  module:
+    - editor
 name: HTML
 format: html
 weight: 0
@@ -18,6 +20,12 @@ filters:
   filter_caption:
     id: filter_caption
     provider: filter
+    status: true
+    weight: 0
+    settings: {  }
+  editor_file_reference:
+    id: editor_file_reference
+    provider: editor
     status: true
     weight: 0
     settings: {  }

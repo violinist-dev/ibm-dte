@@ -193,14 +193,6 @@ resourceFields:
       id: ''
     advancedOptionsIcon: ''
     enhancer_label: ''
-  body:
-    fieldName: body
-    publicName: body
-    enhancer:
-      id: ''
-    disabled: false
-    advancedOptionsIcon: ''
-    enhancer_label: ''
   field_duration:
     fieldName: field_duration
     publicName: duration
@@ -252,6 +244,14 @@ resourceFields:
   field_takeaways:
     fieldName: field_takeaways
     publicName: takeaways
+    enhancer:
+      id: ''
+    disabled: false
+    advancedOptionsIcon: ''
+    enhancer_label: ''
+  field_tasks:
+    fieldName: field_tasks
+    publicName: tasks
     enhancer:
       id: ''
     disabled: false
