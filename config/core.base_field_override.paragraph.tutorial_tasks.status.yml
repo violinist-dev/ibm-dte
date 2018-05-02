@@ -1,0 +1,22 @@
+uuid: b91fb475-9061-4f27-902e-6a058bf2fc5e
+langcode: en
+status: true
+dependencies:
+  config:
+    - paragraphs.paragraphs_type.tutorial_tasks
+id: paragraph.tutorial_tasks.status
+field_name: status
+entity_type: paragraph
+bundle: tutorial_tasks
+label: Published
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

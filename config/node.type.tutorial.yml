@@ -12,7 +12,7 @@ third_party_settings:
 name: Tutorial
 type: tutorial
 description: ''
-help: ''
+help: '<p>Tutorials for should be directed at a public audience and should avoid internal terminology and phrases like <em>proof of technology</em>. Tutorials, tasks, and steps should not include <em>tutorial</em>, <em>task</em>, or <em>step</em> in their titles.</p>'
 new_revision: false
 preview_mode: 2
 display_submitted: false

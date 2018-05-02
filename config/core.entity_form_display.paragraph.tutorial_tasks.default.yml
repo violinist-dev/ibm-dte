@@ -1,0 +1,56 @@
+uuid: c4f75ab6-88dd-4aaf-9655-9b983046cd26
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.tutorial_tasks.field_introduction
+    - field.field.paragraph.tutorial_tasks.field_task
+    - field.field.paragraph.tutorial_tasks.field_task_step
+    - paragraphs.paragraphs_type.tutorial_tasks
+  module:
+    - content_moderation
+    - paragraphs
+    - text
+id: paragraph.tutorial_tasks.default
+targetEntityType: paragraph
+bundle: tutorial_tasks
+mode: default
+content:
+  field_introduction:
+    weight: 2
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textarea
+    region: content
+  field_task:
+    weight: 1
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_task_step:
+    type: entity_reference_paragraphs
+    weight: 4
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: open
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: ''
+    third_party_settings: {  }
+    region: content
+  moderation_state:
+    type: moderation_state_default
+    weight: 0
+    settings: {  }
+    region: content
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true
+  uid: true

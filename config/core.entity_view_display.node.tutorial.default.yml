@@ -3,7 +3,6 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.field.node.tutorial.body
     - field.field.node.tutorial.field_duration
     - field.field.node.tutorial.field_introduction
     - field.field.node.tutorial.field_path
@@ -11,23 +10,17 @@ dependencies:
     - field.field.node.tutorial.field_referenced_runtimes
     - field.field.node.tutorial.field_short_description
     - field.field.node.tutorial.field_takeaways
+    - field.field.node.tutorial.field_tasks
     - node.type.tutorial
   module:
+    - entity_reference_revisions
     - fieldable_path
-    - text
     - user
 id: node.tutorial.default
 targetEntityType: node
 bundle: tutorial
 mode: default
 content:
-  body:
-    label: hidden
-    type: text_default
-    weight: 101
-    settings: {  }
-    third_party_settings: {  }
-    region: content
   content_moderation_control:
     weight: -20
     region: content
@@ -85,6 +78,15 @@ content:
       link_to_entity: false
     third_party_settings: {  }
     type: string
+    region: content
+  field_tasks:
+    type: entity_reference_revisions_entity_view
+    weight: 109
+    label: above
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
     region: content
   links:
     weight: 100

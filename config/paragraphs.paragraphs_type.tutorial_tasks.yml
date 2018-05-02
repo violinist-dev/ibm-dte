@@ -1,0 +1,9 @@
+uuid: ad4c6f72-37af-411b-a528-f401af5a96a1
+langcode: en
+status: true
+dependencies: {  }
+id: tutorial_tasks
+label: Task
+icon_uuid: null
+description: 'Task with steps and optional introduction'
+behavior_plugins: {  }

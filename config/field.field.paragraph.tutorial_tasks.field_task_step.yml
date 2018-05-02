@@ -1,0 +1,34 @@
+uuid: e2d2d2f8-c764-4f3c-b26a-0542f4a21ac0
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_task_step
+    - paragraphs.paragraphs_type.tutorial_steps
+    - paragraphs.paragraphs_type.tutorial_tasks
+  module:
+    - entity_reference_revisions
+id: paragraph.tutorial_tasks.field_task_step
+field_name: field_task_step
+entity_type: paragraph
+bundle: tutorial_tasks
+label: Steps
+description: '<p>Each individual step a user takes to complete a task. An individual step can have multiple actions a user takes to complete the step</p>'
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      tutorial_steps: tutorial_steps
+    target_bundles_drag_drop:
+      tutorial_steps:
+        enabled: true
+        weight: 3
+      tutorial_tasks:
+        weight: 4
+        enabled: false
+field_type: entity_reference_revisions

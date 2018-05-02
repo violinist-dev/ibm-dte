@@ -14,8 +14,10 @@ module:
   ctools: 0
   datetime: 0
   dblog: 0
+  diff: 0
   dynamic_page_cache: 0
   editor: 0
+  entity_reference_revisions: 0
   field: 0
   field_group: 0
   field_ui: 0
@@ -27,6 +29,7 @@ module:
   jsonapi: 0
   jsonapi_extras: 0
   key_value: 0
+  label_help: 0
   language: 0
   layout_discovery: 0
   link: 0
@@ -35,14 +38,12 @@ module:
   menu_ui: 0
   migrate: 0
   migrate_drupal: 0
-  multiversion: 0
   node: 0
   options: 0
   page_cache: 0
   path: 0
   plupload: 0
   plupload_widget: 0
-  replication: 0
   search: 0
   serialization: 0
   statistics: 0
@@ -62,6 +63,7 @@ module:
   pathauto: 1
   content_translation: 10
   views: 10
+  paragraphs: 11
   minimal: 1000
 theme:
   stable: 0

@@ -1,0 +1,19 @@
+uuid: 0197e30d-30f1-4d54-b21e-feff77661053
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_task
+    - paragraphs.paragraphs_type.tutorial_tasks
+id: paragraph.tutorial_tasks.field_task
+field_name: field_task
+entity_type: paragraph
+bundle: tutorial_tasks
+label: Task
+description: '<p>The title of the <em>Task</em>. Each task should be a high-level concept that a user will learn.'
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

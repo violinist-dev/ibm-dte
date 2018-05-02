@@ -54,7 +54,7 @@ trait ContentEntityStorageTrait {
     $enabled = \Drupal::state()->get('multiversion.migration_done.' . $this->getEntityTypeId(), FALSE);
 
     // Prevent to modify the query before entity type updates.
-    if (!is_subclass_of($this->entityType->getStorageClass(), 'Drupal\multiversion\Entity\Storage\ContentEntityStorageInterface') || !$enabled) {
+    if (!is_subclass_of($this->entityType->getStorageClass(), ContentEntityStorageInterface::class) || !$enabled) {
       return $query;
     }
 
@@ -103,7 +103,7 @@ trait ContentEntityStorageTrait {
    * Helper method to get the workspace ID to query.
    */
   protected function getWorkspaceId() {
-    return $this->workspaceId ?: \Drupal::service('workspace.manager')->getActiveWorkspace()->id();
+    return $this->workspaceId ?: \Drupal::service('workspace.manager')->getActiveWorkspaceId();
   }
 
   /**

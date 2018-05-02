@@ -1,0 +1,38 @@
+uuid: ebe8fccc-adf8-4449-bdb3-26dc93fbc479
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_tasks
+    - node.type.tutorial
+    - paragraphs.paragraphs_type.tutorial_tasks
+  module:
+    - entity_reference_revisions
+    - label_help
+third_party_settings:
+  label_help:
+    label_help_description: '<p>Add tasks and steps to create your tutorial here. Each task must have a title, and can optionally include an introduction. Each step must have a title and instructions. Tasks should be directed at a public audience and should avoid internal terminology and phrases like <em>proof of technology</em>. Tasks and steps should not include <em>task</em> or <em>step</em> in their titles.<p>'
+id: node.tutorial.field_tasks
+field_name: field_tasks
+entity_type: node
+bundle: tutorial
+label: Tasks
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      tutorial_tasks: tutorial_tasks
+    target_bundles_drag_drop:
+      tutorial_tasks:
+        enabled: true
+        weight: 2
+      tutorial_steps:
+        weight: 3
+        enabled: false
+field_type: entity_reference_revisions

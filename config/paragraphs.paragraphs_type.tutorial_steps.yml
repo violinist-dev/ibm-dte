@@ -1,0 +1,9 @@
+uuid: de975575-26c3-4801-8838-4cde1156ab4f
+langcode: en
+status: true
+dependencies: {  }
+id: tutorial_steps
+label: Step
+icon_uuid: null
+description: 'Steps for Tutorial Tasks'
+behavior_plugins: {  }

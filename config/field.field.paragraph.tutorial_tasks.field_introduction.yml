@@ -1,0 +1,21 @@
+uuid: 6e385841-4530-4962-81fc-7c1c23139a8a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_introduction
+    - paragraphs.paragraphs_type.tutorial_tasks
+  module:
+    - text
+id: paragraph.tutorial_tasks.field_introduction
+field_name: field_introduction
+entity_type: paragraph
+bundle: tutorial_tasks
+label: Introduction
+description: '<p>If it makes sense, include some introduction material to explain the purpose of this task</p>'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

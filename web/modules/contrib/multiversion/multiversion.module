@@ -1,11 +1,9 @@
 <?php
 
 use Drupal\Core\Cache\Cache;
-use Drupal\Core\Database\Query\AlterableInterface;
 use Drupal\Core\Entity\EntityTypeInterface;
 use Drupal\Core\Field\BaseFieldDefinition;
 use Drupal\Core\StringTranslation\TranslatableMarkup;
-use Drupal\multiversion\Entity\MenuLinkContent;
 use Drupal\multiversion\Entity\Storage\ContentEntityStorageInterface;
 use Drupal\multiversion\Entity\WorkspaceInterface;
 use Drupal\multiversion\MultiversionFieldItemList;
@@ -383,6 +381,13 @@ function multiversion_views_query_alter(ViewExecutable $view, QueryPluginBase $q
     'poll_list',
   ];
   if (in_array($view->id(), $views_ids)) {
+    /** @var \Drupal\multiversion\MultiversionManagerInterface $manager */
+    $manager = \Drupal::service('multiversion.manager');
+    $entity_type = $view->getBaseEntityType();
+    if (!$manager->isEnabledEntityType($entity_type)) {
+      return;
+    }
+
     $base_table = $view->storage->get('base_table');
     $view->query->where[1]['conditions'][] = [
       'field' => $base_table . '._deleted',
@@ -515,6 +520,7 @@ function multiversion_menu_links_discovered_alter(&$links) {
             $links[$id]['parent'] = $new_ids[$link['parent']];
           }
         }
+        $storage->useWorkspace(NULL);
       }
     }
   }
@@ -602,6 +608,7 @@ function _multiversion_add_workspace_field_in_url_alias_table($install = FALSE) 
       if ($storage instanceof ContentEntityStorageInterface) {
         $storage->useWorkspace($workspace_id);
         $entities = $storage->loadMultiple($ids);
+        $storage->useWorkspace(NULL);
       }
       if (empty($entities)) {
         continue;

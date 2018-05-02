@@ -1,0 +1,18 @@
+uuid: 05bde4ec-acbc-49fb-a463-8bc5e54ce630
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.programming_runtimes
+id: taxonomy_term.programming_runtimes.name
+field_name: name
+entity_type: taxonomy_term
+bundle: programming_runtimes
+label: Name
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

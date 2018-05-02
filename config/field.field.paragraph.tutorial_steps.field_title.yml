@@ -1,0 +1,19 @@
+uuid: 7aee3387-85e8-455c-917e-ed556cc347d4
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_title
+    - paragraphs.paragraphs_type.tutorial_steps
+id: paragraph.tutorial_steps.field_title
+field_name: field_title
+entity_type: paragraph
+bundle: tutorial_steps
+label: Title
+description: '<p>The title of the<em>Step</em>. Each step should be a <em>high-level action a user performs to complete a task</em>. Steps <em>should not</em> be low-level items like "click the button marked X".</p>'
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

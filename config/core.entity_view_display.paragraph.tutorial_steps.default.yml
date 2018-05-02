@@ -1,0 +1,31 @@
+uuid: 558e9069-021a-4250-a5f6-8c226d6b12d1
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.tutorial_steps.field_step
+    - field.field.paragraph.tutorial_steps.field_title
+    - paragraphs.paragraphs_type.tutorial_steps
+  module:
+    - text
+id: paragraph.tutorial_steps.default
+targetEntityType: paragraph
+bundle: tutorial_steps
+mode: default
+content:
+  field_step:
+    weight: 1
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_title:
+    weight: 0
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+hidden: {  }
