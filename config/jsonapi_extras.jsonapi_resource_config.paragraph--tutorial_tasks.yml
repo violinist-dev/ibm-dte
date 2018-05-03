@@ -6,8 +6,8 @@ dependencies:
     - paragraphs.paragraphs_type.tutorial_tasks
 id: paragraph--tutorial_tasks
 disabled: false
-path: paragraph/tasks
-resourceType: paragraph--tasks
+path: subsections/tasks
+resourceType: subsection--task
 resourceFields:
   id:
     fieldName: id

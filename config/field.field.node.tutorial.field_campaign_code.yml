@@ -1,0 +1,19 @@
+uuid: f168896b-bde6-4a65-a5d2-9a7bfbfb9c5f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_campaign_code
+    - node.type.tutorial
+id: node.tutorial.field_campaign_code
+field_name: field_campaign_code
+entity_type: node
+bundle: tutorial
+label: 'Campaign Code'
+description: '<p>The marketing campaign code to tie this tutorial to</p>'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

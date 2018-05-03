@@ -1,0 +1,16 @@
+uuid: e5538e12-a289-455d-8a69-16608bde0c25
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.walkthrough
+  module:
+    - content_translation
+third_party_settings:
+  content_translation:
+    enabled: true
+id: node.walkthrough
+target_entity_type_id: node
+target_bundle: walkthrough
+default_langcode: site_default
+language_alterable: true

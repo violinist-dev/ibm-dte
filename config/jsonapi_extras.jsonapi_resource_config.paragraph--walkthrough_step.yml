@@ -1,13 +1,13 @@
-uuid: bdc82657-d425-4347-b74a-629376c26a81
+uuid: b0fb9408-026b-4800-8fd6-f839a4d1f088
 langcode: en
 status: true
 dependencies:
   config:
-    - paragraphs.paragraphs_type.tutorial_steps
-id: paragraph--tutorial_steps
+    - paragraphs.paragraphs_type.walkthrough_step
+id: paragraph--walkthrough_step
 disabled: false
-path: subsections/steps
-resourceType: subsection--step
+path: subsections/walkthrough-steps
+resourceType: subsection--walkthrough-step
 resourceFields:
   id:
     fieldName: id
@@ -145,9 +145,17 @@ resourceFields:
       id: ''
     advancedOptionsIcon: ''
     enhancer_label: ''
-  field_step:
-    fieldName: field_step
-    publicName: step
+  field_introduction:
+    fieldName: field_introduction
+    publicName: introduction
+    enhancer:
+      id: ''
+    disabled: false
+    advancedOptionsIcon: ''
+    enhancer_label: ''
+  field_screenshot:
+    fieldName: field_screenshot
+    publicName: screenshot
     enhancer:
       id: ''
     disabled: false

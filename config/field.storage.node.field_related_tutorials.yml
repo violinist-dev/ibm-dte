@@ -1,0 +1,19 @@
+uuid: 0e9a5d46-abc6-4857-a500-07514528cbfb
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.field_related_tutorials
+field_name: field_related_tutorials
+entity_type: node
+type: entity_reference
+settings:
+  target_type: node
+module: core
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

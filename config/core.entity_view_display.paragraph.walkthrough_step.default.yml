@@ -1,0 +1,42 @@
+uuid: 8443f977-aaab-4cfa-82aa-f87fb74f8e49
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.walkthrough_step.field_introduction
+    - field.field.paragraph.walkthrough_step.field_screenshot
+    - field.field.paragraph.walkthrough_step.field_title
+    - paragraphs.paragraphs_type.walkthrough_step
+  module:
+    - image
+    - text
+id: paragraph.walkthrough_step.default
+targetEntityType: paragraph
+bundle: walkthrough_step
+mode: default
+content:
+  field_introduction:
+    weight: 2
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_screenshot:
+    weight: 0
+    label: above
+    settings:
+      image_style: ''
+      image_link: ''
+    third_party_settings: {  }
+    type: image
+    region: content
+  field_title:
+    weight: 1
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+hidden: {  }

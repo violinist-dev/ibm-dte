@@ -1,0 +1,21 @@
+uuid: c5be373f-52fa-49c4-ad52-1c01061d7f65
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.field_campaign_code
+field_name: field_campaign_code
+entity_type: node
+type: string
+settings:
+  max_length: 8
+  is_ascii: false
+  case_sensitive: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

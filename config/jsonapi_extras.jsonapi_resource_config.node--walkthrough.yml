@@ -1,13 +1,13 @@
-uuid: b2ed322a-b2fa-444f-a2a1-98187e6841f3
+uuid: 6cbc559e-7e4a-4508-80d9-931429373a37
 langcode: en
 status: true
 dependencies:
   config:
-    - node.type.tutorial
-id: node--tutorial
+    - node.type.walkthrough
+id: node--walkthrough
 disabled: false
-path: tutorials
-resourceType: tutorial
+path: walkthroughs
+resourceType: walkthrough
 resourceFields:
   nid:
     fieldName: nid
@@ -193,22 +193,6 @@ resourceFields:
       id: ''
     advancedOptionsIcon: ''
     enhancer_label: ''
-  field_duration:
-    fieldName: field_duration
-    publicName: duration
-    enhancer:
-      id: ''
-    disabled: false
-    advancedOptionsIcon: ''
-    enhancer_label: ''
-  field_introduction:
-    fieldName: field_introduction
-    publicName: introduction
-    enhancer:
-      id: ''
-    disabled: false
-    advancedOptionsIcon: ''
-    enhancer_label: ''
   field_path:
     fieldName: field_path
     publicName: search_path
@@ -225,9 +209,9 @@ resourceFields:
     disabled: false
     advancedOptionsIcon: ''
     enhancer_label: ''
-  field_referenced_runtimes:
-    fieldName: field_referenced_runtimes
-    publicName: referenced_runtimes
+  field_related_tutorials:
+    fieldName: field_related_tutorials
+    publicName: related_tutorials
     enhancer:
       id: ''
     disabled: false
@@ -241,17 +225,9 @@ resourceFields:
     disabled: false
     advancedOptionsIcon: ''
     enhancer_label: ''
-  field_takeaways:
-    fieldName: field_takeaways
-    publicName: takeaways
-    enhancer:
-      id: ''
-    disabled: false
-    advancedOptionsIcon: ''
-    enhancer_label: ''
-  field_tasks:
-    fieldName: field_tasks
-    publicName: tasks
+  field_walkthrough_steps:
+    fieldName: field_walkthrough_steps
+    publicName: walkthrough_steps
     enhancer:
       id: ''
     disabled: false

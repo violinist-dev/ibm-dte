@@ -1,10 +1,10 @@
-uuid: 6e385841-4530-4962-81fc-7c1c23139a8a
+uuid: cb82d2a4-7a49-431f-abb7-c32ddceb1c19
 langcode: en
 status: true
 dependencies:
   config:
     - field.storage.paragraph.field_introduction
-    - paragraphs.paragraphs_type.tutorial_tasks
+    - paragraphs.paragraphs_type.walkthrough_step
   module:
     - allowed_formats
     - text
@@ -13,14 +13,14 @@ third_party_settings:
     limited_html: limited_html
     html: '0'
     plain_text: '0'
-id: paragraph.tutorial_tasks.field_introduction
+id: paragraph.walkthrough_step.field_introduction
 field_name: field_introduction
 entity_type: paragraph
-bundle: tutorial_tasks
-label: Introduction
-description: '<p>If it makes sense, include some introduction material to explain the purpose of this task</p>'
-required: false
-translatable: false
+bundle: walkthrough_step
+label: Description
+description: '<p>A description of the key focus items in the screenshot</p>'
+required: true
+translatable: true
 default_value: {  }
 default_value_callback: ''
 settings: {  }

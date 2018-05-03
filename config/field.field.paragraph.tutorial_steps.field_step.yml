@@ -6,7 +6,13 @@ dependencies:
     - field.storage.paragraph.field_step
     - paragraphs.paragraphs_type.tutorial_steps
   module:
+    - allowed_formats
     - text
+third_party_settings:
+  allowed_formats:
+    html: html
+    limited_html: '0'
+    plain_text: '0'
 id: paragraph.tutorial_steps.field_step
 field_name: field_step
 entity_type: paragraph

@@ -3,8 +3,10 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.node.tutorial.field_campaign_code
     - field.field.node.tutorial.field_duration
     - field.field.node.tutorial.field_introduction
+    - field.field.node.tutorial.field_ov_code
     - field.field.node.tutorial.field_path
     - field.field.node.tutorial.field_referenced_products
     - field.field.node.tutorial.field_referenced_runtimes
@@ -26,6 +28,14 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
+  field_campaign_code:
+    weight: 112
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
   field_duration:
     weight: 102
     label: above
@@ -41,6 +51,14 @@ content:
     settings: {  }
     third_party_settings: {  }
     type: basic_string
+    region: content
+  field_ov_code:
+    weight: 111
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
     region: content
   field_path:
     weight: 108

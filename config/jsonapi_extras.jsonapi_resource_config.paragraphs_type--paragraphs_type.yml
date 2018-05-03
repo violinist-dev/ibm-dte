@@ -5,9 +5,9 @@ dependencies:
   module:
     - paragraphs
 id: paragraphs_type--paragraphs_type
-disabled: false
-path: paragraphs
-resourceType: paragraphs
+disabled: true
+path: subsections
+resourceType: subsections
 resourceFields:
   id:
     fieldName: id

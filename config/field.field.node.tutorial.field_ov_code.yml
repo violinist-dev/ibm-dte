@@ -1,0 +1,19 @@
+uuid: f4425522-6473-48b6-9be1-7aaf591ec504
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_ov_code
+    - node.type.tutorial
+id: node.tutorial.field_ov_code
+field_name: field_ov_code
+entity_type: node
+bundle: tutorial
+label: 'OV Code'
+description: '<p>The OV Code to tie this tutorial to, for marketing purposes</p>'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

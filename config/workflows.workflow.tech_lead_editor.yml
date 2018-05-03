@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - node.type.tutorial
+    - node.type.walkthrough
   module:
     - content_moderation
 id: tech_lead_editor
@@ -76,3 +77,4 @@ type_settings:
   entity_types:
     node:
       - tutorial
+      - walkthrough

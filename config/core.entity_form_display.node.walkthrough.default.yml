@@ -1,19 +1,14 @@
-uuid: c7b57092-1fd3-4955-8900-789769641f58
+uuid: 4cdff628-d14b-4f7c-bf68-517608f3f7a4
 langcode: en
 status: true
 dependencies:
   config:
-    - field.field.node.tutorial.field_campaign_code
-    - field.field.node.tutorial.field_duration
-    - field.field.node.tutorial.field_introduction
-    - field.field.node.tutorial.field_ov_code
-    - field.field.node.tutorial.field_path
-    - field.field.node.tutorial.field_referenced_products
-    - field.field.node.tutorial.field_referenced_runtimes
-    - field.field.node.tutorial.field_short_description
-    - field.field.node.tutorial.field_takeaways
-    - field.field.node.tutorial.field_tasks
-    - node.type.tutorial
+    - field.field.node.walkthrough.field_path
+    - field.field.node.walkthrough.field_referenced_products
+    - field.field.node.walkthrough.field_related_tutorials
+    - field.field.node.walkthrough.field_short_description
+    - field.field.node.walkthrough.field_walkthrough_steps
+    - node.type.walkthrough
   module:
     - content_moderation
     - field_group
@@ -38,7 +33,6 @@ third_party_settings:
         - group_overview
         - group_main_content
         - group_related_items
-        - group_marketing
       parent_name: ''
       weight: 1
       format_type: tabs
@@ -49,9 +43,7 @@ third_party_settings:
       label: 'Content Groupings'
     group_overview:
       children:
-        - field_duration
         - field_short_description
-        - field_takeaways
       parent_name: group_content_groupings
       weight: 20
       format_type: tab
@@ -64,8 +56,7 @@ third_party_settings:
       label: Overview
     group_main_content:
       children:
-        - field_introduction
-        - field_tasks
+        - field_walkthrough_steps
       parent_name: group_content_groupings
       weight: 21
       format_type: tab
@@ -79,7 +70,7 @@ third_party_settings:
     group_related_items:
       children:
         - field_referenced_products
-        - field_referenced_runtimes
+        - field_related_tutorials
       parent_name: group_content_groupings
       weight: 22
       format_type: tab
@@ -90,64 +81,13 @@ third_party_settings:
         description: ''
         required_fields: true
       label: 'Related Items'
-    group_marketing:
-      children:
-        - field_ov_code
-        - field_campaign_code
-      parent_name: group_content_groupings
-      weight: 23
-      format_type: tab
-      format_settings:
-        id: ''
-        classes: ''
-        formatter: closed
-        description: ''
-        required_fields: true
-      label: Marketing
-id: node.tutorial.default
+id: node.walkthrough.default
 targetEntityType: node
-bundle: tutorial
+bundle: walkthrough
 mode: default
 content:
-  field_campaign_code:
-    weight: 29
-    settings:
-      size: 8
-      placeholder: 000000AB
-    third_party_settings:
-      maxlength:
-        maxlength_js: 8
-        maxlength_js_label: 'Campaign Codes are @limit characters long. Yours is <strong>@count</strong>'
-    type: string_textfield
-    region: content
-  field_duration:
-    weight: 4
-    settings:
-      placeholder: ''
-    third_party_settings: {  }
-    type: number
-    region: content
-  field_introduction:
-    weight: 6
-    settings:
-      rows: 5
-      placeholder: ''
-    third_party_settings: {  }
-    type: string_textarea
-    region: content
-  field_ov_code:
-    weight: 28
-    settings:
-      size: 7
-      placeholder: ov12345
-    third_party_settings:
-      maxlength:
-        maxlength_js: 7
-        maxlength_js_label: 'OV Codes are @limit characters long. Yours is <strong>@count</strong>'
-    type: string_textfield
-    region: content
   field_referenced_products:
-    weight: 26
+    weight: 2
     settings:
       match_operator: CONTAINS
       size: 60
@@ -155,8 +95,8 @@ content:
     third_party_settings: {  }
     type: entity_reference_autocomplete
     region: content
-  field_referenced_runtimes:
-    weight: 27
+  field_related_tutorials:
+    weight: 3
     settings:
       match_operator: CONTAINS
       size: 60
@@ -175,17 +115,9 @@ content:
         maxlength_js_label: 'Content limited to @limit characters, remaining: <strong>@remaining</strong>'
     type: string_textfield
     region: content
-  field_takeaways:
-    weight: 7
-    settings:
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
-    type: string_textfield
-    region: content
-  field_tasks:
+  field_walkthrough_steps:
     type: paragraphs
-    weight: 7
+    weight: 1
     settings:
       title: Paragraph
       title_plural: Paragraphs

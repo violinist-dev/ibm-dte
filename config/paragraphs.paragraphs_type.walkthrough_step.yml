@@ -1,0 +1,9 @@
+uuid: 73febc8f-b0a1-44c7-9649-cbc0cd9df0f4
+langcode: en
+status: true
+dependencies: {  }
+id: walkthrough_step
+label: 'Walkthrough Step'
+icon_uuid: null
+description: 'A slide for a walkthrough'
+behavior_plugins: {  }

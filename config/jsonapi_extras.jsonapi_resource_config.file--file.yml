@@ -5,9 +5,9 @@ dependencies:
   module:
     - file
 id: file--file
-disabled: true
-path: file/file
-resourceType: file--file
+disabled: false
+path: files
+resourceType: file
 resourceFields:
   fid:
     fieldName: fid
@@ -26,19 +26,19 @@ resourceFields:
     advancedOptionsIcon: ''
     enhancer_label: ''
   langcode:
+    disabled: true
     fieldName: langcode
     publicName: langcode
     enhancer:
       id: ''
-    disabled: false
     advancedOptionsIcon: ''
     enhancer_label: ''
   uid:
+    disabled: true
     fieldName: uid
     publicName: uid
     enhancer:
       id: ''
-    disabled: false
     advancedOptionsIcon: ''
     enhancer_label: ''
   filename:
@@ -74,27 +74,27 @@ resourceFields:
     advancedOptionsIcon: ''
     enhancer_label: ''
   status:
+    disabled: true
     fieldName: status
     publicName: status
     enhancer:
       id: ''
-    disabled: false
     advancedOptionsIcon: ''
     enhancer_label: ''
   created:
+    disabled: true
     fieldName: created
     publicName: created
     enhancer:
       id: ''
-    disabled: false
     advancedOptionsIcon: ''
     enhancer_label: ''
   changed:
+    disabled: true
     fieldName: changed
     publicName: changed
     enhancer:
       id: ''
-    disabled: false
     advancedOptionsIcon: ''
     enhancer_label: ''
   url:

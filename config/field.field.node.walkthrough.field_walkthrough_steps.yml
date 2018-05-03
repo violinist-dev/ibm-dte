@@ -1,0 +1,37 @@
+uuid: 5db494c5-2fc9-4967-bb75-0bbbf172d0f5
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_walkthrough_steps
+    - node.type.walkthrough
+    - paragraphs.paragraphs_type.walkthrough_step
+  module:
+    - entity_reference_revisions
+id: node.walkthrough.field_walkthrough_steps
+field_name: field_walkthrough_steps
+entity_type: node
+bundle: walkthrough
+label: 'Walkthrough Steps'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      walkthrough_step: walkthrough_step
+    target_bundles_drag_drop:
+      tutorial_steps:
+        weight: 4
+        enabled: false
+      tutorial_tasks:
+        weight: 5
+        enabled: false
+      walkthrough_step:
+        enabled: true
+        weight: 6
+field_type: entity_reference_revisions

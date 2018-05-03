@@ -6,7 +6,7 @@ dependencies:
     - editor
 name: HTML
 format: html
-weight: 0
+weight: -9
 filters:
   filter_html:
     id: filter_html
