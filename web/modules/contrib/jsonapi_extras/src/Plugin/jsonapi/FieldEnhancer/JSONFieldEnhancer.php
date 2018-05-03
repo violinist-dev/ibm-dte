@@ -61,7 +61,7 @@ class JSONFieldEnhancer extends ResourceFieldEnhancerBase implements ContainerFa
   /**
    * {@inheritdoc}
    */
-  public function doTransform($data, Context $context) {
+  protected function doTransform($data, Context $context) {
     return $this->encoder->encode($data);
   }
 

@@ -41,13 +41,14 @@ class SchemataSchemaNormalizer extends SchemataJsonSchemaSchemataSchemaNormalize
     }
 
     // Alter the attributes according to the resource config.
+    $root = &$normalized['properties']['data']['properties'];
     foreach (['attributes', 'relationships'] as $property_type) {
-      if (!isset($normalized['properties'][$property_type]['required'])) {
-        $normalized['properties'][$property_type]['required'] = [];
+      if (!isset($root[$property_type]['required'])) {
+        $root[$property_type]['required'] = [];
       }
       $required_fields = [];
-      foreach ($normalized['properties'][$property_type]['properties'] as $fieldname => $schema) {
-        $properties = &$normalized['properties'][$property_type]['properties'];
+      foreach ($root[$property_type]['properties'] as $fieldname => $schema) {
+        $properties = &$root[$property_type]['properties'];
         unset($properties[$fieldname]);
 
         if (!$resource_type->isFieldEnabled($fieldname)) {
@@ -58,12 +59,12 @@ class SchemataSchemaNormalizer extends SchemataJsonSchemaSchemataSchemaNormalize
           // Otherwise, substitute the public name.
           $public_name = $resource_type->getPublicName($fieldname);
           $properties[$public_name] = $schema;
-          if (in_array($fieldname, $normalized['properties'][$property_type]['required'])) {
+          if (in_array($fieldname, $root[$property_type]['required'])) {
             $required_fields[] = $public_name;
           }
         }
       }
-      $normalized['properties'][$property_type]['required'] = $required_fields;
+      $root[$property_type]['required'] = $required_fields;
     }
 
     return $normalized;
