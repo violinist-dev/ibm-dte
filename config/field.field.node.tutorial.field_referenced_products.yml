@@ -1,10 +1,9 @@
-uuid: d05d2a8f-7cb6-4829-810f-ea30f2144934
+uuid: 72dc0db7-0255-4205-9d06-22bb01265f44
 langcode: en
 status: true
 dependencies:
   config:
     - field.storage.node.field_referenced_products
-    - node.type.product
     - node.type.tutorial
 id: node.tutorial.field_referenced_products
 field_name: field_referenced_products
@@ -17,13 +16,10 @@ translatable: false
 default_value: {  }
 default_value_callback: ''
 settings:
-  handler: 'default:node'
+  handler: views
   handler_settings:
-    target_bundles:
-      product: product
-    sort:
-      field: title
-      direction: ASC
-    auto_create: false
-    auto_create_bundle: ''
+    view:
+      view_name: product_references
+      display_name: entity_reference_1
+      arguments: {  }
 field_type: entity_reference

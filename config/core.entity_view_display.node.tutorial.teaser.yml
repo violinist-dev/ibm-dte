@@ -7,7 +7,6 @@ dependencies:
     - field.field.node.tutorial.field_duration
     - field.field.node.tutorial.field_introduction
     - field.field.node.tutorial.field_path
-    - field.field.node.tutorial.field_referenced_products
     - field.field.node.tutorial.field_referenced_runtimes
     - field.field.node.tutorial.field_short_description
     - field.field.node.tutorial.field_takeaways
@@ -30,7 +29,6 @@ hidden:
   field_duration: true
   field_introduction: true
   field_path: true
-  field_referenced_products: true
   field_referenced_runtimes: true
   field_short_description: true
   field_takeaways: true

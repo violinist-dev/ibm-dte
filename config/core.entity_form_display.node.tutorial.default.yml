@@ -63,7 +63,6 @@ third_party_settings:
       children:
         - field_introduction
         - field_tasks
-        - body
       parent_name: group_content_groupings
       weight: 21
       format_type: tab
@@ -109,7 +108,7 @@ content:
     type: string_textarea
     region: content
   field_referenced_products:
-    weight: 9
+    weight: 26
     settings:
       match_operator: CONTAINS
       size: 60
@@ -118,7 +117,7 @@ content:
     type: entity_reference_autocomplete
     region: content
   field_referenced_runtimes:
-    weight: 10
+    weight: 27
     settings:
       match_operator: CONTAINS
       size: 60

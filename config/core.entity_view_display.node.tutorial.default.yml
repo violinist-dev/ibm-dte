@@ -50,7 +50,7 @@ content:
     type: fieldable_path_formatter
     region: content
   field_referenced_products:
-    weight: 106
+    weight: 110
     label: above
     settings:
       link: true

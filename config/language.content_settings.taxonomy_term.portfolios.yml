@@ -1,0 +1,11 @@
+uuid: aa4ca057-5581-4905-8105-b14a2461871c
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.portfolios
+id: taxonomy_term.portfolios
+target_entity_type_id: taxonomy_term
+target_bundle: portfolios
+default_langcode: site_default
+language_alterable: false

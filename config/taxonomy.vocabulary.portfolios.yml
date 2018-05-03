@@ -1,0 +1,9 @@
+uuid: d5b2ab00-068c-40ef-a300-38f35be3763a
+langcode: en
+status: true
+dependencies: {  }
+name: 'Products and Portfolios'
+vid: portfolios
+description: 'IBM Products and Portfolios'
+hierarchy: 1
+weight: -10

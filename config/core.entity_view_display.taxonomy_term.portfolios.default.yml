@@ -1,0 +1,33 @@
+uuid: c00bb0af-05c3-41a6-b092-9795d5fb88c8
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.taxonomy_term.portfolios.field_logo
+    - taxonomy.vocabulary.portfolios
+  module:
+    - image
+    - text
+id: taxonomy_term.portfolios.default
+targetEntityType: taxonomy_term
+bundle: portfolios
+mode: default
+content:
+  description:
+    label: hidden
+    type: text_default
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_logo:
+    weight: 1
+    label: above
+    settings:
+      image_style: ''
+      image_link: ''
+    third_party_settings: {  }
+    type: image
+    region: content
+hidden:
+  langcode: true
