@@ -8,10 +8,6 @@ dependencies:
     - paragraphs.paragraphs_type.tutorial_tasks
   module:
     - entity_reference_revisions
-    - label_help
-third_party_settings:
-  label_help:
-    label_help_description: '<p>Add tasks and steps to create your tutorial here. Each task must have a title, and can optionally include an introduction. Each step must have a title and instructions. Tasks should be directed at a public audience and should avoid internal terminology and phrases like <em>proof of technology</em>. Tasks and steps should not include <em>task</em> or <em>step</em> in their titles.<p>'
 id: node.tutorial.field_tasks
 field_name: field_tasks
 entity_type: node
