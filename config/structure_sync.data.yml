@@ -1,0 +1,103 @@
+taxonomies:
+  portfolios:
+    -
+      vid: portfolios
+      tid: '1'
+      langcode: en
+      name: 'Hybrid Data Management'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: a91e6d68-20ef-41f2-9e19-cf00d245a48a
+    -
+      vid: portfolios
+      tid: '2'
+      langcode: en
+      name: 'Integration and Development'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 0364594e-2a76-4a05-a137-d455b5c80634
+    -
+      vid: portfolios
+      tid: '3'
+      langcode: en
+      name: 'Management and Platform'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 07a481dc-675e-433f-8777-07841331e02f
+    -
+      vid: portfolios
+      tid: '4'
+      langcode: en
+      name: 'Unified Governance and Integration'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: b0678f24-e5e4-4a53-b36f-eac2dfd9b0fe
+    -
+      vid: portfolios
+      tid: '5'
+      langcode: en
+      name: 'Data Science and Business Analytics'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: b463eb13-ef0a-416e-b1ed-70ff8f3fbfa0
+    -
+      vid: portfolios
+      tid: '6'
+      langcode: en
+      name: 'Watson and Cloud Platform'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 86d4ffb1-e3ad-48bb-af95-21d948b041d7
+    -
+      vid: portfolios
+      tid: '7'
+      langcode: en
+      name: 'Digital Business Automation'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 28ddf914-d380-46bf-9172-e0183c71b722
+    -
+      vid: portfolios
+      tid: '9'
+      langcode: en
+      name: 'IBM API Connect'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '2'
+      uuid: df2816da-f27e-4188-9d98-e6a4370423d2
+    -
+      vid: portfolios
+      tid: '10'
+      langcode: en
+      name: 'IBM Cloud Private'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '3'
+      uuid: e68a5a6e-1749-4001-844d-a9c94519ff63
+    -
+      vid: portfolios
+      tid: '11'
+      langcode: en
+      name: 'IBM Master Data Management'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '4'
+      uuid: 3b78291e-199c-4d4a-ab04-18a7ff81b86a
+  programming_runtimes: {  }

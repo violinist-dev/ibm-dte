@@ -69,6 +69,7 @@
         "drupal/scheduler": "^1.0",
         "drupal/simple_block": "^1.0@beta",
         "drupal/simplemde": "^1.0@alpha",
+        "drupal/structure_sync": "^1.12",
         "drupal/workbench": "^1.0",
         "drupal/workbench_access": "^1.0@beta",
         "drupal/workbench_moderation": "^1.3",
