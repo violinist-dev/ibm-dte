@@ -1,0 +1,23 @@
+uuid: c8204498-3b5c-4cd0-b295-53c7f7b98653
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_path
+    - node.type.video
+  module:
+    - fieldable_path
+id: node.video.field_path
+field_name: field_path
+entity_type: node
+bundle: video
+label: Path
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: ''
+default_value_callback: ''
+settings: {  }
+field_type: fieldable_path

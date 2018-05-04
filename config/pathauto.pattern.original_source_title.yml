@@ -9,15 +9,16 @@ label: 'Translatable Content'
 type: 'canonical_entities:node'
 pattern: '[node:content-type:machine-name]/[node:original:source:title]'
 selection_criteria:
-  011d38c8-8c73-4b45-b1a6-2fc866756577:
+  eaa25ff3-2be1-4013-827d-ed135a8f1a2e:
     id: node_type
     bundles:
       tutorial: tutorial
+      video: video
       walkthrough: walkthrough
     negate: false
     context_mapping:
       node: node
-    uuid: 011d38c8-8c73-4b45-b1a6-2fc866756577
+    uuid: eaa25ff3-2be1-4013-827d-ed135a8f1a2e
 selection_logic: and
 weight: -5
 relationships: {  }

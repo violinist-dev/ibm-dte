@@ -1,0 +1,78 @@
+uuid: 7d1c76eb-2c36-4f77-ada1-df8b443be164
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.video.field_duration
+    - field.field.node.video.field_path
+    - field.field.node.video.field_referenced_products
+    - field.field.node.video.field_short_description
+    - field.field.node.video.field_video_url
+    - field.field.node.video.field_weight
+    - node.type.video
+  module:
+    - fieldable_path
+    - user
+    - video_embed_field
+id: node.video.default
+targetEntityType: node
+bundle: video
+mode: default
+content:
+  field_duration:
+    weight: 104
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_integer
+    region: content
+  field_path:
+    weight: 107
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: fieldable_path_formatter
+    region: content
+  field_referenced_products:
+    weight: 105
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_short_description:
+    weight: 103
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_video_url:
+    weight: 102
+    label: above
+    settings:
+      responsive: true
+      width: 854
+      height: 480
+      autoplay: true
+    third_party_settings: {  }
+    type: video_embed_field_video
+    region: content
+  field_weight:
+    weight: 106
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_integer
+    region: content
+  links:
+    weight: 100
+    region: content
+hidden:
+  langcode: true

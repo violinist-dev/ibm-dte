@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - node.type.tutorial
+    - node.type.video
     - node.type.walkthrough
   module:
     - content_moderation
@@ -77,4 +78,5 @@ type_settings:
   entity_types:
     node:
       - tutorial
+      - video
       - walkthrough

@@ -1,0 +1,25 @@
+uuid: de8e61ff-d884-4324-8a2b-d260cd143158
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_referenced_products
+    - node.type.video
+id: node.video.field_referenced_products
+field_name: field_referenced_products
+entity_type: node
+bundle: video
+label: 'Referenced Products'
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: views
+  handler_settings:
+    view:
+      view_name: product_references
+      display_name: entity_reference_1
+      arguments: {  }
+field_type: entity_reference
