@@ -37,6 +37,7 @@ permissions:
   - 'update content translations'
   - 'use advanced search'
   - 'use tech_lead_editor transition create_new_draft'
+  - 'use tech_lead_editor transition send_to_technical_review'
   - 'use text format html'
   - 'use text format limited_html'
   - 'view all media revisions'
