@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - field.field.node.demo_instance.field_instance_type
+    - field.field.node.demo_instance.field_path
     - field.field.node.demo_instance.field_referenced_products
     - field.field.node.demo_instance.field_short_description
     - field.field.node.demo_instance.field_skytap_instance
@@ -12,6 +13,7 @@ dependencies:
     - node.type.demo_instance
   module:
     - entity_reference_revisions
+    - fieldable_path
     - link
     - options
     - user
@@ -23,12 +25,21 @@ content:
   content_moderation_control:
     weight: -20
     region: content
+    settings: {  }
+    third_party_settings: {  }
   field_instance_type:
     weight: 101
     label: above
     settings: {  }
     third_party_settings: {  }
     type: list_default
+    region: content
+  field_path:
+    weight: 107
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: fieldable_path_formatter
     region: content
   field_referenced_products:
     weight: 103
@@ -78,5 +89,7 @@ content:
   links:
     weight: 100
     region: content
+    settings: {  }
+    third_party_settings: {  }
 hidden:
   langcode: true

@@ -11,7 +11,7 @@ third_party_settings:
     parent: 'main:'
 name: Walkthrough
 type: walkthrough
-description: ''
+description: 'A collection of images with titles and descriptions to give a users a preview of a process, flow, product, etc…'
 help: ''
 new_revision: false
 preview_mode: 2

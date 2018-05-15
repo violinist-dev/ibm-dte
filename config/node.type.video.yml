@@ -11,7 +11,7 @@ third_party_settings:
     parent: 'main:'
 name: Video
 type: video
-description: ''
+description: 'An externally hosted video'
 help: ''
 new_revision: false
 preview_mode: 2

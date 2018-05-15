@@ -201,6 +201,14 @@ resourceFields:
     disabled: false
     advancedOptionsIcon: ''
     enhancer_label: ''
+  field_path:
+    fieldName: field_path
+    publicName: search_path
+    enhancer:
+      id: ''
+    disabled: false
+    advancedOptionsIcon: ''
+    enhancer_label: ''
   field_referenced_products:
     fieldName: field_referenced_products
     publicName: referenced_products

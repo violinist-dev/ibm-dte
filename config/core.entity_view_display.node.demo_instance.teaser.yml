@@ -1,9 +1,15 @@
 uuid: 9ef5ce42-7a70-4590-81c6-4797179f9e95
 langcode: en
-status: true
+status: false
 dependencies:
   config:
     - core.entity_view_mode.node.teaser
+    - field.field.node.demo_instance.field_instance_type
+    - field.field.node.demo_instance.field_referenced_products
+    - field.field.node.demo_instance.field_short_description
+    - field.field.node.demo_instance.field_skytap_instance
+    - field.field.node.demo_instance.field_url
+    - field.field.node.demo_instance.field_urx_form_id
     - node.type.demo_instance
   module:
     - user
@@ -12,8 +18,17 @@ targetEntityType: node
 bundle: demo_instance
 mode: teaser
 content:
+  content_moderation_control:
+    weight: -20
+    region: content
   links:
     weight: 100
     region: content
 hidden:
+  field_instance_type: true
+  field_referenced_products: true
+  field_short_description: true
+  field_skytap_instance: true
+  field_url: true
+  field_urx_form_id: true
   langcode: true

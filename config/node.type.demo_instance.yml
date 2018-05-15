@@ -11,7 +11,7 @@ third_party_settings:
     parent: 'main:'
 name: 'Demo Instance'
 type: demo_instance
-description: 'A demo to bused with a Tutorail'
+description: 'A demo (URX registration form, Skytap instance, or URL) that can be used stand-alone or with a Tutorial'
 help: ''
 new_revision: false
 preview_mode: 2
