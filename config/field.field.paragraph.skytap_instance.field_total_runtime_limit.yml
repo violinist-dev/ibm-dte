@@ -1,0 +1,23 @@
+uuid: 3b01aaab-f229-49d5-90f0-6761c4a599ec
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_total_runtime_limit
+    - paragraphs.paragraphs_type.skytap_instance
+id: paragraph.skytap_instance.field_total_runtime_limit
+field_name: field_total_runtime_limit
+entity_type: paragraph
+bundle: skytap_instance
+label: 'Total Runtime Limit'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: 1
+  max: null
+  prefix: ''
+  suffix: ' minute|minutes'
+field_type: integer

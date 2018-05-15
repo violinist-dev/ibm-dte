@@ -1,0 +1,39 @@
+uuid: 55f01d3e-3a96-4d3c-8c03-c0a117197af8
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.skytap_template.field_region
+    - field.field.paragraph.skytap_template.field_template_id
+    - paragraphs.paragraphs_type.skytap_template
+  module:
+    - content_moderation
+id: paragraph.skytap_template.default
+targetEntityType: paragraph
+bundle: skytap_template
+mode: default
+content:
+  field_region:
+    weight: 102
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_template_id:
+    weight: 101
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  moderation_state:
+    type: moderation_state_default
+    weight: 100
+    settings: {  }
+    region: content
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true
+  uid: true

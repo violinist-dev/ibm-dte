@@ -1,0 +1,30 @@
+uuid: 89def6f6-680f-4130-b6df-0d9c9d7765fb
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - options
+id: node.field_instance_type
+field_name: field_instance_type
+entity_type: node
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: cloud
+      label: 'IBM Registration Form'
+    -
+      value: skytap
+      label: 'Skytap Instance'
+    -
+      value: open
+      label: 'Existing URL'
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -1,0 +1,27 @@
+uuid: 1a0b6948-a2f7-4c52-a780-0ad33dd946a7
+langcode: en
+status: true
+dependencies:
+  module:
+    - options
+    - paragraphs
+id: paragraph.field_smartrdp_client
+field_name: field_smartrdp_client
+entity_type: paragraph
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: 'true'
+      label: Allow
+    -
+      value: 'false'
+      label: Disallow
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

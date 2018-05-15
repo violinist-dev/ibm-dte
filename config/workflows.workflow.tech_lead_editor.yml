@@ -3,6 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
+    - node.type.demo_instance
     - node.type.tutorial
     - node.type.video
     - node.type.walkthrough
@@ -77,6 +78,7 @@ type_settings:
       weight: -9
   entity_types:
     node:
+      - demo_instance
       - tutorial
       - video
       - walkthrough

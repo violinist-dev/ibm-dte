@@ -1,0 +1,21 @@
+uuid: 196931a3-d96d-4a06-9061-9fca9e164000
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_smartrdp_client
+    - paragraphs.paragraphs_type.skytap_instance
+  module:
+    - options
+id: paragraph.skytap_instance.field_smartrdp_client
+field_name: field_smartrdp_client
+entity_type: paragraph
+bundle: skytap_instance
+label: 'SmartRDP Client'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

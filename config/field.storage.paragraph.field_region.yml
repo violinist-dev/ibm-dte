@@ -1,0 +1,33 @@
+uuid: 7fa02176-a1ab-4174-ad84-e863e2264982
+langcode: en
+status: true
+dependencies:
+  module:
+    - options
+    - paragraphs
+id: paragraph.field_region
+field_name: field_region
+entity_type: paragraph
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: emea
+      label: 'Europe, Middle East, and Africa'
+    -
+      value: us-central
+      label: 'US - Central'
+    -
+      value: apac
+      label: 'Asia Pacific'
+    -
+      value: aus-sydney
+      label: 'Australia - Sydney'
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

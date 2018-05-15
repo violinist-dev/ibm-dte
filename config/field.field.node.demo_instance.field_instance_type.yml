@@ -1,0 +1,21 @@
+uuid: fd0ec609-a49c-4f73-a90f-f481f33636fe
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_instance_type
+    - node.type.demo_instance
+  module:
+    - options
+id: node.demo_instance.field_instance_type
+field_name: field_instance_type
+entity_type: node
+bundle: demo_instance
+label: 'Instance Type'
+description: "<p>The type of demo instance. Available options are as follows:</p>\r\n<ul>\r\n  <li><strong>IBM Registration Form</strong> - An IBM URX Registration form with a URL like <code>https://www.ibm.com/account/reg/signup?formid=abc-1234</code>. You will be asked to include whatever <code>formid</code> is equal to</li>\r\n  <li><strong>Skytap Instance</strong> - A Skytap instance. The Skytap instance must already exist</li>\r\n  <li><strong>Existing URL</strong> - Any other URL that may already exist that provides a demo experience. This should be used sparingly</li>\r\n</ul>\r\n"
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

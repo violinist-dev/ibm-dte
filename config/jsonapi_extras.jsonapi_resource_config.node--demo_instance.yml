@@ -1,13 +1,13 @@
-uuid: b2ed322a-b2fa-444f-a2a1-98187e6841f3
+uuid: 45c3cdd7-0656-4e20-9a79-2c4dc69c1faa
 langcode: en
 status: true
 dependencies:
   config:
-    - node.type.tutorial
-id: node--tutorial
+    - node.type.demo_instance
+id: node--demo_instance
 disabled: false
-path: tutorials
-resourceType: tutorial
+path: demo-instance
+resourceType: demo-instance
 resourceFields:
   nid:
     fieldName: nid
@@ -193,57 +193,9 @@ resourceFields:
       id: ''
     advancedOptionsIcon: ''
     enhancer_label: ''
-  field_campaign_code:
-    fieldName: field_campaign_code
-    publicName: campaign_code
-    enhancer:
-      id: ''
-    disabled: false
-    advancedOptionsIcon: ''
-    enhancer_label: ''
-  field_duration:
-    fieldName: field_duration
-    publicName: duration
-    enhancer:
-      id: ''
-    disabled: false
-    advancedOptionsIcon: ''
-    enhancer_label: ''
-  field_embed_tutorial_with_demo:
-    fieldName: field_embed_tutorial_with_demo
-    publicName: embed_tutorial_with_demo
-    enhancer:
-      id: ''
-    disabled: false
-    advancedOptionsIcon: ''
-    enhancer_label: ''
-  field_introduction:
-    fieldName: field_introduction
-    publicName: introduction
-    enhancer:
-      id: ''
-    disabled: false
-    advancedOptionsIcon: ''
-    enhancer_label: ''
-  field_ov_code:
-    fieldName: field_ov_code
-    publicName: ov_code
-    enhancer:
-      id: ''
-    disabled: false
-    advancedOptionsIcon: ''
-    enhancer_label: ''
-  field_path:
-    fieldName: field_path
-    publicName: search_path
-    enhancer:
-      id: ''
-    disabled: false
-    advancedOptionsIcon: ''
-    enhancer_label: ''
-  field_referenced_demo_instance:
-    fieldName: field_referenced_demo_instance
-    publicName: referenced_demo_instance
+  field_instance_type:
+    fieldName: field_instance_type
+    publicName: instance_type
     enhancer:
       id: ''
     disabled: false
@@ -257,14 +209,6 @@ resourceFields:
     disabled: false
     advancedOptionsIcon: ''
     enhancer_label: ''
-  field_referenced_runtimes:
-    fieldName: field_referenced_runtimes
-    publicName: referenced_runtimes
-    enhancer:
-      id: ''
-    disabled: false
-    advancedOptionsIcon: ''
-    enhancer_label: ''
   field_short_description:
     fieldName: field_short_description
     publicName: short_description
@@ -273,17 +217,25 @@ resourceFields:
     disabled: false
     advancedOptionsIcon: ''
     enhancer_label: ''
-  field_takeaways:
-    fieldName: field_takeaways
-    publicName: takeaways
+  field_skytap_instance:
+    fieldName: field_skytap_instance
+    publicName: skytap_instance
     enhancer:
       id: ''
     disabled: false
     advancedOptionsIcon: ''
     enhancer_label: ''
-  field_tasks:
-    fieldName: field_tasks
-    publicName: tasks
+  field_url:
+    fieldName: field_url
+    publicName: url
+    enhancer:
+      id: ''
+    disabled: false
+    advancedOptionsIcon: ''
+    enhancer_label: ''
+  field_urx_form_id:
+    fieldName: field_urx_form_id
+    publicName: urx_form_id
     enhancer:
       id: ''
     disabled: false

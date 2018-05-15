@@ -1,0 +1,23 @@
+uuid: 9c6bde4a-f24f-4ba0-966c-b18eb7f77028
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_idle_runtime_limit
+    - paragraphs.paragraphs_type.skytap_instance
+id: paragraph.skytap_instance.field_idle_runtime_limit
+field_name: field_idle_runtime_limit
+entity_type: paragraph
+bundle: skytap_instance
+label: 'Idle Runtime Limit'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: 1
+  max: null
+  prefix: ''
+  suffix: ' minute|minutes'
+field_type: integer

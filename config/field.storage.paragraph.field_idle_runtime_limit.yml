@@ -1,0 +1,20 @@
+uuid: e3f31120-5d09-4821-a9d7-8821b265f9aa
+langcode: en
+status: true
+dependencies:
+  module:
+    - paragraphs
+id: paragraph.field_idle_runtime_limit
+field_name: field_idle_runtime_limit
+entity_type: paragraph
+type: integer
+settings:
+  unsigned: false
+  size: normal
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

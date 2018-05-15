@@ -5,9 +5,11 @@ dependencies:
   config:
     - field.field.node.tutorial.field_campaign_code
     - field.field.node.tutorial.field_duration
+    - field.field.node.tutorial.field_embed_tutorial_with_demo
     - field.field.node.tutorial.field_introduction
     - field.field.node.tutorial.field_ov_code
     - field.field.node.tutorial.field_path
+    - field.field.node.tutorial.field_referenced_demo_instance
     - field.field.node.tutorial.field_referenced_products
     - field.field.node.tutorial.field_referenced_runtimes
     - field.field.node.tutorial.field_short_description
@@ -45,6 +47,16 @@ content:
     third_party_settings: {  }
     type: number_integer
     region: content
+  field_embed_tutorial_with_demo:
+    weight: 115
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    type: boolean
+    region: content
   field_introduction:
     weight: 103
     label: above
@@ -66,6 +78,14 @@ content:
     settings: {  }
     third_party_settings: {  }
     type: fieldable_path_formatter
+    region: content
+  field_referenced_demo_instance:
+    weight: 114
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
     region: content
   field_referenced_products:
     weight: 110

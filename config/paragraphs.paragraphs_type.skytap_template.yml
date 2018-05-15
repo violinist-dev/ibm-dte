@@ -1,0 +1,9 @@
+uuid: 975d209c-6cba-475a-a36d-94a47ad3f379
+langcode: en
+status: true
+dependencies: {  }
+id: skytap_template
+label: 'Skytap Template'
+icon_uuid: null
+description: ''
+behavior_plugins: {  }

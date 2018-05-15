@@ -45,3 +45,12 @@
 .node-form .paragraphs-subform {
   margin-top: -2em !important;
 }
+
+/* Skytap Instance */
+#edit-field-skytap-instance-0-top.paragraph-type-top {
+  display: none !important;
+}
+
+#edit-field-skytap-instance-0-subform.paragraphs-subform {
+  margin-top: 0 !important;
+}

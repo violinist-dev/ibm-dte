@@ -1,0 +1,19 @@
+uuid: 370d34db-1f89-4421-b60d-eee7dd381466
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_short_description
+    - node.type.demo_instance
+id: node.demo_instance.field_short_description
+field_name: field_short_description
+entity_type: node
+bundle: demo_instance
+label: 'Short Description'
+description: '<p>A short description of the functionality this demo instance provides</p>'
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

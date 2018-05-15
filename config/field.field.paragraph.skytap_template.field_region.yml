@@ -1,0 +1,21 @@
+uuid: 4a21e7c1-33d9-487c-9b5d-6dc8b09bf163
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_region
+    - paragraphs.paragraphs_type.skytap_template
+  module:
+    - options
+id: paragraph.skytap_template.field_region
+field_name: field_region
+entity_type: paragraph
+bundle: skytap_template
+label: Region
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

@@ -1,0 +1,31 @@
+uuid: 5ba28378-adc3-499a-9c54-fa5890d4ac18
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.skytap_template.field_region
+    - field.field.paragraph.skytap_template.field_template_id
+    - paragraphs.paragraphs_type.skytap_template
+  module:
+    - options
+id: paragraph.skytap_template.default
+targetEntityType: paragraph
+bundle: skytap_template
+mode: default
+content:
+  field_region:
+    weight: 1
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: list_default
+    region: content
+  field_template_id:
+    weight: 0
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+hidden: {  }

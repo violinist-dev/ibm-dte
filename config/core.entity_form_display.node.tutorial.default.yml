@@ -5,9 +5,11 @@ dependencies:
   config:
     - field.field.node.tutorial.field_campaign_code
     - field.field.node.tutorial.field_duration
+    - field.field.node.tutorial.field_embed_tutorial_with_demo
     - field.field.node.tutorial.field_introduction
     - field.field.node.tutorial.field_ov_code
     - field.field.node.tutorial.field_path
+    - field.field.node.tutorial.field_referenced_demo_instance
     - field.field.node.tutorial.field_referenced_products
     - field.field.node.tutorial.field_referenced_runtimes
     - field.field.node.tutorial.field_short_description
@@ -15,6 +17,7 @@ dependencies:
     - field.field.node.tutorial.field_tasks
     - node.type.tutorial
   module:
+    - conditional_fields
     - content_moderation
     - field_group
     - paragraphs
@@ -78,6 +81,7 @@ third_party_settings:
       label: 'Main Content'
     group_related_items:
       children:
+        - group_referenced_demo
         - field_referenced_products
         - field_referenced_runtimes
       parent_name: group_content_groupings
@@ -104,6 +108,19 @@ third_party_settings:
         description: ''
         required_fields: true
       label: Marketing
+    group_referenced_demo:
+      children:
+        - field_referenced_demo_instance
+        - field_embed_tutorial_with_demo
+      parent_name: group_related_items
+      weight: 20
+      format_type: fieldset
+      format_settings:
+        id: ''
+        classes: ''
+        description: ''
+        required_fields: true
+      label: 'Referenced Demo'
 id: node.tutorial.default
 targetEntityType: node
 bundle: tutorial
@@ -127,6 +144,14 @@ content:
     third_party_settings: {  }
     type: number
     region: content
+  field_embed_tutorial_with_demo:
+    weight: 22
+    settings:
+      display_label: true
+    third_party_settings:
+      conditional_fields: {  }
+    type: boolean_checkbox
+    region: content
   field_introduction:
     weight: 6
     settings:
@@ -146,8 +171,17 @@ content:
         maxlength_js_label: 'OV Codes are @limit characters long. Yours is <strong>@count</strong>'
     type: string_textfield
     region: content
+  field_referenced_demo_instance:
+    weight: 21
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+    region: content
   field_referenced_products:
-    weight: 26
+    weight: 23
     settings:
       match_operator: CONTAINS
       size: 60
@@ -156,7 +190,7 @@ content:
     type: entity_reference_autocomplete
     region: content
   field_referenced_runtimes:
-    weight: 27
+    weight: 24
     settings:
       match_operator: CONTAINS
       size: 60

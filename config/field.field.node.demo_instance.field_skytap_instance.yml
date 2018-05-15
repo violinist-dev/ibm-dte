@@ -1,0 +1,43 @@
+uuid: 95bee26f-5955-424f-a092-79df5e851198
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_skytap_instance
+    - node.type.demo_instance
+    - paragraphs.paragraphs_type.skytap_instance
+  module:
+    - entity_reference_revisions
+id: node.demo_instance.field_skytap_instance
+field_name: field_skytap_instance
+entity_type: node
+bundle: demo_instance
+label: 'Skytap Instance'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      skytap_instance: skytap_instance
+    target_bundles_drag_drop:
+      skytap_instance:
+        enabled: true
+        weight: 6
+      skytap_template:
+        weight: 7
+        enabled: false
+      tutorial_steps:
+        weight: 8
+        enabled: false
+      tutorial_tasks:
+        weight: 9
+        enabled: false
+      walkthrough_step:
+        weight: 10
+        enabled: false
+field_type: entity_reference_revisions

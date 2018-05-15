@@ -1,0 +1,21 @@
+uuid: dcfacff9-42a6-4092-b81b-1be68eb1f4ec
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_idle_runtime_type
+    - paragraphs.paragraphs_type.skytap_instance
+  module:
+    - options
+id: paragraph.skytap_instance.field_idle_runtime_type
+field_name: field_idle_runtime_type
+entity_type: paragraph
+bundle: skytap_instance
+label: 'Idle Runtime Type'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

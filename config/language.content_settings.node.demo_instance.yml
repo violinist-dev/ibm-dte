@@ -1,0 +1,16 @@
+uuid: 792ea27d-47eb-417e-a5a0-2978a7096906
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.demo_instance
+  module:
+    - content_translation
+third_party_settings:
+  content_translation:
+    enabled: true
+id: node.demo_instance
+target_entity_type_id: node
+target_bundle: demo_instance
+default_langcode: site_default
+language_alterable: true

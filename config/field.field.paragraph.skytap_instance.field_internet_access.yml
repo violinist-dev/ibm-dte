@@ -1,0 +1,21 @@
+uuid: 87ea21d4-4e09-4c39-8647-996a5c26ec3f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_internet_access
+    - paragraphs.paragraphs_type.skytap_instance
+  module:
+    - options
+id: paragraph.skytap_instance.field_internet_access
+field_name: field_internet_access
+entity_type: paragraph
+bundle: skytap_instance
+label: 'Internet Access'
+description: 'Decide whether to use a template''s <em>default</em> Internet access settings, or whether to override those settings to either <em>allow</em> or <em>disallow</em> Internet access regardless of of the Internet access settings in the provided template(s)'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

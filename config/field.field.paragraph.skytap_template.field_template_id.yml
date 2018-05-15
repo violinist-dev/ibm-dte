@@ -1,0 +1,19 @@
+uuid: 334a0bbc-607b-433f-a137-086733a934cf
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_template_id
+    - paragraphs.paragraphs_type.skytap_template
+id: paragraph.skytap_template.field_template_id
+field_name: field_template_id
+entity_type: paragraph
+bundle: skytap_template
+label: 'Template ID'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

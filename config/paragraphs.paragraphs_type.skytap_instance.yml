@@ -1,0 +1,9 @@
+uuid: 07c4f69d-b7b4-4422-8677-9d03053b4541
+langcode: en
+status: true
+dependencies: {  }
+id: skytap_instance
+label: 'Skytap Instance'
+icon_uuid: null
+description: ''
+behavior_plugins: {  }

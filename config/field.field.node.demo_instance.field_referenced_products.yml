@@ -1,0 +1,25 @@
+uuid: fb08656b-a4de-4747-bad9-f50711651d65
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_referenced_products
+    - node.type.demo_instance
+id: node.demo_instance.field_referenced_products
+field_name: field_referenced_products
+entity_type: node
+bundle: demo_instance
+label: 'Referenced Products'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: views
+  handler_settings:
+    view:
+      view_name: product_references
+      display_name: entity_reference_1
+      arguments: {  }
+field_type: entity_reference
