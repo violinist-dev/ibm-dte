@@ -19,6 +19,7 @@ permissions:
   - 'create demo_instance content'
   - 'create tutorial content'
   - 'create video content'
+  - 'create walkthrough content'
   - 'edit any demo_instance content'
   - 'edit any tutorial content'
   - 'edit any video content'
