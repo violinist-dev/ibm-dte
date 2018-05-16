@@ -27,6 +27,8 @@ module:
   file: 0
   filter: 0
   gm_addons: 0
+  graphql: 0
+  graphql_core: 0
   image: 0
   inline_form_errors: 0
   jsonapi: 0

@@ -26,9 +26,14 @@ content:
     weight: 100
     region: content
 hidden:
+  field_campaign_code: true
   field_duration: true
+  field_embed_tutorial_with_demo: true
   field_introduction: true
+  field_ov_code: true
   field_path: true
+  field_referenced_demo_instance: true
+  field_referenced_products: true
   field_referenced_runtimes: true
   field_short_description: true
   field_takeaways: true

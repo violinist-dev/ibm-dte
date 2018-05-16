@@ -55,6 +55,7 @@
         "drupal/extra_field_description": "^1.1",
         "drupal/field_group": "^1.0",
         "drupal/fieldable_path": "^1.0@RC",
+        "drupal/graphql": "^3.0@beta",
         "drupal/jsonapi": "^1.15",
         "drupal/jsonapi_extras": "^2.0@RC",
         "drupal/label_help": "1.x-dev",

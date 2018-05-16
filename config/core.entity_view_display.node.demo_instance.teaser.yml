@@ -26,6 +26,7 @@ content:
     region: content
 hidden:
   field_instance_type: true
+  field_path: true
   field_referenced_products: true
   field_short_description: true
   field_skytap_instance: true

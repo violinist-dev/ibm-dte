@@ -16,10 +16,14 @@ targetEntityType: node
 bundle: walkthrough
 mode: teaser
 content:
+  content_moderation_control:
+    weight: -20
+    region: content
   links:
     weight: 100
     region: content
 hidden:
+  field_path: true
   field_referenced_products: true
   field_related_tutorials: true
   field_short_description: true
