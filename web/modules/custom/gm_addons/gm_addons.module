@@ -1,5 +1,29 @@
 <?php
 
+/*
+ * Implements hook_page_attachments()
+ */
 function gm_addons_page_attachments(array &$page) {
   $page['#attached']['library'][] = 'gm_addons/gm-addons';
+}
+
+/*
+ * Implements hook_ckeditor_plugin_info_alter()
+ */
+function gm_addons_ckeditor_plugin_info_alter(array &$definitions) {
+  $definitions['drupalentity']['class'] = 'Drupal\gm_addons\Plugin\CKEditorPlugin\InlineDrupalEntity';
+}
+
+/*
+ * Implements hook_them().
+ */
+function gm_addons_theme($existing, $type, &$theme, $path) {
+
+
+  return [
+    'entity_embed_container' => [
+      'template' => 'inline-entity-embed-container',
+      'base hook' => 'entity_embed_container'
+    ],
+  ];
 }

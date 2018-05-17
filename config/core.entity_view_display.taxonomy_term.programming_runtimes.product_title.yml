@@ -1,0 +1,32 @@
+uuid: 870fb8d3-744c-4113-b307-6f9ae0bdbaa8
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.taxonomy_term.product_title
+    - field.field.taxonomy_term.programming_runtimes.field_path
+    - taxonomy.vocabulary.programming_runtimes
+  module:
+    - fieldable_path
+    - text
+id: taxonomy_term.programming_runtimes.product_title
+targetEntityType: taxonomy_term
+bundle: programming_runtimes
+mode: product_title
+content:
+  description:
+    label: hidden
+    type: text_default
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_path:
+    weight: 1
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: fieldable_path_formatter
+    region: content
+hidden:
+  langcode: true

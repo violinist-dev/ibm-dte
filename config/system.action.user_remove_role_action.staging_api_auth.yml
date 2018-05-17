@@ -1,0 +1,14 @@
+uuid: 73c80570-3ffb-4b7d-bd99-b3291f0f46a6
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.staging_api_auth
+  module:
+    - user
+id: user_remove_role_action.staging_api_auth
+label: 'Remove the Staging API Auth role from the selected user(s)'
+type: user
+plugin: user_remove_role_action
+configuration:
+  rid: staging_api_auth

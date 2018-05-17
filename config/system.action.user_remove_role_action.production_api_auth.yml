@@ -1,0 +1,14 @@
+uuid: 5d98c263-ef99-4e15-8bf5-dd1c5b283eee
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.production_api_auth
+  module:
+    - user
+id: user_remove_role_action.production_api_auth
+label: 'Remove the Production API Auth role from the selected user(s)'
+type: user
+plugin: user_remove_role_action
+configuration:
+  rid: production_api_auth

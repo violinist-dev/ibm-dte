@@ -1,5 +1,7 @@
 name: 'Garage Method Addons'
 type: module
 description: 'Additional functionality needed to tweak Drupal'
+dependencies:
+  - entity_embed
 version: 1.0.0
 core: 8.x
