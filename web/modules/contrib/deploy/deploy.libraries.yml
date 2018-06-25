@@ -1,5 +1,0 @@
-drupal.deploy.toolbar:
-  version: VERSION
-  css:
-    theme:
-      css/deploy.toolbar.css: {}

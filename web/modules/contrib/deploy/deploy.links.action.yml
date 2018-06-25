@@ -1,5 +1,0 @@
-entity.replication.add_form:
-  route_name: entity.replication.add_form
-  title: 'Start new deployment'
-  appears_on:
-    - entity.replication.collection
