@@ -1,32 +1,71 @@
 language: php
 php:
-  - 5.4
-mysql:
-  database: drupal
-  username: root
-  encoding: utf8
+  - 7.2
+
+services:
+  - docker
+
+# Install lando
 before_install:
-  - composer self-update
+  - sudo apt-get -y update || true
+  - sudo apt-get -y install cgroup-bin curl
+  - curl -fsSL -o /tmp/lando-latest.deb http://installer.kalabox.io/lando-latest-dev.deb
+  - sudo dpkg -i /tmp/lando-latest.deb
+  - lando version
 
+#########################
+## Get Lando running on Travis
+##
+##   Do the Lando magic
+#########################
+before_install:
+  # Start Lando
+  - lando start -- -v
 install:
-  # add composer's global bin directory to the path
-  # see: https://github.com/drush-ops/drush#install---composer
-  - export PATH="$HOME/.composer/vendor/bin:$PATH"
-
   # Install Dependencies
-  - composer install
+  - lando composer install
 
-  # Install Drush
-  - composer global require drush/drush:dev-master
-  - phpenv rehash
-  # Create MySQL Database
-  - mysql -e 'create database drupal;'
+script:
+  # Do needed things to get this repo transformed to what pantheon expects
+  - lando composer prepare-for-pantheon
 
-  # Install drupal default profile
-  - drush --verbose site-install --db-url=mysql://root:@127.0.0.1/dr
+  # Run non-db required tests eg linting/code standards/unit tests
+  # Lint the codez
+  # - lando phplint
 
-  # Import config for our pseudo install
-  - drush --verbose config-import active --yes
+  # Check code standards
+  # - lando phpcs --config-set installed_paths /app/vendor/drupal/coder/coder_sniffer
+  # - lando phpcs -n --report=full --standard=Drupal --ignore=*.tpl.php --extensions=install,module,php,inc web/modules web/themes web/profiles
 
-  # Move into core directory for phpunits benefit
-  - cd web/core
+  # Run unit tests.
+  # - lando composer drupal-unit-tests
+
+  # Get the DB for more advanced things
+  - lando terminus auth:login --machine-token=$PANTHEON_TOKEN
+  - lando pull --code=none --database=dev --files=dev --rsync
+
+  # Check if we can bootstrap the site.
+  - lando drush cr | grep "rebuild complete."
+
+  # Run Behat tests.
+  # - lando behat --config=/app/tests/behat-pantheon.yml
+
+  # Do the multidev as needed
+  # - |
+  #   if [ "$TRAVIS_PULL_REQUEST" != "false" ]; then
+  #     BRANCH=$(echo $TRAVIS_PULL_REQUEST_BRANCH | grep -v '^\(master\|[0-9]\+.x\)$')
+  #     PR_ENV=${BRANCH:+pr-$BRANCH}
+  #     DEFAULT_ENV=$(echo ${PR_ENV:-$TRAVIS_PULL_REQUEST_BRANCH} | tr '[:upper:]' '[:lower:]' | sed 's/[^0-9a-z-]//g' | cut -c -11 | sed 's/-$//')
+  #     if ! lando terminus multidev:list $PANTHEON_SITE_NAME --field id | grep "$DEFAULT_ENV"; then
+  #       lando terminus multidev:create $PANTHEON_SITE_NAME.dev $DEFAULT_ENV
+  #     fi
+  #     lando ssh -c "cd /tmp && git clone -b $DEFAULT_ENV ssh://codeserver.dev.\${PANTHEON_SITE}@codeserver.dev.\${PANTHEON_SITE}.drush.in:2222/~/repository.git pantheon_build"
+  #     lando ssh -u root -c "rm -rf /tmp/pantheon_build/*"
+  #     lando ssh -c "cp -rf /app/ /tmp/pantheon_build/"
+  #     lando ssh -c "git -C /tmp/pantheon_build add -A"
+  #     lando ssh -c "git -C /tmp/pantheon_build commit -m '$TRAVIS_COMMIT_MESSAGE'"
+  #     lando ssh -c "git -C /tmp/pantheon_build push origin $DEFAULT_ENV"
+  #   fi
+  # Clean up posted SSH key
+  - lando terminus ssh-key:remove $(ssh-keygen -l -f ~/.lando/keys/pantheon.lando.id_rsa.pub | awk -F' ' '{print $2}' | sed 's/://g')
+
