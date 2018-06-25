@@ -43,7 +43,9 @@ script:
   - lando pull --code=none --database=dev --files=dev --rsync
 
   # Check if we can bootstrap the site.
+  - cd web
   - lando drush cr | grep "rebuild complete."
+  - cd ..
 
   # Run Behat tests.
   # - lando behat --config=/app/tests/behat-pantheon.yml
