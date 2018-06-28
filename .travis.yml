@@ -1,7 +1,8 @@
-language: php
-php:
-  - 7.2
+# Turn off sudo, use Trusty
+sudo: false
+dist: trusty
 
+# Don't care about the language, we're doing this in Docker!
 services:
   - docker
 
