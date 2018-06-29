@@ -67,16 +67,14 @@ script:
   #     lando ssh -c "git -C /tmp/pantheon_build commit -m '$TRAVIS_COMMIT_MESSAGE'"
   #     lando ssh -c "git -C /tmp/pantheon_build push origin $DEFAULT_ENV"
   #   fi
+
 before_deploy:
-  - git remote -v
+  - git remote add pantheon $PANTHEON_GIT
 
 deploy:
   - provider: script
     skip_cleanup: true
-    script:
-      - git add -f vendor web
-      - git commit -m "Deploy from Travis - `date +'%Y-%m-%d %H:%M:%S %Z'`"
-      - lando ssh -c "git -C push pantheon master"
+    script: scripts/travis/deploy.sh
     on:
       branch: master
 
