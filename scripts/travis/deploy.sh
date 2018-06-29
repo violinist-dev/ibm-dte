@@ -6,10 +6,10 @@ set -eo pipefail
 git remote rename origin upstream
 git remote add origin $PANTHEON_GIT
 git checkout -b master
-git branch --set-upstream-to origin
 
-lando push --files=none --database=none -m "Deploy from Travis - `date +'%Y-%m-%d %H:%M:%S %Z'`"
+git add .
+git commit -m "Deploy from Travis - `date +'%Y-%m-%d %H:%M:%S %Z'`"
+lando ssh -c "git -C push origin master"
 
 git remote remove origin
 git remote rename upstream origin
-git branch --set-upstream-to origin
