@@ -9,7 +9,7 @@ git remote -v
 
 # git add .
 # git commit -m "Deploy from Travis - `date +'%Y-%m-%d %H:%M:%S %Z'`"
-lando ssh -c "git -C push origin master"
+lando ssh -c "git push origin master"
 
 git remote remove origin
 git remote rename upstream origin
