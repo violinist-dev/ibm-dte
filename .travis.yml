@@ -67,12 +67,8 @@ script:
   #     lando ssh -c "git -C /tmp/pantheon_build commit -m '$TRAVIS_COMMIT_MESSAGE'"
   #     lando ssh -c "git -C /tmp/pantheon_build push origin $DEFAULT_ENV"
   #   fi
-  # Clean up posted SSH key
-  - lando terminus ssh-key:remove $(ssh-keygen -l -f ~/.lando/keys/pantheon.lando.id_rsa.pub | awk -F' ' '{print $2}' | sed 's/://g')
-
 before_deploy:
-  - lando terminus auth:login --machine-token=$PANTHEON_TOKEN
-  - git remote add pantheon $PANTHEON_GIT
+  - git remote -v
 
 deploy:
   - provider: script
@@ -84,7 +80,8 @@ deploy:
     on:
       branch: master
 
-after_deploy:
+# Clean up posted SSH key
+after_script:
   - lando terminus ssh-key:remove $(ssh-keygen -l -f ~/.lando/keys/pantheon.lando.id_rsa.pub | awk -F' ' '{print $2}' | sed 's/://g')
 
 env:
