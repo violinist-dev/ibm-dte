@@ -71,7 +71,7 @@ script:
 deploy:
   - provider: script
     skip_cleanup: true
-    script: scripts/travis/deploy.sh 1&>1
+    script: scripts/travis/deploy.sh
     on:
       branch: master
 
