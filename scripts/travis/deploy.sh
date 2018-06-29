@@ -2,9 +2,11 @@
 
 set -eo pipefail
 
+git remote -v
+
+git fetch --all
 git checkout master
 git branch --set-upstream-to pantheon/master
-git fetch
 git status
 
 git add .
