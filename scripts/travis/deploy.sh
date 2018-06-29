@@ -2,6 +2,10 @@
 
 set -eo pipefail
 
+# Did Skip Cleanup Not Work?
+lando composer install
+lando composer prepare-for-pantheon
+
 # Rename origin to upstream, set
 git remote rename origin upstream
 git remote add origin $PANTHEON_GIT
