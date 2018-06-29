@@ -68,6 +68,9 @@ script:
   #     lando ssh -c "git -C /tmp/pantheon_build push origin $DEFAULT_ENV"
   #   fi
 
+before_deploy:
+  - git remote add pantheon $PANTHEON_GIT
+
 deploy:
   - provider: script
     skip_cleanup: true
