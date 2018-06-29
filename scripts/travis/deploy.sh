@@ -3,6 +3,9 @@
 set -eo pipefail
 
 git checkout master
+git branch --set-upstream-to pantheon/master
+git fetch
+git status
 
 git add .
 git commit -m "Deploy from Travis - `date +'%Y-%m-%d %H:%M:%S %Z'`"
