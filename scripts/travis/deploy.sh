@@ -5,7 +5,6 @@ set -eo pipefail
 # Rename origin to upstream, set
 git remote rename origin upstream
 git remote add origin $PANTHEON_GIT
-git checkout -b master
 
 git add .
 git commit -m "Deploy from Travis - `date +'%Y-%m-%d %H:%M:%S %Z'`"
