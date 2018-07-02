@@ -11,4 +11,4 @@ lando ssh -c "git status"
 
 lando ssh -c "git add ."
 lando ssh -c "git commit -m \"Deploy from Travis - `date +'%Y-%m-%d %H:%M:%S %Z'`\""
-lando ssh -c "git push pantheon master"
+lando ssh -c "git push -q pantheon master"
