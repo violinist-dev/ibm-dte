@@ -4,6 +4,8 @@ set -eo pipefail
 
 git remote -v
 
+ssh-keyscan $PANTHEON_GIT >> ~/.ssh/known_hosts
+
 git fetch --all
 git checkout master
 git branch --set-upstream-to pantheon/master
