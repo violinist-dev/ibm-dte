@@ -2,15 +2,13 @@
 
 set -eo pipefail
 
-git remote -v
+lando ssh -c "git remote -v"
 
-ssh-keyscan $PANTHEON_GIT >> ~/.ssh/known_hosts
+lando ssh -c "git fetch --all"
+lando ssh -c "git checkout master"
+lando ssh -c "git branch --set-upstream-to pantheon/master"
+lando ssh -c "git status"
 
-git fetch --all
-git checkout master
-git branch --set-upstream-to pantheon/master
-git status
-
-git add .
-git commit -m "Deploy from Travis - `date +'%Y-%m-%d %H:%M:%S %Z'`"
+lando ssh -c "git add ."
+lando ssh -c "git commit -m \"Deploy from Travis - `date +'%Y-%m-%d %H:%M:%S %Z'`\""
 lando ssh -c "git push pantheon master"
