@@ -7,6 +7,14 @@
 ### to the Pantheon repository.
 ###
 
+# Ignore Composer
+vendor
+web/core
+web/themes/contrib
+web/modules/contrib
+
+# :::::::::::::::::::::: cut ::::::::::::::::::::::
+
 # Ignore Drupal's file directory
 web/sites/default/files
 
@@ -15,12 +23,6 @@ web/sites/default/files
 web/sites/*/settings.local.php
 web/sites/*/services*.yml
 !web/sites/*/services.pantheon.*.yml
-
-# Ignore Composer
-vendor
-web/core
-web/themes/contrib
-web/modules/contrib
 
 # Ignore SimpleTest multi-site environment.
 web/sites/simpletest
