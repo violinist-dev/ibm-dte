@@ -1,6 +1,6 @@
-name: gm-decoupled
+name: ibm-dte
 recipe: pantheon
 config:
   framework: drupal8
-  site: gm-decoupled
+  site: ibm-dte
   id: 1
