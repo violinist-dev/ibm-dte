@@ -6,7 +6,6 @@ dependencies:
     - node.type.demo_instance
     - node.type.tutorial
     - node.type.video
-    - node.type.walkthrough
   module:
     - content_moderation
 id: tech_lead_editor
@@ -81,4 +80,3 @@ type_settings:
       - demo_instance
       - tutorial
       - video
-      - walkthrough

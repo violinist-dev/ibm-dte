@@ -2,7 +2,6 @@ module:
   admin_toolbar: 0
   admin_toolbar_tools: 0
   allowed_formats: 0
-  basic_auth: 0
   big_pipe: 0
   block: 0
   breakpoint: 0
@@ -20,8 +19,6 @@ module:
   diff: 0
   dynamic_page_cache: 0
   editor: 0
-  embed: 0
-  entity_embed: 0
   entity_reference_revisions: 0
   field: 0
   field_group: 0
@@ -30,8 +27,6 @@ module:
   file: 0
   filter: 0
   gm_addons: 0
-  graphql: 0
-  graphql_core: 0
   image: 0
   inline_form_errors: 0
   jsonapi: 0

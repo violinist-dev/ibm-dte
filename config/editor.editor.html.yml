@@ -16,7 +16,6 @@ settings:
           name: Formatting
           items:
             - Format
-            - taxonomy
             - Bold
             - Italic
             - Table
