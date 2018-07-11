@@ -13,6 +13,6 @@ name: 'Demo Instance'
 type: demo_instance
 description: 'A demo (URX registration form, Skytap instance, or URL) that can be used stand-alone or with a Tutorial'
 help: ''
-new_revision: false
-preview_mode: 2
+new_revision: true
+preview_mode: 0
 display_submitted: false

@@ -13,6 +13,6 @@ name: Tutorial
 type: tutorial
 description: 'A collection of tasks and steps with related Demo instance for users to follow'
 help: '<p>Tutorials for should be directed at a public audience and should avoid internal terminology and phrases like <em>proof of technology</em>. Tutorials, tasks, and steps should not include <em>tutorial</em>, <em>task</em>, or <em>step</em> in their titles.</p>'
-new_revision: false
-preview_mode: 2
+new_revision: true
+preview_mode: 0
 display_submitted: false
