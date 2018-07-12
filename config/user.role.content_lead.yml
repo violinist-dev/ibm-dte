@@ -7,6 +7,8 @@ label: 'Content Lead'
 weight: -7
 is_admin: null
 permissions:
+  - 'use tech_lead_editor transition archive'
+  - 'use tech_lead_editor transition restore_to_draft'
   - 'use tech_lead_editor transition send_to_content_lead'
   - 'use tech_lead_editor transition send_to_editor'
   - 'use tech_lead_editor transition send_to_technical_review'

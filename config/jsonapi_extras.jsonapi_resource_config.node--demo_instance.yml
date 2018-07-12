@@ -74,11 +74,11 @@ resourceFields:
     advancedOptionsIcon: ''
     enhancer_label: ''
   status:
-    disabled: true
     fieldName: status
-    publicName: status
+    publicName: published
     enhancer:
       id: ''
+    disabled: false
     advancedOptionsIcon: ''
     enhancer_label: ''
   title:
