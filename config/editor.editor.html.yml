@@ -18,6 +18,8 @@ settings:
             - Format
             - Bold
             - Italic
+            - Code
+            - '-'
             - Table
             - CodeSnippet
         -
