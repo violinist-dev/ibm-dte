@@ -9,7 +9,9 @@
 
 # Ignore Composer
 vendor
+/libraries
 web/core
+web/libraries
 web/themes/contrib
 web/modules/contrib
 
