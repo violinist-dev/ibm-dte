@@ -833,8 +833,8 @@ display:
           empty: true
           tokenize: false
           content:
-            value: 'You have no content in moderation'
-            format: plain_text
+            value: '<p>You don''t have any content in moderation. <a href="/admin/workbench/create"><strong>Go make some</strong></a>.</p>'
+            format: html
           plugin_id: text
       relationships:
         uid:
