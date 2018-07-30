@@ -1,7 +1,10 @@
 gm-addons:
   version: 1.x
+  js:
+    js/views-exposed-form-filters.js: {}
   css:
     theme:
       css/node-preview.css: {}
       css/node-edit.css: {}
       css/drupal-chrome.css: {}
+      css/workbench.css: {}
