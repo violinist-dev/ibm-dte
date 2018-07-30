@@ -1024,7 +1024,7 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
-          empty: false
+          empty: true
           tokenize: false
           content:
             value: '<h3>Your content in moderation</h3>'
