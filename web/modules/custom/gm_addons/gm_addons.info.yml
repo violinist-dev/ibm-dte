@@ -3,5 +3,6 @@ type: module
 description: 'Additional functionality needed to tweak Drupal'
 dependencies:
   - entity_embed
+  - ckeditor
 version: 1.0.0
 core: 8.x
