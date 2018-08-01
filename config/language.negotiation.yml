@@ -5,8 +5,20 @@ url:
   prefixes:
     en: ''
     '': null
+    es: es
+    zh-hans: zh-hans
+    de: de
+    ja: ja
+    fr: fr
+    pt-br: pt-br
   domains:
     en: ''
+    es: ''
+    zh-hans: ''
+    de: ''
+    ja: ''
+    fr: ''
+    pt-br: ''
 selected_langcode: site_default
 _core:
   default_config_hash: uEePITI9tV6WqzmsTb7MfPCi5yPWXSxAN1xeLcYFQbM
