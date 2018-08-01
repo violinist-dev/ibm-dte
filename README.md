@@ -1,1 +1,1 @@
-# ibm-garage
+# ibm-dte
