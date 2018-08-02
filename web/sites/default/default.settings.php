@@ -796,3 +796,4 @@ $databases['default']['default'] = [
   'prefix' => '',
   'username' => getenv('MYSQL_USER'),
 ];
+$config_directories[CONFIG_SYNC_DIRECTORY] = '../config/sync';
