@@ -1,0 +1,25 @@
+name: ibm-dte
+recipe: drupal8
+config:
+  webroot: web
+  php: '7.2'
+  # Using vendor/bin/drush allows drush debugging to work.
+  drush: path:/app/vendor/bin/drush
+services:
+  appserver:
+    run: |
+      cd $LANDO_MOUNT
+      composer install
+      # Copy the .env into place if it doesn't already exist.
+      test -f .env || cp dist/.env.local .env
+    xdebug: true
+    overrides:
+      services:
+        environment:
+          # Support debugging Drush with XDEBUG. Use lando drush to debug.
+          PHP_IDE_CONFIG: "serverName=appserver"
+  database:
+    type: mariadb
+proxy:
+  appserver:
+    - local.ibm-dte.mybluemix.net
