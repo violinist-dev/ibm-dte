@@ -1,0 +1,29 @@
+uuid: 64d4e2c7-0a5c-48bd-abcb-eb047ad7235d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_related_tutorials
+    - node.type.product_tour
+    - node.type.tutorial
+id: node.product_tour.field_related_tutorials
+field_name: field_related_tutorials
+entity_type: node
+bundle: product_tour
+label: 'Related Tutorials'
+description: '<p>Tutorials that are good follow-on learning for this Product Tour</p>'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      tutorial: tutorial
+    sort:
+      field: title
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

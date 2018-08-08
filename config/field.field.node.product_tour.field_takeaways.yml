@@ -1,16 +1,16 @@
-uuid: 6918f49d-0dc2-4a89-a818-52918a612bfc
+uuid: 5f2fe2c0-a3c0-45c9-97ae-c424e13060e0
 langcode: en
 status: true
 dependencies:
   config:
     - field.storage.node.field_takeaways
-    - node.type.tutorial
-id: node.tutorial.field_takeaways
+    - node.type.product_tour
+id: node.product_tour.field_takeaways
 field_name: field_takeaways
 entity_type: node
-bundle: tutorial
+bundle: product_tour
 label: Takeaways
-description: '<p>High-level items a user will learn or accomplish by completing this Tutorial</p>'
+description: '<p>High-level items a user will learn or accomplish by completing this Product Tour</p>'
 required: true
 translatable: true
 default_value: {  }

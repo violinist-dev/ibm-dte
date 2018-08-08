@@ -1,0 +1,22 @@
+uuid: 91714096-9f9a-4a38-8612-2c54e1d43ffe
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.product_tour
+id: node.product_tour.status
+field_name: status
+entity_type: node
+bundle: product_tour
+label: Published
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

@@ -13,7 +13,7 @@ field_name: field_task_step
 entity_type: paragraph
 bundle: tutorial_tasks
 label: Steps
-description: '<p>Each individual step a user takes to complete a task. An individual step can have multiple actions a user takes to complete the step</p>'
+description: '<p>Each individual step a user takes to complete a task. An individual step should direct a user to take some sort of clear action and optionally expand upon the details of or instructions required to complete the action</p>'
 required: true
 translatable: false
 default_value: {  }
@@ -30,5 +30,14 @@ settings:
         weight: 3
       tutorial_tasks:
         weight: 4
+        enabled: false
+      skytap_instance:
+        weight: 6
+        enabled: false
+      skytap_template:
+        weight: 7
+        enabled: false
+      walkthrough_step:
+        weight: 10
         enabled: false
 field_type: entity_reference_revisions

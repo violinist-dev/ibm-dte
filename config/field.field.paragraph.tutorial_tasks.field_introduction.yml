@@ -10,9 +10,10 @@ dependencies:
     - text
 third_party_settings:
   allowed_formats:
-    limited_html: limited_html
-    html: '0'
+    limited_plus_html: limited_plus_html
     plain_text: '0'
+    limited_html: '0'
+    html: '0'
 id: paragraph.tutorial_tasks.field_introduction
 field_name: field_introduction
 entity_type: paragraph

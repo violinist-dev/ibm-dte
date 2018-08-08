@@ -1,0 +1,43 @@
+uuid: 8f2637a3-7712-4832-bcc2-04c9bb5bf53b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_tasks
+    - node.type.product_tour
+    - paragraphs.paragraphs_type.tutorial_tasks
+  module:
+    - entity_reference_revisions
+id: node.product_tour.field_tasks
+field_name: field_tasks
+entity_type: node
+bundle: product_tour
+label: Tasks
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      tutorial_tasks: tutorial_tasks
+    target_bundles_drag_drop:
+      skytap_instance:
+        weight: 6
+        enabled: false
+      skytap_template:
+        weight: 7
+        enabled: false
+      tutorial_steps:
+        weight: 8
+        enabled: false
+      tutorial_tasks:
+        enabled: true
+        weight: 9
+      walkthrough_step:
+        weight: 10
+        enabled: false
+field_type: entity_reference_revisions

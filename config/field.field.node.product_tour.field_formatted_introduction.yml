@@ -1,0 +1,28 @@
+uuid: 6a226b3c-0ce7-4f6c-af1a-6d8bcf261be4
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_formatted_introduction
+    - node.type.product_tour
+  module:
+    - allowed_formats
+    - text
+third_party_settings:
+  allowed_formats:
+    limited_plus_html: limited_plus_html
+    plain_text: '0'
+    limited_html: '0'
+    html: '0'
+id: node.product_tour.field_formatted_introduction
+field_name: field_formatted_introduction
+entity_type: node
+bundle: product_tour
+label: Introduction
+description: '<p>An introductory paragraph to provide background information to users before they start a product tour</p>'
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

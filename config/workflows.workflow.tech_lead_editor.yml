@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - node.type.demo_instance
+    - node.type.product_tour
     - node.type.tutorial
     - node.type.video
   module:
@@ -95,5 +96,6 @@ type_settings:
   entity_types:
     node:
       - demo_instance
+      - product_tour
       - tutorial
       - video

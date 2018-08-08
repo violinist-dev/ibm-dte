@@ -1,0 +1,104 @@
+uuid: 222ba30f-6739-417e-8820-d7733ee7c8ab
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.product_tour.field_formatted_introduction
+    - field.field.node.product_tour.field_referenced_demo_instance
+    - field.field.node.product_tour.field_referenced_products
+    - field.field.node.product_tour.field_related_tutorials
+    - field.field.node.product_tour.field_short_description
+    - field.field.node.product_tour.field_summary
+    - field.field.node.product_tour.field_takeaways
+    - field.field.node.product_tour.field_tasks
+    - field.field.node.product_tour.field_weight
+    - node.type.product_tour
+  module:
+    - entity_reference_revisions
+    - text
+    - user
+id: node.product_tour.default
+targetEntityType: node
+bundle: product_tour
+mode: default
+content:
+  content_moderation_control:
+    weight: -20
+    region: content
+  field_formatted_introduction:
+    weight: 102
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_referenced_demo_instance:
+    weight: 110
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_referenced_products:
+    weight: 108
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_related_tutorials:
+    weight: 109
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_short_description:
+    weight: 103
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_summary:
+    weight: 106
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_takeaways:
+    weight: 104
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_tasks:
+    weight: 105
+    label: above
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    type: entity_reference_revisions_entity_view
+    region: content
+  field_weight:
+    weight: 107
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_integer
+    region: content
+  links:
+    weight: 100
+    region: content
+hidden:
+  langcode: true

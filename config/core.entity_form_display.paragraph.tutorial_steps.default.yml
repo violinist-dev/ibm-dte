@@ -3,8 +3,8 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.paragraph.tutorial_steps.field_formatted_title
     - field.field.paragraph.tutorial_steps.field_step
-    - field.field.paragraph.tutorial_steps.field_title
     - paragraphs.paragraphs_type.tutorial_steps
   module:
     - content_moderation
@@ -14,25 +14,25 @@ targetEntityType: paragraph
 bundle: tutorial_steps
 mode: default
 content:
+  field_formatted_title:
+    weight: 0
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textfield
+    region: content
   field_step:
-    weight: 102
+    weight: 2
     settings:
       rows: 5
       placeholder: ''
     third_party_settings: {  }
     type: text_textarea
     region: content
-  field_title:
-    weight: 101
-    settings:
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
-    type: string_textfield
-    region: content
   moderation_state:
     type: moderation_state_default
-    weight: 100
+    weight: 1
     settings: {  }
     region: content
     third_party_settings: {  }
