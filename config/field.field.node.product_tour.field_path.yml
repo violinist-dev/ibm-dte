@@ -1,0 +1,23 @@
+uuid: 7fc9da4a-d90b-456b-80fc-497f8af29134
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_path
+    - node.type.product_tour
+  module:
+    - fieldable_path
+id: node.product_tour.field_path
+field_name: field_path
+entity_type: node
+bundle: product_tour
+label: Path
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: ''
+default_value_callback: ''
+settings: {  }
+field_type: fieldable_path

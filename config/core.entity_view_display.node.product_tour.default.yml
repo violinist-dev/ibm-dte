@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - field.field.node.product_tour.field_formatted_introduction
+    - field.field.node.product_tour.field_path
     - field.field.node.product_tour.field_referenced_demo_instance
     - field.field.node.product_tour.field_referenced_products
     - field.field.node.product_tour.field_related_tutorials
@@ -15,6 +16,7 @@ dependencies:
     - node.type.product_tour
   module:
     - entity_reference_revisions
+    - fieldable_path
     - text
     - user
 id: node.product_tour.default
@@ -31,6 +33,13 @@ content:
     settings: {  }
     third_party_settings: {  }
     type: text_default
+    region: content
+  field_path:
+    weight: 111
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: fieldable_path_formatter
     region: content
   field_referenced_demo_instance:
     weight: 110
