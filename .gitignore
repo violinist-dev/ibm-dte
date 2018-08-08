@@ -10,6 +10,8 @@
 # (i remember it was working alone on older git versions)
 !/web/modules/contrib/jsonapi/
 !/web/modules/contrib/jsonapi/**
+!/web/modules/contrib/fieldable_path/
+!/web/modules/contrib/fieldable_path/**
 
 /web/themes/contrib/
 /web/profiles/contrib/
