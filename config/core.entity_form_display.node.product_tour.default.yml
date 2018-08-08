@@ -1,21 +1,19 @@
-uuid: c7b57092-1fd3-4955-8900-789769641f58
+uuid: b7a9f9cf-f425-43ef-9e55-5b9356184009
 langcode: en
 status: true
 dependencies:
   config:
-    - field.field.node.tutorial.field_campaign_code
-    - field.field.node.tutorial.field_duration
-    - field.field.node.tutorial.field_formatted_introduction
-    - field.field.node.tutorial.field_ov_code
-    - field.field.node.tutorial.field_path
-    - field.field.node.tutorial.field_referenced_demo_instance
-    - field.field.node.tutorial.field_referenced_products
-    - field.field.node.tutorial.field_short_description
-    - field.field.node.tutorial.field_summary
-    - field.field.node.tutorial.field_takeaways
-    - field.field.node.tutorial.field_tasks
-    - field.field.node.tutorial.field_weight
-    - node.type.tutorial
+    - field.field.node.product_tour.field_formatted_introduction
+    - field.field.node.product_tour.field_path
+    - field.field.node.product_tour.field_referenced_demo_instance
+    - field.field.node.product_tour.field_referenced_products
+    - field.field.node.product_tour.field_related_tutorials
+    - field.field.node.product_tour.field_short_description
+    - field.field.node.product_tour.field_summary
+    - field.field.node.product_tour.field_takeaways
+    - field.field.node.product_tour.field_tasks
+    - field.field.node.product_tour.field_weight
+    - node.type.product_tour
   module:
     - content_moderation
     - field_group
@@ -46,13 +44,13 @@ third_party_settings:
       weight: 1
       format_type: tabs
       format_settings:
+        label: 'Content Groupings'
+        direction: vertical
         id: ''
         classes: ''
-        direction: vertical
       label: 'Content Groupings'
     group_overview:
       children:
-        - field_duration
         - field_short_description
         - field_takeaways
       parent_name: group_content_groupings
@@ -71,7 +69,7 @@ third_party_settings:
         - field_tasks
         - field_summary
       parent_name: group_content_groupings
-      weight: 22
+      weight: 21
       format_type: tab
       format_settings:
         id: ''
@@ -84,6 +82,20 @@ third_party_settings:
       children:
         - field_referenced_demo_instance
         - field_referenced_products
+        - field_related_tutorials
+      parent_name: group_content_groupings
+      weight: 22
+      format_type: tab
+      format_settings:
+        id: ''
+        classes: ''
+        formatter: closed
+        description: ''
+        required_fields: true
+      label: 'Related Items'
+    group_metadata:
+      children:
+        - field_weight
       parent_name: group_content_groupings
       weight: 23
       format_type: tab
@@ -93,78 +105,22 @@ third_party_settings:
         formatter: closed
         description: ''
         required_fields: true
-      label: 'Related Items'
-    group_marketing:
-      children:
-        - field_ov_code
-        - field_campaign_code
-      parent_name: group_metadata
-      weight: 21
-      format_type: fieldset
-      format_settings:
-        id: ''
-        classes: ''
-        description: ''
-        required_fields: true
-      label: Marketing
-    group_metadata:
-      children:
-        - group_marketing
-        - field_weight
-      parent_name: group_content_groupings
-      weight: 24
-      format_type: tab
-      format_settings:
-        id: ''
-        classes: ''
-        formatter: closed
-        description: ''
-        required_fields: true
       label: Metadata
-id: node.tutorial.default
+id: node.product_tour.default
 targetEntityType: node
-bundle: tutorial
+bundle: product_tour
 mode: default
 content:
-  field_campaign_code:
-    weight: 29
-    settings:
-      size: 8
-      placeholder: 000000AB
-    third_party_settings:
-      maxlength:
-        maxlength_js: 8
-        maxlength_js_label: 'Campaign Codes are @limit characters long. Yours is <strong>@count</strong>'
-    type: string_textfield
-    region: content
-  field_duration:
-    weight: 4
-    settings:
-      placeholder: ''
-    third_party_settings: {  }
-    type: number
-    region: content
   field_formatted_introduction:
-    weight: 30
+    weight: 2
     settings:
       rows: 5
       placeholder: ''
     third_party_settings: {  }
     type: text_textarea
     region: content
-  field_ov_code:
-    weight: 28
-    settings:
-      size: 7
-      placeholder: ov12345
-    third_party_settings:
-      maxlength:
-        maxlength_js: 7
-        maxlength_js_label: 'OV Codes are @limit characters long. Yours is <strong>@count</strong>'
-    type: string_textfield
-    region: content
   field_referenced_demo_instance:
-    weight: 21
+    weight: 7
     settings:
       match_operator: CONTAINS
       size: 60
@@ -173,7 +129,16 @@ content:
     type: entity_reference_autocomplete
     region: content
   field_referenced_products:
-    weight: 22
+    weight: 8
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+    region: content
+  field_related_tutorials:
+    weight: 9
     settings:
       match_operator: CONTAINS
       size: 60
@@ -182,18 +147,15 @@ content:
     type: entity_reference_autocomplete
     region: content
   field_short_description:
-    weight: 5
+    weight: 3
     settings:
       size: 60
       placeholder: ''
-    third_party_settings:
-      maxlength:
-        maxlength_js: 180
-        maxlength_js_label: 'Content limited to @limit characters, remaining: <strong>@remaining</strong>'
+    third_party_settings: {  }
     type: string_textfield
     region: content
   field_summary:
-    weight: 32
+    weight: 4
     settings:
       rows: 5
       placeholder: ''
@@ -201,7 +163,7 @@ content:
     type: text_textarea
     region: content
   field_takeaways:
-    weight: 7
+    weight: 6
     settings:
       size: 60
       placeholder: ''
@@ -209,24 +171,25 @@ content:
     type: string_textfield
     region: content
   field_tasks:
-    type: paragraphs
-    weight: 31
+    weight: 3
     settings:
-      title: Paragraph
-      title_plural: Paragraphs
+      title: Task
+      title_plural: Tasks
       edit_mode: open
-      add_mode: dropdown
-      form_display_mode: default
-      default_paragraph_type: ''
       closed_mode: summary
       autocollapse: none
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: tutorial_tasks
       features:
         duplicate: duplicate
         collapse_edit_all: collapse_edit_all
+        add_above: '0'
     third_party_settings: {  }
+    type: paragraphs
     region: content
   field_weight:
-    weight: 22
+    weight: 5
     settings:
       placeholder: ''
     third_party_settings: {  }

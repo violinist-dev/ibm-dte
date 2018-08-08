@@ -9,9 +9,9 @@ third_party_settings:
     available_menus:
       - main
     parent: 'main:'
-name: 'Demo Instance'
+name: 'Demo Environment'
 type: demo_instance
-description: 'A demo (URX registration form, Skytap instance, or URL) that can be used stand-alone or with a Tutorial'
+description: 'A demo (URX registration form, Skytap instance, or URL) that can be used stand-alone or with support material (like a Product Tour or a Tutorial)'
 help: ''
 new_revision: true
 preview_mode: 0

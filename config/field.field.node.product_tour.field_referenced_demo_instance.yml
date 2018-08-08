@@ -1,16 +1,16 @@
-uuid: e567143e-0cf2-42f1-a515-99a19376b772
+uuid: b17345eb-bfa8-45ab-b6cf-eda80c021506
 langcode: en
 status: true
 dependencies:
   config:
     - field.storage.node.field_referenced_demo_instance
-    - node.type.tutorial
-id: node.tutorial.field_referenced_demo_instance
+    - node.type.product_tour
+id: node.product_tour.field_referenced_demo_instance
 field_name: field_referenced_demo_instance
 entity_type: node
-bundle: tutorial
+bundle: product_tour
 label: 'Referenced Demo Environment'
-description: '<p>The Demo Environment that should be used with this Tutorial</p>'
+description: '<p>The Demo Environment that should be included with this Product Tour</p>'
 required: true
 translatable: true
 default_value: {  }

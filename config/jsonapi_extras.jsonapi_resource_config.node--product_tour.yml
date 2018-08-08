@@ -1,13 +1,13 @@
-uuid: 45c3cdd7-0656-4e20-9a79-2c4dc69c1faa
+uuid: 5dfdef5c-0f70-451a-8e91-369c49980f45
 langcode: en
 status: true
 dependencies:
   config:
-    - node.type.demo_instance
-id: node--demo_instance
+    - node.type.product_tour
+id: node--product_tour
 disabled: false
-path: demo-environments
-resourceType: demo-environment
+path: product-tours
+resourceType: product-tour
 resourceFields:
   nid:
     fieldName: nid
@@ -147,21 +147,9 @@ resourceFields:
     publicName: content_translation_outdated
     enhancer:
       id: ''
-  field_benefit_introduction:
-    fieldName: field_benefit_introduction
-    publicName: benefit_introduction
-    enhancer:
-      id: ''
-    disabled: false
   field_formatted_introduction:
     fieldName: field_formatted_introduction
     publicName: introduction
-    enhancer:
-      id: ''
-    disabled: false
-  field_instance_type:
-    fieldName: field_instance_type
-    publicName: instance_type
     enhancer:
       id: ''
     disabled: false
@@ -171,9 +159,21 @@ resourceFields:
     enhancer:
       id: ''
     disabled: false
+  field_referenced_demo_instance:
+    fieldName: field_referenced_demo_instance
+    publicName: referenced_demo_environment
+    enhancer:
+      id: ''
+    disabled: false
   field_referenced_products:
     fieldName: field_referenced_products
     publicName: referenced_products
+    enhancer:
+      id: ''
+    disabled: false
+  field_related_tutorials:
+    fieldName: field_related_tutorials
+    publicName: related_tutorials
     enhancer:
       id: ''
     disabled: false
@@ -183,27 +183,27 @@ resourceFields:
     enhancer:
       id: ''
     disabled: false
-  field_skytap_instance:
-    fieldName: field_skytap_instance
-    publicName: skytap_instance
+  field_summary:
+    fieldName: field_summary
+    publicName: summary
     enhancer:
       id: ''
     disabled: false
   field_takeaways:
     fieldName: field_takeaways
-    publicName: benefits
+    publicName: takeaways
     enhancer:
       id: ''
     disabled: false
-  field_url:
-    fieldName: field_url
-    publicName: url
+  field_tasks:
+    fieldName: field_tasks
+    publicName: tasks
     enhancer:
       id: ''
     disabled: false
-  field_urx_form_id:
-    fieldName: field_urx_form_id
-    publicName: urx_form_id
+  field_weight:
+    fieldName: field_weight
+    publicName: weight
     enhancer:
       id: ''
     disabled: false

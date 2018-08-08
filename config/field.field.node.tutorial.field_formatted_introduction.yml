@@ -1,0 +1,28 @@
+uuid: cd913cfa-d4d0-4bf5-9e0c-f145e56c7a3f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_formatted_introduction
+    - node.type.tutorial
+  module:
+    - allowed_formats
+    - text
+third_party_settings:
+  allowed_formats:
+    limited_plus_html: limited_plus_html
+    plain_text: '0'
+    limited_html: '0'
+    html: '0'
+id: node.tutorial.field_formatted_introduction
+field_name: field_formatted_introduction
+entity_type: node
+bundle: tutorial
+label: Introduction
+description: '<p>An introductory paragraph to provide background information to users before they start a Tutorial. <strong>Do not include prerequisites in the Introduction or Tasks.</strong> They will be automatically generated based on the referenced Demo Environment.</p>'
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

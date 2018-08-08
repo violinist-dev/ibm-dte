@@ -10,7 +10,7 @@ field_name: field_weight
 entity_type: node
 bundle: video
 label: Weight
-description: '<p>The display weight of the video. Lower weights will be hinted to appear higher in lists, and higher weights will be hinted to appear lower in lists. Values go from <strong>-100</strong> to <strong>100</strong></p>'
+description: '<p>A hint for the display postiion of the Video. Lower weights will be hinted to appear higher in lists, and higher weights will be hinted to appear lower in lists. Values go from <strong>-100</strong> to <strong>100</strong></p>'
 required: false
 translatable: false
 default_value:

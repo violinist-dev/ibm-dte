@@ -15,7 +15,6 @@ settings:
         -
           name: Formatting
           items:
-            - Format
             - Bold
             - Italic
             - Code
@@ -32,6 +31,9 @@ settings:
           items:
             - BulletedList
             - NumberedList
+            - '-'
+            - Indent
+            - Outdent
         -
           name: Media
           items:
@@ -41,6 +43,7 @@ settings:
           name: Paste
           items:
             - PasteFromWord
+            - PasteText
         -
           name: Tools
           items:

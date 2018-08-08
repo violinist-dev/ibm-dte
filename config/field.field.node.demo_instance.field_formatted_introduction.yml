@@ -1,0 +1,28 @@
+uuid: ef0686e7-5be3-4537-9d1c-a4c49dc67e08
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_formatted_introduction
+    - node.type.demo_instance
+  module:
+    - allowed_formats
+    - text
+third_party_settings:
+  allowed_formats:
+    limited_plus_html: limited_plus_html
+    plain_text: '0'
+    limited_html: '0'
+    html: '0'
+id: node.demo_instance.field_formatted_introduction
+field_name: field_formatted_introduction
+entity_type: node
+bundle: demo_instance
+label: Introduction
+description: '<p>A generic introduction explaining value-proposition of the product or products featured in this Demo Environment in the specific configuration they exist in this demo. This is usually around 2-3 sentences in length.</p>'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

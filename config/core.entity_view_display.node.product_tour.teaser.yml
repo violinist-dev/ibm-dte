@@ -1,0 +1,22 @@
+uuid: 8ebc980e-9893-4cf9-9853-8d8f73c629a4
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - node.type.product_tour
+  module:
+    - user
+id: node.product_tour.teaser
+targetEntityType: node
+bundle: product_tour
+mode: teaser
+content:
+  content_moderation_control:
+    weight: -20
+    region: content
+  links:
+    weight: 100
+    region: content
+hidden:
+  langcode: true

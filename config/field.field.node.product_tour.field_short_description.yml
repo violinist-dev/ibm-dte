@@ -1,16 +1,16 @@
-uuid: af715794-e1b6-43a6-913b-ef0f5fbaea1e
+uuid: 49c6fda6-fbe4-4e10-8b43-63fe34c4a4ef
 langcode: en
 status: true
 dependencies:
   config:
     - field.storage.node.field_short_description
-    - node.type.tutorial
-id: node.tutorial.field_short_description
+    - node.type.product_tour
+id: node.product_tour.field_short_description
 field_name: field_short_description
 entity_type: node
-bundle: tutorial
+bundle: product_tour
 label: 'Short Description'
-description: '<p>A short description or summary of the purpose of the Tutorial. The maximum length is 180 characters</p>'
+description: '<p>A short description or summary of the purpose of the Product Tour. The maximum length is 180 characters</p>'
 required: true
 translatable: true
 default_value: {  }

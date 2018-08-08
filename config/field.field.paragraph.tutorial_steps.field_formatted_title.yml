@@ -1,0 +1,28 @@
+uuid: 6ce622b0-95e1-4441-af58-dba6d6c23d4a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_formatted_title
+    - paragraphs.paragraphs_type.tutorial_steps
+  module:
+    - allowed_formats
+    - text
+third_party_settings:
+  allowed_formats:
+    limited_html: limited_html
+    plain_text: '0'
+    limited_plus_html: '0'
+    html: '0'
+id: paragraph.tutorial_steps.field_formatted_title
+field_name: field_formatted_title
+entity_type: paragraph
+bundle: tutorial_steps
+label: Step
+description: '<p>The action you want a user to perform. This should be as short and clear as possible. Include instructions (the following field) if there are sub-actions you would like a user to perform, or if the action requires further explanation.</p>'
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text

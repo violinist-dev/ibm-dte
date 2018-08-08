@@ -1,12 +1,12 @@
-uuid: 2c5e8e3c-7e6d-4f16-9b32-676889f47f38
+uuid: a5171195-653f-4565-94fb-adaf1e51d1b6
 langcode: en
 status: true
 dependencies:
   config:
-    - filter.format.limited_html
+    - filter.format.limited_plus_html
   module:
     - ckeditor
-format: limited_html
+format: limited_plus_html
 editor: ckeditor
 settings:
   toolbar:
@@ -18,6 +18,15 @@ settings:
             - Bold
             - Italic
             - Code
+        -
+          name: Links
+          items:
+            - DrupalLink
+            - DrupalUnlink
+        -
+          name: Tools
+          items:
+            - Source
   plugins:
     stylescombo:
       styles: ''

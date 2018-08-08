@@ -1,16 +1,16 @@
-uuid: 72dc0db7-0255-4205-9d06-22bb01265f44
+uuid: a2cb4e03-fd76-49dd-ba35-114c283902d4
 langcode: en
 status: true
 dependencies:
   config:
     - field.storage.node.field_referenced_products
-    - node.type.tutorial
-id: node.tutorial.field_referenced_products
+    - node.type.product_tour
+id: node.product_tour.field_referenced_products
 field_name: field_referenced_products
 entity_type: node
-bundle: tutorial
+bundle: product_tour
 label: 'Referenced Products'
-description: '<p>Products referenced or used in this Tutorial</p>'
+description: '<p>Products referenced or used in this Product Tour</p>'
 required: true
 translatable: false
 default_value: {  }

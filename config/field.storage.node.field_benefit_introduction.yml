@@ -1,14 +1,17 @@
-uuid: a7234d75-da2b-4a3c-9a88-611b713479bf
+uuid: 3c0972da-554a-4c66-bbb3-0dbefcf31d59
 langcode: en
 status: true
 dependencies:
   module:
     - node
-id: node.field_embed_tutorial_with_demo
-field_name: field_embed_tutorial_with_demo
+id: node.field_benefit_introduction
+field_name: field_benefit_introduction
 entity_type: node
-type: boolean
-settings: {  }
+type: string
+settings:
+  max_length: 255
+  is_ascii: false
+  case_sensitive: false
 module: core
 locked: false
 cardinality: 1

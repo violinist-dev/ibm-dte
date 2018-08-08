@@ -1,0 +1,16 @@
+uuid: 271c727c-eb52-4125-bb16-63a132156e86
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.product_tour
+  module:
+    - content_translation
+third_party_settings:
+  content_translation:
+    enabled: true
+id: node.product_tour
+target_entity_type_id: node
+target_bundle: product_tour
+default_langcode: site_default
+language_alterable: true

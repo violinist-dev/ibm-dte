@@ -1,16 +1,16 @@
-uuid: 31dbf0af-7f60-4e3d-ad2c-be789bcaa0f1
+uuid: b9352bf5-b0d9-4c0b-a22a-d329c5d3e1ba
 langcode: en
 status: true
 dependencies:
   module:
     - node
-id: node.field_introduction
-field_name: field_introduction
+    - text
+id: node.field_formatted_introduction
+field_name: field_formatted_introduction
 entity_type: node
-type: string_long
-settings:
-  case_sensitive: false
-module: core
+type: text_long
+settings: {  }
+module: text
 locked: false
 cardinality: 1
 translatable: true

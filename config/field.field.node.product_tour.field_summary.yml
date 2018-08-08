@@ -1,0 +1,28 @@
+uuid: 8b9e05eb-7653-4f5a-997c-d538d2ebbe6c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_summary
+    - node.type.product_tour
+  module:
+    - allowed_formats
+    - text
+third_party_settings:
+  allowed_formats:
+    limited_plus_html: limited_plus_html
+    plain_text: '0'
+    limited_html: '0'
+    html: '0'
+id: node.product_tour.field_summary
+field_name: field_summary
+entity_type: node
+bundle: product_tour
+label: Summary
+description: '<p>A short overview of what the user has completed after going through the whole Product Tour. Follow-up information and links, like tutorials a user should explore or the product pages for the referenced products <strong>should not be included here</strong> as they will be automatically discovered based on the structured information already present</p>'
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long
