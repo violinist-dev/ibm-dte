@@ -146,6 +146,17 @@ class Routes implements ContainerInjectionInterface {
     $collection_route->setRequirement('_csrf_request_header_token', 'TRUE');
     $routes->add(static::getRouteName($resource_type, 'collection'), $collection_route);
 
+    if ($entity_type = $resource_type->getEntityType()) {
+      if ($entity_type->isRevisionable()) {
+        $collection_route = new Route('/' . $resource_type->getPath() . '/revisions/{revision_id}');
+        $collection_route->setMethods(['GET']);
+        $collection_route->addDefaults(['serialization_class' => JsonApiDocumentTopLevel::class]);
+        $collection_route->setRequirement('revision_id', 'current|latest');
+        $collection_route->setRequirement('_csrf_request_header_token', 'TRUE');
+        $routes->add(static::getRouteName($resource_type, 'revision_collection'), $collection_route);
+      }
+    }
+
     // Individual routes like `/jsonapi/node/article/{uuid}` or
     // `/jsonapi/node/article/{uuid}/relationships/uid`.
     $routes->addCollection(static::getIndividualRoutesForResourceType($resource_type));

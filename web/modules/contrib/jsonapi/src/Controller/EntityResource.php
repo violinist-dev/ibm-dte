@@ -147,7 +147,7 @@ class EntityResource {
    * @return \Drupal\jsonapi\ResourceResponse
    *   The response.
    */
-  public function getRevision(EntityInterface $entity, $revision_id, Request $request, $response_code = 200) {
+  public function getRevision(EntityInterface $entity, Request $request, $response_code = 200) {
     $storage = $this->entityTypeManager->getStorage($this->resourceType->getEntityTypeId());
 
     if ($revision_id === 'latest') {
@@ -379,12 +379,18 @@ class EntityResource {
    * @throws \Drupal\Component\Plugin\Exception\InvalidPluginDefinitionException
    */
   public function getCollection(Request $request) {
+    $revision_id = $request->get('revision_id');
+
     // Instantiate the query for the filtering.
     $entity_type_id = $this->resourceType->getEntityTypeId();
 
     $route_params = $request->attributes->get('_route_params');
     $params = isset($route_params['_json_api_params']) ? $route_params['_json_api_params'] : [];
     $query = $this->getCollectionQuery($entity_type_id, $params);
+
+    if ($revision_id === 'latest') {
+      $query->latestRevision();
+    }
 
     try {
       $results = $query->execute();
