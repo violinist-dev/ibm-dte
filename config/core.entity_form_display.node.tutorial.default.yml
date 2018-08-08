@@ -5,22 +5,22 @@ dependencies:
   config:
     - field.field.node.tutorial.field_campaign_code
     - field.field.node.tutorial.field_duration
-    - field.field.node.tutorial.field_embed_tutorial_with_demo
-    - field.field.node.tutorial.field_introduction
+    - field.field.node.tutorial.field_formatted_introduction
     - field.field.node.tutorial.field_ov_code
     - field.field.node.tutorial.field_path
     - field.field.node.tutorial.field_referenced_demo_instance
     - field.field.node.tutorial.field_referenced_products
-    - field.field.node.tutorial.field_referenced_runtimes
     - field.field.node.tutorial.field_short_description
+    - field.field.node.tutorial.field_summary
     - field.field.node.tutorial.field_takeaways
     - field.field.node.tutorial.field_tasks
+    - field.field.node.tutorial.field_weight
     - node.type.tutorial
   module:
-    - conditional_fields
     - content_moderation
     - field_group
     - paragraphs
+    - text
 third_party_settings:
   field_group:
     group_title_and_language:
@@ -41,7 +41,7 @@ third_party_settings:
         - group_overview
         - group_main_content
         - group_related_items
-        - group_marketing
+        - group_metadata
       parent_name: ''
       weight: 1
       format_type: tabs
@@ -67,10 +67,11 @@ third_party_settings:
       label: Overview
     group_main_content:
       children:
-        - field_introduction
+        - field_formatted_introduction
         - field_tasks
+        - field_summary
       parent_name: group_content_groupings
-      weight: 21
+      weight: 22
       format_type: tab
       format_settings:
         id: ''
@@ -81,11 +82,10 @@ third_party_settings:
       label: 'Main Content'
     group_related_items:
       children:
-        - group_referenced_demo
+        - field_referenced_demo_instance
         - field_referenced_products
-        - field_referenced_runtimes
       parent_name: group_content_groupings
-      weight: 22
+      weight: 23
       format_type: tab
       format_settings:
         id: ''
@@ -98,8 +98,21 @@ third_party_settings:
       children:
         - field_ov_code
         - field_campaign_code
+      parent_name: group_metadata
+      weight: 21
+      format_type: fieldset
+      format_settings:
+        id: ''
+        classes: ''
+        description: ''
+        required_fields: true
+      label: Marketing
+    group_metadata:
+      children:
+        - group_marketing
+        - field_weight
       parent_name: group_content_groupings
-      weight: 23
+      weight: 24
       format_type: tab
       format_settings:
         id: ''
@@ -107,20 +120,7 @@ third_party_settings:
         formatter: closed
         description: ''
         required_fields: true
-      label: Marketing
-    group_referenced_demo:
-      children:
-        - field_referenced_demo_instance
-        - field_embed_tutorial_with_demo
-      parent_name: group_related_items
-      weight: 20
-      format_type: fieldset
-      format_settings:
-        id: ''
-        classes: ''
-        description: ''
-        required_fields: true
-      label: 'Referenced Demo'
+      label: Metadata
 id: node.tutorial.default
 targetEntityType: node
 bundle: tutorial
@@ -144,21 +144,13 @@ content:
     third_party_settings: {  }
     type: number
     region: content
-  field_embed_tutorial_with_demo:
-    weight: 22
-    settings:
-      display_label: true
-    third_party_settings:
-      conditional_fields: {  }
-    type: boolean_checkbox
-    region: content
-  field_introduction:
-    weight: 6
+  field_formatted_introduction:
+    weight: 30
     settings:
       rows: 5
       placeholder: ''
     third_party_settings: {  }
-    type: string_textarea
+    type: text_textarea
     region: content
   field_ov_code:
     weight: 28
@@ -181,16 +173,7 @@ content:
     type: entity_reference_autocomplete
     region: content
   field_referenced_products:
-    weight: 23
-    settings:
-      match_operator: CONTAINS
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
-    type: entity_reference_autocomplete
-    region: content
-  field_referenced_runtimes:
-    weight: 24
+    weight: 22
     settings:
       match_operator: CONTAINS
       size: 60
@@ -209,6 +192,14 @@ content:
         maxlength_js_label: 'Content limited to @limit characters, remaining: <strong>@remaining</strong>'
     type: string_textfield
     region: content
+  field_summary:
+    weight: 32
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textarea
+    region: content
   field_takeaways:
     weight: 7
     settings:
@@ -219,7 +210,7 @@ content:
     region: content
   field_tasks:
     type: paragraphs
-    weight: 7
+    weight: 31
     settings:
       title: Paragraph
       title_plural: Paragraphs
@@ -229,7 +220,17 @@ content:
       default_paragraph_type: ''
       closed_mode: summary
       autocollapse: none
+      features:
+        duplicate: duplicate
+        collapse_edit_all: collapse_edit_all
     third_party_settings: {  }
+    region: content
+  field_weight:
+    weight: 22
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
     region: content
   langcode:
     type: language_select

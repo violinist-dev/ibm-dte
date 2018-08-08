@@ -1,0 +1,25 @@
+uuid: 557b70e3-d845-49c5-b1c7-32365ceb754c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_weight
+    - node.type.tutorial
+id: node.tutorial.field_weight
+field_name: field_weight
+entity_type: node
+bundle: tutorial
+label: Weight
+description: '<p>A hint for the display position of a Tutorial. Lower weights will be hinted to appear higher in lists, and higher weights will be hinted to appear lower in lists. Values go from <strong>-100</strong> to <strong>100</strong></p>'
+required: false
+translatable: true
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  min: -100
+  max: 100
+  prefix: ''
+  suffix: ''
+field_type: integer

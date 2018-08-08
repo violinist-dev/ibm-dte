@@ -1,0 +1,28 @@
+uuid: 36217de4-9025-46fd-b64c-6c5da35d0c1d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_summary
+    - node.type.tutorial
+  module:
+    - allowed_formats
+    - text
+third_party_settings:
+  allowed_formats:
+    limited_plus_html: limited_plus_html
+    plain_text: '0'
+    limited_html: '0'
+    html: '0'
+id: node.tutorial.field_summary
+field_name: field_summary
+entity_type: node
+bundle: tutorial
+label: Summary
+description: '<p>A short overview of what the user has completed after going through the whole Tutorial. Follow-up information and links, like product pages for the referenced products <strong>should not be included here</strong> as they will be automatically discovered based on the structured information already present</p>'
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

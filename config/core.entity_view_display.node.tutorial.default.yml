@@ -5,20 +5,21 @@ dependencies:
   config:
     - field.field.node.tutorial.field_campaign_code
     - field.field.node.tutorial.field_duration
-    - field.field.node.tutorial.field_embed_tutorial_with_demo
-    - field.field.node.tutorial.field_introduction
+    - field.field.node.tutorial.field_formatted_introduction
     - field.field.node.tutorial.field_ov_code
     - field.field.node.tutorial.field_path
     - field.field.node.tutorial.field_referenced_demo_instance
     - field.field.node.tutorial.field_referenced_products
-    - field.field.node.tutorial.field_referenced_runtimes
     - field.field.node.tutorial.field_short_description
+    - field.field.node.tutorial.field_summary
     - field.field.node.tutorial.field_takeaways
     - field.field.node.tutorial.field_tasks
+    - field.field.node.tutorial.field_weight
     - node.type.tutorial
   module:
     - entity_reference_revisions
     - fieldable_path
+    - text
     - user
 id: node.tutorial.default
 targetEntityType: node
@@ -47,22 +48,12 @@ content:
     third_party_settings: {  }
     type: number_integer
     region: content
-  field_embed_tutorial_with_demo:
-    weight: 115
-    label: above
-    settings:
-      format: default
-      format_custom_false: ''
-      format_custom_true: ''
-    third_party_settings: {  }
-    type: boolean
-    region: content
-  field_introduction:
-    weight: 103
+  field_formatted_introduction:
+    weight: 116
     label: above
     settings: {  }
     third_party_settings: {  }
-    type: basic_string
+    type: text_default
     region: content
   field_ov_code:
     weight: 111
@@ -95,14 +86,6 @@ content:
     third_party_settings: {  }
     type: entity_reference_label
     region: content
-  field_referenced_runtimes:
-    weight: 107
-    label: above
-    settings:
-      link: true
-    third_party_settings: {  }
-    type: entity_reference_label
-    region: content
   field_short_description:
     weight: 104
     label: above
@@ -110,6 +93,13 @@ content:
       link_to_entity: false
     third_party_settings: {  }
     type: string
+    region: content
+  field_summary:
+    weight: 117
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
     region: content
   field_takeaways:
     weight: 105
@@ -127,6 +117,15 @@ content:
       view_mode: default
       link: ''
     third_party_settings: {  }
+    region: content
+  field_weight:
+    weight: 115
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_integer
     region: content
   links:
     weight: 100
