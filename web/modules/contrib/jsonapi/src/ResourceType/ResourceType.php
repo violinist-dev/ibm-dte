@@ -2,6 +2,8 @@
 
 namespace Drupal\jsonapi\ResourceType;
 
+use Drupal\Core\Entity\EntityTypeInterface;
+
 /**
  * Value object containing all metadata for a JSON API resource type.
  *
@@ -66,6 +68,16 @@ class ResourceType {
    */
   public function getEntityTypeId() {
     return $this->entityTypeId;
+  }
+
+  /**
+   * Gets the entity type.
+   *
+   * @return \Drupal\Core\Entity\EntityTypeInterface
+   *   The entity type.
+   */
+  public function getEntityType() {
+    return $this->entityType;
   }
 
   /**
@@ -202,17 +214,18 @@ class ResourceType {
    *   An entity type ID.
    * @param string $bundle
    *   A bundle.
-   * @param string $deserialization_target_class
-   *   The deserialization target class.
+   * @param \Drupal\Core\Entity\EntityTypeInterface $entity_type
+   *   The entity type.
    * @param bool $internal
    *   (optional) Whether the resource type should be internal.
    * @param bool $is_locatable
    *   (optional) Whether the resource type is locatable.
    */
-  public function __construct($entity_type_id, $bundle, $deserialization_target_class, $internal = FALSE, $is_locatable = TRUE) {
+  public function __construct($entity_type_id, $bundle, EntityTypeInterface $entity_type, $internal = FALSE, $is_locatable = TRUE) {
     $this->entityTypeId = $entity_type_id;
     $this->bundle = $bundle;
-    $this->deserializationTargetClass = $deserialization_target_class;
+    $this->deserializationTargetClass = $entity_type->getClass();
+    $this->entityType = $entity_type;
     $this->internal = $internal;
     $this->isLocatable = $is_locatable;
 

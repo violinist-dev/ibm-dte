@@ -133,6 +133,45 @@ class EntityResource {
   }
 
   /**
+   * Gets an individual entity revision.
+   *
+   * @param \Drupal\Core\Entity\EntityInterface $entity
+   *   The loaded entity.
+   * @param int|string $revision_id
+   *   The revision id or one of 'current' or 'latest'.
+   * @param \Symfony\Component\HttpFoundation\Request $request
+   *   The request object.
+   * @param int $response_code
+   *   The response code. Defaults to 200.
+   *
+   * @return \Drupal\jsonapi\ResourceResponse
+   *   The response.
+   */
+  public function getRevision(EntityInterface $entity, $revision_id, Request $request, $response_code = 200) {
+    $storage = $this->entityTypeManager->getStorage($this->resourceType->getEntityTypeId());
+
+    if ($revision_id === 'latest') {
+      if ($revision_id = $storage->getLatestRevisionId($entity->id())) {
+        $entity = $storage->loadRevision($revision_id);
+      }
+    }
+    elseif (is_numeric($revision_id) && $entity->getLoadedRevisionId() != $revision_id) {
+      $revision = $storage->loadRevision($revision_id);
+      $entity = $revision ?: $entity;
+    }
+
+    $entity_access = $entity->access('view', NULL, TRUE);
+    if (!$entity_access->isAllowed()) {
+      throw new EntityAccessDeniedHttpException($entity, $entity_access, '/data', 'The current user is not allowed to GET the selected resource.');
+    }
+
+    // Fall through to the current revision.
+    $response = $this->buildWrappedResponse($entity, $response_code);
+    $response->addCacheableDependency($entity_access);
+    return $response;
+  }
+
+  /**
    * Verifies that the whole entity does not violate any validation constraints.
    *
    * @param \Drupal\Core\Entity\EntityInterface $entity

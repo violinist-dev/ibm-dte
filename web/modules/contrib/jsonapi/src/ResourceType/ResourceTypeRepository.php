@@ -102,7 +102,7 @@ class ResourceTypeRepository implements ResourceTypeRepositoryInterface {
           return new $resource_type_class(
             $entity_type_id,
             $bundle,
-            $entity_type->getClass(),
+            $entity_type,
             static::shouldBeInternalResourceType($entity_type),
             static::isLocatableResourceType($entity_type)
           );

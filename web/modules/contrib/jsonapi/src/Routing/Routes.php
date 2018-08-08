@@ -66,6 +66,13 @@ class Routes implements ContainerInjectionInterface {
   protected $jsonApiBasePath;
 
   /**
+   * The entity type manager.
+   *
+   * @var \Drupal\Core\Entity\EntityTypeManagerInterface
+   */
+  protected $entityTypeManager;
+
+  /**
    * Instantiates a Routes object.
    *
    * @param \Drupal\jsonapi\ResourceType\ResourceTypeRepositoryInterface $resource_type_repository
@@ -182,6 +189,17 @@ class Routes implements ContainerInjectionInterface {
     $individual_route->addDefaults(['serialization_class' => JsonApiDocumentTopLevel::class]);
     $individual_route->setRequirement('_csrf_request_header_token', 'TRUE');
     $routes->add(static::getRouteName($resource_type, 'individual'), $individual_route);
+
+    // Add route for loading revision.
+    if ($entity_type = $resource_type->getEntityType()) {
+      if ($entity_type->isRevisionable()) {
+        $revision_route = new Route("/{$path}/{{$entity_type_id}}/revisions/{revision_id}");
+        $revision_route->setMethods(['GET']);
+        $revision_route->addDefaults(['serialization_class' => JsonApiDocumentTopLevel::class]);
+        $revision_route->setRequirement('_csrf_request_header_token', 'TRUE');
+        $routes->add(static::getRouteName($resource_type, 'revision'), $revision_route);
+      }
+    }
 
     // Get an individual resource's related resources.
     $related_route = new Route("/{$path}/{{$entity_type_id}}/{related}");

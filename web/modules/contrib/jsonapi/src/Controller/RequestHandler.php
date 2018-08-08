@@ -116,6 +116,10 @@ class RequestHandler {
       $parameters['related'] = $related;
     }
 
+    if ($revision_id = $request->get('revision_id')) {
+      $parameters['revision_id'] = $revision_id;
+    }
+
     // Invoke the operation on the resource plugin.
     $action = $this->action($request, $resource_type);
     $resource = $this->resourceFactory($resource_type);
@@ -209,6 +213,9 @@ class RequestHandler {
         }
         elseif ($request->get('related')) {
           return 'getRelated';
+        }
+        elseif ($request->get('revision_id')) {
+          return 'getRevision';
         }
         return $request->get($resource_type->getEntityTypeId()) ? 'getIndividual' : 'getCollection';
 
