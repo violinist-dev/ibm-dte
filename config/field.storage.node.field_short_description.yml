@@ -9,7 +9,7 @@ field_name: field_short_description
 entity_type: node
 type: string
 settings:
-  max_length: 180
+  max_length: 254
   is_ascii: false
   case_sensitive: false
 module: core

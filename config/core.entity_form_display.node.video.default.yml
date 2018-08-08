@@ -95,11 +95,11 @@ content:
   field_short_description:
     weight: 6
     settings:
-      size: 60
+      size: 254
       placeholder: ''
     third_party_settings:
       maxlength:
-        maxlength_js: 180
+        maxlength_js: 254
         maxlength_js_label: 'Content limited to @limit characters, remaining: <strong>@remaining</strong>'
     type: string_textfield
     region: content

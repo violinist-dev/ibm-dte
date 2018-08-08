@@ -10,7 +10,7 @@ field_name: field_short_description
 entity_type: node
 bundle: video
 label: 'Short Description'
-description: ''
+description: '<p>A short description or summary of the purpose of the Video. The maximum length is 254 characters, allowing a full short description to be written while working within the maximum character count of a Tweet with a link.</p>'
 required: true
 translatable: true
 default_value: {  }
