@@ -113,7 +113,7 @@ resourceFields:
       id: ''
   field_formatted_title:
     fieldName: field_formatted_title
-    publicName: action
+    publicName: step
     enhancer:
       id: ''
     disabled: false
