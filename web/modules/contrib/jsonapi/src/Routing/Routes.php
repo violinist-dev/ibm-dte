@@ -3,6 +3,7 @@
 namespace Drupal\jsonapi\Routing;
 
 use Drupal\Core\DependencyInjection\ContainerInjectionInterface;
+use Drupal\Core\Entity\EntityTypeInterface;
 use Drupal\Core\Field\EntityReferenceFieldItemList;
 use Drupal\jsonapi\Controller\EntryPoint;
 use Drupal\jsonapi\Controller\EntityResource;
@@ -14,6 +15,7 @@ use Symfony\Cmf\Component\Routing\RouteObjectInterface;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 use Symfony\Component\Routing\Route;
 use Symfony\Component\Routing\RouteCollection;
+use Drupal\Core\Entity\EntityTypeManagerInterface;
 
 /**
  * Defines dynamic routes.
@@ -82,11 +84,14 @@ class Routes implements ContainerInjectionInterface {
    *   The authentication providers, keyed by ID.
    * @param string $jsonapi_base_path
    *   The JSON API base path.
+   * @param \Drupal\Core\Entity\EntityTypeManagerInterface $entity_type_manager
+   *   The entity type manager.
    */
-  public function __construct(ResourceTypeRepositoryInterface $resource_type_repository, array $authentication_providers, $jsonapi_base_path) {
+  public function __construct(ResourceTypeRepositoryInterface $resource_type_repository, array $authentication_providers, $jsonapi_base_path, EntityTypeManagerInterface $entity_type_manager) {
     $this->resourceTypeRepository = $resource_type_repository;
     $this->providerIds = array_keys($authentication_providers);
     $this->jsonApiBasePath = $jsonapi_base_path;
+    $this->entityTypeManager = $entity_type_manager;
   }
 
   /**
@@ -96,7 +101,8 @@ class Routes implements ContainerInjectionInterface {
     return new static(
       $container->get('jsonapi.resource_type.repository'),
       $container->getParameter('authentication_providers'),
-      $container->getParameter('jsonapi.base_path')
+      $container->getParameter('jsonapi.base_path'),
+      $container->get('entity_type.manager')
     );
   }
 
@@ -108,7 +114,8 @@ class Routes implements ContainerInjectionInterface {
 
     // JSON API's routes: entry point + routes for every resource type.
     foreach ($this->resourceTypeRepository->all() as $resource_type) {
-      $routes->addCollection(static::getRoutesForResourceType($resource_type, $this->jsonApiBasePath));
+      $entity_type = $this->entityTypeManager->getDefinition($resource_type->getEntityTypeId());
+      $routes->addCollection(static::getRoutesForResourceType($resource_type, $this->jsonApiBasePath, $entity_type));
     }
     $routes->add('jsonapi.resource_list', static::getEntryPointRoute($this->jsonApiBasePath));
 
@@ -128,11 +135,13 @@ class Routes implements ContainerInjectionInterface {
    *   The JSON API resource type for which to get the routes.
    * @param string $path_prefix
    *   The root path prefix.
+   * @param \Drupal\Core\Entity\EntityTypeInterface $entity_type
+   *   The etity type.
    *
    * @return \Symfony\Component\Routing\RouteCollection
    *   A collection of routes for the given resource type.
    */
-  protected static function getRoutesForResourceType(ResourceType $resource_type, $path_prefix) {
+  protected static function getRoutesForResourceType(ResourceType $resource_type, $path_prefix, EntityTypeInterface $entity_type) {
     // Internal resources have no routes.
     if ($resource_type->isInternal()) {
       return new RouteCollection();
@@ -147,25 +156,21 @@ class Routes implements ContainerInjectionInterface {
     $collection_route->setRequirement('_csrf_request_header_token', 'TRUE');
     $routes->add(static::getRouteName($resource_type, 'collection'), $collection_route);
 
-    if ($entity_type = \Drupal::service('entity_type.manager')
-      ->getDefinition($resource_type->getEntityTypeId())) {
-
-        if ($entity_type->isRevisionable()) {
-        $collection_route = new Route('/' . $resource_type->getPath() . '/revisions/{revision_id}');
-        $collection_route->setMethods(['GET']);
-        $collection_route->addDefaults(['serialization_class' => JsonApiDocumentTopLevel::class]);
-        $collection_route->setRequirement('revision_id', implode('|', [
-          EntityResource::CURRENT,
-          EntityResource::LATEST,
-        ]));
-        $collection_route->setRequirement('_csrf_request_header_token', 'TRUE');
-        $routes->add(static::getRouteName($resource_type, 'revision_collection'), $collection_route);
-      }
+    if ($entity_type->isRevisionable()) {
+      $collection_route = new Route('/' . $resource_type->getPath() . '/revisions/{revision_id}');
+      $collection_route->setMethods(['GET']);
+      $collection_route->addDefaults(['serialization_class' => JsonApiDocumentTopLevel::class]);
+      $collection_route->setRequirement('revision_id', implode('|', [
+        EntityResource::CURRENT,
+        EntityResource::LATEST,
+      ]));
+      $collection_route->setRequirement('_csrf_request_header_token', 'TRUE');
+      $routes->add(static::getRouteName($resource_type, 'revision_collection'), $collection_route);
     }
 
     // Individual routes like `/jsonapi/node/article/{uuid}` or
     // `/jsonapi/node/article/{uuid}/relationships/uid`.
-    $routes->addCollection(static::getIndividualRoutesForResourceType($resource_type));
+    $routes->addCollection(static::getIndividualRoutesForResourceType($resource_type, $entity_type));
 
     // Add the resource type as a parameter to every resource route.
     foreach ($routes as $route) {
@@ -186,11 +191,13 @@ class Routes implements ContainerInjectionInterface {
    *
    * @param \Drupal\jsonapi\ResourceType\ResourceType $resource_type
    *   The resource type for which the route collection should be created.
+   * @param \Drupal\Core\Entity\EntityTypeInterface $entity_type
+   *   The etity type.
    *
    * @return \Symfony\Component\Routing\RouteCollection
    *   The route collection.
    */
-  protected static function getIndividualRoutesForResourceType(ResourceType $resource_type) {
+  protected static function getIndividualRoutesForResourceType(ResourceType $resource_type, EntityTypeInterface $entity_type) {
     if (!$resource_type->isLocatable()) {
       return new RouteCollection();
     }
@@ -208,17 +215,13 @@ class Routes implements ContainerInjectionInterface {
     $routes->add(static::getRouteName($resource_type, 'individual'), $individual_route);
 
     // Add route for loading revision.
-    if ($entity_type = \Drupal::service('entity_type.manager')
-      ->getDefinition($resource_type->getEntityTypeId())) {
-
-      if ($entity_type->isRevisionable()) {
-        $revision_route = new Route("/{$path}/{{$entity_type_id}}/revisions/{revision_id}");
-        $revision_route->setMethods(['GET']);
-        $revision_route->addDefaults(['serialization_class' => JsonApiDocumentTopLevel::class]);
-        $revision_route->addDefaults(['revision_id' => EntityResource::CURRENT]);
-        $revision_route->setRequirement('_csrf_request_header_token', 'TRUE');
-        $routes->add(static::getRouteName($resource_type, 'revision'), $revision_route);
-      }
+    if ($entity_type->isRevisionable()) {
+      $revision_route = new Route("/{$path}/{{$entity_type_id}}/revisions/{revision_id}");
+      $revision_route->setMethods(['GET']);
+      $revision_route->addDefaults(['serialization_class' => JsonApiDocumentTopLevel::class]);
+      $revision_route->addDefaults(['revision_id' => EntityResource::CURRENT]);
+      $revision_route->setRequirement('_csrf_request_header_token', 'TRUE');
+      $routes->add(static::getRouteName($resource_type, 'revision'), $revision_route);
     }
 
     // Get an individual resource's related resources.
