@@ -1028,7 +1028,7 @@ display:
           tokenize: false
           content:
             value: '<h3>Your content in moderation</h3>'
-            format: html
+            format: full_tml
           plugin_id: text
       filters:
         uid_current:
