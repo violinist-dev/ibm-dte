@@ -169,6 +169,9 @@ services:
       - [setSchemaFactory, ['@?schemata.schema_factory']] # This is only injected when the service is available.
     tags:
       - { name: event_subscriber, priority: 1000 }
+  plugin.manager.revision_id:
+    class: Drupal\jsonapi\Revisions\RevisionIdManager
+    parent: default_plugin_manager
 
   # Deprecated services.
   serializer.normalizer.htt_exception.jsonapi:
