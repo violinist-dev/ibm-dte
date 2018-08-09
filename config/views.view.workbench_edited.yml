@@ -802,7 +802,7 @@ display:
           tokenize: false
           content:
             value: '<h3>Your most recent edits</h3>'
-            format: html
+            format: full_tml
           plugin_id: text
       filters:
         uid_current:
@@ -958,7 +958,7 @@ display:
           tokenize: false
           content:
             value: '<h3>Your most recent drafts</h3>'
-            format: html
+            format: full_tml
           plugin_id: text
       filters:
         uid_current:
@@ -1563,7 +1563,7 @@ display:
           tokenize: false
           content:
             value: '<h3>Your most recent published content</h3>'
-            format: html
+            format: full_tml
           plugin_id: text
       filters:
         uid_current:

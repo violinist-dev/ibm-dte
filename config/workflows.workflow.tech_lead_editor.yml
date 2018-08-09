@@ -10,7 +10,7 @@ dependencies:
   module:
     - content_moderation
 id: tech_lead_editor
-label: Tech/Lead/Editor
+label: 'Tier 1 Review'
 type: content_moderation
 type_settings:
   states:
@@ -19,11 +19,6 @@ type_settings:
       default_revision: true
       label: Archived
       weight: 0
-    content_lead_review:
-      published: false
-      default_revision: false
-      label: 'Content Lead Review'
-      weight: -8
     draft:
       label: Draft
       published: false
@@ -50,13 +45,12 @@ type_settings:
       from:
         - published
       to: archived
-      weight: 0
+      weight: 1
     create_new_draft:
       label: 'Send To Draft'
       to: draft
-      weight: -10
+      weight: -3
       from:
-        - content_lead_review
         - draft
         - editorial_review
         - published
@@ -64,7 +58,7 @@ type_settings:
     publish:
       label: Publish
       to: published
-      weight: -6
+      weight: 0
       from:
         - editorial_review
     restore_to_draft:
@@ -72,27 +66,20 @@ type_settings:
       from:
         - archived
       to: draft
-      weight: 1
-    send_to_content_lead:
-      label: 'Send to Content Lead'
+      weight: 2
+    send_to_editorial_review:
+      label: 'Send to Editorial Review'
       from:
-        - editorial_review
         - technical_review
-      to: content_lead_review
-      weight: -8
-    send_to_editor:
-      label: 'Send to Editor'
-      from:
-        - content_lead_review
       to: editorial_review
-      weight: -7
+      weight: -1
     send_to_technical_review:
       label: 'Send to Technical Review'
       from:
-        - content_lead_review
         - draft
+        - editorial_review
       to: technical_review
-      weight: -9
+      weight: -2
   entity_types:
     node:
       - demo_instance

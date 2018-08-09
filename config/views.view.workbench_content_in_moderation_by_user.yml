@@ -417,7 +417,7 @@ display:
           relationship: vid
           group_type: group
           admin_label: ''
-          label: 'Moderation state'
+          label: 'Review state'
           exclude: true
           alter:
             alter_text: false
@@ -833,7 +833,7 @@ display:
           empty: true
           tokenize: false
           content:
-            value: '<p>You don''t have any content in moderation. <a href="/admin/workbench/create"><strong>Go make some</strong></a>.</p>'
+            value: '<p>You don''t have any content in review. <a href="/admin/workbench/create"><strong>Go make some</strong></a>.</p>'
             format: html
           plugin_id: text
       relationships:
@@ -1027,8 +1027,8 @@ display:
           empty: true
           tokenize: false
           content:
-            value: '<h3>Your content in moderation</h3>'
-            format: html
+            value: '<h3>Your content in review</h3>'
+            format: full_tml
           plugin_id: text
       filters:
         uid_current:
