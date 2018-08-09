@@ -123,12 +123,37 @@ class EntityResource {
    *   The response.
    */
   public function getIndividual(EntityInterface $entity, Request $request, $response_code = 200) {
+
+    if ($resource_version = $request->get('resource_version')) {
+      list($plugin_id, $revision_id_value) = explode(':', $resource_version);
+      if ($plugin = \Drupal::service('plugin.manager.revision_id')
+        ->createInstance($plugin_id)) {
+
+        if ($revision_id = $plugin->getRevisionId($entity, $revision_id_value)) {
+          if ($storage = $this->entityTypeManager->getStorage($this->resourceType->getEntityTypeId())) {
+            if ($revision = $storage->loadRevision($revision_id)) {
+              $entity = $revision;
+            }
+          }
+        }
+      }
+    }
+
     $entity_access = $entity->access('view', NULL, TRUE);
+
     if (!$entity_access->isAllowed()) {
       throw new EntityAccessDeniedHttpException($entity, $entity_access, '/data', 'The current user is not allowed to GET the selected resource.');
     }
     $response = $this->buildWrappedResponse($entity, $response_code);
     $response->addCacheableDependency($entity_access);
+
+    if (!empty($resource_version)) {
+      $response
+        ->getCacheableMetadata()
+        ->addCacheContexts([
+          'url.query_args:current_version',
+        ]);
+    }
     return $response;
   }
 
