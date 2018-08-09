@@ -147,8 +147,10 @@ class Routes implements ContainerInjectionInterface {
     $collection_route->setRequirement('_csrf_request_header_token', 'TRUE');
     $routes->add(static::getRouteName($resource_type, 'collection'), $collection_route);
 
-    if ($entity_type = $resource_type->getEntityType()) {
-      if ($entity_type->isRevisionable()) {
+    if ($entity_type = \Drupal::service('entity_type.manager')
+      ->getDefinition($resource_type->getEntityTypeId())) {
+
+        if ($entity_type->isRevisionable()) {
         $collection_route = new Route('/' . $resource_type->getPath() . '/revisions/{revision_id}');
         $collection_route->setMethods(['GET']);
         $collection_route->addDefaults(['serialization_class' => JsonApiDocumentTopLevel::class]);
@@ -206,7 +208,9 @@ class Routes implements ContainerInjectionInterface {
     $routes->add(static::getRouteName($resource_type, 'individual'), $individual_route);
 
     // Add route for loading revision.
-    if ($entity_type = $resource_type->getEntityType()) {
+    if ($entity_type = \Drupal::service('entity_type.manager')
+      ->getDefinition($resource_type->getEntityTypeId())) {
+
       if ($entity_type->isRevisionable()) {
         $revision_route = new Route("/{$path}/{{$entity_type_id}}/revisions/{revision_id}");
         $revision_route->setMethods(['GET']);
