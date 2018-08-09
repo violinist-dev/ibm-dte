@@ -85,6 +85,20 @@ class EntityResource {
   protected $resourceTypeRepository;
 
   /**
+   * Revision ID value representing the latest revsion.
+   *
+   * @var string
+   */
+  const LATEST = 'latest';
+
+  /**
+   * Revision ID value representing the current revsion.
+   *
+   * @var string
+   */
+  const CURRENT = 'current';
+
+  /**
    * Instantiates a EntityResource object.
    *
    * @param \Drupal\jsonapi\ResourceType\ResourceType $resource_type
@@ -141,16 +155,14 @@ class EntityResource {
    *   The revision id or one of 'current' or 'latest'.
    * @param \Symfony\Component\HttpFoundation\Request $request
    *   The request object.
-   * @param int $response_code
-   *   The response code. Defaults to 200.
    *
    * @return \Drupal\jsonapi\ResourceResponse
    *   The response.
    */
-  public function getRevision(EntityInterface $entity, Request $request, $response_code = 200) {
+  public function getIndividualRevision(EntityInterface $entity, $revision_id, Request $request) {
     $storage = $this->entityTypeManager->getStorage($this->resourceType->getEntityTypeId());
 
-    if ($revision_id === 'latest') {
+    if ($revision_id === static::LATEST) {
       if ($revision_id = $storage->getLatestRevisionId($entity->id())) {
         $entity = $storage->loadRevision($revision_id);
       }
@@ -166,7 +178,7 @@ class EntityResource {
     }
 
     // Fall through to the current revision.
-    $response = $this->buildWrappedResponse($entity, $response_code);
+    $response = $this->buildWrappedResponse($entity);
     $response->addCacheableDependency($entity_access);
     return $response;
   }
@@ -379,18 +391,12 @@ class EntityResource {
    * @throws \Drupal\Component\Plugin\Exception\InvalidPluginDefinitionException
    */
   public function getCollection(Request $request) {
-    $revision_id = $request->get('revision_id');
-
     // Instantiate the query for the filtering.
     $entity_type_id = $this->resourceType->getEntityTypeId();
 
     $route_params = $request->attributes->get('_route_params');
     $params = isset($route_params['_json_api_params']) ? $route_params['_json_api_params'] : [];
     $query = $this->getCollectionQuery($entity_type_id, $params);
-
-    if ($revision_id === 'latest') {
-      $query->latestRevision();
-    }
 
     try {
       $results = $query->execute();

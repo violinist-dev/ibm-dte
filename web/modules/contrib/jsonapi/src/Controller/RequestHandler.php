@@ -118,7 +118,7 @@ class RequestHandler {
 
     if ($revision_id = $request->get('revision_id')) {
       if ($request->get($resource_type->getEntityTypeId())) {
-       // $parameters['revision_id'] = $revision_id;
+        $parameters['revision_id'] = $revision_id;
       }
     }
 
@@ -218,9 +218,13 @@ class RequestHandler {
           return 'getRelated';
         }
         elseif ($request->get('revision_id')) {
-          return $request->get($resource_type->getEntityTypeId()) ? 'getRevision' : 'getCollection';
+          return $request->get($resource_type->getEntityTypeId())
+            ? 'getIndividualRevision'
+            : 'getCollection';
         }
-        return $request->get($resource_type->getEntityTypeId()) ? 'getIndividual' : 'getCollection';
+        return $request->get($resource_type->getEntityTypeId())
+          ? 'getIndividual'
+          : 'getCollection';
 
       case 'post':
         return ($on_relationship) ? 'createRelationship' : 'createIndividual';

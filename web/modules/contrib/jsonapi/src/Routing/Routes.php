@@ -5,6 +5,7 @@ namespace Drupal\jsonapi\Routing;
 use Drupal\Core\DependencyInjection\ContainerInjectionInterface;
 use Drupal\Core\Field\EntityReferenceFieldItemList;
 use Drupal\jsonapi\Controller\EntryPoint;
+use Drupal\jsonapi\Controller\EntityResource;
 use Drupal\jsonapi\ParamConverter\ResourceTypeConverter;
 use Drupal\jsonapi\ResourceType\ResourceType;
 use Drupal\jsonapi\ResourceType\ResourceTypeRepositoryInterface;
@@ -151,7 +152,10 @@ class Routes implements ContainerInjectionInterface {
         $collection_route = new Route('/' . $resource_type->getPath() . '/revisions/{revision_id}');
         $collection_route->setMethods(['GET']);
         $collection_route->addDefaults(['serialization_class' => JsonApiDocumentTopLevel::class]);
-        $collection_route->setRequirement('revision_id', 'current|latest');
+        $collection_route->setRequirement('revision_id', implode('|', [
+          EntityResource::CURRENT,
+          EntityResource::LATEST,
+        ]));
         $collection_route->setRequirement('_csrf_request_header_token', 'TRUE');
         $routes->add(static::getRouteName($resource_type, 'revision_collection'), $collection_route);
       }
@@ -207,6 +211,7 @@ class Routes implements ContainerInjectionInterface {
         $revision_route = new Route("/{$path}/{{$entity_type_id}}/revisions/{revision_id}");
         $revision_route->setMethods(['GET']);
         $revision_route->addDefaults(['serialization_class' => JsonApiDocumentTopLevel::class]);
+        $revision_route->addDefaults(['revision_id' => EntityResource::CURRENT]);
         $revision_route->setRequirement('_csrf_request_header_token', 'TRUE');
         $routes->add(static::getRouteName($resource_type, 'revision'), $revision_route);
       }
