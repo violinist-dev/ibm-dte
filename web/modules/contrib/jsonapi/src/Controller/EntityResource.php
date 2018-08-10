@@ -18,6 +18,7 @@ use Drupal\Core\Field\FieldItemListInterface;
 use Drupal\Core\Field\FieldTypePluginManagerInterface;
 use Drupal\jsonapi\Exception\EntityAccessDeniedHttpException;
 use Drupal\jsonapi\Exception\UnprocessableHttpEntityException;
+use Drupal\jsonapi\JsonApiSpec;
 use Drupal\jsonapi\Query\Filter;
 use Drupal\jsonapi\Query\Sort;
 use Drupal\jsonapi\Query\OffsetPage;
@@ -94,13 +95,6 @@ class EntityResource {
   protected $revisionIdManager;
 
   /**
-   * The query argument for the revision id.
-   *
-   * @var string
-   */
-  const REVISION_ID_QUERY_ARG = 'resource_version';
-
-  /**
    * Instantiates a EntityResource object.
    *
    * @param \Drupal\jsonapi\ResourceType\ResourceType $resource_type
@@ -143,7 +137,7 @@ class EntityResource {
    */
   public function getIndividual(EntityInterface $entity, Request $request, $response_code = 200) {
 
-    if ($resource_version = $request->get(static::REVISION_ID_QUERY_ARG)) {
+    if ($resource_version = $request->get(JsonApiSpec::VERSION_QUERY_PARAMETER)) {
       try {
         list($plugin_id, $revision_id_value) = explode(':', $resource_version);
         $plugin = $this->revisionIdManager->createInstance($plugin_id);
@@ -157,7 +151,7 @@ class EntityResource {
         }
       }
       catch (\Exception $e) {
-        throw NotFoundHttpException('Could not load revision for entity ' . $entity->id());
+        throw new NotFoundHttpException($e->getMessage());
       }
     }
 
@@ -169,13 +163,6 @@ class EntityResource {
     $response = $this->buildWrappedResponse($entity, $response_code);
     $response->addCacheableDependency($entity_access);
 
-    if (!empty($resource_version)) {
-      $response
-        ->getCacheableMetadata()
-        ->addCacheContexts([
-          'url.query_args:' . static::REVISION_ID_QUERY_ARG,
-        ]);
-    }
     return $response;
   }
 

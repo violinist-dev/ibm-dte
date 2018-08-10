@@ -37,6 +37,7 @@ class RevisionIdManager extends DefaultPluginManager {
    * {@inheritdoc}
    */
   public function createInstance($plugin_id, array $configuration = []) {
+    return parent::createInstance($plugin_id, $configuration);
     $plugin_definition = $this->getDefinition($plugin_id);
     $plugin_class = DefaultFactory::getPluginClass($plugin_id, $plugin_definition, 'Drupal\jsonapi\Revisions\RevisionIdInterface');
     return new $plugin_class($configuration);
