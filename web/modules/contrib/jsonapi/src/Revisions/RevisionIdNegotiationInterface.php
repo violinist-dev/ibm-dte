@@ -18,7 +18,7 @@ interface RevisionIdNegotiationInterface {
    *
    * @param Drupal\Core\Entity\EntityInterface $entity
    *   The entity.
-   * @param string|int
+   * @param string|int $input_data
    *   A value used to derive a revision id for the given entity.
    *
    * @return int

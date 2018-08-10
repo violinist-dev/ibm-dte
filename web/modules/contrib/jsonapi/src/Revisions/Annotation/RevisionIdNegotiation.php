@@ -24,22 +24,4 @@ class RevisionIdNegotiation extends Plugin {
    */
   public $id;
 
-  /**
-   * The human-readable name of the revision id plugin.
-   *
-   * @ingroup plugin_translatable
-   *
-   * @var \Drupal\Core\Annotation\Translation
-   */
-  public $title;
-
-  /**
-   * The description of the revision id plugin.
-   *
-   * @ingroup plugin_translatable
-   *
-   * @var \Drupal\Core\Annotation\Translation
-   */
-  public $description;
-
 }
