@@ -26,6 +26,7 @@ use Drupal\jsonapi\Resource\JsonApiDocumentTopLevel;
 use Drupal\jsonapi\ResourceResponse;
 use Drupal\jsonapi\ResourceType\ResourceType;
 use Drupal\jsonapi\ResourceType\ResourceTypeRepositoryInterface;
+use Drupal\jsonapi\Revisions\RevisionIdManager;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpKernel\Exception\BadRequestHttpException;
@@ -85,6 +86,20 @@ class EntityResource {
   protected $resourceTypeRepository;
 
   /**
+   * The revision id plugin manager.
+   *
+   * @var \Drupal\jsonapi\Revisions\RevisionIdManager
+   */
+  protected $revisionIdManager;
+
+  /**
+   * The query argument for the revision id.
+   *
+   * @var string
+   */
+  const REVISION_ID_QUERY_ARG = 'resource_version';
+
+  /**
    * Instantiates a EntityResource object.
    *
    * @param \Drupal\jsonapi\ResourceType\ResourceType $resource_type
@@ -99,14 +114,17 @@ class EntityResource {
    *   The link manager service.
    * @param \Drupal\jsonapi\ResourceType\ResourceTypeRepositoryInterface $resource_type_repository
    *   The link manager service.
+   * @param \Drupal\jsonapi\Revisions\RevisionIdManager $revision_id_manager
+   *   The revision id manager.
    */
-  public function __construct(ResourceType $resource_type, EntityTypeManagerInterface $entity_type_manager, EntityFieldManagerInterface $field_manager, FieldTypePluginManagerInterface $plugin_manager, LinkManager $link_manager, ResourceTypeRepositoryInterface $resource_type_repository) {
+  public function __construct(ResourceType $resource_type, EntityTypeManagerInterface $entity_type_manager, EntityFieldManagerInterface $field_manager, FieldTypePluginManagerInterface $plugin_manager, LinkManager $link_manager, ResourceTypeRepositoryInterface $resource_type_repository, RevisionIdManager $revision_id_manager) {
     $this->resourceType = $resource_type;
     $this->entityTypeManager = $entity_type_manager;
     $this->fieldManager = $field_manager;
     $this->pluginManager = $plugin_manager;
     $this->linkManager = $link_manager;
     $this->resourceTypeRepository = $resource_type_repository;
+    $this->revisionIdManager = $revision_id_manager;
   }
 
   /**
@@ -125,11 +143,9 @@ class EntityResource {
   public function getIndividual(EntityInterface $entity, Request $request, $response_code = 200) {
 
     // TODO: inject the plugin manager.
-    if ($resource_version = $request->get('resource_version')) {
+    if ($resource_version = $request->get(static::REVISION_ID_QUERY_ARG)) {
       list($plugin_id, $revision_id_value) = explode(':', $resource_version);
-      if ($plugin = \Drupal::service('plugin.manager.revision_id')
-        ->createInstance($plugin_id)) {
-
+      if ($plugin = $this->revisionIdManager->createInstance($plugin_id)) {
         if ($revision_id = $plugin->getRevisionId($entity, $revision_id_value)) {
           if ($storage = $this->entityTypeManager->getStorage($this->resourceType->getEntityTypeId())) {
             if ($revision = $storage->loadRevision($revision_id)) {
@@ -152,7 +168,7 @@ class EntityResource {
       $response
         ->getCacheableMetadata()
         ->addCacheContexts([
-          'url.query_args:current_version',
+          'url.query_args:' . static::REVISION_ID_QUERY_ARG,
         ]);
     }
     return $response;
