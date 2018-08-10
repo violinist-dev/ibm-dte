@@ -16,9 +16,12 @@ use Drupal\jsonapi\Revisions\RevisionIdInterface;
  */
 class EntityRevisionId implements RevisionIdInterface {
 
+  /**
+   * {@inheritdoc}
+   */
   public function getRevisionId(EntityInterface $entity, $revision_id_value) {
     if (!is_numeric($revision_id_value)) {
-      throw new \Exception('The entity revision id must be in integer value.');
+      throw new \InvalidArgumentException('The entity revision id must be in integer value.');
     }
     return $revision_id_value;
   }

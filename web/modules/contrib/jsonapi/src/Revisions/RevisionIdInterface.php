@@ -24,7 +24,7 @@ interface RevisionIdInterface {
    * @return int
    *   The revision id.
    *
-   * @throws \Exception
+   * @throws \InvaldArgumentException
    */
   public function getRevisionId(EntityInterface $entity, $revision_id_value);
 
