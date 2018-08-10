@@ -105,6 +105,20 @@ class EntityNormalizerValue implements ValueExtractorInterface, CacheableDepende
         [],
         'individual'
       ),
+      'working-copy' => $this->linkManager->getEntityVersionLink(
+        $rasterized['id'],
+        $this->context['resource_type'],
+        [],
+        'individual',
+        'current_latest_revision_id:working-copy'
+      ),
+      'latest-version' => $this->linkManager->getEntityVersionLink(
+        $rasterized['id'],
+        $this->context['resource_type'],
+        [],
+        'individual',
+        'current_latest_revision_id:latest-version'
+      ),
     ];
 
     foreach ($this->getValues() as $field_name => $normalizer_value) {
