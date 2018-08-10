@@ -50,6 +50,8 @@ class CurrentLatestRevisionId implements RevisionIdInterface {
       return $entity->getLoadedRevisionId();
     }
     if ($revision_id_value === static::LATEST) {
+      // TODO: I could not figure out how to provide a constructor with the entity
+      // type manager service injected.  I tried makgin this implement the ContainerFactoryPluginInterface but that did not work.
       if ($storage = \Drupal::entityTypeManager()->getStorage($entity->getEntityTypeId())) {
         return $storage->getLatestRevisionId($entity->id());
       }
