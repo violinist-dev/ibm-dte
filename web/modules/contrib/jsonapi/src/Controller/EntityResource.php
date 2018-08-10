@@ -12,6 +12,7 @@ use Drupal\Core\Entity\EntityInterface;
 use Drupal\Core\Entity\EntityStorageInterface;
 use Drupal\Core\Entity\EntityTypeManagerInterface;
 use Drupal\Core\Entity\FieldableEntityInterface;
+use Drupal\Core\Entity\RevisionableStorageInterface;
 use Drupal\Core\Field\EntityReferenceFieldItemListInterface;
 use Drupal\Core\Field\FieldItemListInterface;
 use Drupal\Core\Field\FieldTypePluginManagerInterface;
@@ -142,17 +143,21 @@ class EntityResource {
    */
   public function getIndividual(EntityInterface $entity, Request $request, $response_code = 200) {
 
-    // TODO: inject the plugin manager.
     if ($resource_version = $request->get(static::REVISION_ID_QUERY_ARG)) {
-      list($plugin_id, $revision_id_value) = explode(':', $resource_version);
-      if ($plugin = $this->revisionIdManager->createInstance($plugin_id)) {
-        if ($revision_id = $plugin->getRevisionId($entity, $revision_id_value)) {
-          if ($storage = $this->entityTypeManager->getStorage($this->resourceType->getEntityTypeId())) {
-            if ($revision = $storage->loadRevision($revision_id)) {
-              $entity = $revision;
-            }
+      try {
+        list($plugin_id, $revision_id_value) = explode(':', $resource_version);
+        $plugin = $this->revisionIdManager->createInstance($plugin_id);
+        $revision_id = $plugin->getRevisionId($entity, $revision_id_value);
+        $storage = $this->entityTypeManager
+          ->getStorage($this->resourceType->getEntityTypeId());
+        if ($storage instanceof RevisionableStorageInterface) {
+          if ($revision = $storage->loadRevision($revision_id)) {
+            $entity = $revision;
           }
         }
+      }
+      catch (\Exception $e) {
+        throw NotFoundHttpException('Could not load revision for entity ' . $entity->id());
       }
     }
 
