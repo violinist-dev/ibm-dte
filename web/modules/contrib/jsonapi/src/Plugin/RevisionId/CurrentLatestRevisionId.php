@@ -32,7 +32,7 @@ class CurrentLatestRevisionId extends RevisionIdBase {
       }
     }
 
-    throw new \InvalidArgumentException('Invalid revision id value.');
+    throw new \InvalidArgumentException('Invalid revision id value for entity ' . $entity->uuid());
   }
 
 }
