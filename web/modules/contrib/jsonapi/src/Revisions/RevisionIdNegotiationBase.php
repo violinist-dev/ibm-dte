@@ -27,7 +27,7 @@ class RevisionIdNegotiationBase extends PluginBase implements PluginInspectionIn
    *
    * @var string
    */
-  const LATEST = 'latest';
+  const LATEST = 'latest-version';
 
   public function __construct(array $configuration, $plugin_id, $plugin_definition, EntityTypeManagerInterface $entity_type_manager) {
     parent::__construct($configuration, $plugin_id, $plugin_definition);
