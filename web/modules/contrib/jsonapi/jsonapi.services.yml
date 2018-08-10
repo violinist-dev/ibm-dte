@@ -154,6 +154,7 @@ services:
       - '@entity_field.manager'
       - '@plugin.manager.field.field_type'
       - '@jsonapi.link_manager'
+      - '@plugin.manager.revision_id'
 
   # Event subscribers.
   jsonapi.resource_response.subscriber:
