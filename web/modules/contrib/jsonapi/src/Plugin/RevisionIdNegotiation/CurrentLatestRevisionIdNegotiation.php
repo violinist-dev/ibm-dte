@@ -19,12 +19,12 @@ class CurrentLatestRevisionIdNegotiation extends RevisionIdNegotiationBase {
   /**
    * {@inheritdoc}
    */
-  public function getRevisionId(EntityInterface $entity, $revision_id_value) {
+  public function getRevisionId(EntityInterface $entity, $input_data) {
 
-    if ($revision_id_value === static::CURRENT) {
+    if ($input_data === static::CURRENT) {
       return $entity->getLoadedRevisionId();
     }
-    if ($revision_id_value === static::LATEST) {
+    if ($input_data === static::LATEST) {
       // TODO: I could not figure out how to provide a constructor with the entity
       // type manager service injected.  I tried makgin this implement the ContainerFactoryPluginInterface but that did not work.
       if ($storage = $this->entityTypeManager->getStorage($entity->getEntityTypeId())) {

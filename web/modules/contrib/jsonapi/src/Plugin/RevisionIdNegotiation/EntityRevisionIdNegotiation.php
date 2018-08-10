@@ -19,11 +19,11 @@ class EntityRevisionIdNegotiation extends RevisionIdNegotiationBase {
   /**
    * {@inheritdoc}
    */
-  public function getRevisionId(EntityInterface $entity, $revision_id_value) {
-    if (!is_numeric($revision_id_value)) {
+  public function getRevisionId(EntityInterface $entity, $input_data) {
+    if (!is_numeric($input_data)) {
       throw new \InvalidArgumentException('The entity revision id must be in integer value for entity ' . $entity->uuid());
     }
-    return $revision_id_value;
+    return $input_data;
   }
 
 }
