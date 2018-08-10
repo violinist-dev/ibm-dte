@@ -3,12 +3,7 @@
 namespace Drupal\jsonapi\Plugin\RevisionId;
 
 use Drupal\Core\Entity\EntityInterface;
-use Drupal\Core\Entity\EntityTypeManagerInterface;
-use Drupal\Core\Plugin\ContainerFactoryPluginInterface;
-use Drupal\Core\Plugin\PluginBase;
-use Drupal\Component\Plugin\PluginInspectionInterface;
-use Drupal\jsonapi\Revisions\RevisionIdInterface;
-use Symfony\Component\DependencyInjection\ContainerInterface;
+use Drupal\jsonapi\Revisions\RevisionIdBase;
 
 /**
  * Defines a revision id implementation for the core current or latest revsion id values.
@@ -19,40 +14,10 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
  *   description = @Translation("Handles current or latest revision id values."),
  * )
  */
-class CurrentLatestRevisionId extends PluginBase implements PluginInspectionInterface, ContainerFactoryPluginInterface, RevisionIdInterface {
+class CurrentLatestRevisionId extends RevisionIdBase {
 
   /**
-   * The current revision id value.
-   *
-   * @var string
-   */
-  const CURRENT = 'current';
-
-  /**
-   * The latest revision id value.
-   *
-   * @var string
-   */
-  const LATEST = 'latest';
-
-  public function __construct(array $configuration, $plugin_id, $plugin_definition, EntityTypeManagerInterface $entity_type_manager) {
-    parent::__construct($configuration, $plugin_id, $plugin_definition);
-
-    $this->entityTypeManager = $entity_type_manager;
-  }
-
-  /**
-   * Get the revision id value.
-   *
-   * @param EntityInterface $entity
-   *   The entity
-   * @param string $revision_id_value
-   *   The revision id value to evaluate.
-   *
-   * @return int
-   *   The entity revision id.
-   *
-   * @throws \Exception
+   * {@inheritdoc}
    */
   public function getRevisionId(EntityInterface $entity, $revision_id_value) {
 
@@ -67,16 +32,7 @@ class CurrentLatestRevisionId extends PluginBase implements PluginInspectionInte
       }
     }
 
-    throw new \Exception('Invalid revision id value.');
-  }
-
-  public static function create(ContainerInterface $container, array $configuration, $plugin_id, $plugin_definition) {
-    return new static(
-      $configuration,
-      $plugin_id,
-      $plugin_definition,
-      $container->get('entity_type.manager')
-    );
+    throw new \InvalidArgumentException('Invalid revision id value.');
   }
 
 }
