@@ -10,14 +10,14 @@ use Drupal\Core\Plugin\DefaultPluginManager;
 /**
  * Provides an Revision ID plugin manager.
  *
- * @see \Drupal\jsonapi\Revisions\Annotation\RevisionId
- * @see \Drupal\jsonapi\Revisions\RevisionsIdInterface
+ * @see \Drupal\jsonapi\Revisions\Annotation\RevisionIdNegotiation
+ * @see \Drupal\jsonapi\Revisions\RevisionIdNegotiationInterface
  * @see plugin_api
  */
-class RevisionIdManager extends DefaultPluginManager {
+class RevisionIdNegotiationManager extends DefaultPluginManager {
 
   /**
-   * Constructs a RevisionIdManager object.
+   * Constructs a RevisionIdNegotiationManager object.
    *
    * @param \Traversable $namespaces
    *   An object that implements \Traversable which contains the root paths
@@ -28,9 +28,9 @@ class RevisionIdManager extends DefaultPluginManager {
    *   The module handler to invoke the alter hook with.
    */
   public function __construct(\Traversable $namespaces, CacheBackendInterface $cache_backend, ModuleHandlerInterface $module_handler) {
-    parent::__construct('Plugin/RevisionId', $namespaces, $module_handler, 'Drupal\jsonapi\Revisions\RevisionIdInterface', 'Drupal\jsonapi\Revisions\Annotation\RevisionId');
+    parent::__construct('Plugin/RevisionIdNegotiation', $namespaces, $module_handler, 'Drupal\jsonapi\Revisions\RevisionIdNegotiationInterface', 'Drupal\jsonapi\Revisions\Annotation\RevisionIdNegotiation');
     $this->alterInfo('revision_id_info');
-    $this->setCacheBackend($cache_backend, 'revision_id_info_plugins');
+    $this->setCacheBackend($cache_backend, 'revision_id_negoriation_info_plugins');
   }
 
   /**
@@ -39,7 +39,7 @@ class RevisionIdManager extends DefaultPluginManager {
   public function createInstance($plugin_id, array $configuration = []) {
     return parent::createInstance($plugin_id, $configuration);
     $plugin_definition = $this->getDefinition($plugin_id);
-    $plugin_class = DefaultFactory::getPluginClass($plugin_id, $plugin_definition, 'Drupal\jsonapi\Revisions\RevisionIdInterface');
+    $plugin_class = DefaultFactory::getPluginClass($plugin_id, $plugin_definition, 'Drupal\jsonapi\Revisions\RevisionIdNegotiationInterface');
     return new $plugin_class($configuration);
   }
 

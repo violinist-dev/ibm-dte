@@ -7,11 +7,11 @@ use Drupal\Core\Entity\EntityInterface;
 /**
  * Defines the common interface for all Revision ID classes.
  *
- * @see \Drupal\jsonapi\Revisions\RevisionIdManager
- * @see \Drupal\jsonapi\Revisions\RevisionId
+ * @see \Drupal\jsonapi\Revisions\RevisionIdNegotiationManager
+ * @see \Drupal\jsonapi\Revisions\RevisionIdNegotiation
  * @see plugin_api
  */
-interface RevisionIdInterface {
+interface RevisionIdNegotiationInterface {
 
   /**
    * Gets the revision id.
