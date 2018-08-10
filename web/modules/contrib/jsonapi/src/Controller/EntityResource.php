@@ -124,6 +124,7 @@ class EntityResource {
    */
   public function getIndividual(EntityInterface $entity, Request $request, $response_code = 200) {
 
+    // TODO: inject the plugin manager.
     if ($resource_version = $request->get('resource_version')) {
       list($plugin_id, $revision_id_value) = explode(':', $resource_version);
       if ($plugin = \Drupal::service('plugin.manager.revision_id')
