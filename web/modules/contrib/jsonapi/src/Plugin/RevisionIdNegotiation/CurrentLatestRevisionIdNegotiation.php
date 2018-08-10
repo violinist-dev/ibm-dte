@@ -1,20 +1,20 @@
 <?php
 
-namespace Drupal\jsonapi\Plugin\RevisionId;
+namespace Drupal\jsonapi\Plugin\RevisionIdNegotiation;
 
 use Drupal\Core\Entity\EntityInterface;
-use Drupal\jsonapi\Revisions\RevisionIdBase;
+use Drupal\jsonapi\Revisions\RevisionIdNegotiationBase;
 
 /**
  * Defines a revision id implementation for the core current or latest revsion id values.
  *
- * @RevisionId(
+ * @RevisionIdNegotiation(
  *   id = "current_latest_revision_id",
  *   title = @Translation("Current or Latest Revision ID Value"),
  *   description = @Translation("Handles current or latest revision id values."),
  * )
  */
-class CurrentLatestRevisionId extends RevisionIdBase {
+class CurrentLatestRevisionIdNegotiation extends RevisionIdNegotiationBase {
 
   /**
    * {@inheritdoc}

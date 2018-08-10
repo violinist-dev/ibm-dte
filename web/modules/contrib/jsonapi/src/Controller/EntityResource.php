@@ -28,7 +28,7 @@ use Drupal\jsonapi\Resource\JsonApiDocumentTopLevel;
 use Drupal\jsonapi\ResourceResponse;
 use Drupal\jsonapi\ResourceType\ResourceType;
 use Drupal\jsonapi\ResourceType\ResourceTypeRepositoryInterface;
-use Drupal\jsonapi\Revisions\RevisionIdManager;
+use Drupal\jsonapi\Revisions\RevisionIdNegotiationManager;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpKernel\Exception\BadRequestHttpException;
@@ -88,9 +88,9 @@ class EntityResource {
   protected $resourceTypeRepository;
 
   /**
-   * The revision id plugin manager.
+   * The revision id negotiation plugin manager.
    *
-   * @var \Drupal\jsonapi\Revisions\RevisionIdManager
+   * @var \Drupal\jsonapi\Revisions\RevisionIdNegotiationManager
    */
   protected $revisionIdManager;
 
@@ -109,10 +109,10 @@ class EntityResource {
    *   The link manager service.
    * @param \Drupal\jsonapi\ResourceType\ResourceTypeRepositoryInterface $resource_type_repository
    *   The link manager service.
-   * @param \Drupal\jsonapi\Revisions\RevisionIdManager $revision_id_manager
+   * @param \Drupal\jsonapi\Revisions\RevisionIdNegotiationManager $revision_id_manager
    *   The revision id manager.
    */
-  public function __construct(ResourceType $resource_type, EntityTypeManagerInterface $entity_type_manager, EntityFieldManagerInterface $field_manager, FieldTypePluginManagerInterface $plugin_manager, LinkManager $link_manager, ResourceTypeRepositoryInterface $resource_type_repository, RevisionIdManager $revision_id_manager) {
+  public function __construct(ResourceType $resource_type, EntityTypeManagerInterface $entity_type_manager, EntityFieldManagerInterface $field_manager, FieldTypePluginManagerInterface $plugin_manager, LinkManager $link_manager, ResourceTypeRepositoryInterface $resource_type_repository, RevisionIdNegotiationManager $revision_id_manager) {
     $this->resourceType = $resource_type;
     $this->entityTypeManager = $entity_type_manager;
     $this->fieldManager = $field_manager;
@@ -139,6 +139,7 @@ class EntityResource {
 
     if ($resource_version = $request->get(JsonApiSpec::VERSION_QUERY_PARAMETER)) {
       try {
+        $revision = NULL;
         list($plugin_id, $revision_id_value) = explode(':', $resource_version);
         $plugin = $this->revisionIdManager->createInstance($plugin_id);
         $revision_id = $plugin->getRevisionId($entity, $revision_id_value);
@@ -148,6 +149,9 @@ class EntityResource {
           if ($revision = $storage->loadRevision($revision_id)) {
             $entity = $revision;
           }
+        }
+        if (empty($revision)) {
+          throw new NotFoundHttpException(sprintf('Could not load revision for entity %s, %s value %s', $entity->uuid(), JsonApiSpec::VERSION_QUERY_PARAMETER, $resource_version));
         }
       }
       catch (\Exception $e) {

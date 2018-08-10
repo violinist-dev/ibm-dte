@@ -7,13 +7,13 @@ use Drupal\Core\Entity\EntityInterface;
 use Drupal\Core\Entity\EntityTypeManagerInterface;
 use Drupal\Core\Plugin\ContainerFactoryPluginInterface;
 use Drupal\Core\Plugin\PluginBase;
-use Drupal\jsonapi\Revisions\RevisionIdInterface;
+use Drupal\jsonapi\Revisions\RevisionIdNegotiationInterface;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 
 /**
  * Base revision id plugin.
  */
-class RevisionIdBase extends PluginBase implements PluginInspectionInterface, ContainerFactoryPluginInterface, RevisionIdInterface {
+class RevisionIdNegotiationBase extends PluginBase implements PluginInspectionInterface, ContainerFactoryPluginInterface, RevisionIdNegotiationInterface {
 
   /**
    * The current revision id value.

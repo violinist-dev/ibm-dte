@@ -5,17 +5,17 @@ namespace Drupal\jsonapi\Revisions\Annotation;
 use Drupal\Component\Annotation\Plugin;
 
 /**
- * Defines an revision id annotation object.
+ * Defines an revision id negoriation annotation object.
  *
- * Plugin Namespace: Plugin\RevisionId
+ * Plugin Namespace: Plugin\RevisionIdNegotiation
  *
- * @see \Drupal\jsonapi\Revisions\RevisionIdManager
- * @see \Drupal\jsonapi\Revisions\RevisionIdInterface
+ * @see \Drupal\jsonapi\Revisions\RevisionIdNegotiationManager
+ * @see \Drupal\jsonapi\Revisions\RevisionIdNegotiationInterface
  * @see plugin_api
  *
  * @Annotation
  */
-class RevisionId extends Plugin {
+class RevisionIdNegotiation extends Plugin {
 
   /**
    * The revision id plugin ID.
