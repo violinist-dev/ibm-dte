@@ -2,6 +2,7 @@ gm-addons:
   version: 1.x
   js:
     js/views-exposed-form-filters.js: {}
+    js/moderation-edit.js: {}
   css:
     theme:
       css/node-preview.css: {}
