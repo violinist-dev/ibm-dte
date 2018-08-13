@@ -167,6 +167,11 @@
                 ".htaccess",
                 "web.config"
             ]
+        },
+        "patches": {
+            "drupal/moderation_note": {
+                "Moderation Note with Paragraphs": "https://www.drupal.org/files/issues/2018-05-05/2954753-14.patch"
+            }
         }
     },
     "config": {
