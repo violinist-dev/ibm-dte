@@ -5,7 +5,7 @@ namespace Drupal\jsonapi\Revisions;
 use Drupal\Core\Entity\EntityInterface;
 
 /**
- * Defines the common interface for all Revision ID classes.
+ * Defines the common interface for all Revision ID negotiation classes.
  *
  * @see \Drupal\jsonapi\Revisions\RevisionIdNegotiationManager
  * @see \Drupal\jsonapi\Revisions\RevisionIdNegotiation
@@ -26,6 +26,6 @@ interface RevisionIdNegotiationInterface {
    *
    * @throws \InvaldArgumentException
    */
-  public function getRevisionId(EntityInterface $entity, $revision_id_value);
+  public function getRevisionId(EntityInterface $entity, $input_data);
 
 }

@@ -8,7 +8,6 @@ use Drupal\Core\Field\FieldTypePluginManagerInterface;
 use Drupal\jsonapi\LinkManager\LinkManager;
 use Drupal\jsonapi\ResourceType\ResourceType;
 use Drupal\jsonapi\ResourceType\ResourceTypeRepositoryInterface;
-use Drupal\jsonapi\Revisions\RevisionIdNegotiationManager;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpKernel\Exception\BadRequestHttpException;
 use Symfony\Component\HttpKernel\Exception\UnprocessableEntityHttpException;
@@ -66,13 +65,6 @@ class RequestHandler {
   protected $linkManager;
 
   /**
-   * The revision id plugin manager.
-   *
-   * @var \Drupal\jsonapi\Revisions\RevisionIdManager
-   */
-  protected $revisionIdManager;
-
-  /**
    * Creates a new RequestHandler instance.
    *
    * @param \Symfony\Component\Serializer\SerializerInterface $serializer
@@ -87,8 +79,6 @@ class RequestHandler {
    *   The field type manager.
    * @param \Drupal\jsonapi\LinkManager\LinkManager $link_manager
    *   The JSON API link manager.
-   * @param \Drupal\jsonapi\Revisions\RevisionIdNegotiationManager $revision_id_manager
-   *   The revision id manager.
    */
   public function __construct(SerializerInterface $serializer, ResourceTypeRepositoryInterface $resource_type_repository, EntityTypeManagerInterface $entity_type_manager, EntityFieldManagerInterface $field_manager, FieldTypePluginManagerInterface $field_type_manager, LinkManager $link_manager, RevisionIdNegotiationManager $revision_id_manager) {
     $this->serializer = $serializer;
@@ -97,7 +87,6 @@ class RequestHandler {
     $this->fieldManager = $field_manager;
     $this->fieldTypeManager = $field_type_manager;
     $this->linkManager = $link_manager;
-    $this->revisionIdManager = $revision_id_manager;
   }
 
   /**
@@ -250,8 +239,7 @@ class RequestHandler {
       $this->fieldManager,
       $this->fieldTypeManager,
       $this->linkManager,
-      $this->resourceTypeRepository,
-      $this->revisionIdManager
+      $this->resourceTypeRepository
     );
     return $resource;
   }

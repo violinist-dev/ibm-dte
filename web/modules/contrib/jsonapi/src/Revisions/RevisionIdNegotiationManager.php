@@ -8,7 +8,7 @@ use Drupal\Core\Extension\ModuleHandlerInterface;
 use Drupal\Core\Plugin\DefaultPluginManager;
 
 /**
- * Provides an Revision ID plugin manager.
+ * Provides an Revision ID negoation plugin manager.
  *
  * @see \Drupal\jsonapi\Revisions\Annotation\RevisionIdNegotiation
  * @see \Drupal\jsonapi\Revisions\RevisionIdNegotiationInterface
@@ -47,7 +47,8 @@ class RevisionIdNegotiationManager extends DefaultPluginManager {
    * {@inheritdoc}
    */
   public function getInstance(array $options) {
-    foreach ($this->getDefinitions() as $plugin_id => $definition) {
+    $definitions = $this->getDefinitions();
+    foreach (array_keys($definitions) as $plugin_id) {
       return $this->createInstance($plugin_id, $options);
     }
   }
