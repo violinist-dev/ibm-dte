@@ -2,6 +2,7 @@
 
 namespace Drupal\jsonapi\Controller;
 
+use Drupal\Component\Plugin\Exception\PluginException;
 use Drupal\Component\Serialization\Json;
 use Drupal\Core\Access\AccessibleInterface;
 use Drupal\Core\Cache\CacheableMetadata;
@@ -92,7 +93,7 @@ class EntityResource {
    *
    * @var \Drupal\jsonapi\Revisions\RevisionIdNegotiationManager
    */
-  protected $revisionIdManager;
+  protected $revisionIdNegotiationManager;
 
   /**
    * Instantiates a EntityResource object.
@@ -109,17 +110,17 @@ class EntityResource {
    *   The link manager service.
    * @param \Drupal\jsonapi\ResourceType\ResourceTypeRepositoryInterface $resource_type_repository
    *   The link manager service.
-   * @param \Drupal\jsonapi\Revisions\RevisionIdNegotiationManager $revision_id_manager
-   *   The revision id manager.
+   * @param \Drupal\jsonapi\Revisions\RevisionIdNegotiationManager $revision_id_negotiation_manager
+   *   The revision id negotiation manager.
    */
-  public function __construct(ResourceType $resource_type, EntityTypeManagerInterface $entity_type_manager, EntityFieldManagerInterface $field_manager, FieldTypePluginManagerInterface $plugin_manager, LinkManager $link_manager, ResourceTypeRepositoryInterface $resource_type_repository, RevisionIdNegotiationManager $revision_id_manager) {
+  public function __construct(ResourceType $resource_type, EntityTypeManagerInterface $entity_type_manager, EntityFieldManagerInterface $field_manager, FieldTypePluginManagerInterface $plugin_manager, LinkManager $link_manager, ResourceTypeRepositoryInterface $resource_type_repository, RevisionIdNegotiationManager $revision_id_negotiation_manager) {
     $this->resourceType = $resource_type;
     $this->entityTypeManager = $entity_type_manager;
     $this->fieldManager = $field_manager;
     $this->pluginManager = $plugin_manager;
     $this->linkManager = $link_manager;
     $this->resourceTypeRepository = $resource_type_repository;
-    $this->revisionIdManager = $revision_id_manager;
+    $this->revisionIdNegotiationManager = $revision_id_negotiation_manager;
   }
 
   /**
@@ -136,37 +137,18 @@ class EntityResource {
    *   The response.
    */
   public function getIndividual(EntityInterface $entity, Request $request, $response_code = 200) {
-
-    if ($resource_version = $request->get(JsonApiSpec::VERSION_QUERY_PARAMETER)) {
-      try {
-        $revision = NULL;
-        list($plugin_id, $revision_id_value) = explode(':', $resource_version);
-        $plugin = $this->revisionIdManager->createInstance($plugin_id);
-        $revision_id = $plugin->getRevisionId($entity, $revision_id_value);
-        $storage = $this->entityTypeManager
-          ->getStorage($this->resourceType->getEntityTypeId());
-        if ($storage instanceof RevisionableStorageInterface) {
-          if ($revision = $storage->loadRevision($revision_id)) {
-            $entity = $revision;
-          }
-        }
-        if (empty($revision)) {
-          throw new NotFoundHttpException(sprintf('Could not load revision for entity %s, %s value %s', $entity->uuid(), JsonApiSpec::VERSION_QUERY_PARAMETER, $resource_version));
-        }
-      }
-      catch (\Exception $e) {
-        throw new NotFoundHttpException($e->getMessage());
-      }
+    if (
+      $this->resourceType->isVersionable() &&
+      ($resource_version = $request->get(JsonApiSpec::VERSION_QUERY_PARAMETER))
+    ) {
+      $entity = $this->negotiateEntityRevision($entity, $resource_version);
     }
-
     $entity_access = $entity->access('view', NULL, TRUE);
-
     if (!$entity_access->isAllowed()) {
       throw new EntityAccessDeniedHttpException($entity, $entity_access, '/data', 'The current user is not allowed to GET the selected resource.');
     }
     $response = $this->buildWrappedResponse($entity, $response_code);
     $response->addCacheableDependency($entity_access);
-
     return $response;
   }
 
@@ -1094,6 +1076,46 @@ class EntityResource {
     return !empty($entity_storage->loadByProperties([
       'uuid' => $entity->uuid(),
     ]));
+  }
+
+  /**
+   * Loads the revision for the entity given the user input for the revision.
+   *
+   * @param \Drupal\Core\Entity\EntityInterface $entity
+   *   The entity.
+   * @param $resource_version
+   *   The user input for the revision. It takes the form of "negotiator:id".
+   *
+   * @throws \Symfony\Component\HttpKernel\Exception\NotFoundHttpException
+   *
+   * @return \Drupal\Core\Entity\EntityInterface
+   */
+  protected function negotiateEntityRevision(EntityInterface $entity, $resource_version) {
+    try {
+      list($plugin_id, $revision_id_value) = explode(':', $resource_version);
+      /** @var \Drupal\jsonapi\Revisions\RevisionIdNegotiationInterface $plugin */
+      $plugin = $this->revisionIdNegotiationManager->createInstance($plugin_id);
+      $revision_id = $plugin->getRevisionId($entity, $revision_id_value);
+      $storage = $this->entityTypeManager
+        ->getStorage($this->resourceType->getEntityTypeId());
+      if ($storage instanceof RevisionableStorageInterface) {
+        $revision = $storage->loadRevision($revision_id);
+      }
+    } catch (PluginException $e) {
+      throw new NotFoundHttpException($e->getMessage(), $e);
+    } catch (\InvalidArgumentException $e) {
+      throw new NotFoundHttpException($e->getMessage(), $e);
+    }
+    if (empty($revision)) {
+      $message = sprintf(
+        'Could not load revision for entity %s, %s value %s',
+        $entity->uuid(),
+        JsonApiSpec::VERSION_QUERY_PARAMETER,
+        $resource_version
+      );
+      throw new NotFoundHttpException($message);
+    }
+    return $revision;
   }
 
 }
