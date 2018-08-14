@@ -3,18 +3,17 @@
 namespace Drupal\jsonapi\Plugin\RevisionIdNegotiation;
 
 use Drupal\Core\Entity\EntityInterface;
-use Drupal\jsonapi\Revisions\RevisionIdNegotiationBase;
+use Drupal\Core\Plugin\PluginBase;
+use Drupal\jsonapi\Revisions\RevisionIdNegotiationInterface;
 
 /**
  * Defines a revision id implementation for entity revision id values.
  *
  * @RevisionIdNegotiation(
- *   id = "entity_revision_id",
- *   title = @Translation("Entity Revision ID Value"),
- *   description = @Translation("Handles entity revision id values."),
+ *   id = "id",
  * )
  */
-class EntityRevisionIdNegotiation extends RevisionIdNegotiationBase {
+class IdNegotiation extends PluginBase implements RevisionIdNegotiationInterface {
 
   /**
    * {@inheritdoc}

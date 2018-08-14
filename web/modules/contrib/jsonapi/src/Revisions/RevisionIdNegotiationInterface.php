@@ -16,15 +16,16 @@ interface RevisionIdNegotiationInterface {
   /**
    * Gets the revision id.
    *
-   * @param Drupal\Core\Entity\EntityInterface $entity
+   * @param \Drupal\Core\Entity\EntityInterface $entity
    *   The entity.
-   * @param string|int $input_data
+   * @param string $input_data
    *   A value used to derive a revision id for the given entity.
    *
    * @return int
    *   The revision id.
    *
-   * @throws \InvaldArgumentException
+   * @throws \InvalidArgumentException
+   *   When the revision ID cannot be negotiated.
    */
   public function getRevisionId(EntityInterface $entity, $input_data);
 

@@ -2,14 +2,13 @@
 
 namespace Drupal\jsonapi\Controller;
 
-use Drupal\Component\Plugin\PluginManagerInterface;
 use Drupal\Core\Entity\EntityFieldManagerInterface;
 use Drupal\Core\Entity\EntityTypeManagerInterface;
 use Drupal\Core\Field\FieldTypePluginManagerInterface;
 use Drupal\jsonapi\LinkManager\LinkManager;
 use Drupal\jsonapi\ResourceType\ResourceType;
 use Drupal\jsonapi\ResourceType\ResourceTypeRepositoryInterface;
-use Drupal\jsonapi\Revisions\RevisionIdManager;
+use Drupal\jsonapi\Revisions\RevisionIdNegotiationManager;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpKernel\Exception\BadRequestHttpException;
 use Symfony\Component\HttpKernel\Exception\UnprocessableEntityHttpException;
@@ -69,9 +68,9 @@ class RequestHandler {
   /**
    * The revision id plugin manager.
    *
-   * @var \Drupal\Component\Plugin\PluginManagerInterface
+   * @var \Drupal\jsonapi\Revisions\RevisionIdNegotiationManager
    */
-  protected $revisionIdManager;
+  protected $revisionIdNegotiationManager;
 
   /**
    * Creates a new RequestHandler instance.
@@ -88,17 +87,17 @@ class RequestHandler {
    *   The field type manager.
    * @param \Drupal\jsonapi\LinkManager\LinkManager $link_manager
    *   The JSON API link manager.
-   * @param \Drupal\Component\Plugin\PluginManagerInterface $revision_id_manager
+   * @param \Drupal\jsonapi\Revisions\RevisionIdNegotiationManager $revision_id_negotiation_manager
    *   The revision id manager.
    */
-  public function __construct(SerializerInterface $serializer, ResourceTypeRepositoryInterface $resource_type_repository, EntityTypeManagerInterface $entity_type_manager, EntityFieldManagerInterface $field_manager, FieldTypePluginManagerInterface $field_type_manager, LinkManager $link_manager, PluginManagerInterface $revision_id_manager) {
+  public function __construct(SerializerInterface $serializer, ResourceTypeRepositoryInterface $resource_type_repository, EntityTypeManagerInterface $entity_type_manager, EntityFieldManagerInterface $field_manager, FieldTypePluginManagerInterface $field_type_manager, LinkManager $link_manager, RevisionIdNegotiationManager $revision_id_negotiation_manager) {
     $this->serializer = $serializer;
     $this->resourceTypeRepository = $resource_type_repository;
     $this->entityTypeManager = $entity_type_manager;
     $this->fieldManager = $field_manager;
     $this->fieldTypeManager = $field_type_manager;
     $this->linkManager = $link_manager;
-    $this->revisionIdManager = $revision_id_manager;
+    $this->revisionIdNegotiationManager = $revision_id_negotiation_manager;
   }
 
   /**
@@ -252,7 +251,7 @@ class RequestHandler {
       $this->fieldTypeManager,
       $this->linkManager,
       $this->resourceTypeRepository,
-      $this->revisionIdManager
+      $this->revisionIdNegotiationManager
     );
     return $resource;
   }

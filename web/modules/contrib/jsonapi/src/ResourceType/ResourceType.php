@@ -57,6 +57,13 @@ class ResourceType {
   protected $isLocatable;
 
   /**
+   * Whether this resource type's resources are revisionable.
+   *
+   * @var bool
+   */
+  protected $isVersionable;
+
+  /**
    * Gets the entity type ID.
    *
    * @return string
@@ -196,6 +203,16 @@ class ResourceType {
   }
 
   /**
+   * Whether resources of this resource type are revisionable.
+   *
+   * @return bool
+   *   TRUE if the resource type's resources are revisionable. FALSE otherwise.
+   */
+  public function isVersionable() {
+    return $this->isVersionable;
+  }
+
+  /**
    * Instantiates a ResourceType object.
    *
    * @param string $entity_type_id
@@ -209,12 +226,13 @@ class ResourceType {
    * @param bool $is_locatable
    *   (optional) Whether the resource type is locatable.
    */
-  public function __construct($entity_type_id, $bundle, $deserialization_target_class, $internal = FALSE, $is_locatable = TRUE) {
+  public function __construct($entity_type_id, $bundle, $deserialization_target_class, $internal = FALSE, $is_locatable = TRUE, $is_versionable = FALSE) {
     $this->entityTypeId = $entity_type_id;
     $this->bundle = $bundle;
     $this->deserializationTargetClass = $deserialization_target_class;
     $this->internal = $internal;
     $this->isLocatable = $is_locatable;
+    $this->isVersionable = $is_versionable;
 
     $this->typeName = sprintf('%s--%s', $this->entityTypeId, $this->bundle);
   }
