@@ -4,6 +4,7 @@ namespace Drupal\jsonapi\Normalizer\Value;
 
 use Drupal\Core\Cache\CacheableDependencyInterface;
 use Drupal\Core\Entity\EntityInterface;
+use Drupal\Core\Entity\RevisionableInterface;
 use Drupal\jsonapi\Normalizer\CacheableDependencyTrait;
 
 /**
@@ -92,8 +93,10 @@ class EntityNormalizerValue implements ValueExtractorInterface, CacheableDepende
    */
   public function rasterizeValue() {
     // Create the array of normalized fields, starting with the URI.
+    /** @var \Drupal\jsonapi\ResourceType\ResourceType $resource_type */
+    $resource_type = $this->context['resource_type'];
     $rasterized = [
-      'type' => $this->context['resource_type']->getTypeName(),
+      'type' => $resource_type->getTypeName(),
       'id' => $this->entity->uuid(),
       'attributes' => [],
       'relationships' => [],
@@ -101,25 +104,30 @@ class EntityNormalizerValue implements ValueExtractorInterface, CacheableDepende
     $rasterized['links'] = [
       'self' => $this->linkManager->getEntityLink(
         $rasterized['id'],
-        $this->context['resource_type'],
+        $resource_type,
         [],
         'individual'
       ),
-      'working-copy' => $this->linkManager->getEntityVersionLink(
-        $rasterized['id'],
-        $this->context['resource_type'],
-        [],
-        'individual',
-        'current_latest_revision_id:working-copy'
-      ),
-      'latest-version' => $this->linkManager->getEntityVersionLink(
-        $rasterized['id'],
-        $this->context['resource_type'],
-        [],
-        'individual',
-        'current_latest_revision_id:latest-version'
-      ),
     ];
+    // Add the revision links only if they may sense.
+    if ($resource_type->isVersionable() && $this->entity instanceof RevisionableInterface) {
+      $rasterized['links'] += [
+        'working-copy' => $this->linkManager->getEntityVersionLink(
+          $rasterized['id'],
+          $resource_type,
+          [],
+          'individual',
+          ['resource_type' => 'rel:working-copy']
+        ),
+        'latest-version' => $this->linkManager->getEntityVersionLink(
+          $rasterized['id'],
+          $resource_type,
+          [],
+          'individual',
+          ['resource_type' => 'rel:latest-version']
+        ),
+      ];
+    }
 
     foreach ($this->getValues() as $field_name => $normalizer_value) {
       $rasterized[$normalizer_value->getPropertyType()][$field_name] = $normalizer_value->rasterizeValue();

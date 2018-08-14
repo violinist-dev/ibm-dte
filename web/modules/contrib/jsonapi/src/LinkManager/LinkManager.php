@@ -50,11 +50,19 @@ class LinkManager {
    *   Parameters for the route generation.
    * @param string $key
    *   A key to build the route identifier.
+   * @param array $query
+   *   An structured array with query string parameters.
    *
    * @return string|null
    *   The URL string, or NULL if the given entity is not locatable.
    */
-  public function getEntityLink($entity_id, ResourceType $resource_type, array $route_parameters, $key) {
+  public function getEntityLink(
+    $entity_id,
+    ResourceType $resource_type,
+    array $route_parameters,
+    $key,
+    array $query = []
+  ) {
     if (!$resource_type->isLocatable()) {
       return NULL;
     }
@@ -63,35 +71,16 @@ class LinkManager {
       $resource_type->getEntityTypeId() => $entity_id,
     ];
     $route_key = sprintf('jsonapi.%s.%s', $resource_type->getTypeName(), $key);
-    return $this->urlGenerator->generateFromRoute($route_key, $route_parameters, ['absolute' => TRUE], TRUE)->getGeneratedUrl();
-  }
-
-  /**
-   * Gets a link for the entity.
-   *
-   * @param int $entity_id
-   *   The entity ID to generate the link for. Note: Depending on the
-   *   configuration this might be the UUID as well.
-   * @param \Drupal\jsonapi\ResourceType\ResourceType $resource_type
-   *   The JSON API resource type.
-   * @param array $route_parameters
-   *   Parameters for the route generation.
-   * @param string $key
-   *   A key to build the route identifier.
-   *
-   * @return string|null
-   *   The URL string, or NULL if the given entity is not locatable.
-   */
-  public function getEntityVersionLink($entity_id, ResourceType $resource_type, array $route_parameters, $key, $plugin_id) {
-    if (!$resource_type->isLocatable()) {
-      return NULL;
+    $route_options = ['absolute' => TRUE];
+    if (!empty($query)) {
+      $route_options['query'] = $query;
     }
-
-    $route_parameters += [
-      $resource_type->getEntityTypeId() => $entity_id,
-    ];
-    $route_key = sprintf('jsonapi.%s.%s', $resource_type->getTypeName(), $key);
-    return $this->urlGenerator->generateFromRoute($route_key, $route_parameters, ['absolute' => TRUE, 'query' => ['resource_version' => $plugin_id]], TRUE)->getGeneratedUrl();
+    return $this->urlGenerator->generateFromRoute(
+      $route_key,
+      $route_parameters,
+      $route_options,
+      TRUE
+    )->getGeneratedUrl();
   }
 
   /**
