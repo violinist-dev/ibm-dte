@@ -154,6 +154,7 @@ services:
       - '@entity_field.manager'
       - '@plugin.manager.field.field_type'
       - '@jsonapi.link_manager'
+      - '@plugin.manager.revision_id_negotiation'
 
   # Event subscribers.
   jsonapi.resource_response.subscriber:
@@ -169,6 +170,9 @@ services:
       - [setSchemaFactory, ['@?schemata.schema_factory']] # This is only injected when the service is available.
     tags:
       - { name: event_subscriber, priority: 1000 }
+  plugin.manager.revision_id_negotiation:
+    class: Drupal\jsonapi\Revisions\RevisionIdNegotiationManager
+    parent: default_plugin_manager
 
   # Deprecated services.
   serializer.normalizer.htt_exception.jsonapi:
