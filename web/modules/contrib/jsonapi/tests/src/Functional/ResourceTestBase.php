@@ -456,6 +456,7 @@ abstract class ResourceTestBase extends BrowserTestBase {
       'url.query_args:filter',
       'url.query_args:include',
       'url.query_args:page',
+      'url.query_args:resource_version',
       'url.query_args:sort',
       // Drupal defaults.
       'url.site',
@@ -513,6 +514,7 @@ abstract class ResourceTestBase extends BrowserTestBase {
       'url.query_args:filter',
       'url.query_args:include',
       'url.query_args:page',
+      'url.query_args:resource_version',
       'url.query_args:sort',
       // Drupal defaults.
       'url.site',
