@@ -1083,12 +1083,13 @@ class EntityResource {
    *
    * @param \Drupal\Core\Entity\EntityInterface $entity
    *   The entity.
-   * @param $resource_version
+   * @param string $resource_version
    *   The user input for the revision. It takes the form of "negotiator:id".
    *
    * @throws \Symfony\Component\HttpKernel\Exception\NotFoundHttpException
    *
    * @return \Drupal\Core\Entity\EntityInterface
+   *   The revision entity.
    */
   protected function negotiateEntityRevision(EntityInterface $entity, $resource_version) {
     try {
@@ -1101,9 +1102,11 @@ class EntityResource {
       if ($storage instanceof RevisionableStorageInterface) {
         $revision = $storage->loadRevision($revision_id);
       }
-    } catch (PluginException $e) {
+    }
+    catch (PluginException $e) {
       throw new NotFoundHttpException($e->getMessage(), $e);
-    } catch (\InvalidArgumentException $e) {
+    }
+    catch (\InvalidArgumentException $e) {
       throw new NotFoundHttpException($e->getMessage(), $e);
     }
     if (empty($revision)) {
