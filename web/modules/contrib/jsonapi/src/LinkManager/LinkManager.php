@@ -50,11 +50,19 @@ class LinkManager {
    *   Parameters for the route generation.
    * @param string $key
    *   A key to build the route identifier.
+   * @param array $query
+   *   An structured array with query string parameters.
    *
    * @return string|null
    *   The URL string, or NULL if the given entity is not locatable.
    */
-  public function getEntityLink($entity_id, ResourceType $resource_type, array $route_parameters, $key) {
+  public function getEntityLink(
+    $entity_id,
+    ResourceType $resource_type,
+    array $route_parameters,
+    $key,
+    array $query = []
+  ) {
     if (!$resource_type->isLocatable()) {
       return NULL;
     }
@@ -63,7 +71,16 @@ class LinkManager {
       $resource_type->getEntityTypeId() => $entity_id,
     ];
     $route_key = sprintf('jsonapi.%s.%s', $resource_type->getTypeName(), $key);
-    return $this->urlGenerator->generateFromRoute($route_key, $route_parameters, ['absolute' => TRUE], TRUE)->getGeneratedUrl();
+    $route_options = ['absolute' => TRUE];
+    if (!empty($query)) {
+      $route_options['query'] = $query;
+    }
+    return $this->urlGenerator->generateFromRoute(
+      $route_key,
+      $route_parameters,
+      $route_options,
+      TRUE
+    )->getGeneratedUrl();
   }
 
   /**
