@@ -61,9 +61,6 @@ class EntityNormalizerValue implements ValueExtractorInterface, CacheableDepende
    *   The context for the normalizer.
    * @param \Drupal\Core\Entity\EntityInterface $entity
    *   The entity.
-   * @param array $link_context
-   *   All the objects and variables needed to generate the links for this
-   *   relationship.
    */
   public function __construct(array $values, array $context, EntityInterface $entity, array $link_context) {
     $this->setCacheability(static::mergeCacheableDependencies(array_merge([$entity], $values)));
