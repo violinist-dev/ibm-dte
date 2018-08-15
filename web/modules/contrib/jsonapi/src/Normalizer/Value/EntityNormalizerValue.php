@@ -112,14 +112,14 @@ class EntityNormalizerValue implements ValueExtractorInterface, CacheableDepende
     // Add the revision links only if they may sense.
     if ($resource_type->isVersionable() && $this->entity instanceof RevisionableInterface) {
       $rasterized['links'] += [
-        'working-copy' => $this->linkManager->getEntityVersionLink(
+        'working-copy' => $this->linkManager->getEntityLink(
           $rasterized['id'],
           $resource_type,
           [],
           'individual',
           ['resource_type' => 'rel:working-copy']
         ),
-        'latest-version' => $this->linkManager->getEntityVersionLink(
+        'latest-version' => $this->linkManager->getEntityLink(
           $rasterized['id'],
           $resource_type,
           [],
