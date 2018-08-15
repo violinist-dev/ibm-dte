@@ -8,6 +8,7 @@ use Drupal\Core\Entity\EntityTypeBundleInfoInterface;
 use Drupal\Core\Entity\EntityTypeInterface;
 use Drupal\Core\Entity\EntityTypeManagerInterface;
 use Drupal\Core\Entity\FieldableEntityInterface;
+use Drupal\Core\Entity\RevisionableStorageInterface;
 use Drupal\Core\Field\FieldDefinitionInterface;
 use Drupal\Core\TypedData\DataReferenceTargetDefinition;
 use Symfony\Component\HttpKernel\Exception\PreconditionFailedHttpException;
@@ -104,7 +105,8 @@ class ResourceTypeRepository implements ResourceTypeRepositoryInterface {
             $bundle,
             $entity_type->getClass(),
             static::shouldBeInternalResourceType($entity_type),
-            static::isLocatableResourceType($entity_type)
+            static::isLocatableResourceType($entity_type),
+            static::isVersionableResourceType($entity_type)
           );
         }, array_keys($this->entityTypeBundleInfo->getBundleInfo($entity_type_id))));
       }
@@ -173,6 +175,20 @@ class ResourceTypeRepository implements ResourceTypeRepositoryInterface {
    */
   protected static function isLocatableResourceType(EntityTypeInterface $entity_type) {
     return $entity_type->getStorageClass() !== ContentEntityNullStorage::class;
+  }
+
+  /**
+   * Whether an entity type is a versionable resource type.
+   *
+   * @param \Drupal\Core\Entity\EntityTypeInterface $entity_type
+   *   The entity type to assess.
+   *
+   * @return bool
+   *   TRUE if the entity type is versionable, FALSE otherwise.
+   */
+  protected static function isVersionableResourceType(EntityTypeInterface $entity_type) {
+    $interfaces = class_implements($entity_type->getStorageClass());
+    return !empty($interfaces[RevisionableStorageInterface::class]);
   }
 
   /**

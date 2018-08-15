@@ -81,6 +81,7 @@ class JsonApiDocumentTopLevelNormalizerValue implements ValueExtractorInterface,
     }, JsonApiSpec::getReservedQueryParameters()));
     // Every JSON API document contains absolute URLs.
     $this->addCacheContexts(['url.site']);
+    $this->addCacheContexts([sprintf('url.query_args:%s', JsonApiSpec::VERSION_QUERY_PARAMETER)]);
 
     $this->context = $context;
     $this->isCollection = $is_collection;
