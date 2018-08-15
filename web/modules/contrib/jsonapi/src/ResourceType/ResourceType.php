@@ -226,7 +226,14 @@ class ResourceType {
    * @param bool $is_locatable
    *   (optional) Whether the resource type is locatable.
    */
-  public function __construct($entity_type_id, $bundle, $deserialization_target_class, $internal = FALSE, $is_locatable = TRUE, $is_versionable = FALSE) {
+  public function __construct(
+    $entity_type_id,
+    $bundle,
+    $deserialization_target_class,
+    $internal = FALSE,
+    $is_locatable = TRUE,
+    $is_versionable = FALSE
+  ) {
     $this->entityTypeId = $entity_type_id;
     $this->bundle = $bundle;
     $this->deserializationTargetClass = $deserialization_target_class;

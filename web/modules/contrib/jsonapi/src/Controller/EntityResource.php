@@ -113,7 +113,15 @@ class EntityResource {
    * @param \Drupal\jsonapi\Revisions\RevisionIdNegotiationManager $revision_id_negotiation_manager
    *   The revision id negotiation manager.
    */
-  public function __construct(ResourceType $resource_type, EntityTypeManagerInterface $entity_type_manager, EntityFieldManagerInterface $field_manager, FieldTypePluginManagerInterface $plugin_manager, LinkManager $link_manager, ResourceTypeRepositoryInterface $resource_type_repository, RevisionIdNegotiationManager $revision_id_negotiation_manager) {
+  public function __construct(
+    ResourceType $resource_type,
+    EntityTypeManagerInterface $entity_type_manager,
+    EntityFieldManagerInterface $field_manager,
+    FieldTypePluginManagerInterface $plugin_manager,
+    LinkManager $link_manager,
+    ResourceTypeRepositoryInterface $resource_type_repository,
+    RevisionIdNegotiationManager $revision_id_negotiation_manager
+  ) {
     $this->resourceType = $resource_type;
     $this->entityTypeManager = $entity_type_manager;
     $this->fieldManager = $field_manager;

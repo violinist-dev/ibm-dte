@@ -90,7 +90,15 @@ class RequestHandler {
    * @param \Drupal\jsonapi\Revisions\RevisionIdNegotiationManager $revision_id_negotiation_manager
    *   The revision id manager.
    */
-  public function __construct(SerializerInterface $serializer, ResourceTypeRepositoryInterface $resource_type_repository, EntityTypeManagerInterface $entity_type_manager, EntityFieldManagerInterface $field_manager, FieldTypePluginManagerInterface $field_type_manager, LinkManager $link_manager, RevisionIdNegotiationManager $revision_id_negotiation_manager) {
+  public function __construct(
+    SerializerInterface $serializer,
+    ResourceTypeRepositoryInterface $resource_type_repository,
+    EntityTypeManagerInterface $entity_type_manager,
+    EntityFieldManagerInterface $field_manager,
+    FieldTypePluginManagerInterface $field_type_manager,
+    LinkManager $link_manager,
+    RevisionIdNegotiationManager $revision_id_negotiation_manager
+  ) {
     $this->serializer = $serializer;
     $this->resourceTypeRepository = $resource_type_repository;
     $this->entityTypeManager = $entity_type_manager;

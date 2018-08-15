@@ -26,7 +26,11 @@ class RevisionIdNegotiationManager extends DefaultPluginManager {
    * @param \Drupal\Core\Extension\ModuleHandlerInterface $module_handler
    *   The module handler to invoke the alter hook with.
    */
-  public function __construct(\Traversable $namespaces, CacheBackendInterface $cache_backend, ModuleHandlerInterface $module_handler) {
+  public function __construct(
+    \Traversable $namespaces,
+    CacheBackendInterface $cache_backend,
+    ModuleHandlerInterface $module_handler
+  ) {
     parent::__construct('Plugin/RevisionIdNegotiation', $namespaces, $module_handler, 'Drupal\jsonapi\Revisions\RevisionIdNegotiationInterface', 'Drupal\jsonapi\Revisions\Annotation\RevisionIdNegotiation');
     $this->alterInfo('revision_id_info');
     $this->setCacheBackend($cache_backend, 'revision_id_negoriation_info_plugins');
