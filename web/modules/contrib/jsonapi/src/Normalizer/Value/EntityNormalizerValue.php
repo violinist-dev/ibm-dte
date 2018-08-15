@@ -5,6 +5,7 @@ namespace Drupal\jsonapi\Normalizer\Value;
 use Drupal\Core\Cache\CacheableDependencyInterface;
 use Drupal\Core\Entity\EntityInterface;
 use Drupal\Core\Entity\RevisionableInterface;
+use Drupal\jsonapi\JsonApiSpec;
 use Drupal\jsonapi\Normalizer\CacheableDependencyTrait;
 
 /**
@@ -117,14 +118,14 @@ class EntityNormalizerValue implements ValueExtractorInterface, CacheableDepende
           $resource_type,
           [],
           'individual',
-          ['resource_type' => 'rel:working-copy']
+          [JsonApiSpec::VERSION_QUERY_PARAMETER => 'rel:working-copy']
         ),
         'latest-version' => $this->linkManager->getEntityLink(
           $rasterized['id'],
           $resource_type,
           [],
           'individual',
-          ['resource_type' => 'rel:latest-version']
+          [JsonApiSpec::VERSION_QUERY_PARAMETER => 'rel:latest-version']
         ),
       ];
     }
