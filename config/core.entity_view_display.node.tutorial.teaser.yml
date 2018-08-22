@@ -39,6 +39,7 @@ hidden:
   field_referenced_demo_instance: true
   field_referenced_products: true
   field_short_description: true
+  field_summary: true
   field_takeaways: true
   field_tasks: true
   field_weight: true
