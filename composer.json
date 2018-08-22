@@ -56,9 +56,9 @@
         "drupal/entity_embed": "^1.0@beta",
         "drupal/extra_field_description": "^1.1",
         "drupal/field_group": "^1.0",
-        "drupal/fieldable_path": "^1.0@RC",
+        "drupal/fieldable_path": "1.x-dev",
         "drupal/graphql": "^3.0@beta",
-        "drupal/jsonapi": "^1.15",
+        "drupal/jsonapi": "^1.23",
         "drupal/jsonapi_extras": "^2.0@RC",
         "drupal/label_help": "1.x-dev",
         "drupal/markdown": "^1.2",
@@ -171,6 +171,10 @@
         "patches": {
             "drupal/moderation_note": {
                 "Moderation Note with Paragraphs": "https://www.drupal.org/files/issues/2018-05-05/2954753-14.patch"
+            },
+            "drupal/jsonapi": {
+                "Individual Revision Links": "https://www.drupal.org/files/issues/2018-08-17/2992836--revision-links--10.patch",
+                "Revision ID Negotiation": "https://www.drupal.org/files/issues/2018-08-20/2992833--revision-id-negotiation--36.patch"
             }
         }
     },
