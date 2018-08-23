@@ -1,9 +1,19 @@
 uuid: 8ebc980e-9893-4cf9-9853-8d8f73c629a4
 langcode: en
-status: true
+status: false
 dependencies:
   config:
     - core.entity_view_mode.node.teaser
+    - field.field.node.product_tour.field_formatted_introduction
+    - field.field.node.product_tour.field_path
+    - field.field.node.product_tour.field_referenced_demo_instance
+    - field.field.node.product_tour.field_referenced_products
+    - field.field.node.product_tour.field_related_tutorials
+    - field.field.node.product_tour.field_short_description
+    - field.field.node.product_tour.field_summary
+    - field.field.node.product_tour.field_takeaways
+    - field.field.node.product_tour.field_tasks
+    - field.field.node.product_tour.field_weight
     - node.type.product_tour
   module:
     - user

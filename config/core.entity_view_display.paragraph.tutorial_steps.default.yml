@@ -14,7 +14,7 @@ bundle: tutorial_steps
 mode: default
 content:
   field_formatted_title:
-    weight: 2
+    weight: 0
     label: above
     settings: {  }
     third_party_settings: {  }
