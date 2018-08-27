@@ -3,23 +3,39 @@ langcode: en
 status: true
 dependencies:
   module:
+    - language
     - node
 id: original_source_title
-label: 'Translatable Content'
+label: 'Translated Content'
 type: 'canonical_entities:node'
-pattern: '[node:content-type:machine-name]/[node:original:source:title]'
+pattern: '[node:content-type:machine-name]/[node:source:original:title]'
 selection_criteria:
-  9e075b3b-416a-4087-9a98-5db22c2a1f74:
+  02321f77-ecd3-49e2-ac50-e21554b5b97f:
     id: node_type
     bundles:
-      tutorial: tutorial
       demo_instance: demo_instance
       product_tour: product_tour
+      tutorial: tutorial
       video: video
     negate: false
     context_mapping:
       node: node
-    uuid: 9e075b3b-416a-4087-9a98-5db22c2a1f74
+    uuid: 02321f77-ecd3-49e2-ac50-e21554b5b97f
+  851e1c54-5bec-4629-ae4b-01e5f93e51da:
+    id: language
+    langcodes:
+      es: es
+      zh-hans: zh-hans
+      de: de
+      ja: ja
+      fr: fr
+      pt-br: pt-br
+    negate: false
+    context_mapping:
+      language: 'node:langcode:language'
+    uuid: 851e1c54-5bec-4629-ae4b-01e5f93e51da
 selection_logic: and
 weight: -5
-relationships: {  }
+relationships:
+  'node:langcode:language':
+    label: Language
