@@ -2,17 +2,7 @@
 /drush/contrib/
 /vendor/
 /web/core/
-
-!/web/modules/contrib/
-# Ignore subdirectory and all including directories and files to match pattern as valid for the next pattern
-/web/modules/contrib/**
-# This pattern only works with the two previous patterns
-# (i remember it was working alone on older git versions)
-!/web/modules/contrib/jsonapi/
-!/web/modules/contrib/jsonapi/**
-!/web/modules/contrib/fieldable_path/
-!/web/modules/contrib/fieldable_path/**
-
+/web/modules/contrib/
 /web/themes/contrib/
 /web/profiles/contrib/
 /web/libraries/

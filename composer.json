@@ -22,9 +22,9 @@
         "drupal/config_installer": "^1.8",
         "drupal/console": "^1.0.2",
         "drupal/core": "~8.5.3",
-        "drupal/fieldable_path": "^1.0@RC",
+        "drupal/fieldable_path": "1.x-dev",
         "drupal/jsonapi": "^1.23",
-        "drupal/jsonapi_extras": "^2.5",
+        "drupal/jsonapi_extras": "^2.8",
         "drupal/paragraphs": "^1.3",
         "drush/drush": "^9.0.0",
         "webflo/drupal-finder": "^1.0.0",
@@ -83,6 +83,10 @@
         "patches": {
             "drupal/core": {
                 "Add support to migrate multilingual revisions": "https://www.drupal.org/files/issues/2018-07-04/2921661-86-8.6.x.patch"
+            },
+            "drupal/jsonapi": {
+                "Add a revision id negotiation plugin to support entity revisions": "https://www.drupal.org/files/issues/2018-08-26/2992833--revision-id-negotiation--52.patch",
+                "Provide links to entity revisions in json api output": "https://www.drupal.org/files/issues/2018-08-27/2992836--revision-links--12--do-not-test.patch"
             }
         }
     }
