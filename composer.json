@@ -59,7 +59,7 @@
         "drupal/fieldable_path": "1.x-dev",
         "drupal/graphql": "^3.0@beta",
         "drupal/jsonapi": "^1.23",
-        "drupal/jsonapi_extras": "^2.0@RC",
+        "drupal/jsonapi_extras": "^2.8",
         "drupal/label_help": "1.x-dev",
         "drupal/markdown": "^1.2",
         "drupal/material_admin": "^1.0@alpha",
@@ -173,8 +173,11 @@
                 "Moderation Note with Paragraphs": "https://www.drupal.org/files/issues/2018-05-05/2954753-14.patch"
             },
             "drupal/jsonapi": {
-                "Individual Revision Links": "https://www.drupal.org/files/issues/2018-08-17/2992836--revision-links--10.patch",
-                "Revision ID Negotiation": "https://www.drupal.org/files/issues/2018-08-20/2992833--revision-id-negotiation--36.patch"
+                "Add a revision id negotiation plugin to support entity revisions": "https://www.drupal.org/files/issues/2018-08-26/2992833--revision-id-negotiation--52.patch",
+                "Provide links to entity revisions in json api output": "https://www.drupal.org/files/issues/2018-08-27/2992836--revision-links--12--do-not-test.patch"
+            },
+            "drupal/core": {
+                "Add support to migrate multilingual revisions": "https://www.drupal.org/files/issues/2018-07-04/2921661-86-8.6.x.patch"
             }
         }
     },
