@@ -1,0 +1,107 @@
+uuid: cc810b82-235e-481a-bdfa-d39ce46efde3
+langcode: es
+status: true
+dependencies:
+  module:
+    - moderation_note
+id: moderation_note--moderation_note
+disabled: true
+path: moderation_note/moderation_note
+resourceType: moderation_note--moderation_note
+resourceFields:
+  id:
+    fieldName: id
+    publicName: id
+    enhancer:
+      id: ''
+    disabled: false
+  uuid:
+    fieldName: uuid
+    publicName: uuid
+    enhancer:
+      id: ''
+    disabled: false
+  published:
+    fieldName: published
+    publicName: published
+    enhancer:
+      id: ''
+    disabled: false
+  parent:
+    fieldName: parent
+    publicName: parent
+    enhancer:
+      id: ''
+    disabled: false
+  uid:
+    fieldName: uid
+    publicName: uid
+    enhancer:
+      id: ''
+    disabled: false
+  entity_type:
+    fieldName: entity_type
+    publicName: entity_type
+    enhancer:
+      id: ''
+    disabled: false
+  entity_id:
+    fieldName: entity_id
+    publicName: entity_id
+    enhancer:
+      id: ''
+    disabled: false
+  entity_field_name:
+    fieldName: entity_field_name
+    publicName: entity_field_name
+    enhancer:
+      id: ''
+    disabled: false
+  entity_langcode:
+    fieldName: entity_langcode
+    publicName: entity_langcode
+    enhancer:
+      id: ''
+    disabled: false
+  entity_view_mode_id:
+    fieldName: entity_view_mode_id
+    publicName: entity_view_mode_id
+    enhancer:
+      id: ''
+    disabled: false
+  quote:
+    fieldName: quote
+    publicName: quote
+    enhancer:
+      id: ''
+    disabled: false
+  quote_offset:
+    fieldName: quote_offset
+    publicName: quote_offset
+    enhancer:
+      id: ''
+    disabled: false
+  text:
+    fieldName: text
+    publicName: text
+    enhancer:
+      id: ''
+    disabled: false
+  created:
+    fieldName: created
+    publicName: created
+    enhancer:
+      id: ''
+    disabled: false
+  changed:
+    fieldName: changed
+    publicName: changed
+    enhancer:
+      id: ''
+    disabled: false
+  assignee:
+    fieldName: assignee
+    publicName: assignee
+    enhancer:
+      id: ''
+    disabled: false

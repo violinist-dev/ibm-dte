@@ -197,7 +197,7 @@ resourceFields:
     disabled: false
   field_summary:
     fieldName: field_summary
-    publicName: field_summary
+    publicName: summary
     enhancer:
       id: ''
     disabled: false
@@ -215,7 +215,7 @@ resourceFields:
     disabled: false
   field_weight:
     fieldName: field_weight
-    publicName: field_weight
+    publicName: weight
     enhancer:
       id: ''
     disabled: false

@@ -3,12 +3,34 @@ langcode: en
 status: true
 dependencies:
   module:
+    - language
     - node
 id: untranslatable_content
-label: 'Untranslatable Content'
+label: 'Base Content'
 type: 'canonical_entities:node'
-pattern: '[node:content-type:machine-name]/[node:original:title]'
-selection_criteria: {  }
+pattern: '[node:content-type:machine-name]/[node:title]'
+selection_criteria:
+  af09415b-9e96-46be-a7cc-371a5579b77a:
+    id: node_type
+    bundles:
+      demo_instance: demo_instance
+      product_tour: product_tour
+      tutorial: tutorial
+      video: video
+    negate: false
+    context_mapping:
+      node: node
+    uuid: af09415b-9e96-46be-a7cc-371a5579b77a
+  66abe057-e9b2-466a-a22c-080bd2424962:
+    id: language
+    langcodes:
+      en: en
+    negate: false
+    context_mapping:
+      language: 'node:langcode:language'
+    uuid: 66abe057-e9b2-466a-a22c-080bd2424962
 selection_logic: and
 weight: -5
-relationships: {  }
+relationships:
+  'node:langcode:language':
+    label: Language
