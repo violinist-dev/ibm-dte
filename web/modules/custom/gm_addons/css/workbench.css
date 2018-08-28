@@ -15,7 +15,10 @@
 
 .workbench--content-moderation .form-item-title-op,
 .workbench--content-moderation .form-item-type-op,
-.workbench--content-moderation .form-item-field-referenced-products-target-id-op {
+.workbench--content-moderation .form-item-field-referenced-products-target-id-op,
+.workbench--content-moderation .form-item-langcode-op,
+.workbench--content-moderation .form-item-moderation-state-op,
+.workbench--content-moderation .form-item-uid-op {
   grid-column: 2 / span 1;
   grid-row: 1 / span 1;
   align-self: self-end;
@@ -39,6 +42,17 @@
 
 .workbench--content-moderation .form-item-field-referenced-products-target-id-op {
   grid-row: 3 / span 1;
+}
+
+.workbench--content-moderation .form-item-langcode-op {
+  grid-row: 4 / span 1;
+}
+.workbench--content-moderation .form-item-moderation-state-op {
+  grid-row: 5 / span 1;
+}
+.workbench--content-moderation .form-item-uid-op {
+  grid-row: 6 / span 1;
+  align-self: baseline;
 }
 
 .workbench--content-moderation .views-table caption {

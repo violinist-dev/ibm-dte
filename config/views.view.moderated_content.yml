@@ -3,12 +3,14 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.storage.node.field_referenced_products
     - system.menu.workbench
-    - workflows.workflow.editorial
+    - taxonomy.vocabulary.portfolios
     - workflows.workflow.tech_lead_editor
   module:
     - content_moderation
     - node
+    - taxonomy
     - user
 _core:
   default_config_hash: 1UIjNd6iIhogbx50cJPDN7Me8cUQx2xCP2IBgrKG6Ms
@@ -267,6 +269,69 @@ display:
           entity_type: node
           entity_field: type
           plugin_id: field
+        field_referenced_products:
+          id: field_referenced_products
+          table: node__field_referenced_products
+          field: field_referenced_products
+          relationship: nid
+          group_type: group
+          admin_label: ''
+          label: 'Referenced Products'
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: true
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: target_id
+          type: entity_reference_label
+          settings:
+            link: true
+          group_column: target_id
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+          plugin_id: field
         name:
           id: name
           table: users_field_data
@@ -340,7 +405,7 @@ display:
           group_type: group
           admin_label: ''
           label: 'Moderation state'
-          exclude: false
+          exclude: true
           alter:
             alter_text: false
             text: ''
@@ -566,7 +631,7 @@ display:
             operator_id: title_op
             label: Title
             description: ''
-            use_operator: false
+            use_operator: true
             operator: title_op
             identifier: title
             required: false
@@ -574,8 +639,14 @@ display:
             multiple: false
             remember_roles:
               authenticated: authenticated
-              anonymous: '0'
+              content_creator: '0'
+              technical_reviewer: '0'
+              content_editor: '0'
+              api_consumer: '0'
+              api_consumer_staging_: '0'
               administrator: '0'
+              anonymous: '0'
+            placeholder: ''
           is_grouped: false
           group_info:
             label: ''
@@ -606,7 +677,7 @@ display:
             operator_id: type_op
             label: 'Content type'
             description: ''
-            use_operator: false
+            use_operator: true
             operator: type_op
             identifier: type
             required: false
@@ -614,8 +685,13 @@ display:
             multiple: false
             remember_roles:
               authenticated: authenticated
-              anonymous: '0'
+              content_creator: '0'
+              technical_reviewer: '0'
+              content_editor: '0'
+              api_consumer: '0'
+              api_consumer_staging_: '0'
               administrator: '0'
+              anonymous: '0'
             reduce: false
           is_grouped: false
           group_info:
@@ -632,34 +708,37 @@ display:
           entity_type: node
           entity_field: type
           plugin_id: bundle
-        moderation_state:
-          id: moderation_state
-          table: node_field_revision
-          field: moderation_state
-          relationship: none
+        field_referenced_products_target_id:
+          id: field_referenced_products_target_id
+          table: node__field_referenced_products
+          field: field_referenced_products_target_id
+          relationship: nid
           group_type: group
           admin_label: ''
-          operator: in
-          value:
-            editorial-draft: editorial-draft
-            editorial-archived: editorial-archived
+          operator: or
+          value: {  }
           group: 1
           exposed: true
           expose:
-            operator_id: moderation_state_op
-            label: 'Moderation state'
+            operator_id: field_referenced_products_target_id_op
+            label: 'Referenced Products'
             description: ''
-            use_operator: false
-            operator: moderation_state_op
-            identifier: moderation_state
+            use_operator: true
+            operator: field_referenced_products_target_id_op
+            identifier: field_referenced_products_target_id
             required: false
             remember: false
             multiple: false
             remember_roles:
               authenticated: authenticated
-              anonymous: '0'
+              content_creator: '0'
+              technical_reviewer: '0'
+              content_editor: '0'
+              api_consumer: '0'
+              api_consumer_staging_: '0'
               administrator: '0'
-            reduce: true
+              anonymous: '0'
+            reduce: false
           is_grouped: false
           group_info:
             label: ''
@@ -672,8 +751,13 @@ display:
             default_group: All
             default_group_multiple: {  }
             group_items: {  }
-          entity_type: node
-          plugin_id: moderation_state_filter
+          reduce_duplicates: false
+          type: textfield
+          limit: true
+          vid: portfolios
+          hierarchy: false
+          error_message: true
+          plugin_id: taxonomy_index_tid
         langcode:
           id: langcode
           table: node_field_revision
@@ -689,7 +773,7 @@ display:
             operator_id: langcode_op
             label: Language
             description: ''
-            use_operator: false
+            use_operator: true
             operator: langcode_op
             identifier: langcode
             required: false
@@ -697,8 +781,13 @@ display:
             multiple: false
             remember_roles:
               authenticated: authenticated
-              anonymous: '0'
+              content_creator: '0'
+              technical_reviewer: '0'
+              content_editor: '0'
+              api_consumer: '0'
+              api_consumer_staging_: '0'
               administrator: '0'
+              anonymous: '0'
             reduce: false
           is_grouped: false
           group_info:
@@ -715,6 +804,51 @@ display:
           entity_type: node
           entity_field: langcode
           plugin_id: language
+        moderation_state:
+          id: moderation_state
+          table: node_field_revision
+          field: moderation_state
+          relationship: none
+          group_type: group
+          admin_label: ''
+          operator: in
+          value: {  }
+          group: 1
+          exposed: true
+          expose:
+            operator_id: moderation_state_op
+            label: 'Moderation state'
+            description: ''
+            use_operator: true
+            operator: moderation_state_op
+            identifier: moderation_state
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+              content_creator: '0'
+              technical_reviewer: '0'
+              content_editor: '0'
+              api_consumer: '0'
+              api_consumer_staging_: '0'
+              administrator: '0'
+              anonymous: '0'
+            reduce: true
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          entity_type: node
+          plugin_id: moderation_state_filter
         moderation_state_1:
           id: moderation_state_1
           table: node_field_revision
@@ -755,6 +889,52 @@ display:
             group_items: {  }
           entity_type: node
           plugin_id: moderation_state_filter
+        uid:
+          id: uid
+          table: node_field_data
+          field: uid
+          relationship: nid
+          group_type: group
+          admin_label: ''
+          operator: in
+          value: {  }
+          group: 1
+          exposed: true
+          expose:
+            operator_id: uid_op
+            label: 'Authored by'
+            description: ''
+            use_operator: true
+            operator: uid_op
+            identifier: uid
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+              content_creator: '0'
+              technical_reviewer: '0'
+              content_editor: '0'
+              api_consumer: '0'
+              api_consumer_staging_: '0'
+              administrator: '0'
+              anonymous: '0'
+            reduce: false
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          entity_type: node
+          entity_field: uid
+          plugin_id: user_name
       sorts: {  }
       title: 'Moderated Content'
       header: {  }
@@ -800,6 +980,7 @@ display:
         operator: AND
         groups:
           1: AND
+      use_ajax: true
     cache_metadata:
       max-age: -1
       contexts:
@@ -807,9 +988,11 @@ display:
         - 'languages:language_interface'
         - url
         - url.query_args
+        - user
         - 'user.node_grants:view'
         - user.permissions
       tags:
+        - 'config:field.storage.node.field_referenced_products'
         - 'config:workflow_list'
   moderated_content:
     display_plugin: page
@@ -836,9 +1019,11 @@ display:
         - 'languages:language_interface'
         - url
         - url.query_args
+        - user
         - 'user.node_grants:view'
         - user.permissions
       tags:
+        - 'config:field.storage.node.field_referenced_products'
         - 'config:workflow_list'
   page_1:
     display_plugin: page
@@ -847,21 +1032,22 @@ display:
     position: 2
     display_options:
       display_extenders: {  }
-      path: admin/workbench/content/moderation
+      path: admin/workbench/content/review
       menu:
         type: normal
-        title: 'Moderation Status'
-        description: 'Moderation Status of All Content'
+        title: 'Review status'
+        description: 'Review Status of All Content'
         expanded: false
         parent: ''
         weight: -46
         context: '0'
         menu_name: workbench
-      title: 'Moderation Status'
+      title: 'Content In Review'
       defaults:
         title: false
         style: false
         row: false
+        css_class: false
       display_description: ''
       style:
         type: table
@@ -881,6 +1067,7 @@ display:
           columns:
             title: title
             type: type
+            field_referenced_products: field_referenced_products
             name: name
             moderation_state: moderation_state
             changed: changed
@@ -900,8 +1087,13 @@ display:
               separator: ''
               empty_column: false
               responsive: ''
+            field_referenced_products:
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
             name:
-              sortable: false
+              sortable: true
               default_sort_order: asc
               align: ''
               separator: ''
@@ -931,6 +1123,7 @@ display:
       row:
         type: fields
         options: {  }
+      css_class: workbench--content-moderation
     cache_metadata:
       max-age: -1
       contexts:
@@ -938,7 +1131,9 @@ display:
         - 'languages:language_interface'
         - url
         - url.query_args
+        - user
         - 'user.node_grants:view'
         - user.permissions
       tags:
+        - 'config:field.storage.node.field_referenced_products'
         - 'config:workflow_list'
