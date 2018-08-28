@@ -1,0 +1,14 @@
+uuid: ee6f12b3-4c58-4c03-9433-06b6f3c677d6
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.api_consumer_staging_
+  module:
+    - user
+id: user_remove_role_action.api_consumer_staging_
+label: 'Remove the API Consumer (Staging) role from the selected user(s)'
+type: user
+plugin: user_remove_role_action
+configuration:
+  rid: api_consumer_staging_

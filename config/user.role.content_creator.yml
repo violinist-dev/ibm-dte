@@ -1,10 +1,10 @@
-uuid: 843cbd71-43a2-4e7a-9a6b-39a42078959a
+uuid: 7bf5b092-b97f-468b-bf28-1b08648f2088
 langcode: en
 status: true
 dependencies: {  }
-id: content_editor
-label: 'Content Editor'
-weight: -7
+id: content_creator
+label: 'Content Creator'
+weight: -9
 is_admin: null
 permissions:
   - 'access coffee'
@@ -33,9 +33,6 @@ permissions:
   - 'update content translations'
   - 'use advanced search'
   - 'use tech_lead_editor transition create_new_draft'
-  - 'use tech_lead_editor transition publish'
-  - 'use tech_lead_editor transition send_to_content_lead'
-  - 'use tech_lead_editor transition send_to_editor'
   - 'use tech_lead_editor transition send_to_technical_review'
   - 'use text format html'
   - 'use text format limited_html'

@@ -1,0 +1,11 @@
+uuid: 9617f708-575c-454e-ae7c-4985f6717011
+langcode: en
+status: true
+dependencies: {  }
+id: api_consumer
+label: 'API Consumer (Production)'
+weight: -6
+is_admin: null
+permissions:
+  - 'access jsonapi resource list'
+  - 'use advanced search'
