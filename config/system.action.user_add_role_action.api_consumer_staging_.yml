@@ -1,0 +1,14 @@
+uuid: aae1c1d0-ce35-4d64-a583-8ee8f4322603
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.api_consumer_staging_
+  module:
+    - user
+id: user_add_role_action.api_consumer_staging_
+label: 'Add the API Consumer (Staging) role to the selected user(s)'
+type: user
+plugin: user_add_role_action
+configuration:
+  rid: api_consumer_staging_

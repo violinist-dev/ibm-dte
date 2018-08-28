@@ -1,0 +1,20 @@
+uuid: acfe7d59-8b2d-4b31-9582-fe35447da09a
+langcode: en
+status: true
+dependencies: {  }
+id: api_consumer_staging_
+label: 'API Consumer (Staging)'
+weight: -5
+is_admin: null
+permissions:
+  - 'access jsonapi resource list'
+  - 'use advanced search'
+  - 'view all media revisions'
+  - 'view all revisions'
+  - 'view any unpublished content'
+  - 'view demo_instance revisions'
+  - 'view latest version'
+  - 'view own unpublished content'
+  - 'view product_tour revisions'
+  - 'view tutorial revisions'
+  - 'view video revisions'
