@@ -184,7 +184,7 @@ content:
   field_short_description:
     weight: 5
     settings:
-      size: 60
+      size: 250
       placeholder: ''
     third_party_settings:
       maxlength:
