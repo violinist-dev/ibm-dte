@@ -7,12 +7,16 @@ dependencies:
     - field.field.node.video.field_path
     - field.field.node.video.field_referenced_products
     - field.field.node.video.field_short_description
+    - field.field.node.video.field_transcription
     - field.field.node.video.field_video_url
     - field.field.node.video.field_weight
     - node.type.video
   module:
+    - allowed_formats
     - content_moderation
     - field_group
+    - maxlength
+    - text
     - video_embed_field
 third_party_settings:
   field_group:
@@ -48,6 +52,7 @@ third_party_settings:
         - field_duration
         - field_short_description
         - field_weight
+        - field_transcription
       parent_name: group_content_grouping
       weight: 20
       format_type: tab
@@ -102,6 +107,22 @@ content:
         maxlength_js: 254
         maxlength_js_label: 'Content limited to @limit characters, remaining: <strong>@remaining</strong>'
     type: string_textfield
+    region: content
+  field_transcription:
+    weight: 8
+    settings:
+      rows: 20
+      placeholder: 'Please provide a simplified english transcription of the video to be used for translation'
+    third_party_settings:
+      maxlength:
+        maxlength_js: null
+        maxlength_js_label: 'Content limited to @limit characters, remaining: <strong>@remaining</strong>'
+        maxlength_js_enforce: false
+        maxlength_js_truncate_html: false
+      allowed_formats:
+        hide_help: '0'
+        hide_guidelines: '0'
+    type: text_textarea
     region: content
   field_video_url:
     weight: 4
