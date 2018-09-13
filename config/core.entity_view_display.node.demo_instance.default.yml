@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - field.field.node.demo_instance.field_benefit_introduction
+    - field.field.node.demo_instance.field_completed_security_checkli
     - field.field.node.demo_instance.field_formatted_introduction
     - field.field.node.demo_instance.field_instance_type
     - field.field.node.demo_instance.field_path
@@ -38,6 +39,16 @@ content:
       link_to_entity: false
     third_party_settings: {  }
     type: string
+    region: content
+  field_completed_security_checkli:
+    weight: 111
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    type: boolean
     region: content
   field_formatted_introduction:
     weight: 108

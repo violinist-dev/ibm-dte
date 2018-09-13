@@ -1,0 +1,23 @@
+uuid: e907f503-7a36-415f-8192-1e18920fe699
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_completed_security_checkli
+    - node.type.demo_instance
+id: node.demo_instance.field_completed_security_checkli
+field_name: field_completed_security_checkli
+entity_type: node
+bundle: demo_instance
+label: 'Completed Security Checklist'
+description: '<p>Checklist can be found here: <a href="http://ibm.biz/dte-security-checklist">http://ibm.biz/dte-security-checklist</a></p>'
+required: true
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: Completed
+  off_label: 'Not Completed'
+field_type: boolean
