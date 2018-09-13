@@ -1,0 +1,9 @@
+login_redirection:
+  authenticated: /admin/workbench
+  content_creator: /admin/workbench
+  technical_reviewer: /admin/workbench
+  content_editor: /admin/workbench
+  api_consumer: /admin
+  api_consumer_staging_: /admin
+  administrator: /admin
+  anonymous: null
