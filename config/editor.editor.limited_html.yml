@@ -17,15 +17,21 @@ settings:
           items:
             - Bold
             - Italic
-            - BulletedList
-            - NumberedList
-            - Blockquote
             - Code
         -
           name: links
           items:
             - DrupalLink
             - DrupalUnlink
+        -
+          name: lists
+          items:
+            - BulletedList
+            - NumberedList
+        -
+          name: media
+          items:
+            - Blockquote
         -
           name: paste
           items:
