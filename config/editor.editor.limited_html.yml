@@ -17,7 +17,20 @@ settings:
           items:
             - Bold
             - Italic
+            - BulletedList
+            - NumberedList
+            - Blockquote
             - Code
+        -
+          name: links
+          items:
+            - DrupalLink
+            - DrupalUnlink
+        -
+          name: paste
+          items:
+            - PasteFromWord
+            - PasteText
   plugins:
     stylescombo:
       styles: ''

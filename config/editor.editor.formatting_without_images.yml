@@ -1,6 +1,6 @@
 uuid: 050987fb-4b0e-4bc8-8115-79c47f2f550f
 langcode: en
-status: true
+status: false
 dependencies:
   config:
     - filter.format.formatting_without_images

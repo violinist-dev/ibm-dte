@@ -12,6 +12,6 @@ filters:
     status: true
     weight: -10
     settings:
-      allowed_html: '<em> <strong> <code>'
+      allowed_html: '<em> <strong> <code> <ul> <li> <ol> <a href> <blockquote>'
       filter_html_help: true
       filter_html_nofollow: true

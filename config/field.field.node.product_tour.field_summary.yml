@@ -10,11 +10,11 @@ dependencies:
     - text
 third_party_settings:
   allowed_formats:
-    formatting_without_images: formatting_without_images
+    limited_html: limited_html
     plain_text: '0'
-    limited_html: '0'
     limited_plus_html: '0'
     html: '0'
+    formatting_without_images: '0'
     full_tml: '0'
 id: node.product_tour.field_summary
 field_name: field_summary

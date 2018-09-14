@@ -1,6 +1,6 @@
 uuid: 1b120294-15db-4f8f-ba36-62d0bd367005
 langcode: en
-status: true
+status: false
 dependencies: {  }
 name: 'Formatting without images'
 format: formatting_without_images
