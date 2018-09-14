@@ -112,7 +112,7 @@ content:
     weight: 8
     settings:
       rows: 20
-      placeholder: 'Please provide a simplified english transcription of the video to be used for translation'
+      placeholder: ''
     third_party_settings:
       maxlength:
         maxlength_js: null

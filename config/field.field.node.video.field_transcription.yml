@@ -14,14 +14,13 @@ third_party_settings:
     limited_html: '0'
     limited_plus_html: '0'
     html: '0'
-    formatting_without_images: '0'
     full_tml: '0'
 id: node.video.field_transcription
 field_name: field_transcription
 entity_type: node
 bundle: video
 label: Transcription
-description: ''
+description: '<p>Exported YouTube transcription or the translation of the transcription</p>'
 required: true
 translatable: true
 default_value: {  }
