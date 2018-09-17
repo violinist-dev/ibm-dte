@@ -4,11 +4,10 @@ status: true
 dependencies:
   config:
     - field.field.paragraph.tutorial_tasks.field_introduction
+    - field.field.paragraph.tutorial_tasks.field_steps
     - field.field.paragraph.tutorial_tasks.field_task
-    - field.field.paragraph.tutorial_tasks.field_task_step
     - paragraphs.paragraphs_type.tutorial_tasks
   module:
-    - entity_reference_revisions
     - text
 id: paragraph.tutorial_tasks.default
 targetEntityType: paragraph
@@ -17,7 +16,14 @@ mode: default
 content:
   field_introduction:
     weight: 1
-    label: hidden
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_steps:
+    weight: 2
+    label: above
     settings: {  }
     third_party_settings: {  }
     type: text_default
@@ -29,14 +35,5 @@ content:
       link_to_entity: false
     third_party_settings: {  }
     type: string
-    region: content
-  field_task_step:
-    type: entity_reference_revisions_entity_view
-    weight: 3
-    label: above
-    settings:
-      view_mode: default
-      link: ''
-    third_party_settings: {  }
     region: content
 hidden: {  }
