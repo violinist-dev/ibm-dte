@@ -14,7 +14,6 @@ third_party_settings:
     plain_text: '0'
     limited_plus_html: '0'
     html: '0'
-    formatting_without_images: '0'
     full_tml: '0'
 id: node.tutorial.field_summary
 field_name: field_summary
