@@ -35,7 +35,6 @@ permissions:
   - 'use tech_lead_editor transition create_new_draft'
   - 'use tech_lead_editor transition send_to_content_lead'
   - 'use tech_lead_editor transition send_to_technical_review'
-  - 'use text format formatting_without_images'
   - 'use text format html'
   - 'use text format limited_html'
   - 'use text format limited_plus_html'
