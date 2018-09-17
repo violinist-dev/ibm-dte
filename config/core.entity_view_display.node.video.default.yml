@@ -7,11 +7,13 @@ dependencies:
     - field.field.node.video.field_path
     - field.field.node.video.field_referenced_products
     - field.field.node.video.field_short_description
+    - field.field.node.video.field_transcription
     - field.field.node.video.field_video_url
     - field.field.node.video.field_weight
     - node.type.video
   module:
     - fieldable_path
+    - text
     - user
     - video_embed_field
 id: node.video.default
@@ -55,6 +57,13 @@ content:
       link_to_entity: false
     third_party_settings: {  }
     type: string
+    region: content
+  field_transcription:
+    weight: 108
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
     region: content
   field_video_url:
     weight: 102

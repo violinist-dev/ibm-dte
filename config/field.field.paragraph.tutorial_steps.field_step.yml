@@ -14,11 +14,12 @@ third_party_settings:
     plain_text: '0'
     limited_html: '0'
     limited_plus_html: '0'
+    full_tml: '0'
 id: paragraph.tutorial_steps.field_step
 field_name: field_step
 entity_type: paragraph
 bundle: tutorial_steps
-label: Instructions
+label: 'Step Details'
 description: "<p>For all instructions, use an active voice instead of a passive voice. If you have a user do the same or similar actions, explain it in-depth the first time you ask a user to do it, but you can refer to previous knowledge <em>from the current tutorial</em> to shorten subsequent actions. Before using an acronym for the first time, define the acronym. If there is domain-specific terminology that is used and it is not obvious from the context of the tutorial, link to an appropriate introduction of the material the first time it is brought up.</p>\r\n"
 required: false
 translatable: true

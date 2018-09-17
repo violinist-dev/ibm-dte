@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - field.field.node.demo_instance.field_benefit_introduction
+    - field.field.node.demo_instance.field_completed_security_checkli
     - field.field.node.demo_instance.field_formatted_introduction
     - field.field.node.demo_instance.field_instance_type
     - field.field.node.demo_instance.field_path
@@ -70,6 +71,7 @@ third_party_settings:
         - field_urx_form_id
         - field_url
         - field_skytap_instance
+        - field_completed_security_checkli
       parent_name: group_content_grouping
       weight: 3
       format_type: tab
@@ -84,7 +86,7 @@ third_party_settings:
       children:
         - field_referenced_products
       parent_name: group_content_grouping
-      weight: 4
+      weight: 5
       format_type: tab
       format_settings:
         id: ''
@@ -118,6 +120,13 @@ content:
       placeholder: ''
     third_party_settings: {  }
     type: string_textfield
+    region: content
+  field_completed_security_checkli:
+    weight: 10
+    settings:
+      display_label: true
+    third_party_settings: {  }
+    type: boolean_checkbox
     region: content
   field_formatted_introduction:
     weight: 8
