@@ -1,9 +1,9 @@
-uuid: 6e385841-4530-4962-81fc-7c1c23139a8a
+uuid: 8f52f1ff-c6a2-46ba-aae8-c3413705a708
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.paragraph.field_introduction
+    - field.storage.paragraph.field_steps
     - paragraphs.paragraphs_type.tutorial_tasks
   module:
     - allowed_formats
@@ -15,12 +15,12 @@ third_party_settings:
     limited_html: '0'
     limited_plus_html: '0'
     full_tml: '0'
-id: paragraph.tutorial_tasks.field_introduction
-field_name: field_introduction
+id: paragraph.tutorial_tasks.field_steps
+field_name: field_steps
 entity_type: paragraph
 bundle: tutorial_tasks
-label: Introduction
-description: '<br/>'
+label: Steps
+description: ''
 required: false
 translatable: false
 default_value: {  }
