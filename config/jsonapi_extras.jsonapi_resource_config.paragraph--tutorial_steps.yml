@@ -5,7 +5,7 @@ dependencies:
   config:
     - paragraphs.paragraphs_type.tutorial_steps
 id: paragraph--tutorial_steps
-disabled: false
+disabled: true
 path: subsections/steps
 resourceType: subsection--step
 resourceFields:
