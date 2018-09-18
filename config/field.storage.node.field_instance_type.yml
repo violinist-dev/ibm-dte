@@ -19,7 +19,7 @@ settings:
       label: 'Skytap Instance'
     -
       value: open
-      label: 'Existing URL'
+      label: 'Existing URL (captivate URL, cloud trial URL, etc)'
   allowed_values_function: ''
 module: options
 locked: false
