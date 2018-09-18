@@ -117,15 +117,15 @@ resourceFields:
     enhancer:
       id: ''
     disabled: false
-  field_task:
-    fieldName: field_task
-    publicName: title
+  field_steps:
+    fieldName: field_steps
+    publicName: steps
     enhancer:
       id: ''
     disabled: false
-  field_task_step:
-    fieldName: field_task_step
-    publicName: steps
+  field_task:
+    fieldName: field_task
+    publicName: title
     enhancer:
       id: ''
     disabled: false
