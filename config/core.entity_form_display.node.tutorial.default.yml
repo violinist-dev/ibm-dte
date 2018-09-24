@@ -10,6 +10,7 @@ dependencies:
     - field.field.node.tutorial.field_path
     - field.field.node.tutorial.field_referenced_demo_instance
     - field.field.node.tutorial.field_referenced_products
+    - field.field.node.tutorial.field_related_tutorials
     - field.field.node.tutorial.field_short_description
     - field.field.node.tutorial.field_summary
     - field.field.node.tutorial.field_takeaways
@@ -84,6 +85,7 @@ third_party_settings:
       children:
         - field_referenced_demo_instance
         - field_referenced_products
+        - field_related_tutorials
       parent_name: group_content_groupings
       weight: 23
       format_type: tab
@@ -174,6 +176,15 @@ content:
     region: content
   field_referenced_products:
     weight: 22
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+    region: content
+  field_related_tutorials:
+    weight: 23
     settings:
       match_operator: CONTAINS
       size: 60
