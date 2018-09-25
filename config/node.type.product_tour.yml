@@ -11,7 +11,7 @@ third_party_settings:
     parent: 'main:'
 name: 'Product Tour'
 type: product_tour
-description: ''
+description: 'A in-depth collection of tasks and steps for users to follow in conjunction with a given Demo Environment (Captivate or other interactive product preview), in order to learn a concept about one or more products.'
 help: ''
 new_revision: true
 preview_mode: 0

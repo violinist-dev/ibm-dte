@@ -9,7 +9,7 @@ field_name: field_takeaways
 entity_type: node
 type: string
 settings:
-  max_length: 255
+  max_length: 280
   is_ascii: false
   case_sensitive: false
 module: core
