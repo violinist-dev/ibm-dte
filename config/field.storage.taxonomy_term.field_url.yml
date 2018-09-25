@@ -1,20 +1,20 @@
-uuid: f48f0c74-3c01-4cde-bea7-ea7d0636eec8
+uuid: 4a571f89-814d-402d-8193-3a6d3362b6f6
 langcode: en
 status: true
 dependencies:
   module:
-    - node
-id: node.field_takeaways
-field_name: field_takeaways
-entity_type: node
+    - taxonomy
+id: taxonomy_term.field_url
+field_name: field_url
+entity_type: taxonomy_term
 type: string
 settings:
-  max_length: 255
+  max_length: 500
   is_ascii: false
   case_sensitive: false
 module: core
 locked: false
-cardinality: -1
+cardinality: 1
 translatable: true
 indexes: {  }
 persist_with_no_fields: false

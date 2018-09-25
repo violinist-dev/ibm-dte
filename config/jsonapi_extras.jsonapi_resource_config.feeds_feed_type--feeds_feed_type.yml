@@ -1,0 +1,11 @@
+uuid: 9b14187b-56e8-44dc-a4db-2371cd27f53a
+langcode: en
+status: true
+dependencies:
+  module:
+    - feeds
+id: feeds_feed_type--feeds_feed_type
+disabled: true
+path: feeds_feed_type/feeds_feed_type
+resourceType: feeds_feed_type--feeds_feed_type
+resourceFields: ''
