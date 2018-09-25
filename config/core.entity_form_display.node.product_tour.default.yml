@@ -12,11 +12,13 @@ dependencies:
     - field.field.node.product_tour.field_summary
     - field.field.node.product_tour.field_takeaways
     - field.field.node.product_tour.field_tasks
+    - field.field.node.product_tour.field_url
     - field.field.node.product_tour.field_weight
     - node.type.product_tour
   module:
     - content_moderation
     - field_group
+    - link
     - paragraphs
     - text
 third_party_settings:
@@ -83,6 +85,7 @@ third_party_settings:
         - field_referenced_demo_instance
         - field_referenced_products
         - field_related_tutorials
+        - field_url
       parent_name: group_content_groupings
       weight: 22
       format_type: tab
@@ -190,6 +193,14 @@ content:
         add_above: '0'
     third_party_settings: {  }
     type: paragraphs
+    region: content
+  field_url:
+    weight: 10
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+    type: link_default
     region: content
   field_weight:
     weight: 5
