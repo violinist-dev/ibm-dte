@@ -1,0 +1,19 @@
+uuid: 18dc5c3c-ecde-481f-9fa0-08479ea99f1f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_overview
+    - taxonomy.vocabulary.portfolios
+id: taxonomy_term.portfolios.field_overview
+field_name: field_overview
+entity_type: taxonomy_term
+bundle: portfolios
+label: Overview
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

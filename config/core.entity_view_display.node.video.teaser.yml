@@ -8,6 +8,7 @@ dependencies:
     - field.field.node.video.field_path
     - field.field.node.video.field_referenced_products
     - field.field.node.video.field_short_description
+    - field.field.node.video.field_transcription
     - field.field.node.video.field_video_url
     - field.field.node.video.field_weight
     - node.type.video
@@ -21,14 +22,19 @@ content:
   content_moderation_control:
     weight: -20
     region: content
+    settings: {  }
+    third_party_settings: {  }
   links:
     weight: 100
     region: content
+    settings: {  }
+    third_party_settings: {  }
 hidden:
   field_duration: true
   field_path: true
   field_referenced_products: true
   field_short_description: true
+  field_transcription: true
   field_video_url: true
   field_weight: true
   langcode: true

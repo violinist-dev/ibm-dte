@@ -12,6 +12,7 @@ dependencies:
     - field.field.node.tutorial.field_referenced_demo_instance
     - field.field.node.tutorial.field_referenced_products
     - field.field.node.tutorial.field_short_description
+    - field.field.node.tutorial.field_summary
     - field.field.node.tutorial.field_takeaways
     - field.field.node.tutorial.field_tasks
     - field.field.node.tutorial.field_weight
@@ -26,9 +27,13 @@ content:
   content_moderation_control:
     weight: -20
     region: content
+    settings: {  }
+    third_party_settings: {  }
   links:
     weight: 100
     region: content
+    settings: {  }
+    third_party_settings: {  }
 hidden:
   field_campaign_code: true
   field_duration: true

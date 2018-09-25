@@ -1,0 +1,29 @@
+uuid: 21eacf2b-fc00-4f85-952f-f2cfd533f39d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_headline
+    - taxonomy.vocabulary.portfolios
+  module:
+    - allowed_formats
+    - text
+third_party_settings:
+  allowed_formats:
+    plain_text: plain_text
+    limited_html: '0'
+    limited_plus_html: '0'
+    html: '0'
+    full_tml: '0'
+id: taxonomy_term.portfolios.field_headline
+field_name: field_headline
+entity_type: taxonomy_term
+bundle: portfolios
+label: Headline
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

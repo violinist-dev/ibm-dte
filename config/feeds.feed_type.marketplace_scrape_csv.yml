@@ -1,0 +1,127 @@
+uuid: fb322d8a-e329-44a6-a442-72944dd7bc03
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.taxonomy_term.portfolios.feeds_item
+    - field.field.taxonomy_term.portfolios.field_business_unit
+    - field.field.taxonomy_term.portfolios.field_headline
+    - field.field.taxonomy_term.portfolios.field_natural_language_name
+    - field.field.taxonomy_term.portfolios.field_overview
+    - field.field.taxonomy_term.portfolios.field_short_description
+    - field.field.taxonomy_term.portfolios.field_url
+    - taxonomy.vocabulary.portfolios
+  module:
+    - taxonomy
+label: 'Marketplace Scrape CSV'
+id: marketplace_scrape_csv
+description: 'Scrape of the Marketplace Product API, uploaded as a CSV'
+import_period: -1
+fetcher: upload
+fetcher_configuration:
+  allowed_extensions: 'txt csv tsv xml opml'
+  directory: 'private://feeds'
+parser: csv
+parser_configuration:
+  delimiter: ','
+  no_headers: false
+  line_limit: 100
+processor: 'entity:taxonomy_term'
+processor_configuration:
+  update_existing: 2
+  update_non_existent: _keep
+  expire: -1
+  skip_hash_check: false
+  values:
+    vid: portfolios
+  owner_id: 0
+  authorize: false
+  owner_feed_author: false
+custom_sources:
+  url:
+    label: url
+    value: url
+    machine_name: url
+  productkey:
+    label: productKey
+    value: productKey
+    machine_name: productkey
+  name:
+    label: name
+    value: name
+    machine_name: name
+  description:
+    label: description
+    value: description
+    machine_name: description
+  naturallanguagename:
+    label: naturalLanguageName
+    value: naturalLanguageName
+    machine_name: naturallanguagename
+  offeringheadline:
+    label: offeringHeadline
+    value: offeringHeadline
+    machine_name: offeringheadline
+  overviewheadline:
+    label: overviewHeadline
+    value: overviewHeadline
+    machine_name: overviewheadline
+  longdescription:
+    label: longDescription
+    value: longDescription
+    machine_name: longdescription
+  businessunit:
+    label: businessUnit
+    value: businessUnit
+    machine_name: businessunit
+mappings:
+  -
+    target: feeds_item
+    map:
+      url: url
+      guid: productkey
+    unique:
+      guid: '1'
+  -
+    target: name
+    map:
+      value: name
+    unique: {  }
+  -
+    target: description
+    map:
+      value: description
+    settings:
+      format: html
+  -
+    target: field_natural_language_name
+    map:
+      value: naturallanguagename
+    unique: {  }
+  -
+    target: field_headline
+    map:
+      value: offeringheadline
+    settings:
+      format: plain_text
+  -
+    target: field_overview
+    map:
+      value: overviewheadline
+    unique: {  }
+  -
+    target: field_short_description
+    map:
+      value: longdescription
+    settings:
+      format: plain_text
+  -
+    target: field_url
+    map:
+      value: url
+    unique: {  }
+  -
+    target: field_business_unit
+    map:
+      value: businessunit
+    unique: {  }
