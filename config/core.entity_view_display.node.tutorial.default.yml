@@ -15,11 +15,13 @@ dependencies:
     - field.field.node.tutorial.field_summary
     - field.field.node.tutorial.field_takeaways
     - field.field.node.tutorial.field_tasks
+    - field.field.node.tutorial.field_url
     - field.field.node.tutorial.field_weight
     - node.type.tutorial
   module:
     - entity_reference_revisions
     - fieldable_path
+    - link
     - text
     - user
 id: node.tutorial.default
@@ -126,6 +128,18 @@ content:
       view_mode: default
       link: ''
     third_party_settings: {  }
+    region: content
+  field_url:
+    weight: 119
+    label: above
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    type: link
     region: content
   field_weight:
     weight: 115

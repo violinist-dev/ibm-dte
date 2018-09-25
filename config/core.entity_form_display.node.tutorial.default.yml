@@ -15,11 +15,13 @@ dependencies:
     - field.field.node.tutorial.field_summary
     - field.field.node.tutorial.field_takeaways
     - field.field.node.tutorial.field_tasks
+    - field.field.node.tutorial.field_url
     - field.field.node.tutorial.field_weight
     - node.type.tutorial
   module:
     - content_moderation
     - field_group
+    - link
     - paragraphs
     - text
 third_party_settings:
@@ -86,6 +88,7 @@ third_party_settings:
         - field_referenced_demo_instance
         - field_referenced_products
         - field_related_tutorials
+        - field_url
       parent_name: group_content_groupings
       weight: 23
       format_type: tab
@@ -235,6 +238,14 @@ content:
         duplicate: duplicate
         collapse_edit_all: collapse_edit_all
     third_party_settings: {  }
+    region: content
+  field_url:
+    weight: 24
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+    type: link_default
     region: content
   field_weight:
     weight: 22

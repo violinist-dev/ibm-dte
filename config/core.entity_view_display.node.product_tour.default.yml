@@ -12,11 +12,13 @@ dependencies:
     - field.field.node.product_tour.field_summary
     - field.field.node.product_tour.field_takeaways
     - field.field.node.product_tour.field_tasks
+    - field.field.node.product_tour.field_url
     - field.field.node.product_tour.field_weight
     - node.type.product_tour
   module:
     - entity_reference_revisions
     - fieldable_path
+    - link
     - text
     - user
 id: node.product_tour.default
@@ -98,6 +100,18 @@ content:
       link: ''
     third_party_settings: {  }
     type: entity_reference_revisions_entity_view
+    region: content
+  field_url:
+    weight: 112
+    label: above
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    type: link
     region: content
   field_weight:
     weight: 107
