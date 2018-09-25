@@ -1,0 +1,19 @@
+uuid: f3b65973-4e9b-456b-b118-c75967bd1c3a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_url
+    - taxonomy.vocabulary.portfolios
+id: taxonomy_term.portfolios.field_url
+field_name: field_url
+entity_type: taxonomy_term
+bundle: portfolios
+label: URL
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

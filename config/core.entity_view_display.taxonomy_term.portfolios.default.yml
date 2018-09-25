@@ -3,10 +3,15 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.field.taxonomy_term.portfolios.field_logo
+    - field.field.taxonomy_term.portfolios.feeds_item
+    - field.field.taxonomy_term.portfolios.field_business_unit
+    - field.field.taxonomy_term.portfolios.field_headline
+    - field.field.taxonomy_term.portfolios.field_natural_language_name
+    - field.field.taxonomy_term.portfolios.field_overview
+    - field.field.taxonomy_term.portfolios.field_short_description
+    - field.field.taxonomy_term.portfolios.field_url
     - taxonomy.vocabulary.portfolios
   module:
-    - image
     - text
 id: taxonomy_term.portfolios.default
 targetEntityType: taxonomy_term
@@ -20,14 +25,52 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
-  field_logo:
+  field_business_unit:
+    weight: 6
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_headline:
+    weight: 2
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_natural_language_name:
     weight: 1
     label: above
     settings:
-      image_style: ''
-      image_link: ''
+      link_to_entity: false
     third_party_settings: {  }
-    type: image
+    type: string
+    region: content
+  field_overview:
+    weight: 3
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_short_description:
+    weight: 4
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_url:
+    weight: 5
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
     region: content
 hidden:
+  feeds_item: true
   langcode: true

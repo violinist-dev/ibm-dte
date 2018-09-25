@@ -1,16 +1,16 @@
-uuid: 4f263ddf-ef73-4235-b682-f237c30b0eee
+uuid: 1f3a34de-c9b6-41cb-9ed0-c49cd2b9f853
 langcode: en
 status: true
 dependencies:
   module:
-    - fieldable_path
     - taxonomy
-id: taxonomy_term.field_path
-field_name: field_path
+    - text
+id: taxonomy_term.field_headline
+field_name: field_headline
 entity_type: taxonomy_term
-type: fieldable_path
+type: text_long
 settings: {  }
-module: fieldable_path
+module: text
 locked: false
 cardinality: 1
 translatable: true
