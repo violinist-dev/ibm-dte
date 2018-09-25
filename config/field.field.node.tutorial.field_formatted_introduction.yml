@@ -20,7 +20,7 @@ field_name: field_formatted_introduction
 entity_type: node
 bundle: tutorial
 label: Introduction
-description: '<p>An introductory paragraph to provide background information to users before they start a Tutorial. <strong>Do not include prerequisites in the Introduction or Tasks.</strong> They will be automatically generated based on the referenced Demo Environment.</p>'
+description: '<p>An introductory paragraph to provide background information to users before they start a Tutorial.</p>'
 required: true
 translatable: true
 default_value: {  }
