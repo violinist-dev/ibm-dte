@@ -11,7 +11,7 @@ third_party_settings:
     parent: 'main:'
 name: Tutorial
 type: tutorial
-description: 'A in-depth collection of tasks and steps for users to follow in order to learn a concept about one or more products within a given Demo Environment'
+description: '(Hands-on-Lab), A in-depth collection of tasks and steps for users to follow in order to learn a concept about one or more products within a given Demo Environment'
 help: '<p>Tutorials for should be directed at a public audience and should avoid internal terminology and phrases like <em>proof of technology</em>. Tutorials, tasks, and steps should not include <em>tutorial</em>, <em>task</em>, or <em>step</em> in their titles.</p>'
 new_revision: true
 preview_mode: 0
