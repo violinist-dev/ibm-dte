@@ -138,48 +138,6 @@ display:
           entity_type: taxonomy_term
           entity_field: vid
           plugin_id: bundle
-        parent:
-          id: parent
-          table: taxonomy_term__parent
-          field: parent_target_id
-          relationship: none
-          group_type: group
-          admin_label: ''
-          operator: '!='
-          value:
-            min: ''
-            max: ''
-            value: '<root>'
-          group: 1
-          exposed: false
-          expose:
-            operator_id: parent_op
-            label: 'Parent term'
-            description: null
-            use_operator: false
-            operator: parent_op
-            identifier: parent
-            required: false
-            remember: false
-            multiple: false
-            remember_roles:
-              authenticated: authenticated
-            placeholder: null
-            min_placeholder: null
-            max_placeholder: null
-          is_grouped: false
-          group_info:
-            label: ''
-            description: ''
-            identifier: ''
-            optional: true
-            widget: select
-            multiple: false
-            remember: false
-            default_group: All
-            default_group_multiple: {  }
-            group_items: {  }
-          plugin_id: numeric
         status:
           id: status
           table: taxonomy_term_field_data
@@ -220,13 +178,30 @@ display:
           entity_type: taxonomy_term
           entity_field: status
           plugin_id: boolean
-      sorts: {  }
+      sorts:
+        name:
+          id: name
+          table: taxonomy_term_field_data
+          field: name
+          relationship: none
+          group_type: group
+          admin_label: ''
+          order: ASC
+          exposed: false
+          expose:
+            label: ''
+          entity_type: taxonomy_term
+          entity_field: name
+          plugin_id: standard
       header: {  }
       footer: {  }
       empty: {  }
       relationships: {  }
       arguments: {  }
       display_extenders: {  }
+      use_more: false
+      use_more_always: true
+      use_more_text: more
     cache_metadata:
       max-age: -1
       contexts:
@@ -247,6 +222,7 @@ display:
         options:
           search_fields:
             name: name
+            field_overview: '0'
       fields: {  }
       sorts: {  }
       filters:
@@ -290,6 +266,19 @@ display:
           entity_type: taxonomy_term
           entity_field: status
           plugin_id: boolean
+      row:
+        type: entity_reference
+        options:
+          default_field_elements: true
+          inline:
+            field_overview: field_overview
+          separator: '-'
+          hide_empty: false
+      pager:
+        type: some
+        options:
+          items_per_page: 20
+          offset: 0
     cache_metadata:
       max-age: -1
       contexts:

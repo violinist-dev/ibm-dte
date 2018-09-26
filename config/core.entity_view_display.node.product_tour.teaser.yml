@@ -42,5 +42,6 @@ hidden:
   field_summary: true
   field_takeaways: true
   field_tasks: true
+  field_url: true
   field_weight: true
   langcode: true
