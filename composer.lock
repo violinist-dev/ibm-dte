@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "d7703df6eecbf3e469eac81eac9f7f05",
+    "content-hash": "be355ed6bb7a8ec466669817843705ef",
     "packages": [
         {
             "name": "alchemy/zippy",
@@ -179,6 +179,76 @@
             "time": "2018-03-15T21:23:44+00:00"
         },
         {
+            "name": "ckeditor-plugin/filetools",
+            "version": "4.10.1",
+            "dist": {
+                "type": "zip",
+                "url": "https://download.ckeditor.com/filetools/releases/filetools_4.10.1.zip",
+                "reference": null,
+                "shasum": null
+            },
+            "type": "drupal-library",
+            "extra": {
+                "installer-name": "filetools"
+            }
+        },
+        {
+            "name": "ckeditor-plugin/notification",
+            "version": "4.10.1",
+            "dist": {
+                "type": "zip",
+                "url": "https://download.ckeditor.com/notification/releases/notification_4.10.1.zip",
+                "reference": null,
+                "shasum": null
+            },
+            "type": "drupal-library",
+            "extra": {
+                "installer-name": "notification"
+            }
+        },
+        {
+            "name": "ckeditor-plugin/notificationaggregator",
+            "version": "4.10.1",
+            "dist": {
+                "type": "zip",
+                "url": "https://download.ckeditor.com/notificationaggregator/releases/notificationaggregator_4.10.1.zip",
+                "reference": null,
+                "shasum": null
+            },
+            "type": "drupal-library",
+            "extra": {
+                "installer-name": "notificationaggregator"
+            }
+        },
+        {
+            "name": "ckeditor-plugin/uploadimage",
+            "version": "4.10.1",
+            "dist": {
+                "type": "zip",
+                "url": "https://download.ckeditor.com/uploadimage/releases/uploadimage_4.10.1.zip",
+                "reference": null,
+                "shasum": null
+            },
+            "type": "drupal-library",
+            "extra": {
+                "installer-name": "uploadimage"
+            }
+        },
+        {
+            "name": "ckeditor-plugin/uploadwidget",
+            "version": "4.10.1",
+            "dist": {
+                "type": "zip",
+                "url": "https://download.ckeditor.com/uploadwidget/releases/uploadwidget_4.10.1.zip",
+                "reference": null,
+                "shasum": null
+            },
+            "type": "drupal-library",
+            "extra": {
+                "installer-name": "uploadwidget"
+            }
+        },
+        {
             "name": "ckeditor/codesnippet",
             "version": "4.9.2",
             "dist": {
@@ -187,7 +257,10 @@
                 "reference": null,
                 "shasum": null
             },
-            "type": "drupal-library"
+            "type": "drupal-library",
+            "extra": {
+                "installer-name": "codesnippet"
+            }
         },
         {
             "name": "clue/graph",
@@ -1443,6 +1516,58 @@
             }
         },
         {
+            "name": "drupal/ckeditor_uploadimage",
+            "version": "1.5.0",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupal.org/project/ckeditor_uploadimage",
+                "reference": "8.x-1.5"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/ckeditor_uploadimage-8.x-1.5.zip",
+                "reference": "8.x-1.5",
+                "shasum": "dc427fcf73b956409e7a22d46d6d2bfb67b040c3"
+            },
+            "require": {
+                "drupal/core": "*"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "branch-alias": {
+                    "dev-1.x": "1.x-dev"
+                },
+                "drupal": {
+                    "version": "8.x-1.5",
+                    "datestamp": "1519351726",
+                    "security-coverage": {
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0+"
+            ],
+            "authors": [
+                {
+                    "name": "Roland Michael dela Peña (arpeggio)",
+                    "homepage": "https://www.webfoobar.com",
+                    "role": "Maintainer"
+                },
+                {
+                    "name": "mertres",
+                    "homepage": "https://www.drupal.org/user/3513520"
+                }
+            ],
+            "description": "Integrates CKEditor's Upload Image plugin to Drupal. This enables Drupal's default WYSIWYG text editor capable of uploading images that were dropped or pasted from clipboard into the editor as inline image.",
+            "homepage": "https://drupal.org/project/ckeditor_uploadimage",
+            "support": {
+                "source": "http://cgit.drupalcode.org/ckeditor_uploadimage"
+            }
+        },
+        {
             "name": "drupal/codesnippet",
             "version": "1.6.0",
             "source": {
@@ -2382,22 +2507,22 @@
         },
         {
             "name": "drupal/deploy",
-            "version": "1.0.0-beta10",
+            "version": "1.0.0-beta11",
             "source": {
                 "type": "git",
                 "url": "https://git.drupal.org/project/deploy",
-                "reference": "8.x-1.0-beta10"
+                "reference": "8.x-1.0-beta11"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/deploy-8.x-1.0-beta10.zip",
-                "reference": "8.x-1.0-beta10",
-                "shasum": "fba723dd780042e99e476ab64f51b111cb96d77d"
+                "url": "https://ftp.drupal.org/files/projects/deploy-8.x-1.0-beta11.zip",
+                "reference": "8.x-1.0-beta11",
+                "shasum": "2b5bed119c7f920a342312f04f13d26efca3cc9e"
             },
             "require": {
                 "drupal/core": "~8.0",
                 "drupal/workspace": "*",
-                "relaxedws/replicator": "dev-master"
+                "relaxedws/replicator": "~1.0.1"
             },
             "type": "drupal-module",
             "extra": {
@@ -2405,8 +2530,8 @@
                     "dev-1.x": "1.x-dev"
                 },
                 "drupal": {
-                    "version": "8.x-1.0-beta10",
-                    "datestamp": "1527692884",
+                    "version": "8.x-1.0-beta11",
+                    "datestamp": "1538056384",
                     "security-coverage": {
                         "status": "not-covered",
                         "message": "Beta releases are not covered by Drupal security advisories."
@@ -3635,21 +3760,21 @@
         },
         {
             "name": "drupal/multiversion",
-            "version": "1.0.0-beta25",
+            "version": "1.0.0-beta26",
             "source": {
                 "type": "git",
                 "url": "https://git.drupal.org/project/multiversion",
-                "reference": "8.x-1.0-beta25"
+                "reference": "8.x-1.0-beta26"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/multiversion-8.x-1.0-beta25.zip",
-                "reference": "8.x-1.0-beta25",
-                "shasum": "992ebd6f4a1b4e9493525f2b42ce3a8476559b7c"
+                "url": "https://ftp.drupal.org/files/projects/multiversion-8.x-1.0-beta26.zip",
+                "reference": "8.x-1.0-beta26",
+                "shasum": "a8dc7b6996f899fdad3e3ab89912d1a0df62575b"
             },
             "require": {
                 "drupal/conflict": "^1-beta",
-                "drupal/core": "^8.3.0",
+                "drupal/core": "^8.4.0",
                 "drupal/key_value": "^1",
                 "relaxedws/lca": "dev-master"
             },
@@ -3664,8 +3789,8 @@
                     "dev-1.x": "1.x-dev"
                 },
                 "drupal": {
-                    "version": "8.x-1.0-beta25",
-                    "datestamp": "1533292984",
+                    "version": "8.x-1.0-beta26",
+                    "datestamp": "1538056080",
                     "security-coverage": {
                         "status": "not-covered",
                         "message": "Beta releases are not covered by Drupal security advisories."
@@ -4101,17 +4226,17 @@
         },
         {
             "name": "drupal/replication",
-            "version": "1.0.0-beta14",
+            "version": "1.0.0-beta15",
             "source": {
                 "type": "git",
                 "url": "https://git.drupal.org/project/replication",
-                "reference": "8.x-1.0-beta14"
+                "reference": "8.x-1.0-beta15"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/replication-8.x-1.0-beta14.zip",
-                "reference": "8.x-1.0-beta14",
-                "shasum": "a5c017c843fd31fa75a1669f3a9d32381cc6265b"
+                "url": "https://ftp.drupal.org/files/projects/replication-8.x-1.0-beta15.zip",
+                "reference": "8.x-1.0-beta15",
+                "shasum": "ca9b88408914234a3e1d4ccd46a1d33a2be2a25b"
             },
             "require": {
                 "drupal/core": "~8.0",
@@ -4123,8 +4248,8 @@
                     "dev-1.x": "1.x-dev"
                 },
                 "drupal": {
-                    "version": "8.x-1.0-beta14",
-                    "datestamp": "1533305280",
+                    "version": "8.x-1.0-beta15",
+                    "datestamp": "1538056384",
                     "security-coverage": {
                         "status": "not-covered",
                         "message": "Beta releases are not covered by Drupal security advisories."
@@ -4914,17 +5039,17 @@
         },
         {
             "name": "drupal/workspace",
-            "version": "1.0.0-beta14",
+            "version": "1.0.0-beta15",
             "source": {
                 "type": "git",
                 "url": "https://git.drupal.org/project/workspace",
-                "reference": "8.x-1.0-beta14"
+                "reference": "8.x-1.0-beta15"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/workspace-8.x-1.0-beta14.zip",
-                "reference": "8.x-1.0-beta14",
-                "shasum": "5a772665dd0a8a69ad8827b305efb5519f28fc26"
+                "url": "https://ftp.drupal.org/files/projects/workspace-8.x-1.0-beta15.zip",
+                "reference": "8.x-1.0-beta15",
+                "shasum": "30f5979ec77a826fc159b89aab5dd5bfbff2d3c4"
             },
             "require": {
                 "drupal/core": "*",
@@ -4936,8 +5061,8 @@
                     "dev-1.x": "1.x-dev"
                 },
                 "drupal": {
-                    "version": "8.x-1.0-beta14",
-                    "datestamp": "1533305881",
+                    "version": "8.x-1.0-beta15",
+                    "datestamp": "1538056080",
                     "security-coverage": {
                         "status": "not-covered",
                         "message": "Beta releases are not covered by Drupal security advisories."
@@ -5294,16 +5419,16 @@
         },
         {
             "name": "egulias/email-validator",
-            "version": "1.2.14",
+            "version": "1.2.15",
             "source": {
                 "type": "git",
                 "url": "https://github.com/egulias/EmailValidator.git",
-                "reference": "5642614492f0ca2064c01d60cc33284cc2f731a9"
+                "reference": "758a77525bdaabd6c0f5669176bd4361cb2dda9e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/egulias/EmailValidator/zipball/5642614492f0ca2064c01d60cc33284cc2f731a9",
-                "reference": "5642614492f0ca2064c01d60cc33284cc2f731a9",
+                "url": "https://api.github.com/repos/egulias/EmailValidator/zipball/758a77525bdaabd6c0f5669176bd4361cb2dda9e",
+                "reference": "758a77525bdaabd6c0f5669176bd4361cb2dda9e",
                 "shasum": ""
             },
             "require": {
@@ -5342,7 +5467,7 @@
                 "validation",
                 "validator"
             ],
-            "time": "2017-02-03T22:48:59+00:00"
+            "time": "2018-09-25T20:59:41+00:00"
         },
         {
             "name": "ezyang/htmlpurifier",
@@ -6516,7 +6641,7 @@
         },
         {
             "name": "relaxedws/replicator",
-            "version": "dev-master",
+            "version": "1.0.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/relaxedws/couchdb-replicator.git",

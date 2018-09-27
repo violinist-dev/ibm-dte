@@ -32,6 +32,7 @@ permissions:
   - 'translate video node'
   - 'update content translations'
   - 'use advanced search'
+  - 'use ckeditor_uploadimage'
   - 'use tech_lead_editor transition create_new_draft'
   - 'use tech_lead_editor transition publish'
   - 'use tech_lead_editor transition send_to_content_lead'
