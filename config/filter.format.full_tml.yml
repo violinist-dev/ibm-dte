@@ -2,7 +2,7 @@ uuid: e867a00d-c538-4a0d-b199-23b0e8fd0751
 langcode: en
 status: true
 dependencies: {  }
-name: 'Full TML'
+name: 'Full HTML'
 format: full_tml
 weight: 0
 filters:

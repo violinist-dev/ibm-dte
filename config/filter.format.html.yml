@@ -14,7 +14,7 @@ filters:
     status: true
     weight: -10
     settings:
-      allowed_html: '<a href hreflang> <em> <strong> <cite> <blockquote cite> <pre class> <code class> <ul type> <ol start type> <li> <dl> <dt> <dd> <p> <img src alt data-entity-type data-entity-uuid data-align data-caption> <table> <caption> <tbody> <thead> <tfoot> <th> <td> <tr>'
+      allowed_html: '<a href hreflang> <em> <strong> <cite> <blockquote cite> <pre class> <code class> <ul type> <ol start type> <li> <dl> <dt> <dd> <p> <img src alt data-entity-type data-entity-uuid data-align data-caption data-cke-saved-src data-cke-upload-id data-widget data-cke-widget-keep-attr data-cke-widget-data class data-image-style data-responsive-image-style> <table> <caption> <tbody> <thead> <tfoot> <th> <td> <tr>'
       filter_html_help: true
       filter_html_nofollow: true
   filter_caption:

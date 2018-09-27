@@ -7,6 +7,7 @@ module:
   block: 0
   breakpoint: 0
   ckeditor: 0
+  ckeditor_uploadimage: 0
   codesnippet: 0
   coffee: 0
   conditional_fields: 0
