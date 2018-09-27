@@ -3,15 +3,12 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.field.node.demo_instance.field_benefit_introduction
     - field.field.node.demo_instance.field_completed_security_checkli
-    - field.field.node.demo_instance.field_formatted_introduction
     - field.field.node.demo_instance.field_instance_type
     - field.field.node.demo_instance.field_path
     - field.field.node.demo_instance.field_referenced_products
     - field.field.node.demo_instance.field_short_description
     - field.field.node.demo_instance.field_skytap_instance
-    - field.field.node.demo_instance.field_takeaways
     - field.field.node.demo_instance.field_url
     - field.field.node.demo_instance.field_urx_form_id
     - node.type.demo_instance
@@ -20,7 +17,6 @@ dependencies:
     - fieldable_path
     - link
     - options
-    - text
     - user
 id: node.demo_instance.default
 targetEntityType: node
@@ -32,14 +28,6 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
-  field_benefit_introduction:
-    weight: 109
-    label: above
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-    type: string
-    region: content
   field_completed_security_checkli:
     weight: 111
     label: above
@@ -49,13 +37,6 @@ content:
       format_custom_true: ''
     third_party_settings: {  }
     type: boolean
-    region: content
-  field_formatted_introduction:
-    weight: 108
-    label: above
-    settings: {  }
-    third_party_settings: {  }
-    type: text_default
     region: content
   field_instance_type:
     weight: 101
@@ -95,14 +76,6 @@ content:
       view_mode: default
       link: ''
     third_party_settings: {  }
-    region: content
-  field_takeaways:
-    weight: 110
-    label: above
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-    type: string
     region: content
   field_url:
     weight: 105
