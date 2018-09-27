@@ -21,7 +21,7 @@ entity_type: node
 bundle: video
 label: Transcription
 description: '<p>Exported YouTube transcription or the translation of the transcription</p>'
-required: true
+required: false
 translatable: true
 default_value: {  }
 default_value_callback: ''
