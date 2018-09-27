@@ -1,0 +1,19 @@
+uuid: 4ca91271-322f-4f33-bf11-4d183556a776
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - text
+id: node.field_environment_introduction
+field_name: field_environment_introduction
+entity_type: node
+type: text_long
+settings: {  }
+module: text
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -3,6 +3,8 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.node.product_tour.field_environment_benefits
+    - field.field.node.product_tour.field_environment_introduction
     - field.field.node.product_tour.field_formatted_introduction
     - field.field.node.product_tour.field_path
     - field.field.node.product_tour.field_referenced_demo_instance
@@ -40,6 +42,7 @@ third_party_settings:
       children:
         - group_overview
         - group_main_content
+        - group_demo_environment
         - group_related_items
         - group_metadata
       parent_name: ''
@@ -54,6 +57,7 @@ third_party_settings:
     group_overview:
       children:
         - field_short_description
+        - field_formatted_introduction
         - field_takeaways
       parent_name: group_content_groupings
       weight: 20
@@ -67,7 +71,6 @@ third_party_settings:
       label: Overview
     group_main_content:
       children:
-        - field_formatted_introduction
         - field_tasks
         - field_summary
       parent_name: group_content_groupings
@@ -82,12 +85,11 @@ third_party_settings:
       label: 'Main Content'
     group_related_items:
       children:
-        - field_referenced_demo_instance
         - field_referenced_products
         - field_related_tutorials
         - field_url
       parent_name: group_content_groupings
-      weight: 22
+      weight: 23
       format_type: tab
       format_settings:
         id: ''
@@ -100,7 +102,7 @@ third_party_settings:
       children:
         - field_weight
       parent_name: group_content_groupings
-      weight: 23
+      weight: 24
       format_type: tab
       format_settings:
         id: ''
@@ -109,13 +111,47 @@ third_party_settings:
         description: ''
         required_fields: true
       label: Metadata
+    group_demo_environment:
+      children:
+        - field_referenced_demo_instance
+        - field_environment_introduction
+        - field_environment_benefits
+      parent_name: group_content_groupings
+      weight: 22
+      format_type: tab
+      format_settings:
+        id: ''
+        classes: ''
+        formatter: closed
+        description: ''
+        required_fields: true
+      label: 'Demo Environment'
 id: node.product_tour.default
 targetEntityType: node
 bundle: product_tour
 mode: default
 content:
+  field_environment_benefits:
+    weight: 9
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings:
+      maxlength:
+        maxlength_js: null
+        maxlength_js_label: 'Content limited to @limit characters, remaining: <strong>@remaining</strong>'
+    type: string_textfield
+    region: content
+  field_environment_introduction:
+    weight: 8
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textarea
+    region: content
   field_formatted_introduction:
-    weight: 2
+    weight: 4
     settings:
       rows: 5
       placeholder: ''
@@ -169,7 +205,7 @@ content:
     type: text_textarea
     region: content
   field_takeaways:
-    weight: 6
+    weight: 5
     settings:
       size: 60
       placeholder: ''
