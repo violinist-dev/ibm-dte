@@ -16980,3 +16980,16 @@ taxonomies:
       weight: '0'
       parent: '0'
       uuid: c2eb7612-4134-4363-bec6-b6ad95eff920
+menus:
+  -
+    menu_name: workbench
+    title: 'CMS Support'
+    parent: null
+    uri: 'https://ibm-dte.slack.com/app_redirect?channel=cms'
+    link_title: ''
+    description: 'A slack channel to ask questions about how to use the CMS'
+    enabled: '1'
+    expanded: '0'
+    weight: '10'
+    langcode: en
+    uuid: 74227e98-3f3f-40f8-80f7-b1fda18fe034

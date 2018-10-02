@@ -2,3 +2,9 @@
 #toolbar-link-view-moderated_content-page_1:before {
   background-image: url('../images/moderation.svg');
 }
+
+
+/* CMS Support menu item icon */
+#toolbar-link-hNFqr7StwvKp3rPG:before {
+  background-image: url('../images/slack-icon.svg');
+}
