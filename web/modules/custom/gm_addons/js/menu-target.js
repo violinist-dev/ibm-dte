@@ -1,10 +1,8 @@
 window.addEventListener('DOMContentLoaded', function() {
     //find the cms support link
-    // if it's there, add target attribute 
+    //if it's there, add target attribute 
     //set attribute to blank
-    
-    const supportLink = document.querySelector('#toolbar-link-hNFqr7StwvKp3rPG');
-    console.log('Found support link?? ', supportLink);
+    const supportLink = document.querySelector('#toolbar-item-workbench-tray .menu-item a[href="https://ibm-dte.slack.com/app_redirect?channel=cms"] ');
   
     if (supportLink) {
       supportLink.setAttribute('target', '_blank');
