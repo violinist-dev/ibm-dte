@@ -5,6 +5,6 @@
 
 
 /* CMS Support menu item icon */
-#toolbar-link-hNFqr7StwvKp3rPG:before {
+#toolbar-item-workbench-tray .menu-item a[href="https://ibm-dte.slack.com/app_redirect?channel=cms"]:before {
   background-image: url('../images/slack-icon.svg');
 }
