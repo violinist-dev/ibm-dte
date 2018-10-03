@@ -1,0 +1,22 @@
+uuid: 953f87e4-13d3-4d02-9996-c2677fb641e2
+langcode: en
+status: true
+dependencies: {  }
+id: translator
+label: Translator
+weight: -5
+is_admin: null
+permissions:
+  - 'translate demo_instance node'
+  - 'translate product_tour node'
+  - 'translate tutorial node'
+  - 'translate video node'
+  - 'use editorial transition create_new_draft'
+  - 'use tech_lead_editor transition create_new_draft'
+  - 'use tech_lead_editor transition send_to_technical_review'
+  - 'use text format html'
+  - 'use text format limited_html'
+  - 'use text format limited_plus_html'
+  - 'view all media revisions'
+  - 'view any unpublished content'
+  - 'view latest version'
