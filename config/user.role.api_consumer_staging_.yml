@@ -4,7 +4,7 @@ status: true
 dependencies: {  }
 id: api_consumer_staging_
 label: 'API Consumer (Staging)'
-weight: -5
+weight: -4
 is_admin: null
 permissions:
   - 'access jsonapi resource list'

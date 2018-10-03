@@ -1,0 +1,12 @@
+uuid: 614e18f4-16dc-4a07-90ce-be833727d5dd
+langcode: en
+status: true
+dependencies: {  }
+id: manager
+label: Manager
+weight: -6
+is_admin: null
+permissions:
+  - 'access user profiles'
+  - 'administer users'
+  - 'use tech_lead_editor transition publish'
