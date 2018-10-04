@@ -1,0 +1,9 @@
+uuid: 8acc0545-ef26-4bc5-905a-0e2b6869f386
+langcode: en
+status: true
+dependencies: {  }
+id: garage_method_staging
+label: 'Garage Method Staging'
+tab_label: 'Staging Preview (GM)'
+open_external_label: 'preview (gm)'
+preview_url: 'https://dte-ibmcloudgarage.mybluemix.net/cloud/garage/dte[node:field_path:value]'
