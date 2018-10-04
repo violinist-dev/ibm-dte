@@ -3,6 +3,7 @@ gm-addons:
   js:
     js/views-exposed-form-filters.js: {}
     js/moderation-edit.js: {}
+    js/menu-target.js: {}
   css:
     theme:
       css/node-preview.css: {}
