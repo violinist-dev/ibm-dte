@@ -2761,17 +2761,17 @@
         },
         {
             "name": "drupal/dpl",
-            "version": "2.0.0-alpha1",
+            "version": "2.0.0-alpha3",
             "source": {
                 "type": "git",
                 "url": "https://git.drupal.org/project/dpl",
-                "reference": "8.x-2.0-alpha1"
+                "reference": "8.x-2.0-alpha3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/dpl-8.x-2.0-alpha1.zip",
-                "reference": "8.x-2.0-alpha1",
-                "shasum": "4afd7f68a631a601d71bdeabf53bb1a4ab707c31"
+                "url": "https://ftp.drupal.org/files/projects/dpl-8.x-2.0-alpha3.zip",
+                "reference": "8.x-2.0-alpha3",
+                "shasum": "c06566fd0239862f642fd61311c00b34e779f460"
             },
             "require": {
                 "drupal/consumers": "*",
@@ -2786,8 +2786,8 @@
                     "dev-2.x": "2.x-dev"
                 },
                 "drupal": {
-                    "version": "8.x-2.0-alpha1",
-                    "datestamp": "1538083380",
+                    "version": "8.x-2.0-alpha3",
+                    "datestamp": "1538610180",
                     "security-coverage": {
                         "status": "not-covered",
                         "message": "Project has not opted into security advisory coverage!"
