@@ -15,8 +15,18 @@ window.addEventListener('DOMContentLoaded', function() {
     }
   } else {
     const edit = document.querySelectorAll('.path-node .tabs.primary [data-drupal-link-system-path^="node/"][data-drupal-link-system-path$="/edit"], .path-node .edit.dropbutton-action a');
-    [].forEach.call(edit, item => {
-      item.parentNode.style.display = 'none';
-    });
+
+    // Hide all Edit links
+    [].forEach.call(edit, item => item.parentNode.style.display = 'none');
+
+    // If content is published (no moderation form) and we're on the `view` tab (active tab points to the node itself) we re-show the edit tab (as that's what allows us to create a new draft from published or archive content)
+    const activeTab = document.querySelector('.path-node .tabs.primary a.is-active');
+
+    const viewExp = /^node\/\d+$/g;
+    const isView = activeTab && activeTab.dataset && activeTab.dataset.drupalLinkSystemPath.match(viewExp);
+
+    if (isView) {
+      [].forEach.call(edit, item => item.parentNode.style.display = 'initial');
+    }
   }
 });
