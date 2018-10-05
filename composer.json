@@ -163,6 +163,7 @@
         "drupal/simple_block": "^1.0@beta",
         "drupal/simplemde": "^1.0@alpha",
         "drupal/structure_sync": "^1.12",
+        "drupal/taxonomy_multidelete_terms": "^1.1",
         "drupal/video_embed_field": "^2.0",
         "drupal/views_ef_fieldset": "^1.1",
         "drupal/workbench": "^1.0",
