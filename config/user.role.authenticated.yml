@@ -13,6 +13,7 @@ permissions:
   - 'create walkthrough content'
   - 'edit any walkthrough content'
   - 'edit own walkthrough content'
+  - 'preview decoupled link'
   - 'search content'
   - 'translate walkthrough node'
   - 'use advanced search'
