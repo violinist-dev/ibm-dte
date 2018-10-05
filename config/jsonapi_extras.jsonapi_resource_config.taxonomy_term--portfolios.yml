@@ -10,11 +10,11 @@ path: taxonomy/products
 resourceType: taxonomy--products
 resourceFields:
   tid:
+    disabled: true
     fieldName: tid
     publicName: tid
     enhancer:
       id: ''
-    disabled: false
   uuid:
     fieldName: uuid
     publicName: uuid
@@ -34,11 +34,11 @@ resourceFields:
     enhancer:
       id: ''
   status:
+    disabled: true
     fieldName: status
     publicName: status
     enhancer:
       id: ''
-    disabled: false
   name:
     fieldName: name
     publicName: name
@@ -52,17 +52,17 @@ resourceFields:
       id: ''
     disabled: false
   weight:
+    disabled: true
     fieldName: weight
     publicName: weight
     enhancer:
       id: ''
-    disabled: false
   parent:
+    disabled: true
     fieldName: parent
     publicName: parent
     enhancer:
       id: ''
-    disabled: false
   changed:
     disabled: true
     fieldName: changed
@@ -76,17 +76,17 @@ resourceFields:
     enhancer:
       id: ''
   path:
+    disabled: true
     fieldName: path
     publicName: path
     enhancer:
       id: ''
-    disabled: false
   feeds_item:
-    disabled: true
     fieldName: feeds_item
-    publicName: feeds_item
+    publicName: import_id
     enhancer:
       id: ''
+    disabled: false
   field_business_unit:
     fieldName: field_business_unit
     publicName: business_unit
