@@ -9,6 +9,7 @@ dependencies:
     - field.field.taxonomy_term.portfolios.field_natural_language_name
     - field.field.taxonomy_term.portfolios.field_overview
     - field.field.taxonomy_term.portfolios.field_short_description
+    - field.field.taxonomy_term.portfolios.field_short_name
     - field.field.taxonomy_term.portfolios.field_url
     - taxonomy.vocabulary.portfolios
   module:
@@ -74,6 +75,10 @@ custom_sources:
     label: businessUnit
     value: businessUnit
     machine_name: businessunit
+  productpagename:
+    label: productPageName
+    value: productPageName
+    machine_name: productpagename
 mappings:
   -
     target: feeds_item
@@ -125,3 +130,7 @@ mappings:
     map:
       value: businessunit
     unique: {  }
+  -
+    target: field_short_name
+    map:
+      value: productpagename

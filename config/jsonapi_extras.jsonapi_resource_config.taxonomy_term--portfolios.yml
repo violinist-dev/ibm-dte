@@ -117,6 +117,12 @@ resourceFields:
     enhancer:
       id: ''
     disabled: false
+  field_short_name:
+    fieldName: field_short_name
+    publicName: url_shortname
+    enhancer:
+      id: ''
+    disabled: false
   field_url:
     fieldName: field_url
     publicName: url

@@ -1,0 +1,19 @@
+uuid: d6efaa87-e4fd-495c-b1ec-54aebe372b3d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_short_name
+    - taxonomy.vocabulary.portfolios
+id: taxonomy_term.portfolios.field_short_name
+field_name: field_short_name
+entity_type: taxonomy_term
+bundle: portfolios
+label: 'Short Name'
+description: 'URL-friendly short name for product'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

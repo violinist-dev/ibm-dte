@@ -9,6 +9,7 @@ dependencies:
     - field.field.taxonomy_term.portfolios.field_natural_language_name
     - field.field.taxonomy_term.portfolios.field_overview
     - field.field.taxonomy_term.portfolios.field_short_description
+    - field.field.taxonomy_term.portfolios.field_short_name
     - field.field.taxonomy_term.portfolios.field_url
     - taxonomy.vocabulary.portfolios
   module:
@@ -62,6 +63,13 @@ content:
     settings: {  }
     third_party_settings: {  }
     type: text_default
+    region: content
+  field_short_name:
+    weight: 7
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: basic_string
     region: content
   field_url:
     weight: 5
