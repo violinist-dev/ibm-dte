@@ -7,6 +7,8 @@ label: Manager
 weight: -6
 is_admin: null
 permissions:
+  - 'access toolbar'
   - 'access user profiles'
   - 'administer users'
+  - 'assign roles'
   - 'use tech_lead_editor transition publish'

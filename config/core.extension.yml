@@ -56,6 +56,7 @@ module:
   plupload: 0
   plupload_widget: 0
   redirect_after_login: 0
+  roleassign: 0
   search: 0
   serialization: 0
   statistics: 0
