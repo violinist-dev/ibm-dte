@@ -159,6 +159,7 @@
         "drupal/plupload_widget": "^1.0",
         "drupal/redirect_after_login": "^2.3",
         "drupal/restui": "^1.15",
+        "drupal/roleassign": "^1.0@alpha",
         "drupal/scheduler": "^1.0",
         "drupal/simple_block": "^1.0@beta",
         "drupal/simplemde": "^1.0@alpha",
