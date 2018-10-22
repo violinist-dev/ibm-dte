@@ -27,8 +27,7 @@ deploy:
   on:
     branch: master
 after_script:
-- lando terminus ssh-key:remove $(ssh-keygen -l -f ~/.lando/keys/pantheon.lando.id_rsa.pub
-  | awk -F' ' '{print $2}' | sed 's/://g')
+- lando terminus ssh-key:remove $(ssh-keygen -l -f ~/.lando/keys/pantheon.lando.id_rsa.pub | awk -F' ' '{print $2}' | sed 's/://g')
 env:
   global:
   - secure: yR9tScYLwBITWGlXVDjeY8/JTVxlnMRn5rYnHBsMLiIbXzs5GUR/nfkvPIzyNbG1tFYaS7bHGidnI6bvPeqVTjl2rII9yOWmio6604uachFnUCkxBb++fRfA/GXYE+Wk9D6pkMn6GmOA92aldaxsAsyYb9KQtwk4PIJwetLOSKVmLN64oytrj9rfVFX7cIEB2jvcwYf94gVgw/UTlOIRLRAEZfuBlH2TmJjBwf51lO2PiHEL9TCQoryk1EifxZjg1LynZ7TFajMh7c9MH5SVMRrIXRwijrDj7P0ZELn0PS5NYHSGdtKlmeAho4KO7zizRJ++lWKT2LbPf2V8QD+yFW/OYp3oXHgnPgIh9oc4HGsy2Qsd+8Ry9eY9t115eNAn95kEl1dDBH67QSbFL1SDjEJ6rFOKzBfHY1aeav03PHno0Ui9WDO3IDXZMnm5jqY0indQUIrXGRSHnyUFMTxswfM95Rgsn9aa6M5Z+YDYs45Iiblco18KD0CA4H4yz21jBz6JFwr2Ft/1NixSCz8tfJ8m1f1nfO3JtT29qIA0xWLS7+RvS+d/hkkeNCO2dDvYku+k//jHE1YWIdZE3g3FF6IIJmdcEBNfcUpRPTK22KIM+gcElpS1DI1Lf0IhqIW2nZs3HCLT+e+6fvSR/oM0en70GYGKbKtMTxBX5hJGw2Y=
