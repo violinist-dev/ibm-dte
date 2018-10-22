@@ -1,92 +1,39 @@
-# Turn off sudo, use Trusty
 sudo: false
 dist: trusty
-
-# Don't care about the language, we're doing this in Docker!
 services:
-  - docker
-
-#########################
-## Get Lando running on Travis
-##
-##   Do the Lando magic
-#########################
+- docker
 before_install:
-  # Install Lando
-  - sudo apt-get -y update || true
-  - sudo apt-get -y install cgroup-bin curl
-  - curl -fsSL -o /tmp/lando-latest.deb https://github.com/lando/lando/releases/download/v3.0.0-beta.47/lando-v3.0.0-beta.47.deb
-  - sudo dpkg -i /tmp/lando-latest.deb
-  - lando version
-  # Start Lando
-  - lando start -- -v
+- sudo apt-get -y update || true
+- sudo apt-get -y install cgroup-bin curl
+- curl -fsSL -o /tmp/lando-latest.deb https://github.com/lando/lando/releases/download/v3.0.0-beta.47/lando-v3.0.0-beta.47.deb
+- sudo dpkg -i /tmp/lando-latest.deb
+- lando version
+- lando start -- -v
 install:
-  # Install Dependencies
-  - lando composer install
-
+- lando composer install
 script:
-  # Do needed things to get this repo transformed to what pantheon expects
-  - lando composer prepare-for-pantheon
-
-  # Run non-db required tests eg linting/code standards/unit tests
-  # Lint the codez
-  # - lando phplint
-
-  # Check code standards
-  # - lando phpcs --config-set installed_paths /app/vendor/drupal/coder/coder_sniffer
-  # - lando phpcs -n --report=full --standard=Drupal --ignore=*.tpl.php --extensions=install,module,php,inc web/modules web/themes web/profiles
-
-  # Run unit tests.
-  # - lando composer drupal-unit-tests
-
-  # Get the DB for more advanced things
-  - lando terminus auth:login --machine-token=$PANTHEON_TOKEN
-  - lando pull --code=none --database=dev --files=dev --rsync
-
-  # Check if we can bootstrap the site.
-  - cd web
-  - lando drush cr | grep "rebuild complete."
-  - cd ..
-
-  # Run Behat tests.
-  # - lando behat --config=/app/tests/behat-pantheon.yml
-
-  # Do the multidev as needed
-  # - |
-  #   if [ "$TRAVIS_PULL_REQUEST" != "false" ]; then
-  #     BRANCH=$(echo $TRAVIS_PULL_REQUEST_BRANCH | grep -v '^\(master\|[0-9]\+.x\)$')
-  #     PR_ENV=${BRANCH:+pr-$BRANCH}
-  #     DEFAULT_ENV=$(echo ${PR_ENV:-$TRAVIS_PULL_REQUEST_BRANCH} | tr '[:upper:]' '[:lower:]' | sed 's/[^0-9a-z-]//g' | cut -c -11 | sed 's/-$//')
-  #     if ! lando terminus multidev:list $PANTHEON_SITE_NAME --field id | grep "$DEFAULT_ENV"; then
-  #       lando terminus multidev:create $PANTHEON_SITE_NAME.dev $DEFAULT_ENV
-  #     fi
-  #     lando ssh -c "cd /tmp && git clone -b $DEFAULT_ENV ssh://codeserver.dev.\${PANTHEON_SITE}@codeserver.dev.\${PANTHEON_SITE}.drush.in:2222/~/repository.git pantheon_build"
-  #     lando ssh -u root -c "rm -rf /tmp/pantheon_build/*"
-  #     lando ssh -c "cp -rf /app/ /tmp/pantheon_build/"
-  #     lando ssh -c "git -C /tmp/pantheon_build add -A"
-  #     lando ssh -c "git -C /tmp/pantheon_build commit -m '$TRAVIS_COMMIT_MESSAGE'"
-  #     lando ssh -c "git -C /tmp/pantheon_build push origin $DEFAULT_ENV"
-  #   fi
-
+- lando composer prepare-for-pantheon
+- lando terminus auth:login --machine-token=$PANTHEON_TOKEN
+- lando pull --code=none --database=dev --files=dev --rsync
+- cd web
+- lando drush cr | grep "rebuild complete."
+- cd ..
 before_deploy:
-  - git remote add pantheon $PANTHEON_GIT
-
+- git remote add pantheon $PANTHEON_GIT
 deploy:
-  - provider: script
-    skip_cleanup: true
-    script: scripts/travis/deploy.sh
-    on:
-      branch: master
-
-# Clean up posted SSH key
+- provider: script
+  skip_cleanup: true
+  script: scripts/travis/deploy.sh
+  on:
+    branch: master
 after_script:
-  - lando terminus ssh-key:remove $(ssh-keygen -l -f ~/.lando/keys/pantheon.lando.id_rsa.pub | awk -F' ' '{print $2}' | sed 's/://g')
-
+- lando terminus ssh-key:remove $(ssh-keygen -l -f ~/.lando/keys/pantheon.lando.id_rsa.pub
+  | awk -F' ' '{print $2}' | sed 's/://g')
 env:
   global:
-    - secure: yR9tScYLwBITWGlXVDjeY8/JTVxlnMRn5rYnHBsMLiIbXzs5GUR/nfkvPIzyNbG1tFYaS7bHGidnI6bvPeqVTjl2rII9yOWmio6604uachFnUCkxBb++fRfA/GXYE+Wk9D6pkMn6GmOA92aldaxsAsyYb9KQtwk4PIJwetLOSKVmLN64oytrj9rfVFX7cIEB2jvcwYf94gVgw/UTlOIRLRAEZfuBlH2TmJjBwf51lO2PiHEL9TCQoryk1EifxZjg1LynZ7TFajMh7c9MH5SVMRrIXRwijrDj7P0ZELn0PS5NYHSGdtKlmeAho4KO7zizRJ++lWKT2LbPf2V8QD+yFW/OYp3oXHgnPgIh9oc4HGsy2Qsd+8Ry9eY9t115eNAn95kEl1dDBH67QSbFL1SDjEJ6rFOKzBfHY1aeav03PHno0Ui9WDO3IDXZMnm5jqY0indQUIrXGRSHnyUFMTxswfM95Rgsn9aa6M5Z+YDYs45Iiblco18KD0CA4H4yz21jBz6JFwr2Ft/1NixSCz8tfJ8m1f1nfO3JtT29qIA0xWLS7+RvS+d/hkkeNCO2dDvYku+k//jHE1YWIdZE3g3FF6IIJmdcEBNfcUpRPTK22KIM+gcElpS1DI1Lf0IhqIW2nZs3HCLT+e+6fvSR/oM0en70GYGKbKtMTxBX5hJGw2Y=
-    - secure: 2W10tWPhPVsECYzsAz1DEsUTERftonemP4r3pilAGYytAJ5hRYXo/9yckE3Iqoyk+pV5M2Ib66gnP0kZLB4juZVkhOgKsceDLorgkQ20gIVdXObOCxe57IPuHx6T5D01qOZ02QoANozqeICHXbdjmAYYmqpoFcW5cGZB/Uh0XGHu/jrNUK3drZHPVpuPcW6xm8cIV9YC6Xtcmguov7LUTvHtf9VOSiWD022RDP653Nv30elKb3ET2n66Ee4GtHMIGn+mt/5i+eOwZ4mfaB6zFz4cPM36blT13TNSfPKyNSmXUBg8K5ClS+QIAzdW40yothO8HkWfjGR3SMMu6X0D987PrGi5lswM7xJGbhIf81Z5edVLQ6XdKsEp1c98O4IYvPLeq49cIxU8EpuA/6If5ufe5GwYnBV8tBcyxNYOduKaAo6yRogb8sJlritbEcbzIPTPVPFJOgfye/DFpmeEekHqLNreSr84wbfZecuhSJ3/7Yoq/jhKUJ/6TpcR8fI4kRd4V5MVJuqym53qmvcWKjy4oFeCjFL/kB2DsHSjb66h8BMp8ClQ7W5mRB9CIBaMdRYa56tJhKw5GWdGySO8gi/tVPLJx+BO88fzijX7eWYhQwMicGvMyxlawfrpjfGK/b4/dP4tOFsIjAwFIi3QUp1lBrrlBQzZ2y+mz9NAq3Y=
-
+  - secure: yR9tScYLwBITWGlXVDjeY8/JTVxlnMRn5rYnHBsMLiIbXzs5GUR/nfkvPIzyNbG1tFYaS7bHGidnI6bvPeqVTjl2rII9yOWmio6604uachFnUCkxBb++fRfA/GXYE+Wk9D6pkMn6GmOA92aldaxsAsyYb9KQtwk4PIJwetLOSKVmLN64oytrj9rfVFX7cIEB2jvcwYf94gVgw/UTlOIRLRAEZfuBlH2TmJjBwf51lO2PiHEL9TCQoryk1EifxZjg1LynZ7TFajMh7c9MH5SVMRrIXRwijrDj7P0ZELn0PS5NYHSGdtKlmeAho4KO7zizRJ++lWKT2LbPf2V8QD+yFW/OYp3oXHgnPgIh9oc4HGsy2Qsd+8Ry9eY9t115eNAn95kEl1dDBH67QSbFL1SDjEJ6rFOKzBfHY1aeav03PHno0Ui9WDO3IDXZMnm5jqY0indQUIrXGRSHnyUFMTxswfM95Rgsn9aa6M5Z+YDYs45Iiblco18KD0CA4H4yz21jBz6JFwr2Ft/1NixSCz8tfJ8m1f1nfO3JtT29qIA0xWLS7+RvS+d/hkkeNCO2dDvYku+k//jHE1YWIdZE3g3FF6IIJmdcEBNfcUpRPTK22KIM+gcElpS1DI1Lf0IhqIW2nZs3HCLT+e+6fvSR/oM0en70GYGKbKtMTxBX5hJGw2Y=
+  - secure: 2W10tWPhPVsECYzsAz1DEsUTERftonemP4r3pilAGYytAJ5hRYXo/9yckE3Iqoyk+pV5M2Ib66gnP0kZLB4juZVkhOgKsceDLorgkQ20gIVdXObOCxe57IPuHx6T5D01qOZ02QoANozqeICHXbdjmAYYmqpoFcW5cGZB/Uh0XGHu/jrNUK3drZHPVpuPcW6xm8cIV9YC6Xtcmguov7LUTvHtf9VOSiWD022RDP653Nv30elKb3ET2n66Ee4GtHMIGn+mt/5i+eOwZ4mfaB6zFz4cPM36blT13TNSfPKyNSmXUBg8K5ClS+QIAzdW40yothO8HkWfjGR3SMMu6X0D987PrGi5lswM7xJGbhIf81Z5edVLQ6XdKsEp1c98O4IYvPLeq49cIxU8EpuA/6If5ufe5GwYnBV8tBcyxNYOduKaAo6yRogb8sJlritbEcbzIPTPVPFJOgfye/DFpmeEekHqLNreSr84wbfZecuhSJ3/7Yoq/jhKUJ/6TpcR8fI4kRd4V5MVJuqym53qmvcWKjy4oFeCjFL/kB2DsHSjb66h8BMp8ClQ7W5mRB9CIBaMdRYa56tJhKw5GWdGySO8gi/tVPLJx+BO88fzijX7eWYhQwMicGvMyxlawfrpjfGK/b4/dP4tOFsIjAwFIi3QUp1lBrrlBQzZ2y+mz9NAq3Y=
+  - secure: 01vwLsHh9jRPWaJeYeh32olqKmpMLQZTAsxggv98l7zgUuwL2tM28fPZAHCjwSzIFRzhISMrf8FbG2XnqEA8NBKA16aK+OjiNI+Tk9ryClxC/c8ZDaZyfvoxcRk8maqUCV2wUd8W19s2vtK4VBNWq31wjsHnetu5iDo/5UsJR468Vo3aUx5bU/9FXFsizJ7CsOSSzPZuiTzrzFt/s2HjL7tyHaZt+JlnZfTrHuNseg/+fuK8BNS56emAYtUAesdvJBmU4jztAFxiD2FFyDDVbHWKHsRyJLGjwP3iMCzE4ESPX0kuaoG6wP1tPow9KhMjmyQB/Igvuw2Gy/2XlINhFBW3dgIvEsYtR1kA5JFUQnA79jS3jniD0HMmnq16pMtDRNYE1gtIjtclgSfJp4nFghsNHOZVgCnfEENS1Cp9dX1h2BVQKOrpSJ84SQVJhc52encCWh+vD20rqbk78Ay3EWsnHFfLM4WUmpNk4jpJz854omZoFgGy4jrwYfRjedMB3RKwrGA1NuPX2StC04k8BlosbZ98YzW/zNsL/0m9ghy2OuVycyF8xyAHxlms/S9XeWKlBud6rqZx6kCDaTwSa9+xBYfMV0hq8It9yxsBWuqP1dBEEABdfojZx3+fsrrcYz7uMHKm61NA7l1YIvJTXC81+/HLJ5GTrwGadxaMS0Q=
 notifications:
   email: false
   slack:
