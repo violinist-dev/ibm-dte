@@ -8,6 +8,7 @@ dependencies:
     - field.field.taxonomy_term.portfolios.field_headline
     - field.field.taxonomy_term.portfolios.field_natural_language_name
     - field.field.taxonomy_term.portfolios.field_overview
+    - field.field.taxonomy_term.portfolios.field_product_key
     - field.field.taxonomy_term.portfolios.field_short_description
     - field.field.taxonomy_term.portfolios.field_short_name
     - field.field.taxonomy_term.portfolios.field_url
@@ -79,12 +80,16 @@ custom_sources:
     label: productPageName
     value: productPageName
     machine_name: productpagename
+  id:
+    label: id
+    value: id
+    machine_name: id
 mappings:
   -
     target: feeds_item
     map:
       url: url
-      guid: productkey
+      guid: id
     unique:
       guid: '1'
   -
@@ -134,3 +139,8 @@ mappings:
     target: field_short_name
     map:
       value: productpagename
+  -
+    target: field_product_key
+    map:
+      value: productkey
+    unique: {  }
