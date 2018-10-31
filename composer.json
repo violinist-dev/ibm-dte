@@ -266,6 +266,9 @@
             "drupal/jsonapi": {
                 "Add a revision id negotiation plugin to support entity revisions": "https://www.drupal.org/files/issues/2018-08-26/2992833--revision-id-negotiation--52.patch",
                 "Provide links to entity revisions in json api output": "https://www.drupal.org/files/issues/2018-08-27/2992836--revision-links--12--do-not-test.patch"
+            },
+            "drupal/paragraphs": {
+                "Add upgrade path for sites that have existing base field overrides for moderation_state field": "https://www.drupal.org/files/issues/2018-10-09/3005263_5.patch"
             }
         }
     },
