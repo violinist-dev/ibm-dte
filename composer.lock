@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "31667f9f8c830556cfef1f6f49b20b9f",
+    "content-hash": "f935eef1797e564689fdb03ba57c6bae",
     "packages": [
         {
             "name": "alchemy/zippy",
@@ -2220,6 +2220,55 @@
             }
         },
         {
+            "name": "drupal/content_moderation_reviewer",
+            "version": "1.0.0-beta3",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupal.org/project/content_moderation_reviewer",
+                "reference": "8.x-1.0-beta3"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/content_moderation_reviewer-8.x-1.0-beta3.zip",
+                "reference": "8.x-1.0-beta3",
+                "shasum": "ea6dbbeb59b59b1e73964de57410de4276e432ea"
+            },
+            "require": {
+                "drupal/content_moderation": "*",
+                "drupal/core": "~8.0",
+                "drupal/workflows": "*"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "branch-alias": {
+                    "dev-1.x": "1.x-dev"
+                },
+                "drupal": {
+                    "version": "8.x-1.0-beta3",
+                    "datestamp": "1541794080",
+                    "security-coverage": {
+                        "status": "not-covered",
+                        "message": "Project has not opted into security advisory coverage!"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "dawehner",
+                    "homepage": "https://www.drupal.org/user/99340"
+                }
+            ],
+            "description": "Allows to define who should review a piece of content",
+            "homepage": "https://www.drupal.org/project/content_moderation_reviewer",
+            "support": {
+                "source": "http://cgit.drupalcode.org/content_moderation_reviewer"
+            }
+        },
+        {
             "name": "drupal/core",
             "version": "8.6.2",
             "source": {
@@ -2432,6 +2481,9 @@
                     "recurse": false,
                     "replace": false,
                     "merge-extra": false
+                },
+                "patches_applied": {
+                    "Normalize Content Moderation Form": "https://www.drupal.org/files/issues/2018-08-06/2849279-20.patch"
                 }
             },
             "autoload": {
@@ -4044,12 +4096,13 @@
                 },
                 "drupal": {
                     "version": "8.x-1.4",
-                    "datestamp": "1540628880",
+                    "datestamp": "1541009695",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
                     }
-                }
+                },
+                "patches_applied": []
             },
             "notification-url": "https://packages.drupal.org/8/downloads",
             "license": [
@@ -11111,6 +11164,7 @@
     "stability-flags": {
         "drupal/coffee": 10,
         "drupal/conditional_fields": 15,
+        "drupal/content_moderation_reviewer": 15,
         "drupal/deploy": 10,
         "drupal/diff": 5,
         "drupal/entity_embed": 10,

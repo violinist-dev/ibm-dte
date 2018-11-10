@@ -134,6 +134,7 @@
         "drupal/config_installer": "^1.0",
         "drupal/console": "^1",
         "drupal/consumers": "^1.2",
+        "drupal/content_moderation_reviewer": "^1.0@alpha",
         "drupal/core": "^8.6.1",
         "drupal/deploy": "^1.0@beta",
         "drupal/diff": "^1.0@RC",
@@ -260,6 +261,9 @@
             ]
         },
         "patches": {
+            "drupal/core": {
+                "Normalize Content Moderation Form": "https://www.drupal.org/files/issues/2018-08-06/2849279-20.patch"
+            },
             "drupal/moderation_note": {
                 "Moderation Note with Paragraphs": "https://www.drupal.org/files/issues/2018-05-05/2954753-14.patch"
             },
