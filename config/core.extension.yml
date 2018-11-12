@@ -52,6 +52,11 @@ module:
   node: 0
   options: 0
   page_cache: 0
+  password_policy: 0
+  password_policy_character_types: 0
+  password_policy_characters: 0
+  password_policy_history: 0
+  password_policy_length: 0
   path: 0
   plupload: 0
   plupload_widget: 0
