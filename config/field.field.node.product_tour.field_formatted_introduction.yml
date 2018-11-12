@@ -10,10 +10,10 @@ dependencies:
     - text
 third_party_settings:
   allowed_formats:
-    limited_html: limited_html
+    html: html
     plain_text: '0'
+    limited_html: '0'
     limited_plus_html: '0'
-    html: '0'
     full_tml: '0'
 id: node.product_tour.field_formatted_introduction
 field_name: field_formatted_introduction
