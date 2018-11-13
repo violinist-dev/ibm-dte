@@ -273,7 +273,7 @@
             },
             "drupal/password_policy": {
                 "Fix import configuration for field_last_password_reset is undown": "https://www.drupal.org/files/issues/2018-07-30/password_policy-config_import_field_error-2771129-57.patch"
-            },
+            }
         }
     },
     "config": {
