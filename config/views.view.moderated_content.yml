@@ -1015,27 +1015,24 @@ display:
           entity_type: node
           entity_field: uid
           plugin_id: user_name
-        content_moderation_reviewer:
-          id: content_moderation_reviewer
-          table: node_field_data
-          field: content_moderation_reviewer
-          relationship: nid
+        uid_1:
+          id: uid_1
+          table: users_field_data
+          field: uid
+          relationship: content_moderation_reviewer_1
           group_type: group
           admin_label: ''
-          operator: '='
-          value:
-            min: ''
-            max: ''
-            value: ''
+          operator: in
+          value: {  }
           group: 1
           exposed: true
           expose:
-            operator_id: content_moderation_reviewer_op
-            label: 'Assigned Reviewer'
+            operator_id: uid_1_op
+            label: 'Assigned Reviewer (username)'
             description: ''
-            use_operator: true
-            operator: content_moderation_reviewer_op
-            identifier: content_moderation_reviewer
+            use_operator: false
+            operator: uid_1_op
+            identifier: uid_1
             required: false
             remember: false
             multiple: false
@@ -1050,9 +1047,7 @@ display:
               api_consumer_staging_: '0'
               administrator: '0'
               anonymous: '0'
-            placeholder: ''
-            min_placeholder: ''
-            max_placeholder: ''
+            reduce: false
           is_grouped: false
           group_info:
             label: ''
@@ -1065,9 +1060,9 @@ display:
             default_group: All
             default_group_multiple: {  }
             group_items: {  }
-          entity_type: node
-          entity_field: content_moderation_reviewer
-          plugin_id: numeric
+          entity_type: user
+          entity_field: uid
+          plugin_id: user_name
       sorts: {  }
       title: 'Moderated Content'
       header: {  }
@@ -1106,6 +1101,17 @@ display:
           required: false
           entity_type: node
           entity_field: uid
+          plugin_id: standard
+        content_moderation_reviewer_1:
+          id: content_moderation_reviewer_1
+          table: node_field_revision
+          field: content_moderation_reviewer
+          relationship: none
+          group_type: group
+          admin_label: 'Moderation reviewer'
+          required: false
+          entity_type: node
+          entity_field: content_moderation_reviewer
           plugin_id: standard
       arguments: {  }
       display_extenders: {  }
