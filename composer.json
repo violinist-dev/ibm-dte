@@ -155,6 +155,7 @@
         "drupal/moderation_note": "^1.0@beta",
         "drupal/node_title_validation": "^1.1",
         "drupal/paragraphs": "^1.2",
+        "drupal/password_policy": "^3.0@alpha",
         "drupal/pathauto": "^1.1",
         "drupal/plupload": "^1.0@beta",
         "drupal/plupload_widget": "^1.0",
