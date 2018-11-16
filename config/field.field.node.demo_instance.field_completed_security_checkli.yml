@@ -10,7 +10,7 @@ field_name: field_completed_security_checkli
 entity_type: node
 bundle: demo_instance
 label: 'Completed Security Checklist'
-description: '<p>Checklist can be found here: <a href="http://ibm.biz/dte-security-checklist">http://ibm.biz/dte-security-checklist</a></p>'
+description: "<p>Checklist can be found here: <a href=\"http://ibm.biz/dte-security-checklist\">http://ibm.biz/dte-security-checklist</a></p>\r\n<p>You only need to complete the checklist for SKYTAP instances. For all other types, you can simple click this checkbox</p>"
 required: true
 translatable: false
 default_value:
