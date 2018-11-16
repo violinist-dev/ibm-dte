@@ -128,6 +128,7 @@
         "drupal/allowed_formats": "^1.1",
         "drupal/ckeditor_uploadimage": "^1.5",
         "drupal/codesnippet": "^1.6",
+        "drupal/codetag": "^1.1",
         "drupal/coffee": "^1.0@beta",
         "drupal/conditional_fields": "^1.0@alpha",
         "drupal/config_direct_save": "^1.0",
