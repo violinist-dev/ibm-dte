@@ -1,0 +1,19 @@
+uuid: 054d9dba-0669-4fdb-a139-12c870953a13
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_urx_form_id
+    - node.type.product_tour
+id: node.product_tour.field_urx_form_id
+field_name: field_urx_form_id
+entity_type: node
+bundle: product_tour
+label: 'URX Form ID'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

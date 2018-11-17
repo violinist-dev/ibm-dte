@@ -3,9 +3,11 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.node.product_tour.field_campaign_code
     - field.field.node.product_tour.field_environment_benefits
     - field.field.node.product_tour.field_environment_introduction
     - field.field.node.product_tour.field_formatted_introduction
+    - field.field.node.product_tour.field_ov_code
     - field.field.node.product_tour.field_path
     - field.field.node.product_tour.field_referenced_demo_instance
     - field.field.node.product_tour.field_referenced_products
@@ -15,6 +17,7 @@ dependencies:
     - field.field.node.product_tour.field_takeaways
     - field.field.node.product_tour.field_tasks
     - field.field.node.product_tour.field_url
+    - field.field.node.product_tour.field_urx_form_id
     - field.field.node.product_tour.field_weight
     - node.type.product_tour
   module:
@@ -33,6 +36,14 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
+  field_campaign_code:
+    weight: 16
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
   field_environment_benefits:
     weight: 14
     label: above
@@ -54,6 +65,14 @@ content:
     settings: {  }
     third_party_settings: {  }
     type: text_default
+    region: content
+  field_ov_code:
+    weight: 17
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
     region: content
   field_path:
     weight: 12
@@ -130,6 +149,14 @@ content:
     third_party_settings: {  }
     type: link
     region: content
+  field_urx_form_id:
+    weight: 18
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
   field_weight:
     weight: 7
     label: above
@@ -145,4 +172,5 @@ content:
     settings: {  }
     third_party_settings: {  }
 hidden:
+  content_moderation_reviewer: true
   langcode: true

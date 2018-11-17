@@ -3,9 +3,11 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.node.product_tour.field_campaign_code
     - field.field.node.product_tour.field_environment_benefits
     - field.field.node.product_tour.field_environment_introduction
     - field.field.node.product_tour.field_formatted_introduction
+    - field.field.node.product_tour.field_ov_code
     - field.field.node.product_tour.field_path
     - field.field.node.product_tour.field_referenced_demo_instance
     - field.field.node.product_tour.field_referenced_products
@@ -15,10 +17,12 @@ dependencies:
     - field.field.node.product_tour.field_takeaways
     - field.field.node.product_tour.field_tasks
     - field.field.node.product_tour.field_url
+    - field.field.node.product_tour.field_urx_form_id
     - field.field.node.product_tour.field_weight
     - node.type.product_tour
   module:
     - content_moderation
+    - content_moderation_reviewer
     - field_group
     - link
     - paragraphs
@@ -100,6 +104,7 @@ third_party_settings:
       label: 'Related Items'
     group_metadata:
       children:
+        - group_marketing
         - field_weight
       parent_name: group_content_groupings
       weight: 24
@@ -126,11 +131,36 @@ third_party_settings:
         description: ''
         required_fields: true
       label: 'Demo Environment'
+    group_marketing:
+      children:
+        - field_ov_code
+        - field_campaign_code
+        - field_urx_form_id
+      parent_name: group_metadata
+      weight: 20
+      format_type: fieldset
+      format_settings:
+        id: ''
+        classes: ''
+        description: ''
+        required_fields: true
+      label: Marketing
 id: node.product_tour.default
 targetEntityType: node
 bundle: product_tour
 mode: default
 content:
+  field_campaign_code:
+    weight: 23
+    settings:
+      size: 8
+      placeholder: 000000AB
+    third_party_settings:
+      maxlength:
+        maxlength_js: 8
+        maxlength_js_label: 'Campaign Codes are @limit characters long. Yours is <strong>@count</strong>'
+    type: string_textfield
+    region: content
   field_environment_benefits:
     weight: 9
     settings:
@@ -157,6 +187,17 @@ content:
       placeholder: ''
     third_party_settings: {  }
     type: text_textarea
+    region: content
+  field_ov_code:
+    weight: 22
+    settings:
+      size: 7
+      placeholder: ov12345
+    third_party_settings:
+      maxlength:
+        maxlength_js: 7
+        maxlength_js_label: 'OV Codes are @limit characters long. Yours is <strong>@count</strong>'
+    type: string_textfield
     region: content
   field_referenced_demo_instance:
     weight: 7
@@ -227,6 +268,7 @@ content:
         duplicate: duplicate
         collapse_edit_all: collapse_edit_all
         add_above: '0'
+      closed_mode_threshold: 0
     third_party_settings: {  }
     type: paragraphs
     region: content
@@ -238,8 +280,16 @@ content:
     third_party_settings: {  }
     type: link_default
     region: content
+  field_urx_form_id:
+    weight: 24
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
   field_weight:
-    weight: 5
+    weight: 21
     settings:
       placeholder: ''
     third_party_settings: {  }
