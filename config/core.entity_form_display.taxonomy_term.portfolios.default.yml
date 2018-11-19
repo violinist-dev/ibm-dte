@@ -5,6 +5,7 @@ dependencies:
   config:
     - field.field.taxonomy_term.portfolios.feeds_item
     - field.field.taxonomy_term.portfolios.field_business_unit
+    - field.field.taxonomy_term.portfolios.field_category
     - field.field.taxonomy_term.portfolios.field_headline
     - field.field.taxonomy_term.portfolios.field_natural_language_name
     - field.field.taxonomy_term.portfolios.field_overview
@@ -31,6 +32,14 @@ content:
     third_party_settings: {  }
   field_business_unit:
     weight: 36
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_category:
+    weight: 39
     settings:
       size: 60
       placeholder: ''

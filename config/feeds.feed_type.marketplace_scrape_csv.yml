@@ -5,6 +5,7 @@ dependencies:
   config:
     - field.field.taxonomy_term.portfolios.feeds_item
     - field.field.taxonomy_term.portfolios.field_business_unit
+    - field.field.taxonomy_term.portfolios.field_category
     - field.field.taxonomy_term.portfolios.field_headline
     - field.field.taxonomy_term.portfolios.field_natural_language_name
     - field.field.taxonomy_term.portfolios.field_overview
@@ -84,6 +85,10 @@ custom_sources:
     label: id
     value: id
     machine_name: id
+  category:
+    label: category
+    value: category
+    machine_name: category
 mappings:
   -
     target: feeds_item
@@ -143,4 +148,9 @@ mappings:
     target: field_product_key
     map:
       value: productkey
+    unique: {  }
+  -
+    target: field_category
+    map:
+      value: category
     unique: {  }
