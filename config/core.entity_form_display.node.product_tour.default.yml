@@ -22,7 +22,6 @@ dependencies:
     - node.type.product_tour
   module:
     - content_moderation
-    - content_moderation_reviewer
     - field_group
     - link
     - paragraphs

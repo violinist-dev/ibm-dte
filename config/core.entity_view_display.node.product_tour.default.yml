@@ -172,5 +172,4 @@ content:
     settings: {  }
     third_party_settings: {  }
 hidden:
-  content_moderation_reviewer: true
   langcode: true
