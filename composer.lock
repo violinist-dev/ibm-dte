@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "69ecafa6a3069a5d2cf70ec36ae10e39",
+    "content-hash": "ff8023c09ecd9262ba5c9d875a0e00d9",
     "packages": [
         {
             "name": "alchemy/zippy",
@@ -2274,55 +2274,6 @@
             "homepage": "https://www.drupal.org/project/consumers",
             "support": {
                 "source": "http://cgit.drupalcode.org/consumers"
-            }
-        },
-        {
-            "name": "drupal/content_moderation_reviewer",
-            "version": "1.0.0-beta5",
-            "source": {
-                "type": "git",
-                "url": "https://git.drupal.org/project/content_moderation_reviewer",
-                "reference": "8.x-1.0-beta5"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/content_moderation_reviewer-8.x-1.0-beta5.zip",
-                "reference": "8.x-1.0-beta5",
-                "shasum": "3a8d1625d58692b920f1788fc39ba2afb8d12726"
-            },
-            "require": {
-                "drupal/content_moderation": "*",
-                "drupal/core": "~8.0",
-                "drupal/workflows": "*"
-            },
-            "type": "drupal-module",
-            "extra": {
-                "branch-alias": {
-                    "dev-1.x": "1.x-dev"
-                },
-                "drupal": {
-                    "version": "8.x-1.0-beta5",
-                    "datestamp": "1542436380",
-                    "security-coverage": {
-                        "status": "not-covered",
-                        "message": "Project has not opted into security advisory coverage!"
-                    }
-                }
-            },
-            "notification-url": "https://packages.drupal.org/8/downloads",
-            "license": [
-                "GPL-2.0-or-later"
-            ],
-            "authors": [
-                {
-                    "name": "dawehner",
-                    "homepage": "https://www.drupal.org/user/99340"
-                }
-            ],
-            "description": "Allows to define who should review a piece of content",
-            "homepage": "https://www.drupal.org/project/content_moderation_reviewer",
-            "support": {
-                "source": "http://cgit.drupalcode.org/content_moderation_reviewer"
             }
         },
         {
@@ -11221,7 +11172,6 @@
     "stability-flags": {
         "drupal/coffee": 10,
         "drupal/conditional_fields": 15,
-        "drupal/content_moderation_reviewer": 15,
         "drupal/deploy": 10,
         "drupal/diff": 5,
         "drupal/entity_embed": 10,

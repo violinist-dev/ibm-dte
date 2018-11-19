@@ -135,7 +135,6 @@
         "drupal/config_installer": "^1.0",
         "drupal/console": "^1",
         "drupal/consumers": "^1.2",
-        "drupal/content_moderation_reviewer": "^1.0@alpha",
         "drupal/core": "^8.6.1",
         "drupal/deploy": "^1.0@beta",
         "drupal/diff": "^1.0@RC",
