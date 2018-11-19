@@ -6,5 +6,5 @@ id: garage_method_staging
 label: 'Garage Method Staging'
 tab_label: 'Staging Preview (GM)'
 open_external_label: 'preview (gm)'
-preview_url: 'https://dte-ibmcloudgarage.mybluemix.net/cloud/garage/dte[node:field_path:value]'
+preview_url: 'https://dte-staging-ibmcloudgarage.mybluemix.net/cloud/garage/dte[node:field_path:value]'
 default_size: full
