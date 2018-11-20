@@ -1,0 +1,23 @@
+uuid: ac1871d6-a960-4277-b383-086a4f502d23
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_max_reservation_time
+    - paragraphs.paragraphs_type.skytap_instance
+id: paragraph.skytap_instance.field_max_reservation_time
+field_name: field_max_reservation_time
+entity_type: paragraph
+bundle: skytap_instance
+label: 'Max Reservation Time'
+description: '<p>The value represents the longest reservation option in the "try it for" drop down on the reservation form <p>'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: hour|hours
+field_type: integer

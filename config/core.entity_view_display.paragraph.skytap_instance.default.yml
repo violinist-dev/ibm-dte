@@ -6,6 +6,7 @@ dependencies:
     - field.field.paragraph.skytap_instance.field_idle_runtime_limit
     - field.field.paragraph.skytap_instance.field_idle_runtime_type
     - field.field.paragraph.skytap_instance.field_internet_access
+    - field.field.paragraph.skytap_instance.field_max_reservation_time
     - field.field.paragraph.skytap_instance.field_smartrdp_client
     - field.field.paragraph.skytap_instance.field_template
     - field.field.paragraph.skytap_instance.field_total_runtime_limit
@@ -40,6 +41,15 @@ content:
     settings: {  }
     third_party_settings: {  }
     type: list_default
+    region: content
+  field_max_reservation_time:
+    weight: 7
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_integer
     region: content
   field_smartrdp_client:
     weight: 6
