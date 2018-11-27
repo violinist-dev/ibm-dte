@@ -262,7 +262,8 @@
         },
         "patches": {
             "drupal/core": {
-                "Normalize Content Moderation Form": "https://www.drupal.org/files/issues/2018-08-06/2849279-20.patch"
+                "Normalize Content Moderation Form": "https://www.drupal.org/files/issues/2018-08-06/2849279-20.patch",
+                "Including entity reference in tables for json api to access": "https://www.drupal.org/files/issues/2018-11-26/2649268-28.patch"
             },
             "drupal/moderation_note": {
                 "Moderation Note with Paragraphs": "https://www.drupal.org/files/issues/2018-05-05/2954753-14.patch"
