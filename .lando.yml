@@ -4,3 +4,4 @@ config:
   framework: drupal8
   site: ibm-dte
   id: 1
+  drush: global:8.1.16
