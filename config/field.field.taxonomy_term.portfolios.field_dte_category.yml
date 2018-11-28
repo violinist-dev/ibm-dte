@@ -1,0 +1,19 @@
+uuid: 9b589237-b56b-4543-8621-79c62e847c80
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_dte_category
+    - taxonomy.vocabulary.portfolios
+id: taxonomy_term.portfolios.field_dte_category
+field_name: field_dte_category
+entity_type: taxonomy_term
+bundle: portfolios
+label: 'DTE category'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string
