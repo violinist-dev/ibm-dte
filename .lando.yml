@@ -4,8 +4,3 @@ config:
   framework: drupal8
   site: ibm-dte
   id: 1
-tooling:
-  drush:
-    cmd:
-      - "/app/vendor/bin/drush"
-      - "--root=/app/web"
