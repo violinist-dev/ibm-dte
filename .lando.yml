@@ -4,4 +4,8 @@ config:
   framework: drupal8
   site: ibm-dte
   id: 1
-  drush: global:8.1.16
+tooling:
+  drush:
+    cmd:
+      - "/app/vendor/bin/drush"
+      - "--root=/app/web"
