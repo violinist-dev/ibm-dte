@@ -827,7 +827,10 @@ display:
           group_type: group
           admin_label: ''
           operator: in
-          value: {  }
+          value:
+            tech_lead_editor-draft: tech_lead_editor-draft
+            tech_lead_editor-technical_review: tech_lead_editor-technical_review
+            tech_lead_editor-editorial_review: tech_lead_editor-editorial_review
           group: 1
           exposed: true
           expose:
@@ -845,6 +848,8 @@ display:
               content_creator: '0'
               technical_reviewer: '0'
               content_editor: '0'
+              manager: '0'
+              translator: '0'
               api_consumer: '0'
               api_consumer_staging_: '0'
               administrator: '0'
