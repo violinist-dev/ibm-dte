@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "ff8023c09ecd9262ba5c9d875a0e00d9",
+    "content-hash": "4ff3d46a1836c36864bfad066c0a2255",
     "packages": [
         {
             "name": "alchemy/zippy",
@@ -2491,7 +2491,8 @@
                     "merge-extra": false
                 },
                 "patches_applied": {
-                    "Normalize Content Moderation Form": "https://www.drupal.org/files/issues/2018-08-06/2849279-20.patch"
+                    "Normalize Content Moderation Form": "https://www.drupal.org/files/issues/2018-08-06/2849279-20.patch",
+                    "Including entity reference in tables for json api to access": "https://www.drupal.org/files/issues/2018-11-26/2649268-28.patch"
                 }
             },
             "autoload": {
@@ -3383,17 +3384,17 @@
         },
         {
             "name": "drupal/jsonapi",
-            "version": "1.23.0",
+            "version": "1.24.0",
             "source": {
                 "type": "git",
                 "url": "https://git.drupal.org/project/jsonapi",
-                "reference": "8.x-1.23"
+                "reference": "8.x-1.24"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/jsonapi-8.x-1.23.zip",
-                "reference": "8.x-1.23",
-                "shasum": "4fb88736a9ad90a995bdc9c3ab90e7731b6d89e5"
+                "url": "https://ftp.drupal.org/files/projects/jsonapi-8.x-1.24.zip",
+                "reference": "8.x-1.24",
+                "shasum": "61ff3254b228d41c6a37d3b6e37f30120c0729b7"
             },
             "require": {
                 "drupal/core": "^8.4.3"
@@ -3409,15 +3410,14 @@
                     "dev-1.x": "1.x-dev"
                 },
                 "drupal": {
-                    "version": "8.x-1.23",
-                    "datestamp": "1532084496",
+                    "version": "8.x-1.24",
+                    "datestamp": "1545243863",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
                     }
                 },
                 "patches_applied": {
-                    "Add a revision id negotiation plugin to support entity revisions": "https://www.drupal.org/files/issues/2018-08-26/2992833--revision-id-negotiation--52.patch",
                     "Provide links to entity revisions in json api output": "https://www.drupal.org/files/issues/2018-08-27/2992836--revision-links--12--do-not-test.patch"
                 }
             },
