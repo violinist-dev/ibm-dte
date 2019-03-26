@@ -146,8 +146,8 @@
         "drupal/field_group": "^1.0",
         "drupal/fieldable_path": "1.x-dev",
         "drupal/graphql": "^3.0@beta",
-        "drupal/jsonapi": "^1.23",
-        "drupal/jsonapi_extras": "^2.8",
+        "drupal/jsonapi": "^2.4.0",
+        "drupal/jsonapi_extras": "^3.4.0",
         "drupal/label_help": "1.x-dev",
         "drupal/markdown": "^1.2",
         "drupal/material_admin": "^1.0@alpha",
@@ -267,13 +267,6 @@
             },
             "drupal/moderation_note": {
                 "Moderation Note with Paragraphs": "https://www.drupal.org/files/issues/2018-05-05/2954753-14.patch"
-            },
-            "drupal/jsonapi": {
-                "Add a revision id negotiation plugin to support entity revisions": "https://www.drupal.org/files/issues/2018-08-26/2992833--revision-id-negotiation--52.patch",
-                "Provide links to entity revisions in json api output": "https://www.drupal.org/files/issues/2018-08-27/2992836--revision-links--12--do-not-test.patch"
-            },
-            "drupal/paragraphs": {
-                "Add upgrade path for sites that have existing base field overrides for moderation_state field": "https://www.drupal.org/files/issues/2018-10-09/3005263_5.patch"
             },
             "drupal/password_policy": {
                 "Fix import configuration for field_last_password_reset is unknown": "https://www.drupal.org/files/issues/2018-07-30/password_policy-config_import_field_error-2771129-57.patch"
