@@ -9,6 +9,7 @@ before_install:
 - sudo dpkg -i /tmp/lando-latest.deb
 - lando version
 - lando start -- -v
+- curl -O https://raw.githubusercontent.com/pantheon-systems/terminus-installer/master/builds/installer.phar && php installer.phar install
 install:
 - lando composer install
 script:
