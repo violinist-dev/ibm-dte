@@ -155,7 +155,7 @@
         "drupal/media_upload": "^1.7",
         "drupal/moderation_note": "^1.0@beta",
         "drupal/node_title_validation": "^1.1",
-        "drupal/paragraphs": "^1.2",
+        "drupal/paragraphs": "^1.8",
         "drupal/pathauto": "^1.1",
         "drupal/plupload": "^1.0@beta",
         "drupal/plupload_widget": "^1.0",

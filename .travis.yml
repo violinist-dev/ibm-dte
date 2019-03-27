@@ -5,7 +5,7 @@ services:
 before_install:
 - sudo apt-get -y update || true
 - sudo apt-get -y install cgroup-bin curl
-- curl -fsSL -o /tmp/lando-latest.deb https://github.com/lando/lando/releases/download/v3.0.0-rc.14/lando-v3.0.0-rc.14.deb
+- curl -fsSL -o /tmp/lando-latest.deb https://github.com/lando/lando/releases/download/v3.0.0-beta.47/lando-v3.0.0-beta.47.deb
 - sudo dpkg -i /tmp/lando-latest.deb
 - lando version
 - lando start -- -v
