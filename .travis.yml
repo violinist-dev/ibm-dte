@@ -21,6 +21,7 @@ script:
 - cd web
 - lando drush cr | grep "rebuild complete."
 - cd ..
+- pwd
 before_deploy:
 - git remote add pantheon $PANTHEON_GIT
 deploy:
