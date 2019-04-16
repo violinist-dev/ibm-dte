@@ -15,13 +15,12 @@ install:
 script:
 - lando composer prepare-for-pantheon
 - lando terminus auth:login --machine-token=$PANTHEON_TOKEN
-- lando pull --code=none --database=dev --files=dev --rsync
+- lando pull --code=none --database=dev --files=dev --rsync &>/dev/null
 - lando terminus backup:get ibm-dte.dev --element=db --to=/app/database.sql.gz
 - lando db-import database.sql.gz
 - cd web
 - lando drush cr | grep "rebuild complete."
 - cd ..
-- printenv
 before_deploy:
 - git remote add pantheon $PANTHEON_GIT
 deploy:
