@@ -24,6 +24,8 @@ script:
 - pwd
 before_deploy:
 - git remote add pantheon $PANTHEON_GIT
+- echo -e 'Host *.ibm.com\n  StrictHostKeyChecking no' >> ~/.ssh/config
+- echo -e 'Host *.drush.in\n  VerifyHostKeyDNS yes\n  StrictHostKeyChecking no' >> ~/.ssh/config
 deploy:
 - provider: script
   skip_cleanup: true
