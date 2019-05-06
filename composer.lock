@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "069c31872ed6b96d41632d76f4a029f0",
+    "content-hash": "0cc3b6fac7e1aeab0075c7cf87329c0d",
     "packages": [
         {
             "name": "alchemy/zippy",
@@ -4225,6 +4225,9 @@
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
                     }
+                },
+                "patches_applied": {
+                    "Running drush entup results in an exception when attempting to update to 1.7": "https://www.drupal.org/files/issues/2019-04-01/paragraphs_revision_uid_exception-3042330-4.patch"
                 }
             },
             "notification-url": "https://packages.drupal.org/8/downloads",

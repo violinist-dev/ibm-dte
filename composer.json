@@ -109,6 +109,20 @@
                     "type": "zip"
                 }
             }
+        },
+        {
+            "type": "package",
+            "package": {
+                "name": "moxiecode/plupload",
+                "version": "2.1.9",
+                "type": "drupal-library",
+                "source": {
+                    "url": "https://github.com/moxiecode/plupload.git",
+                    "type": "git",
+                    "reference": "v2.1.9"
+                },
+                "require": { "composer/installers": "~1.0" }
+            }
         }
     ],
     "require": {
@@ -264,10 +278,13 @@
             "drupal/core": {
                 "Normalize Content Moderation Form": "https://www.drupal.org/files/issues/2018-08-06/2849279-20.patch",
                 "Including entity reference in tables for json api to access": "https://www.drupal.org/files/issues/2018-11-26/2649268-28.patch",
-				"Shipping a profile with multiple languages without locale module not possible": "https://www.drupal.org/files/issues/2019-01-12/2413191-31.patch"
+                "Shipping a profile with multiple languages without locale module not possible": "https://www.drupal.org/files/issues/2019-01-12/2413191-31.patch"
             },
             "drupal/moderation_note": {
                 "Moderation Note with Paragraphs": "https://www.drupal.org/files/issues/2018-05-05/2954753-14.patch"
+            },
+            "drupal/paragraphs": {
+                "Running drush entup results in an exception when attempting to update to 1.7": "https://www.drupal.org/files/issues/2019-04-01/paragraphs_revision_uid_exception-3042330-4.patch"
             },
             "drupal/password_policy": {
                 "Fix import configuration for field_last_password_reset is unknown": "https://www.drupal.org/files/issues/2018-07-30/password_policy-config_import_field_error-2771129-57.patch"
