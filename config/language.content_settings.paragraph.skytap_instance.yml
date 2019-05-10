@@ -1,9 +1,9 @@
-uuid: aa4ca057-5581-4905-8105-b14a2461871c
-langcode: en
+uuid: 54d84256-d9f9-4ef4-aed2-b4aa0b74a8c1
+langcode: ja
 status: true
 dependencies:
   config:
-    - taxonomy.vocabulary.portfolios
+    - paragraphs.paragraphs_type.skytap_instance
   module:
     - content_translation
 third_party_settings:
@@ -11,8 +11,8 @@ third_party_settings:
     enabled: false
     bundle_settings:
       untranslatable_fields_hide: '0'
-id: taxonomy_term.portfolios
-target_entity_type_id: taxonomy_term
-target_bundle: portfolios
+id: paragraph.skytap_instance
+target_entity_type_id: paragraph
+target_bundle: skytap_instance
 default_langcode: site_default
 language_alterable: false

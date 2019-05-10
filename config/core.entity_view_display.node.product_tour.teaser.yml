@@ -33,7 +33,11 @@ content:
     settings: {  }
     third_party_settings: {  }
 hidden:
+  field_campaign_code: true
+  field_environment_benefits: true
+  field_environment_introduction: true
   field_formatted_introduction: true
+  field_ov_code: true
   field_path: true
   field_referenced_demo_instance: true
   field_referenced_products: true
@@ -43,5 +47,6 @@ hidden:
   field_takeaways: true
   field_tasks: true
   field_url: true
+  field_urx_form_id: true
   field_weight: true
   langcode: true

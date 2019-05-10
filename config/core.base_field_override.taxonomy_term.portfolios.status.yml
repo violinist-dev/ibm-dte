@@ -1,17 +1,17 @@
-uuid: b91fb475-9061-4f27-902e-6a058bf2fc5e
-langcode: en
+uuid: c0259be7-4eea-4028-99d1-e9dc9e8df2bb
+langcode: ja
 status: true
 dependencies:
   config:
-    - paragraphs.paragraphs_type.tutorial_tasks
-id: paragraph.tutorial_tasks.status
+    - taxonomy.vocabulary.portfolios
+id: taxonomy_term.portfolios.status
 field_name: status
-entity_type: paragraph
-bundle: tutorial_tasks
+entity_type: taxonomy_term
+bundle: portfolios
 label: Published
 description: ''
 required: false
-translatable: true
+translatable: false
 default_value:
   -
     value: 1

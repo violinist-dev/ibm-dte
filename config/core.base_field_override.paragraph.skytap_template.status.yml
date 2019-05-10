@@ -1,17 +1,17 @@
-uuid: b91fb475-9061-4f27-902e-6a058bf2fc5e
-langcode: en
+uuid: b0999508-9578-4bc5-9a59-4721de871bb8
+langcode: ja
 status: true
 dependencies:
   config:
-    - paragraphs.paragraphs_type.tutorial_tasks
-id: paragraph.tutorial_tasks.status
+    - paragraphs.paragraphs_type.skytap_template
+id: paragraph.skytap_template.status
 field_name: status
 entity_type: paragraph
-bundle: tutorial_tasks
+bundle: skytap_template
 label: Published
 description: ''
 required: false
-translatable: true
+translatable: false
 default_value:
   -
     value: 1

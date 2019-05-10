@@ -1,0 +1,20 @@
+uuid: 98152914-594a-481c-84a7-d7b32f047758
+langcode: ja
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.portfolios
+  module:
+    - path
+id: taxonomy_term.portfolios.path
+field_name: path
+entity_type: taxonomy_term
+bundle: portfolios
+label: 'URL alias'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: path

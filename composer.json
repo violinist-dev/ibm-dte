@@ -150,7 +150,7 @@
         "drupal/config_installer": "^1.0",
         "drupal/console": "^1",
         "drupal/consumers": "^1.2",
-        "drupal/core": "^8.6.13",
+        "drupal/core": "~8.7.1",
         "drupal/deploy": "^1.0@beta",
         "drupal/diff": "^1.0@RC",
         "drupal/disable_html5_validation": "^1.0",
@@ -161,8 +161,7 @@
         "drupal/field_group": "^1.0",
         "drupal/fieldable_path": "1.x-dev",
         "drupal/graphql": "^3.0@beta",
-        "drupal/jsonapi": "^2.4.0",
-        "drupal/jsonapi_extras": "^3.4.0",
+        "drupal/jsonapi_extras": "^3.6.0",
         "drupal/label_help": "1.x-dev",
         "drupal/markdown": "^1.2",
         "drupal/material_admin": "^1.0@alpha",
@@ -276,9 +275,12 @@
         },
         "patches": {
             "drupal/core": {
-                "Normalize Content Moderation Form": "https://www.drupal.org/files/issues/2018-08-06/2849279-20.patch",
-                "Including entity reference in tables for json api to access": "https://www.drupal.org/files/issues/2018-11-26/2649268-28.patch",
-                "Shipping a profile with multiple languages without locale module not possible": "https://www.drupal.org/files/issues/2019-01-12/2413191-31.patch"
+				"Shipping a profile with multiple languages without locale module not possible": "https://www.drupal.org/files/issues/2019-01-12/2413191-31.patch",
+                "InvalidArgumentException: Invalid translation language specified.": "https://www.drupal.org/files/issues/2018-04-03/drupal_2137815_43.patch",
+                "PATCH 405 for untranslatable conent entities with different default language than English": "https://www.drupal.org/files/issues/2019-05-02/drupal-jsonapi-error-405-translatable-3043168-25.patch"
+            },
+            "drupal/entity_reference_revisions": {
+                "InvalidArgumentException: Invalid translation language": "https://www.drupal.org/files/issues/2019-01-08/3024588-2-entity_reference_revisions-invalid-translation-lang.patch"
             },
             "drupal/moderation_note": {
                 "Moderation Note with Paragraphs": "https://www.drupal.org/files/issues/2018-05-05/2954753-14.patch"

@@ -5,5 +5,4 @@ dependencies: {  }
 name: Products
 vid: portfolios
 description: 'IBM Products'
-hierarchy: 0
 weight: -10

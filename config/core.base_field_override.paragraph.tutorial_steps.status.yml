@@ -1,17 +1,17 @@
-uuid: b91fb475-9061-4f27-902e-6a058bf2fc5e
-langcode: en
+uuid: 6382f177-4c2d-47b8-8ddf-fb9f6cb2ea96
+langcode: ja
 status: true
 dependencies:
   config:
-    - paragraphs.paragraphs_type.tutorial_tasks
-id: paragraph.tutorial_tasks.status
+    - paragraphs.paragraphs_type.tutorial_steps
+id: paragraph.tutorial_steps.status
 field_name: status
 entity_type: paragraph
-bundle: tutorial_tasks
+bundle: tutorial_steps
 label: Published
 description: ''
 required: false
-translatable: true
+translatable: false
 default_value:
   -
     value: 1

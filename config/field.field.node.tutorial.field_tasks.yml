@@ -15,7 +15,7 @@ bundle: tutorial
 label: Tasks
 description: ''
 required: true
-translatable: true
+translatable: false
 default_value: {  }
 default_value_callback: ''
 settings:
@@ -30,5 +30,14 @@ settings:
         weight: 2
       tutorial_steps:
         weight: 3
+        enabled: false
+      skytap_instance:
+        weight: 6
+        enabled: false
+      skytap_template:
+        weight: 7
+        enabled: false
+      walkthrough_step:
+        weight: 10
         enabled: false
 field_type: entity_reference_revisions

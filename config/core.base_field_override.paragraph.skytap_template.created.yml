@@ -1,17 +1,17 @@
-uuid: d353d37c-28b1-4e71-98be-6a6500fc5ebf
-langcode: en
+uuid: 6ea2cc02-0ab3-4712-9414-d089e8bfc6d8
+langcode: ja
 status: true
 dependencies:
   config:
-    - paragraphs.paragraphs_type.tutorial_tasks
-id: paragraph.tutorial_tasks.created
+    - paragraphs.paragraphs_type.skytap_template
+id: paragraph.skytap_template.created
 field_name: created
 entity_type: paragraph
-bundle: tutorial_tasks
+bundle: skytap_template
 label: 'Authored on'
 description: 'The time that the Paragraph was created.'
 required: false
-translatable: true
+translatable: false
 default_value: {  }
 default_value_callback: ''
 settings: {  }

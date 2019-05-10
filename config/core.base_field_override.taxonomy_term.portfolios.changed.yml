@@ -1,0 +1,18 @@
+uuid: 0e79a26f-3d76-4160-b448-a596430cc061
+langcode: ja
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.portfolios
+id: taxonomy_term.portfolios.changed
+field_name: changed
+entity_type: taxonomy_term
+bundle: portfolios
+label: Changed
+description: 'The time that the term was last edited.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: changed

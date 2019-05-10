@@ -1,17 +1,17 @@
-uuid: d353d37c-28b1-4e71-98be-6a6500fc5ebf
-langcode: en
+uuid: bfc53547-59cc-4e47-bab4-8d532a62c381
+langcode: ja
 status: true
 dependencies:
   config:
-    - paragraphs.paragraphs_type.tutorial_tasks
-id: paragraph.tutorial_tasks.created
+    - paragraphs.paragraphs_type.tutorial_steps
+id: paragraph.tutorial_steps.created
 field_name: created
 entity_type: paragraph
-bundle: tutorial_tasks
+bundle: tutorial_steps
 label: 'Authored on'
 description: 'The time that the Paragraph was created.'
 required: false
-translatable: true
+translatable: false
 default_value: {  }
 default_value_callback: ''
 settings: {  }

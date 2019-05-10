@@ -1,18 +1,17 @@
-uuid: aa4ca057-5581-4905-8105-b14a2461871c
-langcode: en
+uuid: 48efecfd-6fa8-4b82-8af5-b5a654ccd289
+langcode: ja
 status: true
 dependencies:
-  config:
-    - taxonomy.vocabulary.portfolios
   module:
+    - consumers
     - content_translation
 third_party_settings:
   content_translation:
     enabled: false
     bundle_settings:
       untranslatable_fields_hide: '0'
-id: taxonomy_term.portfolios
-target_entity_type_id: taxonomy_term
-target_bundle: portfolios
+id: consumer.consumer
+target_entity_type_id: consumer
+target_bundle: consumer
 default_langcode: site_default
 language_alterable: false

@@ -1,9 +1,9 @@
-uuid: aa4ca057-5581-4905-8105-b14a2461871c
-langcode: en
+uuid: 90b48c5a-b98d-402e-b537-0d75ff76013a
+langcode: ja
 status: true
 dependencies:
   config:
-    - taxonomy.vocabulary.portfolios
+    - paragraphs.paragraphs_type.tutorial_steps
   module:
     - content_translation
 third_party_settings:
@@ -11,8 +11,8 @@ third_party_settings:
     enabled: false
     bundle_settings:
       untranslatable_fields_hide: '0'
-id: taxonomy_term.portfolios
-target_entity_type_id: taxonomy_term
-target_bundle: portfolios
+id: paragraph.tutorial_steps
+target_entity_type_id: paragraph
+target_bundle: tutorial_steps
 default_langcode: site_default
 language_alterable: false

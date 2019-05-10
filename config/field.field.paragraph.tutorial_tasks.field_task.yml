@@ -12,7 +12,7 @@ bundle: tutorial_tasks
 label: Task
 description: '<p>The title of the <em>Task</em>. Each task should be a high-level concept that a user will learn.'
 required: true
-translatable: false
+translatable: true
 default_value: {  }
 default_value_callback: ''
 settings: {  }

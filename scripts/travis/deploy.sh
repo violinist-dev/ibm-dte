@@ -14,5 +14,6 @@ git push -f pantheon master 1>/dev/null 2>&2
 
 # Update Database and Sync Config
 lando terminus aliases
-lando drush @pantheon.ibm-dte.dev updatedb | grep "ssh: not found"
+lando drush @pantheon.ibm-dte.dev entup -y
+lando drush @pantheon.ibm-dte.dev updatedb -y | grep "ssh: not found"
 lando drush @pantheon.ibm-dte.dev cim -y
