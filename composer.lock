@@ -183,7 +183,9 @@
             "version": "4.10.1",
             "dist": {
                 "type": "zip",
-                "url": "https://download.ckeditor.com/filetools/releases/filetools_4.10.1.zip"
+                "url": "https://download.ckeditor.com/filetools/releases/filetools_4.10.1.zip",
+                "reference": null,
+                "shasum": null
             },
             "type": "drupal-library",
             "extra": {
@@ -195,7 +197,9 @@
             "version": "4.10.1",
             "dist": {
                 "type": "zip",
-                "url": "https://download.ckeditor.com/notification/releases/notification_4.10.1.zip"
+                "url": "https://download.ckeditor.com/notification/releases/notification_4.10.1.zip",
+                "reference": null,
+                "shasum": null
             },
             "type": "drupal-library",
             "extra": {
@@ -207,7 +211,9 @@
             "version": "4.10.1",
             "dist": {
                 "type": "zip",
-                "url": "https://download.ckeditor.com/notificationaggregator/releases/notificationaggregator_4.10.1.zip"
+                "url": "https://download.ckeditor.com/notificationaggregator/releases/notificationaggregator_4.10.1.zip",
+                "reference": null,
+                "shasum": null
             },
             "type": "drupal-library",
             "extra": {
@@ -219,7 +225,9 @@
             "version": "4.10.1",
             "dist": {
                 "type": "zip",
-                "url": "https://download.ckeditor.com/uploadimage/releases/uploadimage_4.10.1.zip"
+                "url": "https://download.ckeditor.com/uploadimage/releases/uploadimage_4.10.1.zip",
+                "reference": null,
+                "shasum": null
             },
             "type": "drupal-library",
             "extra": {
@@ -231,7 +239,9 @@
             "version": "4.10.1",
             "dist": {
                 "type": "zip",
-                "url": "https://download.ckeditor.com/uploadwidget/releases/uploadwidget_4.10.1.zip"
+                "url": "https://download.ckeditor.com/uploadwidget/releases/uploadwidget_4.10.1.zip",
+                "reference": null,
+                "shasum": null
             },
             "type": "drupal-library",
             "extra": {
@@ -243,7 +253,9 @@
             "version": "4.9.2",
             "dist": {
                 "type": "zip",
-                "url": "https://download.ckeditor.com/codesnippet/releases/codesnippet_4.9.2.zip"
+                "url": "https://download.ckeditor.com/codesnippet/releases/codesnippet_4.9.2.zip",
+                "reference": null,
+                "shasum": null
             },
             "type": "drupal-library",
             "extra": {
@@ -2701,17 +2713,17 @@
         },
         {
             "name": "drupal/deploy",
-            "version": "1.0.0-beta16",
+            "version": "1.0.0-beta17",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/deploy.git",
-                "reference": "8.x-1.0-beta16"
+                "reference": "8.x-1.0-beta17"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/deploy-8.x-1.0-beta16.zip",
-                "reference": "8.x-1.0-beta16",
-                "shasum": "147bd2f947bbf8323f8fe8d748a9033453f112fc"
+                "url": "https://ftp.drupal.org/files/projects/deploy-8.x-1.0-beta17.zip",
+                "reference": "8.x-1.0-beta17",
+                "shasum": "f831fa27fe696d55f4e6f3df22f3631e970b328e"
             },
             "require": {
                 "drupal/core": "~8.0",
@@ -2724,8 +2736,8 @@
                     "dev-1.x": "1.x-dev"
                 },
                 "drupal": {
-                    "version": "8.x-1.0-beta16",
-                    "datestamp": "1552921984",
+                    "version": "8.x-1.0-beta17",
+                    "datestamp": "1557305285",
                     "security-coverage": {
                         "status": "not-covered",
                         "message": "Beta releases are not covered by Drupal security advisories."
@@ -4039,17 +4051,17 @@
         },
         {
             "name": "drupal/multiversion",
-            "version": "1.0.0-beta29",
+            "version": "1.0.0-beta30",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/multiversion.git",
-                "reference": "8.x-1.0-beta29"
+                "reference": "8.x-1.0-beta30"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/multiversion-8.x-1.0-beta29.zip",
-                "reference": "8.x-1.0-beta29",
-                "shasum": "4e50f7036c2fb1599a6f177d7cb549f426dd3b01"
+                "url": "https://ftp.drupal.org/files/projects/multiversion-8.x-1.0-beta30.zip",
+                "reference": "8.x-1.0-beta30",
+                "shasum": "2d7b2cde9f18f2989494a945712466d2737b1147"
             },
             "require": {
                 "drupal/conflict": "^1-beta",
@@ -4068,8 +4080,8 @@
                     "dev-1.x": "1.x-dev"
                 },
                 "drupal": {
-                    "version": "8.x-1.0-beta29",
-                    "datestamp": "1548760423",
+                    "version": "8.x-1.0-beta30",
+                    "datestamp": "1557299609",
                     "security-coverage": {
                         "status": "not-covered",
                         "message": "Beta releases are not covered by Drupal security advisories."
@@ -4505,17 +4517,17 @@
         },
         {
             "name": "drupal/replication",
-            "version": "1.0.0-beta18",
+            "version": "1.0.0-beta20",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/replication.git",
-                "reference": "8.x-1.0-beta18"
+                "reference": "8.x-1.0-beta20"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/replication-8.x-1.0-beta18.zip",
-                "reference": "8.x-1.0-beta18",
-                "shasum": "8b0d7ad05373f7096ccd1426fe86c8bb670d8475"
+                "url": "https://ftp.drupal.org/files/projects/replication-8.x-1.0-beta20.zip",
+                "reference": "8.x-1.0-beta20",
+                "shasum": "304f8072a5f7eec1f094161b4e76dfaa4db4e7bc"
             },
             "require": {
                 "drupal/core": "~8.0",
@@ -4527,8 +4539,8 @@
                     "dev-1.x": "1.x-dev"
                 },
                 "drupal": {
-                    "version": "8.x-1.0-beta18",
-                    "datestamp": "1544188080",
+                    "version": "8.x-1.0-beta20",
+                    "datestamp": "1557303784",
                     "security-coverage": {
                         "status": "not-covered",
                         "message": "Beta releases are not covered by Drupal security advisories."
@@ -5444,17 +5456,17 @@
         },
         {
             "name": "drupal/workspace",
-            "version": "1.0.0-beta19",
+            "version": "1.0.0-beta20",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/workspace.git",
-                "reference": "8.x-1.0-beta19"
+                "reference": "8.x-1.0-beta20"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/workspace-8.x-1.0-beta19.zip",
-                "reference": "8.x-1.0-beta19",
-                "shasum": "ea3e6d9b8b6bca33f926ab94c2d55ea43529d441"
+                "url": "https://ftp.drupal.org/files/projects/workspace-8.x-1.0-beta20.zip",
+                "reference": "8.x-1.0-beta20",
+                "shasum": "e5e6f253a107ec54e6c07594b79d871aaf2dbb1c"
             },
             "require": {
                 "drupal/core": "*",
@@ -5469,8 +5481,8 @@
                     "dev-1.x": "1.x-dev"
                 },
                 "drupal": {
-                    "version": "8.x-1.0-beta19",
-                    "datestamp": "1547800980",
+                    "version": "8.x-1.0-beta20",
+                    "datestamp": "1557304385",
                     "security-coverage": {
                         "status": "not-covered",
                         "message": "Beta releases are not covered by Drupal security advisories."
@@ -7224,7 +7236,9 @@
             "version": "1.11.2",
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/sparksuite/simplemde-markdown-editor/archive/1.11.2.zip"
+                "url": "https://github.com/sparksuite/simplemde-markdown-editor/archive/1.11.2.zip",
+                "reference": null,
+                "shasum": null
             },
             "type": "drupal-library"
         },
