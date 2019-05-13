@@ -183,7 +183,9 @@
             "version": "4.10.1",
             "dist": {
                 "type": "zip",
-                "url": "https://download.ckeditor.com/filetools/releases/filetools_4.10.1.zip"
+                "url": "https://download.ckeditor.com/filetools/releases/filetools_4.10.1.zip",
+                "reference": null,
+                "shasum": null
             },
             "type": "drupal-library",
             "extra": {
@@ -195,7 +197,9 @@
             "version": "4.10.1",
             "dist": {
                 "type": "zip",
-                "url": "https://download.ckeditor.com/notification/releases/notification_4.10.1.zip"
+                "url": "https://download.ckeditor.com/notification/releases/notification_4.10.1.zip",
+                "reference": null,
+                "shasum": null
             },
             "type": "drupal-library",
             "extra": {
@@ -207,7 +211,9 @@
             "version": "4.10.1",
             "dist": {
                 "type": "zip",
-                "url": "https://download.ckeditor.com/notificationaggregator/releases/notificationaggregator_4.10.1.zip"
+                "url": "https://download.ckeditor.com/notificationaggregator/releases/notificationaggregator_4.10.1.zip",
+                "reference": null,
+                "shasum": null
             },
             "type": "drupal-library",
             "extra": {
@@ -219,7 +225,9 @@
             "version": "4.10.1",
             "dist": {
                 "type": "zip",
-                "url": "https://download.ckeditor.com/uploadimage/releases/uploadimage_4.10.1.zip"
+                "url": "https://download.ckeditor.com/uploadimage/releases/uploadimage_4.10.1.zip",
+                "reference": null,
+                "shasum": null
             },
             "type": "drupal-library",
             "extra": {
@@ -231,7 +239,9 @@
             "version": "4.10.1",
             "dist": {
                 "type": "zip",
-                "url": "https://download.ckeditor.com/uploadwidget/releases/uploadwidget_4.10.1.zip"
+                "url": "https://download.ckeditor.com/uploadwidget/releases/uploadwidget_4.10.1.zip",
+                "reference": null,
+                "shasum": null
             },
             "type": "drupal-library",
             "extra": {
@@ -243,7 +253,9 @@
             "version": "4.9.2",
             "dist": {
                 "type": "zip",
-                "url": "https://download.ckeditor.com/codesnippet/releases/codesnippet_4.9.2.zip"
+                "url": "https://download.ckeditor.com/codesnippet/releases/codesnippet_4.9.2.zip",
+                "reference": null,
+                "shasum": null
             },
             "type": "drupal-library",
             "extra": {
@@ -1323,16 +1335,16 @@
         },
         {
             "name": "drupal-composer/drupal-scaffold",
-            "version": "2.6.0",
+            "version": "2.6.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/drupal-composer/drupal-scaffold.git",
-                "reference": "0e00601e070c5c71e6d3a6478fa61198e30c2964"
+                "reference": "13c1ffc7dd4925cb03707759128b85c0cd6276f8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/drupal-composer/drupal-scaffold/zipball/0e00601e070c5c71e6d3a6478fa61198e30c2964",
-                "reference": "0e00601e070c5c71e6d3a6478fa61198e30c2964",
+                "url": "https://api.github.com/repos/drupal-composer/drupal-scaffold/zipball/13c1ffc7dd4925cb03707759128b85c0cd6276f8",
+                "reference": "13c1ffc7dd4925cb03707759128b85c0cd6276f8",
                 "shasum": ""
             },
             "require": {
@@ -1363,7 +1375,7 @@
                 "GPL-2.0-or-later"
             ],
             "description": "Composer Plugin for updating the Drupal scaffold files when using drupal/core",
-            "time": "2019-03-26T09:14:17+00:00"
+            "time": "2019-03-30T10:41:38+00:00"
         },
         {
             "name": "drupal/admin_toolbar",
@@ -7224,7 +7236,9 @@
             "version": "1.11.2",
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/sparksuite/simplemde-markdown-editor/archive/1.11.2.zip"
+                "url": "https://github.com/sparksuite/simplemde-markdown-editor/archive/1.11.2.zip",
+                "reference": null,
+                "shasum": null
             },
             "type": "drupal-library"
         },
