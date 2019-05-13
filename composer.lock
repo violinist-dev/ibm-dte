@@ -183,7 +183,9 @@
             "version": "4.10.1",
             "dist": {
                 "type": "zip",
-                "url": "https://download.ckeditor.com/filetools/releases/filetools_4.10.1.zip"
+                "url": "https://download.ckeditor.com/filetools/releases/filetools_4.10.1.zip",
+                "reference": null,
+                "shasum": null
             },
             "type": "drupal-library",
             "extra": {
@@ -195,7 +197,9 @@
             "version": "4.10.1",
             "dist": {
                 "type": "zip",
-                "url": "https://download.ckeditor.com/notification/releases/notification_4.10.1.zip"
+                "url": "https://download.ckeditor.com/notification/releases/notification_4.10.1.zip",
+                "reference": null,
+                "shasum": null
             },
             "type": "drupal-library",
             "extra": {
@@ -207,7 +211,9 @@
             "version": "4.10.1",
             "dist": {
                 "type": "zip",
-                "url": "https://download.ckeditor.com/notificationaggregator/releases/notificationaggregator_4.10.1.zip"
+                "url": "https://download.ckeditor.com/notificationaggregator/releases/notificationaggregator_4.10.1.zip",
+                "reference": null,
+                "shasum": null
             },
             "type": "drupal-library",
             "extra": {
@@ -219,7 +225,9 @@
             "version": "4.10.1",
             "dist": {
                 "type": "zip",
-                "url": "https://download.ckeditor.com/uploadimage/releases/uploadimage_4.10.1.zip"
+                "url": "https://download.ckeditor.com/uploadimage/releases/uploadimage_4.10.1.zip",
+                "reference": null,
+                "shasum": null
             },
             "type": "drupal-library",
             "extra": {
@@ -231,7 +239,9 @@
             "version": "4.10.1",
             "dist": {
                 "type": "zip",
-                "url": "https://download.ckeditor.com/uploadwidget/releases/uploadwidget_4.10.1.zip"
+                "url": "https://download.ckeditor.com/uploadwidget/releases/uploadwidget_4.10.1.zip",
+                "reference": null,
+                "shasum": null
             },
             "type": "drupal-library",
             "extra": {
@@ -243,7 +253,9 @@
             "version": "4.9.2",
             "dist": {
                 "type": "zip",
-                "url": "https://download.ckeditor.com/codesnippet/releases/codesnippet_4.9.2.zip"
+                "url": "https://download.ckeditor.com/codesnippet/releases/codesnippet_4.9.2.zip",
+                "reference": null,
+                "shasum": null
             },
             "type": "drupal-library",
             "extra": {
@@ -3544,21 +3556,21 @@
         },
         {
             "name": "drupal/jsonapi_extras",
-            "version": "3.5.0",
+            "version": "3.6.0",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/jsonapi_extras.git",
-                "reference": "8.x-3.5"
+                "reference": "8.x-3.6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/jsonapi_extras-8.x-3.5.zip",
-                "reference": "8.x-3.5",
-                "shasum": "4413fbe0e56ba4e44b3e71dc53236dfd074f50a2"
+                "url": "https://ftp.drupal.org/files/projects/jsonapi_extras-8.x-3.6.zip",
+                "reference": "8.x-3.6",
+                "shasum": "e651acd28433e3555ec12d47f559d05e6419d0d5"
             },
             "require": {
-                "drupal/core": "^8.5",
-                "drupal/jsonapi": "^2.1",
+                "drupal/core": "~8.0",
+                "drupal/jsonapi": "*",
                 "e0ipso/shaper": "^1"
             },
             "require-dev": {
@@ -3570,8 +3582,8 @@
                     "dev-3.x": "3.x-dev"
                 },
                 "drupal": {
-                    "version": "8.x-3.5",
-                    "datestamp": "1553765343",
+                    "version": "8.x-3.6",
+                    "datestamp": "1556431984",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -7224,7 +7236,9 @@
             "version": "1.11.2",
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/sparksuite/simplemde-markdown-editor/archive/1.11.2.zip"
+                "url": "https://github.com/sparksuite/simplemde-markdown-editor/archive/1.11.2.zip",
+                "reference": null,
+                "shasum": null
             },
             "type": "drupal-library"
         },
