@@ -93,6 +93,18 @@ resourceFields:
     enhancer:
       id: ''
     disabled: false
+  field_category:
+    fieldName: field_category
+    publicName: field_category
+    enhancer:
+      id: ''
+    disabled: false
+  field_dte_category:
+    fieldName: field_dte_category
+    publicName: field_dte_category
+    enhancer:
+      id: ''
+    disabled: false
   field_headline:
     fieldName: field_headline
     publicName: headline
@@ -108,6 +120,12 @@ resourceFields:
   field_overview:
     fieldName: field_overview
     publicName: overview
+    enhancer:
+      id: ''
+    disabled: false
+  field_product_key:
+    fieldName: field_product_key
+    publicName: field_product_key
     enhancer:
       id: ''
     disabled: false

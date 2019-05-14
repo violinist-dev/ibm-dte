@@ -8,7 +8,6 @@ dependencies:
     - field.field.paragraph.tutorial_tasks.field_task
     - paragraphs.paragraphs_type.tutorial_tasks
   module:
-    - content_moderation
     - text
 id: paragraph.tutorial_tasks.default
 targetEntityType: paragraph
@@ -47,12 +46,6 @@ content:
     third_party_settings: {  }
     type: string_textfield
     region: content
-  moderation_state:
-    type: moderation_state_default
-    weight: 0
-    settings: {  }
-    region: content
-    third_party_settings: {  }
 hidden:
   created: true
   status: true

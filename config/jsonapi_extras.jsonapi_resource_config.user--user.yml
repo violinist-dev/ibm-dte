@@ -5,151 +5,115 @@ dependencies:
   module:
     - user
 id: user--user
-disabled: true
-path: user/user
+disabled: false
+path: user
 resourceType: user--user
 resourceFields:
   uid:
+    disabled: true
     fieldName: uid
     publicName: uid
     enhancer:
       id: ''
-    disabled: false
-    advancedOptionsIcon: ''
-    enhancer_label: ''
   uuid:
+    disabled: true
     fieldName: uuid
     publicName: uuid
     enhancer:
       id: ''
-    disabled: false
-    advancedOptionsIcon: ''
-    enhancer_label: ''
   langcode:
+    disabled: true
     fieldName: langcode
     publicName: langcode
     enhancer:
       id: ''
-    disabled: false
-    advancedOptionsIcon: ''
-    enhancer_label: ''
   preferred_langcode:
+    disabled: true
     fieldName: preferred_langcode
     publicName: preferred_langcode
     enhancer:
       id: ''
-    disabled: false
-    advancedOptionsIcon: ''
-    enhancer_label: ''
   preferred_admin_langcode:
+    disabled: true
     fieldName: preferred_admin_langcode
     publicName: preferred_admin_langcode
     enhancer:
       id: ''
-    disabled: false
-    advancedOptionsIcon: ''
-    enhancer_label: ''
   name:
     fieldName: name
     publicName: name
     enhancer:
       id: ''
     disabled: false
-    advancedOptionsIcon: ''
-    enhancer_label: ''
   pass:
+    disabled: true
     fieldName: pass
     publicName: pass
     enhancer:
       id: ''
-    disabled: false
-    advancedOptionsIcon: ''
-    enhancer_label: ''
   mail:
+    disabled: true
     fieldName: mail
     publicName: mail
     enhancer:
       id: ''
-    disabled: false
-    advancedOptionsIcon: ''
-    enhancer_label: ''
   timezone:
+    disabled: true
     fieldName: timezone
     publicName: timezone
     enhancer:
       id: ''
-    disabled: false
-    advancedOptionsIcon: ''
-    enhancer_label: ''
   status:
+    disabled: true
     fieldName: status
     publicName: status
     enhancer:
       id: ''
-    disabled: false
-    advancedOptionsIcon: ''
-    enhancer_label: ''
   created:
+    disabled: true
     fieldName: created
     publicName: created
     enhancer:
       id: ''
-    disabled: false
-    advancedOptionsIcon: ''
-    enhancer_label: ''
   changed:
+    disabled: true
     fieldName: changed
     publicName: changed
     enhancer:
       id: ''
-    disabled: false
-    advancedOptionsIcon: ''
-    enhancer_label: ''
   access:
+    disabled: true
     fieldName: access
     publicName: access
     enhancer:
       id: ''
-    disabled: false
-    advancedOptionsIcon: ''
-    enhancer_label: ''
   login:
+    disabled: true
     fieldName: login
     publicName: login
     enhancer:
       id: ''
-    disabled: false
-    advancedOptionsIcon: ''
-    enhancer_label: ''
   init:
+    disabled: true
     fieldName: init
     publicName: init
     enhancer:
       id: ''
-    disabled: false
-    advancedOptionsIcon: ''
-    enhancer_label: ''
   roles:
+    disabled: true
     fieldName: roles
     publicName: roles
     enhancer:
       id: ''
-    disabled: false
-    advancedOptionsIcon: ''
-    enhancer_label: ''
   default_langcode:
+    disabled: true
     fieldName: default_langcode
     publicName: default_langcode
     enhancer:
       id: ''
-    disabled: false
-    advancedOptionsIcon: ''
-    enhancer_label: ''
-  path:
-    fieldName: path
-    publicName: path
+  field_full_name:
+    fieldName: field_full_name
+    publicName: full_name
     enhancer:
       id: ''
     disabled: false
-    advancedOptionsIcon: ''
-    enhancer_label: ''

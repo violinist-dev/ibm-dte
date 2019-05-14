@@ -9,7 +9,6 @@ dependencies:
     - image.style.thumbnail
     - paragraphs.paragraphs_type.walkthrough_step
   module:
-    - content_moderation
     - image
     - text
 id: paragraph.walkthrough_step.default
@@ -41,12 +40,6 @@ content:
     third_party_settings: {  }
     type: string_textfield
     region: content
-  moderation_state:
-    type: moderation_state_default
-    weight: 100
-    settings: {  }
-    region: content
-    third_party_settings: {  }
 hidden:
   created: true
   status: true

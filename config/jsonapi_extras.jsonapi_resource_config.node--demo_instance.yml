@@ -40,11 +40,11 @@ resourceFields:
       id: ''
     disabled: false
   revision_timestamp:
-    disabled: true
     fieldName: revision_timestamp
     publicName: revision_timestamp
     enhancer:
       id: ''
+    disabled: false
   revision_uid:
     disabled: true
     fieldName: revision_uid
@@ -70,23 +70,23 @@ resourceFields:
       id: ''
     disabled: false
   uid:
-    disabled: true
     fieldName: uid
     publicName: uid
     enhancer:
       id: ''
+    disabled: false
   created:
-    disabled: true
     fieldName: created
     publicName: created
     enhancer:
       id: ''
+    disabled: false
   changed:
-    disabled: true
     fieldName: changed
     publicName: changed
     enhancer:
       id: ''
+    disabled: false
   promote:
     disabled: true
     fieldName: promote
@@ -147,15 +147,9 @@ resourceFields:
     publicName: content_translation_outdated
     enhancer:
       id: ''
-  field_benefit_introduction:
-    fieldName: field_benefit_introduction
-    publicName: benefit_introduction
-    enhancer:
-      id: ''
-    disabled: false
-  field_formatted_introduction:
-    fieldName: field_formatted_introduction
-    publicName: introduction
+  field_completed_security_checkli:
+    fieldName: field_completed_security_checkli
+    publicName: field_completed_security_checkli
     enhancer:
       id: ''
     disabled: false
@@ -186,12 +180,6 @@ resourceFields:
   field_skytap_instance:
     fieldName: field_skytap_instance
     publicName: skytap_instance
-    enhancer:
-      id: ''
-    disabled: false
-  field_takeaways:
-    fieldName: field_takeaways
-    publicName: benefits
     enhancer:
       id: ''
     disabled: false

@@ -4,7 +4,11 @@ status: false
 dependencies:
   config:
     - core.entity_view_mode.node.teaser
+    - field.field.node.product_tour.field_campaign_code
+    - field.field.node.product_tour.field_environment_benefits
+    - field.field.node.product_tour.field_environment_introduction
     - field.field.node.product_tour.field_formatted_introduction
+    - field.field.node.product_tour.field_ov_code
     - field.field.node.product_tour.field_path
     - field.field.node.product_tour.field_referenced_demo_instance
     - field.field.node.product_tour.field_referenced_products
@@ -13,6 +17,8 @@ dependencies:
     - field.field.node.product_tour.field_summary
     - field.field.node.product_tour.field_takeaways
     - field.field.node.product_tour.field_tasks
+    - field.field.node.product_tour.field_url
+    - field.field.node.product_tour.field_urx_form_id
     - field.field.node.product_tour.field_weight
     - node.type.product_tour
   module:

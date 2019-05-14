@@ -8,6 +8,7 @@ weight: -3
 is_admin: null
 permissions:
   - 'access jsonapi resource list'
+  - 'access user profiles'
   - 'use advanced search'
   - 'view all media revisions'
   - 'view all revisions'

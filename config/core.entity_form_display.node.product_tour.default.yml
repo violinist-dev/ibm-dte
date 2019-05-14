@@ -20,6 +20,7 @@ dependencies:
     - field.field.node.product_tour.field_urx_form_id
     - field.field.node.product_tour.field_weight
     - node.type.product_tour
+    - workflows.workflow.tech_lead_editor
   module:
     - content_moderation
     - field_group

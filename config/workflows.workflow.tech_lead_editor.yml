@@ -86,3 +86,4 @@ type_settings:
       - product_tour
       - tutorial
       - video
+  default_moderation_state: draft
