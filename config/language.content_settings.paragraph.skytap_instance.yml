@@ -1,5 +1,5 @@
-uuid: 54d84256-d9f9-4ef4-aed2-b4aa0b74a8c1
-langcode: ja
+uuid: 75cc79d9-912e-4f17-9952-283a3c5dd316
+langcode: en
 status: true
 dependencies:
   config:
@@ -8,11 +8,11 @@ dependencies:
     - content_translation
 third_party_settings:
   content_translation:
-    enabled: false
+    enabled: true
     bundle_settings:
       untranslatable_fields_hide: '0'
 id: paragraph.skytap_instance
 target_entity_type_id: paragraph
 target_bundle: skytap_instance
 default_langcode: site_default
-language_alterable: false
+language_alterable: true

@@ -21,7 +21,7 @@ bundle: tutorial_steps
 label: Step
 description: '<p>The action you want a user to perform. This should be as short and clear as possible. Include instructions (the following field) if there are sub-actions you would like a user to perform, or if the action requires further explanation.</p>'
 required: true
-translatable: false
+translatable: true
 default_value: {  }
 default_value_callback: ''
 settings: {  }

@@ -12,7 +12,7 @@ bundle: skytap_instance
 label: 'Total Runtime Limit'
 description: ''
 required: false
-translatable: false
+translatable: true
 default_value: {  }
 default_value_callback: ''
 settings:

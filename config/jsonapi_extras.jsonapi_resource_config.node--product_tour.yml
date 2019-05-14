@@ -76,17 +76,17 @@ resourceFields:
     enhancer:
       id: ''
   created:
-    disabled: true
     fieldName: created
     publicName: created
     enhancer:
       id: ''
+    disabled: false
   changed:
-    disabled: true
     fieldName: changed
     publicName: changed
     enhancer:
       id: ''
+    disabled: false
   promote:
     disabled: true
     fieldName: promote
@@ -147,9 +147,33 @@ resourceFields:
     publicName: content_translation_outdated
     enhancer:
       id: ''
+  field_campaign_code:
+    fieldName: field_campaign_code
+    publicName: field_campaign_code
+    enhancer:
+      id: ''
+    disabled: false
+  field_environment_benefits:
+    fieldName: field_environment_benefits
+    publicName: field_environment_benefits
+    enhancer:
+      id: ''
+    disabled: false
+  field_environment_introduction:
+    fieldName: field_environment_introduction
+    publicName: field_environment_introduction
+    enhancer:
+      id: ''
+    disabled: false
   field_formatted_introduction:
     fieldName: field_formatted_introduction
     publicName: introduction
+    enhancer:
+      id: ''
+    disabled: false
+  field_ov_code:
+    fieldName: field_ov_code
+    publicName: field_ov_code
     enhancer:
       id: ''
     disabled: false
@@ -198,6 +222,18 @@ resourceFields:
   field_tasks:
     fieldName: field_tasks
     publicName: tasks
+    enhancer:
+      id: ''
+    disabled: false
+  field_url:
+    fieldName: field_url
+    publicName: field_url
+    enhancer:
+      id: ''
+    disabled: false
+  field_urx_form_id:
+    fieldName: field_urx_form_id
+    publicName: field_urx_form_id
     enhancer:
       id: ''
     disabled: false

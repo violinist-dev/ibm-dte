@@ -3,6 +3,7 @@ langcode: en
 status: true
 dependencies:
   module:
+    - roleassign
     - user
 _core:
   default_config_hash: wTJRNzsLVTenCALONNlVfgm_pBOlqucSPuVFLOD56ck

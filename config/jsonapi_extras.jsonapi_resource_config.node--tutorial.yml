@@ -70,23 +70,23 @@ resourceFields:
       id: ''
     disabled: false
   uid:
-    disabled: true
     fieldName: uid
     publicName: uid
     enhancer:
       id: ''
+    disabled: false
   created:
-    disabled: true
     fieldName: created
     publicName: created
     enhancer:
       id: ''
+    disabled: false
   changed:
-    disabled: true
     fieldName: changed
     publicName: changed
     enhancer:
       id: ''
+    disabled: false
   promote:
     disabled: true
     fieldName: promote
@@ -189,6 +189,12 @@ resourceFields:
     enhancer:
       id: ''
     disabled: false
+  field_related_tutorials:
+    fieldName: field_related_tutorials
+    publicName: field_related_tutorials
+    enhancer:
+      id: ''
+    disabled: false
   field_short_description:
     fieldName: field_short_description
     publicName: short_description
@@ -210,6 +216,12 @@ resourceFields:
   field_tasks:
     fieldName: field_tasks
     publicName: tasks
+    enhancer:
+      id: ''
+    disabled: false
+  field_url:
+    fieldName: field_url
+    publicName: field_url
     enhancer:
       id: ''
     disabled: false

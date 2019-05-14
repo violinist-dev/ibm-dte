@@ -12,6 +12,7 @@ dependencies:
     - field.field.node.demo_instance.field_url
     - field.field.node.demo_instance.field_urx_form_id
     - node.type.demo_instance
+    - workflows.workflow.tech_lead_editor
   module:
     - conditional_fields
     - content_moderation

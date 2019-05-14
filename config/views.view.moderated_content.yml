@@ -6,6 +6,7 @@ dependencies:
     - field.storage.node.field_referenced_products
     - system.menu.workbench
     - taxonomy.vocabulary.portfolios
+    - workflows.workflow.editorial
     - workflows.workflow.tech_lead_editor
   module:
     - content_moderation
@@ -594,10 +595,11 @@ display:
           entity_field: changed
           plugin_id: field
       filters:
-        latest_revision:
-          id: latest_revision
+        latest_translation_affected_revision:
+          id: latest_translation_affected_revision
+          field: latest_translation_affected_revision
+          plugin_id: latest_translation_affected_revision
           table: node_revision
-          field: latest_revision
           relationship: none
           group_type: group
           admin_label: ''
@@ -630,7 +632,6 @@ display:
             default_group_multiple: {  }
             group_items: {  }
           entity_type: node
-          plugin_id: latest_revision
         title:
           id: title
           table: node_field_revision

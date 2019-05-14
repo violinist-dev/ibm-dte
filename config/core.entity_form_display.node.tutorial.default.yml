@@ -18,6 +18,7 @@ dependencies:
     - field.field.node.tutorial.field_url
     - field.field.node.tutorial.field_weight
     - node.type.tutorial
+    - workflows.workflow.tech_lead_editor
   module:
     - content_moderation
     - field_group
