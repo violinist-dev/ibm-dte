@@ -219,7 +219,9 @@
             "version": "4.10.1",
             "dist": {
                 "type": "zip",
-                "url": "https://download.ckeditor.com/filetools/releases/filetools_4.10.1.zip"
+                "url": "https://download.ckeditor.com/filetools/releases/filetools_4.10.1.zip",
+                "reference": null,
+                "shasum": null
             },
             "type": "drupal-library",
             "extra": {
@@ -231,7 +233,9 @@
             "version": "4.10.1",
             "dist": {
                 "type": "zip",
-                "url": "https://download.ckeditor.com/notification/releases/notification_4.10.1.zip"
+                "url": "https://download.ckeditor.com/notification/releases/notification_4.10.1.zip",
+                "reference": null,
+                "shasum": null
             },
             "type": "drupal-library",
             "extra": {
@@ -243,7 +247,9 @@
             "version": "4.10.1",
             "dist": {
                 "type": "zip",
-                "url": "https://download.ckeditor.com/notificationaggregator/releases/notificationaggregator_4.10.1.zip"
+                "url": "https://download.ckeditor.com/notificationaggregator/releases/notificationaggregator_4.10.1.zip",
+                "reference": null,
+                "shasum": null
             },
             "type": "drupal-library",
             "extra": {
@@ -255,7 +261,9 @@
             "version": "4.10.1",
             "dist": {
                 "type": "zip",
-                "url": "https://download.ckeditor.com/uploadimage/releases/uploadimage_4.10.1.zip"
+                "url": "https://download.ckeditor.com/uploadimage/releases/uploadimage_4.10.1.zip",
+                "reference": null,
+                "shasum": null
             },
             "type": "drupal-library",
             "extra": {
@@ -267,7 +275,9 @@
             "version": "4.10.1",
             "dist": {
                 "type": "zip",
-                "url": "https://download.ckeditor.com/uploadwidget/releases/uploadwidget_4.10.1.zip"
+                "url": "https://download.ckeditor.com/uploadwidget/releases/uploadwidget_4.10.1.zip",
+                "reference": null,
+                "shasum": null
             },
             "type": "drupal-library",
             "extra": {
@@ -279,7 +289,9 @@
             "version": "4.9.2",
             "dist": {
                 "type": "zip",
-                "url": "https://download.ckeditor.com/codesnippet/releases/codesnippet_4.9.2.zip"
+                "url": "https://download.ckeditor.com/codesnippet/releases/codesnippet_4.9.2.zip",
+                "reference": null,
+                "shasum": null
             },
             "type": "drupal-library",
             "extra": {
@@ -5053,17 +5065,17 @@
         },
         {
             "name": "drupal/video_embed_field",
-            "version": "2.0.0",
+            "version": "2.1.0",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/video_embed_field.git",
-                "reference": "8.x-2.0"
+                "reference": "8.x-2.1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/video_embed_field-8.x-2.0.zip",
-                "reference": "8.x-2.0",
-                "shasum": "e864f090b3cb9405376ca324d81ace83613e2019"
+                "url": "https://ftp.drupal.org/files/projects/video_embed_field-8.x-2.1.zip",
+                "reference": "8.x-2.1",
+                "shasum": "fa1682741b4a1404df80c709ed8e40b7d8362d67"
             },
             "require": {
                 "drupal/core": "*"
@@ -5079,13 +5091,12 @@
                     "dev-2.x": "2.x-dev"
                 },
                 "drupal": {
-                    "version": "8.x-1.x",
-                    "datestamp": "1523338084",
+                    "version": "8.x-2.1",
+                    "datestamp": "1557724385",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
-                    },
-                    "package": "Field types"
+                    }
                 }
             },
             "notification-url": "https://packages.drupal.org/8/downloads",
@@ -7424,7 +7435,9 @@
             "version": "1.11.2",
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/sparksuite/simplemde-markdown-editor/archive/1.11.2.zip"
+                "url": "https://github.com/sparksuite/simplemde-markdown-editor/archive/1.11.2.zip",
+                "reference": null,
+                "shasum": null
             },
             "type": "drupal-library"
         },
